@@ -81,6 +81,7 @@
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.employeesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.isEditedCheckBox = new System.Windows.Forms.CheckBox();
 			this.insertDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.endDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -119,7 +120,7 @@
 			this.employeeTypeIdComboBox = new System.Windows.Forms.ComboBox();
 			this.employeeTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			isEditedLabel = new System.Windows.Forms.Label();
 			insertDateLabel = new System.Windows.Forms.Label();
 			endDateLabel = new System.Windows.Forms.Label();
@@ -601,6 +602,15 @@
 			this.employeesBindingNavigatorSaveItem.Text = "Save Data";
 			this.employeesBindingNavigatorSaveItem.Click += new System.EventHandler(this.employeesBindingNavigatorSaveItem_Click);
 			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButton1.Text = "toolStripButton1";
+			// 
 			// isEditedCheckBox
 			// 
 			this.isEditedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.employeesBindingSource, "IsEdited", true));
@@ -755,6 +765,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.panel1.Controls.Add(this.textBox1);
 			this.panel1.Controls.Add(this.imagePathTextBox);
 			this.panel1.Controls.Add(this.imageFileTextBox);
 			this.panel1.Controls.Add(this.button1);
@@ -980,14 +991,12 @@
 			this.companiesBindingSource.DataMember = "Companies";
 			this.companiesBindingSource.DataSource = this.homeTextileDBDataSet;
 			// 
-			// toolStripButton1
+			// textBox1
 			// 
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButton1.Text = "toolStripButton1";
+			this.textBox1.Location = new System.Drawing.Point(127, 91);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(100, 20);
+			this.textBox1.TabIndex = 73;
 			// 
 			// Form1
 			// 
@@ -1087,6 +1096,7 @@
 		private System.Windows.Forms.TextBox imagePathTextBox;
 		private System.Windows.Forms.TextBox imageFileTextBox;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }
 
