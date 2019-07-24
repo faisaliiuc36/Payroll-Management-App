@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89007D1A-9761-49B3-9A4E-A274E5F8DA2F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HomeTextileApp</RootNamespace>
+    <AssemblyName>HomeTextileApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DL\BloodGroup.cs" />
+    <Compile Include="DL\Bonus.cs" />
+    <Compile Include="DL\Company.cs" />
+    <Compile Include="DL\DatabaseContext.cs" />
+    <Compile Include="DL\Department.cs" />
+    <Compile Include="DL\Designation.cs" />
+    <Compile Include="DL\Duty_Roster.cs" />
+    <Compile Include="DL\Employee.cs" />
+    <Compile Include="DL\EmployeeType.cs" />
+    <Compile Include="DL\Emp_CheckInOut.cs" />
+    <Compile Include="DL\Gender.cs" />
+    <Compile Include="DL\Holiday.cs" />
+    <Compile Include="DL\HTAdmins.cs" />
+    <Compile Include="DL\InActiveHistory.cs" />
+    <Compile Include="DL\Leave.cs" />
+    <Compile Include="DL\LeaveStore.cs" />
+    <Compile Include="DL\LeaveType.cs" />
+    <Compile Include="DL\Loan.cs" />
+    <Compile Include="DL\MaritialStatus.cs" />
+    <Compile Include="DL\Paytime.cs" />
+    <Compile Include="DL\Religion.cs" />
+    <Compile Include="DL\Salary.cs" />
+    <Compile Include="DL\SalaryGrade.cs" />
+    <Compile Include="DL\SalarySetting.cs" />
+    <Compile Include="DL\Section.cs" />
+    <Compile Include="DL\Shift.cs" />
+    <Compile Include="DL\ShowEmployeeShift.cs" />
+    <Compile Include="DL\Unit.cs" />
+    <Compile Include="DL\ViewAttendance.cs" />
+    <Compile Include="DL\ViewAttendanceHistory.cs" />
+    <Compile Include="DL\ViewEmpLeaveStatus.cs" />
+    <Compile Include="DL\ViewIndividualAttendance.cs" />
+    <Compile Include="DL\ViewLoanWithPayTIme.cs" />
+    <Compile Include="DL\ViewSalarySheet.cs" />
+    <Compile Include="DL\WorkerDesignation.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeTextileDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeTextileDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907220426129_Admin.cs" />
+    <Compile Include="Migrations\201907220426129_Admin.Designer.cs">
+      <DependentUpon>201907220426129_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907220431210_Bonus.cs" />
+    <Compile Include="Migrations\201907220431210_Bonus.Designer.cs">
+      <DependentUpon>201907220431210_Bonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907220434393_Employee-Primary.cs" />
+    <Compile Include="Migrations\201907220434393_Employee-Primary.Designer.cs">
+      <DependentUpon>201907220434393_Employee-Primary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907230456155_Company-Update.cs" />
+    <Compile Include="Migrations\201907230456155_Company-Update.Designer.cs">
+      <DependentUpon>201907230456155_Company-Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907230521483_Emp-InActive-Loan-Update.cs" />
+    <Compile Include="Migrations\201907230521483_Emp-InActive-Loan-Update.Designer.cs">
+      <DependentUpon>201907230521483_Emp-InActive-Loan-Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907230636148_Emp-Add-Permanent-Table.cs" />
+    <Compile Include="Migrations\201907230636148_Emp-Add-Permanent-Table.Designer.cs">
+      <DependentUpon>201907230636148_Emp-Add-Permanent-Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907240534498_CheckInOut_U-Shift_U-SalaryGrade-WorkerDesignation.cs" />
+    <Compile Include="Migrations\201907240534498_CheckInOut_U-Shift_U-SalaryGrade-WorkerDesignation.Designer.cs">
+      <DependentUpon>201907240534498_CheckInOut_U-Shift_U-SalaryGrade-WorkerDesignation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907220426129_Admin.resx">
+      <DependentUpon>201907220426129_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907220431210_Bonus.resx">
+      <DependentUpon>201907220431210_Bonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907220434393_Employee-Primary.resx">
+      <DependentUpon>201907220434393_Employee-Primary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907230456155_Company-Update.resx">
+      <DependentUpon>201907230456155_Company-Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907230521483_Emp-InActive-Loan-Update.resx">
+      <DependentUpon>201907230521483_Emp-InActive-Loan-Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907230636148_Emp-Add-Permanent-Table.resx">
+      <DependentUpon>201907230636148_Emp-Add-Permanent-Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907240534498_CheckInOut_U-Shift_U-SalaryGrade-WorkerDesignation.resx">
+      <DependentUpon>201907240534498_CheckInOut_U-Shift_U-SalaryGrade-WorkerDesignation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="HomeTextileDBDataSet.xsc">
+      <DependentUpon>HomeTextileDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HomeTextileDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HomeTextileDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HomeTextileDBDataSet.xss">
+      <DependentUpon>HomeTextileDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmployeeImage\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
