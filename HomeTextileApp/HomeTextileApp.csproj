@@ -88,6 +88,7 @@
     <Compile Include="DL\ViewLoanWithPayTIme.cs" />
     <Compile Include="DL\ViewSalarySheet.cs" />
     <Compile Include="DL\WorkerDesignation.cs" />
+    <Compile Include="EmployeeImage\Class1.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,8 +189,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EmployeeImage\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
