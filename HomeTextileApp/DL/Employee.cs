@@ -115,7 +115,8 @@ namespace HomeTextileApp.DL
 		[ForeignKey("WorkerDesignationId")]
 		public virtual WorkerDesignation WorkerDesignation { get; set; }
 
-
+		[Display(Name = "Technical Allowance(Worker)")]
+		public double TechnicalAllowance { get; set; }
 
 		[Display(Name = "First Name")]
 		public string FirstName { get; set; }
