@@ -1,0 +1,38 @@
+﻿<Window x:Class="wpfHomeTextile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfHomeTextile"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:HomeTextileDBDataSet x:Key="homeTextileDBDataSet"/>
+        <CollectionViewSource x:Key="salaryGradesViewSource" Source="{Binding SalaryGrades, Source={StaticResource homeTextileDBDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource salaryGradesViewSource}">
+        <DataGrid x:Name="salaryGradesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="62,53,330,166" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="gradeIdColumn" Binding="{Binding GradeId}" Header="Grade Id" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="gradeNameColumn" Binding="{Binding GradeName}" Header="Grade Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Description}" Header="Description" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="salaryColumn" Binding="{Binding Salary}" Header="Salary" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="yearlyIncrementColumn" Binding="{Binding YearlyIncrement}" Header="Yearly Increment" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="houseRentColumn" Binding="{Binding HouseRent}" Header="House Rent" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="medicalAllowanceColumn" Binding="{Binding MedicalAllowance}" Header="Medical Allowance" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="transportAllowanceColumn" Binding="{Binding TransportAllowance}" Header="Transport Allowance" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="foodAllowanceColumn" Binding="{Binding FoodAllowance}" Header="Food Allowance" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="totalColumn" Binding="{Binding Total}" Header="Total" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="effectiveFromColumn" Header="Effective From" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding EffectiveFrom, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

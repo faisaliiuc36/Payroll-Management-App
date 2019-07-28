@@ -95,12 +95,6 @@
       <DependentUpon>employeeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeImage\Class1.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +108,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeTextileDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HomeTextileDBDataSet1.cs">
+      <DependentUpon>HomeTextileDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HomeTextileDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeTextileDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Layout.cs">
       <SubType>Form</SubType>
@@ -153,20 +155,33 @@
     <Compile Include="Migrations\201907251006003_Worker-TA-U.Designer.cs">
       <DependentUpon>201907251006003_Worker-TA-U.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907280420539_Company.cs" />
+    <Compile Include="Migrations\201907280420539_Company.Designer.cs">
+      <DependentUpon>201907280420539_Company.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkerDesignationControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Section.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerDesignationControl.Designer.cs">
-      <DependentUpon>WorkerDesignationControl.cs</DependentUpon>
+    <Compile Include="Section.Designer.cs">
+      <DependentUpon>Section.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrialForm.Designer.cs">
+      <DependentUpon>TrialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerDesignation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerDesignation.Designer.cs">
+      <DependentUpon>WorkerDesignation.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="employeeControl.resx">
       <DependentUpon>employeeControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -198,6 +213,9 @@
     <EmbeddedResource Include="Migrations\201907251006003_Worker-TA-U.resx">
       <DependentUpon>201907251006003_Worker-TA-U.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907280420539_Company.resx">
+      <DependentUpon>201907280420539_Company.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -207,8 +225,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WorkerDesignationControl.resx">
-      <DependentUpon>WorkerDesignationControl.cs</DependentUpon>
+    <EmbeddedResource Include="Section.resx">
+      <DependentUpon>Section.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerDesignation.resx">
+      <DependentUpon>WorkerDesignation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="HomeTextileDBDataSet.xsc">
       <DependentUpon>HomeTextileDBDataSet.xsd</DependentUpon>
@@ -221,7 +242,53 @@
     <None Include="HomeTextileDBDataSet.xss">
       <DependentUpon>HomeTextileDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="HomeTextileDBDataSet1.xsc">
+      <DependentUpon>HomeTextileDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HomeTextileDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HomeTextileDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HomeTextileDBDataSet1.xss">
+      <DependentUpon>HomeTextileDBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.BloodGroup.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Bonus.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Company.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.DatabaseContext.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Department.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Designation.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Duty_Roster.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Employee.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.EmployeeType.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Emp_CheckInOut.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Gender.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Holiday.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.HTAdmins.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.InActiveHistory.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Leave.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.LeaveStore.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.LeaveType.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Loan.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.MaritialStatus.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Paytime.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Religion.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Salary.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.SalaryGrade.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.SalarySetting.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Section.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Shift.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ShowEmployeeShift.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Unit.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewAttendance.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewAttendanceHistory.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewEmpLeaveStatus.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewIndividualAttendance.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewLoanWithPayTIme.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewSalarySheet.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.WorkerDesignation.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

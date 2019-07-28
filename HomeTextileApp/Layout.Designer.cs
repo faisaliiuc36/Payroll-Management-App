@@ -51,13 +51,12 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.workerDesignationControl1 = new HomeTextileApp.WorkerDesignationControl();
-			this.employeeControl1 = new HomeTextileApp.employeeControl();
-			this.home1 = new HomeTextileApp.Home();
 			this.empListButton = new System.Windows.Forms.Button();
 			this.settingsSubPanel = new System.Windows.Forms.Panel();
 			this.workerDesignationButton = new System.Windows.Forms.Button();
 			this.empSubPanel2 = new System.Windows.Forms.Panel();
+			this.home1 = new HomeTextileApp.Home();
+			this.employeeControl1 = new HomeTextileApp.employeeControl();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -339,34 +338,11 @@
 			// 
 			this.panel6.BackColor = System.Drawing.Color.Honeydew;
 			this.panel6.Controls.Add(this.home1);
-			this.panel6.Controls.Add(this.workerDesignationControl1);
 			this.panel6.Controls.Add(this.employeeControl1);
 			this.panel6.Location = new System.Drawing.Point(203, 158);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(764, 559);
 			this.panel6.TabIndex = 3;
-			// 
-			// workerDesignationControl1
-			// 
-			this.workerDesignationControl1.Location = new System.Drawing.Point(0, 0);
-			this.workerDesignationControl1.Name = "workerDesignationControl1";
-			this.workerDesignationControl1.Size = new System.Drawing.Size(793, 605);
-			this.workerDesignationControl1.TabIndex = 2;
-			// 
-			// employeeControl1
-			// 
-			this.employeeControl1.Location = new System.Drawing.Point(0, 0);
-			this.employeeControl1.Name = "employeeControl1";
-			this.employeeControl1.Size = new System.Drawing.Size(768, 523);
-			this.employeeControl1.TabIndex = 1;
-			// 
-			// home1
-			// 
-			this.home1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.home1.Location = new System.Drawing.Point(0, -1);
-			this.home1.Name = "home1";
-			this.home1.Size = new System.Drawing.Size(771, 526);
-			this.home1.TabIndex = 0;
 			// 
 			// empListButton
 			// 
@@ -421,6 +397,21 @@
 			this.empSubPanel2.Size = new System.Drawing.Size(198, 197);
 			this.empSubPanel2.TabIndex = 15;
 			this.empSubPanel2.Visible = false;
+			// 
+			// home1
+			// 
+			this.home1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.home1.Location = new System.Drawing.Point(-3, 0);
+			this.home1.Name = "home1";
+			this.home1.Size = new System.Drawing.Size(771, 526);
+			this.home1.TabIndex = 0;
+			// 
+			// employeeControl1
+			// 
+			this.employeeControl1.Location = new System.Drawing.Point(0, 0);
+			this.employeeControl1.Name = "employeeControl1";
+			this.employeeControl1.Size = new System.Drawing.Size(768, 523);
+			this.employeeControl1.TabIndex = 1;
 			// 
 			// Layout
 			// 
@@ -485,6 +476,6 @@
 		private System.Windows.Forms.Panel empSubPanel2;
 		private employeeControl employeeControl1;
 		private Home home1;
-		private WorkerDesignationControl workerDesignationControl1;
+
 	}
 }

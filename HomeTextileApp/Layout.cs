@@ -83,9 +83,8 @@ namespace HomeTextileApp
 
 		private void workerDesignationButton_Click(object sender, EventArgs e)
 		{
-			settingsSubPanel.Visible = false;
-			workerDesignationControl1.BringToFront();
-			
+			settingsSubPanel.Visible = false;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 		}
 	}
 }
+                                                                                  

@@ -14,9 +14,13 @@ namespace HomeTextileApp
 		[STAThread]
 		static void Main()
 		{
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Layout());
+			Application.Run(new Section());
+
+			//Application.Run(new Section());
+
 		}
 	}
 }
