@@ -10,6 +10,8 @@ namespace HomeTextileApp.DL
 {
 	public class Employee
 	{
+		private DatabaseContext db = new DatabaseContext();
+		[Key]
 		public int Id { get; set; }
 
 
@@ -51,6 +53,8 @@ namespace HomeTextileApp.DL
 		public DateTime? DateOfBirth { get; set; }
 
 
+		
+		public string NationalId { get; set; }
 
 		[Display(Name = "Blood Group")]
 		public int? BloodGroupId { get; set; }
@@ -78,7 +82,7 @@ namespace HomeTextileApp.DL
 
 
 		[Display(Name = "IsWorker")]
-		public string IsWorker { get; set; }
+		public bool IsWorker { get; set; }
 
 
 
@@ -100,7 +104,21 @@ namespace HomeTextileApp.DL
 		public bool ActiveStatus { get; set; }
 
 		[Display(Name = "Is Edited?")]
-		public bool IsEdited { get; set; }
+		public bool IsEdited {
+			get
+			{
+				if(this.EmpFullName=="" || this.GenderId==null || this.SectionId==null || this.PhoneNumber=="" || this.MaritialStatusId==null || this.DateOfBirth ==null || this.BloodGroupId==null || this.Address=="")
+				{
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+			
+				
+							}
 
 
 
@@ -161,7 +179,7 @@ namespace HomeTextileApp.DL
 		public virtual List<Holiday> Holidays { get; set; }
 		public virtual List<Leave> Leaves { get; set; }
 		public virtual List<Loan> Loans { get; set; }
-		public virtual List<LeaveStore> LeaveStores { get; set; }
+		
 		public virtual List<InActiveHistory> InActiveHistories { get; set; }
 
 		public string NameWithId
@@ -174,5 +192,20 @@ namespace HomeTextileApp.DL
 
 		public string Password { get; set; }
 		
+
+		public bool IsActive(DateTime d)
+		{
+			
+				var ActiveHistory = db.InActiveHistories.FirstOrDefault(a => a.EmployeeId == this.Id && a.From >= d && a.To <= d);
+				if (ActiveHistory == null)
+				{
+					return true;
+				}
+				else
+					return false;
+					
+			
+			
+		}
 	}
 }

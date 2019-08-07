@@ -53,6 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalenderColumn.cs" />
     <Compile Include="DL\BloodGroup.cs" />
     <Compile Include="DL\Bonus.cs" />
     <Compile Include="DL\Company.cs" />
@@ -88,6 +95,12 @@
     <Compile Include="DL\ViewLoanWithPayTIme.cs" />
     <Compile Include="DL\ViewSalarySheet.cs" />
     <Compile Include="DL\WorkerDesignation.cs" />
+    <Compile Include="Duty_Roster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duty_Roster.Designer.cs">
+      <DependentUpon>Duty_Roster.cs</DependentUpon>
+    </Compile>
     <Compile Include="employeeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +108,18 @@
       <DependentUpon>employeeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeImage\Class1.cs" />
+    <Compile Include="EmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeList.Designer.cs">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeUpdate.Designer.cs">
+      <DependentUpon>EmployeeUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,11 +142,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeTextileDBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HomeTextileDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeTextileDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ImportAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportAttendance.Designer.cs">
+      <DependentUpon>ImportAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportEmployee.Designer.cs">
+      <DependentUpon>ImportEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Layout.Designer.cs">
       <DependentUpon>Layout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveSetting.Designer.cs">
+      <DependentUpon>LeaveSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveSettings.Designer.cs">
+      <DependentUpon>LeaveSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manuel_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manuel_Attendance.Designer.cs">
+      <DependentUpon>Manuel_Attendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201907220426129_Admin.cs" />
     <Compile Include="Migrations\201907220426129_Admin.Designer.cs">
@@ -159,20 +219,66 @@
     <Compile Include="Migrations\201907280420539_Company.Designer.cs">
       <DependentUpon>201907280420539_Company.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907290653098_Employee-NationalId.cs" />
+    <Compile Include="Migrations\201907290653098_Employee-NationalId.Designer.cs">
+      <DependentUpon>201907290653098_Employee-NationalId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907300547002_ShiftTimePicker.cs" />
+    <Compile Include="Migrations\201907300547002_ShiftTimePicker.Designer.cs">
+      <DependentUpon>201907300547002_ShiftTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907310659283_NationalId-NotUnique.cs" />
+    <Compile Include="Migrations\201907310659283_NationalId-NotUnique.Designer.cs">
+      <DependentUpon>201907310659283_NationalId-NotUnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908010619005_Emp_CheckInOut-Update.cs" />
+    <Compile Include="Migrations\201908010619005_Emp_CheckInOut-Update.Designer.cs">
+      <DependentUpon>201908010619005_Emp_CheckInOut-Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908030720299_Update-DutyRoster.cs" />
+    <Compile Include="Migrations\201908030720299_Update-DutyRoster.Designer.cs">
+      <DependentUpon>201908030720299_Update-DutyRoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908040649381_04-08-2019.cs" />
+    <Compile Include="Migrations\201908040649381_04-08-2019.Designer.cs">
+      <DependentUpon>201908040649381_04-08-2019.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908070710596_Emp_Id-U.cs" />
+    <Compile Include="Migrations\201908070710596_Emp_Id-U.Designer.cs">
+      <DependentUpon>201908070710596_Emp_Id-U.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="OtherSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherSettings.Designer.cs">
+      <DependentUpon>OtherSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangeWiseDutyRoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RangeWiseDutyRoster.Designer.cs">
+      <DependentUpon>RangeWiseDutyRoster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Section.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Section.Designer.cs">
       <DependentUpon>Section.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrialForm.cs">
+    <Compile Include="Shift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrialForm.Designer.cs">
-      <DependentUpon>TrialForm.cs</DependentUpon>
+    <Compile Include="Shift.Designer.cs">
+      <DependentUpon>Shift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffSalarySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffSalarySetting.Designer.cs">
+      <DependentUpon>StaffSalarySetting.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkerDesignation.cs">
       <SubType>Form</SubType>
@@ -180,14 +286,41 @@
     <Compile Include="WorkerDesignation.Designer.cs">
       <DependentUpon>WorkerDesignation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duty_Roster.resx">
+      <DependentUpon>Duty_Roster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="employeeControl.resx">
       <DependentUpon>employeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeList.resx">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeUpdate.resx">
+      <DependentUpon>EmployeeUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImportAttendance.resx">
+      <DependentUpon>ImportAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportEmployee.resx">
+      <DependentUpon>ImportEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layout.resx">
       <DependentUpon>Layout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveSetting.resx">
+      <DependentUpon>LeaveSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveSettings.resx">
+      <DependentUpon>LeaveSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manuel_Attendance.resx">
+      <DependentUpon>Manuel_Attendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907220426129_Admin.resx">
       <DependentUpon>201907220426129_Admin.cs</DependentUpon>
@@ -216,6 +349,30 @@
     <EmbeddedResource Include="Migrations\201907280420539_Company.resx">
       <DependentUpon>201907280420539_Company.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907290653098_Employee-NationalId.resx">
+      <DependentUpon>201907290653098_Employee-NationalId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907300547002_ShiftTimePicker.resx">
+      <DependentUpon>201907300547002_ShiftTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907310659283_NationalId-NotUnique.resx">
+      <DependentUpon>201907310659283_NationalId-NotUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908010619005_Emp_CheckInOut-Update.resx">
+      <DependentUpon>201908010619005_Emp_CheckInOut-Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908030720299_Update-DutyRoster.resx">
+      <DependentUpon>201908030720299_Update-DutyRoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908040649381_04-08-2019.resx">
+      <DependentUpon>201908040649381_04-08-2019.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908070710596_Emp_Id-U.resx">
+      <DependentUpon>201908070710596_Emp_Id-U.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherSettings.resx">
+      <DependentUpon>OtherSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -225,8 +382,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RangeWiseDutyRoster.resx">
+      <DependentUpon>RangeWiseDutyRoster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Section.resx">
       <DependentUpon>Section.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shift.resx">
+      <DependentUpon>Shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffSalarySetting.resx">
+      <DependentUpon>StaffSalarySetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerDesignation.resx">
       <DependentUpon>WorkerDesignation.cs</DependentUpon>
@@ -252,6 +418,17 @@
     </None>
     <None Include="HomeTextileDBDataSet1.xss">
       <DependentUpon>HomeTextileDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HomeTextileDBDataSet2.xsc">
+      <DependentUpon>HomeTextileDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HomeTextileDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HomeTextileDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HomeTextileDBDataSet2.xss">
+      <DependentUpon>HomeTextileDBDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.BloodGroup.datasource" />

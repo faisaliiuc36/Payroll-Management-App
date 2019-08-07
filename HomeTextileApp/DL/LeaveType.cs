@@ -22,12 +22,15 @@ namespace HomeTextileApp.DL
         [Required(ErrorMessage = "Please Input Tags")]
         public string Tags { get; set; }
 
-        [Display(Name = "Yearly Count")]
-        [Required(ErrorMessage = "Please Input Yearly Count")]
-        public int Count { get; set; }
+       
 
         [Display(Name = "Paid?")]
         public bool Paid { get; set; }
+
+		[Display(Name = "IsIncremental?")]
+        public bool IsIncremental { get; set; }
+
+		public int DaysCountForEL { get; set; }
 
 
         public virtual List<Leave> Leaves { get; set; }

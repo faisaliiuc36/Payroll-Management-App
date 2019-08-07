@@ -30,59 +30,59 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.homeTextileDBDataSet1 = new HomeTextileApp.HomeTextileDBDataSet1();
+			this.button4 = new System.Windows.Forms.Button();
+			this.companiesDataGridView = new System.Windows.Forms.DataGridView();
 			this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.homeTextileDBDataSet1 = new HomeTextileApp.HomeTextileDBDataSet1();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.unitsDataGridView = new System.Windows.Forms.DataGridView();
+			this.companiesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.button2 = new System.Windows.Forms.Button();
+			this.sectionsDataGridView = new System.Windows.Forms.DataGridView();
+			this.departmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.sectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.button3 = new System.Windows.Forms.Button();
+			this.departmentsDataGridView = new System.Windows.Forms.DataGridView();
+			this.unitsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.companiesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.CompaniesTableAdapter();
 			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.TableAdapterManager();
-			this.companiesDataGridView = new System.Windows.Forms.DataGridView();
+			this.departmentsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.DepartmentsTableAdapter();
+			this.sectionsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.SectionsTableAdapter();
+			this.unitsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.UnitsTableAdapter();
+			this.button5 = new System.Windows.Forms.Button();
+			this.button6 = new System.Windows.Forms.Button();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.unitsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.UnitsTableAdapter();
-			this.unitsDataGridView = new System.Windows.Forms.DataGridView();
-			this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.departmentsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.DepartmentsTableAdapter();
-			this.departmentsDataGridView = new System.Windows.Forms.DataGridView();
-			this.sectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sectionsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.SectionsTableAdapter();
-			this.sectionsDataGridView = new System.Windows.Forms.DataGridView();
-			this.companiesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CompanyId = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.unitsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.UnitId = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.departmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DepartmentId = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
-			this.button5 = new System.Windows.Forms.Button();
-			this.button6 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			this.groupBox3.SuspendLayout();
-			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.companiesDataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet1)).BeginInit();
+			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.departmentsDataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sectionsDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
+			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.sectionsDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
+			this.groupBox4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.departmentsDataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -98,6 +98,42 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Company";
 			// 
+			// button4
+			// 
+			this.button4.BackColor = System.Drawing.Color.Maroon;
+			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button4.Location = new System.Drawing.Point(201, 167);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(149, 31);
+			this.button4.TabIndex = 3;
+			this.button4.Text = "Company Delete";
+			this.button4.UseVisualStyleBackColor = false;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
+			// companiesDataGridView
+			// 
+			this.companiesDataGridView.AutoGenerateColumns = false;
+			this.companiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.companiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+			this.companiesDataGridView.DataSource = this.companiesBindingSource;
+			this.companiesDataGridView.Location = new System.Drawing.Point(9, 20);
+			this.companiesDataGridView.Name = "companiesDataGridView";
+			this.companiesDataGridView.Size = new System.Drawing.Size(341, 131);
+			this.companiesDataGridView.TabIndex = 0;
+			// 
+			// companiesBindingSource
+			// 
+			this.companiesBindingSource.DataMember = "Companies";
+			this.companiesBindingSource.DataSource = this.homeTextileDBDataSet1;
+			// 
+			// homeTextileDBDataSet1
+			// 
+			this.homeTextileDBDataSet1.DataSetName = "HomeTextileDBDataSet1";
+			this.homeTextileDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.button1);
@@ -110,6 +146,43 @@
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Unit";
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.Maroon;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button1.Location = new System.Drawing.Point(200, 167);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(149, 31);
+			this.button1.TabIndex = 1;
+			this.button1.Text = "Unit Delete";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// unitsDataGridView
+			// 
+			this.unitsDataGridView.AutoGenerateColumns = false;
+			this.unitsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.unitsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.CompanyId,
+            this.dataGridViewTextBoxColumn4});
+			this.unitsDataGridView.DataSource = this.unitsBindingSource;
+			this.unitsDataGridView.Location = new System.Drawing.Point(16, 17);
+			this.unitsDataGridView.Name = "unitsDataGridView";
+			this.unitsDataGridView.Size = new System.Drawing.Size(332, 146);
+			this.unitsDataGridView.TabIndex = 0;
+			// 
+			// companiesBindingSource1
+			// 
+			this.companiesBindingSource1.DataMember = "Companies";
+			this.companiesBindingSource1.DataSource = this.homeTextileDBDataSet1;
+			// 
+			// unitsBindingSource
+			// 
+			this.unitsBindingSource.DataMember = "FK_dbo.Units_dbo.Companies_CompanyId";
+			this.unitsBindingSource.DataSource = this.companiesBindingSource;
 			// 
 			// groupBox3
 			// 
@@ -124,6 +197,48 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Section";
 			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.Maroon;
+			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button2.Location = new System.Drawing.Point(200, 269);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(149, 31);
+			this.button2.TabIndex = 2;
+			this.button2.Text = "Section Delete";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// sectionsDataGridView
+			// 
+			this.sectionsDataGridView.AutoGenerateColumns = false;
+			this.sectionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.sectionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn11,
+            this.DepartmentId});
+			this.sectionsDataGridView.DataSource = this.sectionsBindingSource;
+			this.sectionsDataGridView.Location = new System.Drawing.Point(16, 19);
+			this.sectionsDataGridView.Name = "sectionsDataGridView";
+			this.sectionsDataGridView.Size = new System.Drawing.Size(332, 243);
+			this.sectionsDataGridView.TabIndex = 0;
+			// 
+			// departmentsBindingSource1
+			// 
+			this.departmentsBindingSource1.DataMember = "Departments";
+			this.departmentsBindingSource1.DataSource = this.homeTextileDBDataSet1;
+			// 
+			// sectionsBindingSource
+			// 
+			this.sectionsBindingSource.DataMember = "FK_dbo.Sections_dbo.Departments_DepartmentId";
+			this.sectionsBindingSource.DataSource = this.departmentsBindingSource;
+			// 
+			// departmentsBindingSource
+			// 
+			this.departmentsBindingSource.DataMember = "FK_dbo.Departments_dbo.Units_UnitId";
+			this.departmentsBindingSource.DataSource = this.unitsBindingSource;
+			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.button3);
@@ -137,15 +252,37 @@
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Department";
 			// 
-			// homeTextileDBDataSet1
+			// button3
 			// 
-			this.homeTextileDBDataSet1.DataSetName = "HomeTextileDBDataSet1";
-			this.homeTextileDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			this.button3.BackColor = System.Drawing.Color.Maroon;
+			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button3.Location = new System.Drawing.Point(201, 266);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(149, 31);
+			this.button3.TabIndex = 3;
+			this.button3.Text = "Department Delete";
+			this.button3.UseVisualStyleBackColor = false;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
-			// companiesBindingSource
+			// departmentsDataGridView
 			// 
-			this.companiesBindingSource.DataMember = "Companies";
-			this.companiesBindingSource.DataSource = this.homeTextileDBDataSet1;
+			this.departmentsDataGridView.AutoGenerateColumns = false;
+			this.departmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.departmentsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.UnitId,
+            this.dataGridViewTextBoxColumn8});
+			this.departmentsDataGridView.DataSource = this.departmentsBindingSource;
+			this.departmentsDataGridView.Location = new System.Drawing.Point(6, 19);
+			this.departmentsDataGridView.Name = "departmentsDataGridView";
+			this.departmentsDataGridView.Size = new System.Drawing.Size(344, 243);
+			this.departmentsDataGridView.TabIndex = 0;
+			// 
+			// unitsBindingSource1
+			// 
+			this.unitsBindingSource1.DataMember = "Units";
+			this.unitsBindingSource1.DataSource = this.homeTextileDBDataSet1;
 			// 
 			// companiesTableAdapter
 			// 
@@ -184,239 +321,17 @@
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			this.tableAdapterManager.WorkerDesignationsTableAdapter = null;
 			// 
-			// companiesDataGridView
-			// 
-			this.companiesDataGridView.AutoGenerateColumns = false;
-			this.companiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.companiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-			this.companiesDataGridView.DataSource = this.companiesBindingSource;
-			this.companiesDataGridView.Location = new System.Drawing.Point(9, 20);
-			this.companiesDataGridView.Name = "companiesDataGridView";
-			this.companiesDataGridView.Size = new System.Drawing.Size(341, 131);
-			this.companiesDataGridView.TabIndex = 0;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-			this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			// 
-			// unitsBindingSource
-			// 
-			this.unitsBindingSource.DataMember = "FK_dbo.Units_dbo.Companies_CompanyId";
-			this.unitsBindingSource.DataSource = this.companiesBindingSource;
-			// 
-			// unitsTableAdapter
-			// 
-			this.unitsTableAdapter.ClearBeforeFill = true;
-			// 
-			// unitsDataGridView
-			// 
-			this.unitsDataGridView.AutoGenerateColumns = false;
-			this.unitsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.unitsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.CompanyId,
-            this.dataGridViewTextBoxColumn4});
-			this.unitsDataGridView.DataSource = this.unitsBindingSource;
-			this.unitsDataGridView.Location = new System.Drawing.Point(16, 17);
-			this.unitsDataGridView.Name = "unitsDataGridView";
-			this.unitsDataGridView.Size = new System.Drawing.Size(332, 146);
-			this.unitsDataGridView.TabIndex = 0;
-			// 
-			// departmentsBindingSource
-			// 
-			this.departmentsBindingSource.DataMember = "FK_dbo.Departments_dbo.Units_UnitId";
-			this.departmentsBindingSource.DataSource = this.unitsBindingSource;
-			// 
 			// departmentsTableAdapter
 			// 
 			this.departmentsTableAdapter.ClearBeforeFill = true;
-			// 
-			// departmentsDataGridView
-			// 
-			this.departmentsDataGridView.AutoGenerateColumns = false;
-			this.departmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.departmentsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.UnitId,
-            this.dataGridViewTextBoxColumn8});
-			this.departmentsDataGridView.DataSource = this.departmentsBindingSource;
-			this.departmentsDataGridView.Location = new System.Drawing.Point(6, 19);
-			this.departmentsDataGridView.Name = "departmentsDataGridView";
-			this.departmentsDataGridView.Size = new System.Drawing.Size(344, 243);
-			this.departmentsDataGridView.TabIndex = 0;
-			// 
-			// sectionsBindingSource
-			// 
-			this.sectionsBindingSource.DataMember = "FK_dbo.Sections_dbo.Departments_DepartmentId";
-			this.sectionsBindingSource.DataSource = this.departmentsBindingSource;
 			// 
 			// sectionsTableAdapter
 			// 
 			this.sectionsTableAdapter.ClearBeforeFill = true;
 			// 
-			// sectionsDataGridView
+			// unitsTableAdapter
 			// 
-			this.sectionsDataGridView.AutoGenerateColumns = false;
-			this.sectionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.sectionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn11,
-            this.DepartmentId});
-			this.sectionsDataGridView.DataSource = this.sectionsBindingSource;
-			this.sectionsDataGridView.Location = new System.Drawing.Point(16, 19);
-			this.sectionsDataGridView.Name = "sectionsDataGridView";
-			this.sectionsDataGridView.Size = new System.Drawing.Size(332, 243);
-			this.sectionsDataGridView.TabIndex = 0;
-			// 
-			// companiesBindingSource1
-			// 
-			this.companiesBindingSource1.DataMember = "Companies";
-			this.companiesBindingSource1.DataSource = this.homeTextileDBDataSet1;
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn3.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.ReadOnly = true;
-			// 
-			// CompanyId
-			// 
-			this.CompanyId.DataPropertyName = "CompanyId";
-			this.CompanyId.DataSource = this.companiesBindingSource1;
-			this.CompanyId.DisplayMember = "Name";
-			this.CompanyId.HeaderText = "Company";
-			this.CompanyId.Name = "CompanyId";
-			this.CompanyId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.CompanyId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.CompanyId.ValueMember = "Id";
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-			this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			// 
-			// unitsBindingSource1
-			// 
-			this.unitsBindingSource1.DataMember = "Units";
-			this.unitsBindingSource1.DataSource = this.homeTextileDBDataSet1;
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn6.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-			this.dataGridViewTextBoxColumn6.ReadOnly = true;
-			// 
-			// UnitId
-			// 
-			this.UnitId.DataPropertyName = "UnitId";
-			this.UnitId.DataSource = this.unitsBindingSource1;
-			this.UnitId.DisplayMember = "Name";
-			this.UnitId.HeaderText = "Unit";
-			this.UnitId.Name = "UnitId";
-			this.UnitId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.UnitId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.UnitId.ValueMember = "Id";
-			// 
-			// dataGridViewTextBoxColumn8
-			// 
-			this.dataGridViewTextBoxColumn8.DataPropertyName = "Name";
-			this.dataGridViewTextBoxColumn8.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-			// 
-			// departmentsBindingSource1
-			// 
-			this.departmentsBindingSource1.DataMember = "Departments";
-			this.departmentsBindingSource1.DataSource = this.homeTextileDBDataSet1;
-			// 
-			// dataGridViewTextBoxColumn9
-			// 
-			this.dataGridViewTextBoxColumn9.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn9.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-			this.dataGridViewTextBoxColumn9.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn11
-			// 
-			this.dataGridViewTextBoxColumn11.DataPropertyName = "Name";
-			this.dataGridViewTextBoxColumn11.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-			// 
-			// DepartmentId
-			// 
-			this.DepartmentId.DataPropertyName = "DepartmentId";
-			this.DepartmentId.DataSource = this.departmentsBindingSource1;
-			this.DepartmentId.DisplayMember = "Name";
-			this.DepartmentId.HeaderText = "Department";
-			this.DepartmentId.Name = "DepartmentId";
-			this.DepartmentId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.DepartmentId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.DepartmentId.ValueMember = "Id";
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.Color.Maroon;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.button1.Location = new System.Drawing.Point(200, 167);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(149, 31);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "Unit Delete";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// button2
-			// 
-			this.button2.BackColor = System.Drawing.Color.Maroon;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.button2.Location = new System.Drawing.Point(200, 269);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(149, 31);
-			this.button2.TabIndex = 2;
-			this.button2.Text = "Section Delete";
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// button3
-			// 
-			this.button3.BackColor = System.Drawing.Color.Maroon;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.button3.Location = new System.Drawing.Point(201, 266);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(149, 31);
-			this.button3.TabIndex = 3;
-			this.button3.Text = "Department Delete";
-			this.button3.UseVisualStyleBackColor = false;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
-			// button4
-			// 
-			this.button4.BackColor = System.Drawing.Color.Maroon;
-			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.button4.Location = new System.Drawing.Point(201, 167);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(149, 31);
-			this.button4.TabIndex = 3;
-			this.button4.Text = "Company Delete";
-			this.button4.UseVisualStyleBackColor = false;
-			this.button4.Click += new System.EventHandler(this.button4_Click);
+			this.unitsTableAdapter.ClearBeforeFill = true;
 			// 
 			// button5
 			// 
@@ -444,6 +359,95 @@
 			this.button6.UseVisualStyleBackColor = false;
 			this.button6.Click += new System.EventHandler(this.button6_Click);
 			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			this.dataGridViewTextBoxColumn1.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+			this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn3.HeaderText = "Id";
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			this.dataGridViewTextBoxColumn3.ReadOnly = true;
+			this.dataGridViewTextBoxColumn3.Visible = false;
+			// 
+			// CompanyId
+			// 
+			this.CompanyId.DataPropertyName = "CompanyId";
+			this.CompanyId.DataSource = this.companiesBindingSource1;
+			this.CompanyId.DisplayMember = "Name";
+			this.CompanyId.HeaderText = "Company";
+			this.CompanyId.Name = "CompanyId";
+			this.CompanyId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.CompanyId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.CompanyId.ValueMember = "Id";
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+			this.dataGridViewTextBoxColumn4.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn6.HeaderText = "Id";
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			this.dataGridViewTextBoxColumn6.ReadOnly = true;
+			this.dataGridViewTextBoxColumn6.Visible = false;
+			// 
+			// UnitId
+			// 
+			this.UnitId.DataPropertyName = "UnitId";
+			this.UnitId.DataSource = this.unitsBindingSource1;
+			this.UnitId.DisplayMember = "Name";
+			this.UnitId.HeaderText = "Unit";
+			this.UnitId.Name = "UnitId";
+			this.UnitId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.UnitId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.UnitId.ValueMember = "Id";
+			// 
+			// dataGridViewTextBoxColumn8
+			// 
+			this.dataGridViewTextBoxColumn8.DataPropertyName = "Name";
+			this.dataGridViewTextBoxColumn8.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+			// 
+			// dataGridViewTextBoxColumn9
+			// 
+			this.dataGridViewTextBoxColumn9.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn9.HeaderText = "Id";
+			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+			this.dataGridViewTextBoxColumn9.ReadOnly = true;
+			this.dataGridViewTextBoxColumn9.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn11
+			// 
+			this.dataGridViewTextBoxColumn11.DataPropertyName = "Name";
+			this.dataGridViewTextBoxColumn11.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+			// 
+			// DepartmentId
+			// 
+			this.DepartmentId.DataPropertyName = "DepartmentId";
+			this.DepartmentId.DataSource = this.departmentsBindingSource1;
+			this.DepartmentId.DisplayMember = "Name";
+			this.DepartmentId.HeaderText = "Department";
+			this.DepartmentId.Name = "DepartmentId";
+			this.DepartmentId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.DepartmentId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.DepartmentId.ValueMember = "Id";
+			// 
 			// Section
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,21 +463,21 @@
 			this.Text = "Section";
 			this.Load += new System.EventHandler(this.Section_Load);
 			this.groupBox1.ResumeLayout(false);
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox3.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.companiesDataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet1)).EndInit();
+			this.groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.departmentsDataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sectionsDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
+			this.groupBox3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.sectionsDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
+			this.groupBox4.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.departmentsDataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -489,8 +493,6 @@
 		private HomeTextileDBDataSet1TableAdapters.CompaniesTableAdapter companiesTableAdapter;
 		private HomeTextileDBDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
 		private System.Windows.Forms.DataGridView companiesDataGridView;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private HomeTextileDBDataSet1TableAdapters.UnitsTableAdapter unitsTableAdapter;
 		private System.Windows.Forms.BindingSource unitsBindingSource;
 		private System.Windows.Forms.DataGridView unitsDataGridView;
@@ -499,24 +501,26 @@
 		private System.Windows.Forms.DataGridView departmentsDataGridView;
 		private HomeTextileDBDataSet1TableAdapters.SectionsTableAdapter sectionsTableAdapter;
 		private System.Windows.Forms.BindingSource sectionsBindingSource;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-		private System.Windows.Forms.DataGridViewComboBoxColumn CompanyId;
 		private System.Windows.Forms.BindingSource companiesBindingSource1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 		private System.Windows.Forms.DataGridView sectionsDataGridView;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-		private System.Windows.Forms.DataGridViewComboBoxColumn DepartmentId;
 		private System.Windows.Forms.BindingSource departmentsBindingSource1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-		private System.Windows.Forms.DataGridViewComboBoxColumn UnitId;
 		private System.Windows.Forms.BindingSource unitsBindingSource1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private System.Windows.Forms.DataGridViewComboBoxColumn CompanyId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+		private System.Windows.Forms.DataGridViewComboBoxColumn DepartmentId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+		private System.Windows.Forms.DataGridViewComboBoxColumn UnitId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
 	}
 }

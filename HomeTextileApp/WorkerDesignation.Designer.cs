@@ -29,24 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkerDesignation));
-			this.homeTextileDBDataSet = new HomeTextileApp.HomeTextileDBDataSet();
+			this.homeTextileDBDataSet1 = new HomeTextileApp.HomeTextileDBDataSet1();
 			this.salaryGradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.salaryGradesTableAdapter = new HomeTextileApp.HomeTextileDBDataSetTableAdapters.SalaryGradesTableAdapter();
-			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSetTableAdapters.TableAdapterManager();
-			this.salaryGradesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-			this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-			this.salaryGradesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+			this.salaryGradesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.SalaryGradesTableAdapter();
+			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.TableAdapterManager();
+			this.workerDesignationsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.WorkerDesignationsTableAdapter();
 			this.salaryGradesDataGridView = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,30 +48,35 @@
 			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.workerDesignationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.workerDesignationsTableAdapter = new HomeTextileApp.HomeTextileDBDataSetTableAdapters.WorkerDesignationsTableAdapter();
 			this.workerDesignationsDataGridView = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet)).BeginInit();
+			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SalaryGradeId = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.salaryGradesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.EffectiveDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.button6 = new System.Windows.Forms.Button();
+			this.button5 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.salaryGradesBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.salaryGradesBindingNavigator)).BeginInit();
-			this.salaryGradesBindingNavigator.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.salaryGradesDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsDataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.salaryGradesBindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// homeTextileDBDataSet
+			// homeTextileDBDataSet1
 			// 
-			this.homeTextileDBDataSet.DataSetName = "HomeTextileDBDataSet";
-			this.homeTextileDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			this.homeTextileDBDataSet1.DataSetName = "HomeTextileDBDataSet1";
+			this.homeTextileDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// salaryGradesBindingSource
 			// 
 			this.salaryGradesBindingSource.DataMember = "SalaryGrades";
-			this.salaryGradesBindingSource.DataSource = this.homeTextileDBDataSet;
+			this.salaryGradesBindingSource.DataSource = this.homeTextileDBDataSet1;
 			// 
 			// salaryGradesTableAdapter
 			// 
@@ -120,132 +112,12 @@
 			this.tableAdapterManager.SectionsTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
-			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			this.tableAdapterManager.WorkerDesignationsTableAdapter = this.workerDesignationsTableAdapter;
 			// 
-			// salaryGradesBindingNavigator
+			// workerDesignationsTableAdapter
 			// 
-			this.salaryGradesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-			this.salaryGradesBindingNavigator.BindingSource = this.salaryGradesBindingSource;
-			this.salaryGradesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-			this.salaryGradesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-			this.salaryGradesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.salaryGradesBindingNavigatorSaveItem});
-			this.salaryGradesBindingNavigator.Location = new System.Drawing.Point(0, 0);
-			this.salaryGradesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-			this.salaryGradesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-			this.salaryGradesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-			this.salaryGradesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-			this.salaryGradesBindingNavigator.Name = "salaryGradesBindingNavigator";
-			this.salaryGradesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-			this.salaryGradesBindingNavigator.Size = new System.Drawing.Size(808, 25);
-			this.salaryGradesBindingNavigator.TabIndex = 0;
-			this.salaryGradesBindingNavigator.Text = "bindingNavigator1";
-			// 
-			// bindingNavigatorMoveFirstItem
-			// 
-			this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-			this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-			this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorMoveFirstItem.Text = "Move first";
-			// 
-			// bindingNavigatorMovePreviousItem
-			// 
-			this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-			this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-			this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-			// 
-			// bindingNavigatorSeparator
-			// 
-			this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-			this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-			// 
-			// bindingNavigatorPositionItem
-			// 
-			this.bindingNavigatorPositionItem.AccessibleName = "Position";
-			this.bindingNavigatorPositionItem.AutoSize = false;
-			this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-			this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-			this.bindingNavigatorPositionItem.Text = "0";
-			this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-			// 
-			// bindingNavigatorCountItem
-			// 
-			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-			this.bindingNavigatorCountItem.Text = "of {0}";
-			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-			// 
-			// bindingNavigatorSeparator1
-			// 
-			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-			this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
-			// 
-			// bindingNavigatorMoveNextItem
-			// 
-			this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-			this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-			this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
-			this.bindingNavigatorMoveNextItem.Text = "Move next";
-			// 
-			// bindingNavigatorMoveLastItem
-			// 
-			this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-			this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-			this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
-			this.bindingNavigatorMoveLastItem.Text = "Move last";
-			// 
-			// bindingNavigatorSeparator2
-			// 
-			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-			// 
-			// bindingNavigatorAddNewItem
-			// 
-			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorAddNewItem.Text = "Add new";
-			// 
-			// bindingNavigatorDeleteItem
-			// 
-			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-			this.bindingNavigatorDeleteItem.Text = "Delete";
-			// 
-			// salaryGradesBindingNavigatorSaveItem
-			// 
-			this.salaryGradesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.salaryGradesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("salaryGradesBindingNavigatorSaveItem.Image")));
-			this.salaryGradesBindingNavigatorSaveItem.Name = "salaryGradesBindingNavigatorSaveItem";
-			this.salaryGradesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
-			this.salaryGradesBindingNavigatorSaveItem.Text = "Save Data";
-			this.salaryGradesBindingNavigatorSaveItem.Click += new System.EventHandler(this.salaryGradesBindingNavigatorSaveItem_Click);
+			this.workerDesignationsTableAdapter.ClearBeforeFill = true;
 			// 
 			// salaryGradesDataGridView
 			// 
@@ -265,9 +137,9 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
 			this.salaryGradesDataGridView.DataSource = this.salaryGradesBindingSource;
-			this.salaryGradesDataGridView.Location = new System.Drawing.Point(0, 28);
+			this.salaryGradesDataGridView.Location = new System.Drawing.Point(12, 55);
 			this.salaryGradesDataGridView.Name = "salaryGradesDataGridView";
-			this.salaryGradesDataGridView.Size = new System.Drawing.Size(788, 220);
+			this.salaryGradesDataGridView.Size = new System.Drawing.Size(780, 220);
 			this.salaryGradesDataGridView.TabIndex = 1;
 			// 
 			// dataGridViewTextBoxColumn1
@@ -276,6 +148,7 @@
 			this.dataGridViewTextBoxColumn1.HeaderText = "Id";
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			this.dataGridViewTextBoxColumn1.Visible = false;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
@@ -345,97 +218,171 @@
 			// 
 			// workerDesignationsBindingSource
 			// 
-			this.workerDesignationsBindingSource.DataMember = "WorkerDesignations";
-			this.workerDesignationsBindingSource.DataSource = this.homeTextileDBDataSet;
-			// 
-			// workerDesignationsTableAdapter
-			// 
-			this.workerDesignationsTableAdapter.ClearBeforeFill = true;
+			this.workerDesignationsBindingSource.DataMember = "FK_dbo.WorkerDesignations_dbo.SalaryGrades_SalaryGradeId";
+			this.workerDesignationsBindingSource.DataSource = this.salaryGradesBindingSource;
 			// 
 			// workerDesignationsDataGridView
 			// 
 			this.workerDesignationsDataGridView.AutoGenerateColumns = false;
 			this.workerDesignationsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.workerDesignationsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16});
+            this.idDataGridViewTextBoxColumn,
+            this.SalaryGradeId,
+            this.Name,
+            this.EffectiveDate});
 			this.workerDesignationsDataGridView.DataSource = this.workerDesignationsBindingSource;
-			this.workerDesignationsDataGridView.Location = new System.Drawing.Point(0, 254);
+			this.workerDesignationsDataGridView.Location = new System.Drawing.Point(12, 312);
 			this.workerDesignationsDataGridView.Name = "workerDesignationsDataGridView";
-			this.workerDesignationsDataGridView.Size = new System.Drawing.Size(788, 220);
+			this.workerDesignationsDataGridView.Size = new System.Drawing.Size(416, 220);
 			this.workerDesignationsDataGridView.TabIndex = 2;
 			// 
-			// dataGridViewTextBoxColumn13
+			// idDataGridViewTextBoxColumn
 			// 
-			this.dataGridViewTextBoxColumn13.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn13.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-			this.dataGridViewTextBoxColumn13.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn.Visible = false;
 			// 
-			// dataGridViewTextBoxColumn14
+			// SalaryGradeId
 			// 
-			this.dataGridViewTextBoxColumn14.DataPropertyName = "SalaryGradeId";
-			this.dataGridViewTextBoxColumn14.HeaderText = "SalaryGradeId";
-			this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+			this.SalaryGradeId.DataPropertyName = "SalaryGradeId";
+			this.SalaryGradeId.DataSource = this.salaryGradesBindingSource1;
+			this.SalaryGradeId.DisplayMember = "GradeName";
+			this.SalaryGradeId.HeaderText = "Salary Grade";
+			this.SalaryGradeId.Name = "SalaryGradeId";
+			this.SalaryGradeId.ValueMember = "Id";
 			// 
-			// dataGridViewTextBoxColumn15
+			// salaryGradesBindingSource1
 			// 
-			this.dataGridViewTextBoxColumn15.DataPropertyName = "Name";
-			this.dataGridViewTextBoxColumn15.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+			this.salaryGradesBindingSource1.DataMember = "SalaryGrades";
+			this.salaryGradesBindingSource1.DataSource = this.homeTextileDBDataSet1;
 			// 
-			// dataGridViewTextBoxColumn16
+			// Name
 			// 
-			this.dataGridViewTextBoxColumn16.DataPropertyName = "EffectiveDate";
-			this.dataGridViewTextBoxColumn16.HeaderText = "EffectiveDate";
-			this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+			this.Name.DataPropertyName = "Name";
+			this.Name.HeaderText = "Name";
+			this.Name.Name = "Name";
+			// 
+			// EffectiveDate
+			// 
+			this.EffectiveDate.DataPropertyName = "EffectiveDate";
+			this.EffectiveDate.HeaderText = "EffectiveDate";
+			this.EffectiveDate.Name = "EffectiveDate";
+			// 
+			// button6
+			// 
+			this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button6.Location = new System.Drawing.Point(358, 4);
+			this.button6.Name = "button6";
+			this.button6.Size = new System.Drawing.Size(276, 39);
+			this.button6.TabIndex = 7;
+			this.button6.Text = "Discard All Changes";
+			this.button6.UseVisualStyleBackColor = false;
+			this.button6.Click += new System.EventHandler(this.button6_Click);
+			// 
+			// button5
+			// 
+			this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button5.Location = new System.Drawing.Point(76, 4);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(276, 39);
+			this.button5.TabIndex = 6;
+			this.button5.Text = "Save All Changes";
+			this.button5.UseVisualStyleBackColor = false;
+			this.button5.Click += new System.EventHandler(this.button5_Click);
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.Maroon;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button1.Location = new System.Drawing.Point(593, 275);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(207, 31);
+			this.button1.TabIndex = 8;
+			this.button1.Text = "Salary Grade Delete";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.Maroon;
+			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.button2.Location = new System.Drawing.Point(221, 532);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(207, 31);
+			this.button2.TabIndex = 9;
+			this.button2.Text = "Designation Delete";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox1.Location = new System.Drawing.Point(12, 294);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(427, 269);
+			this.groupBox1.TabIndex = 10;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Worker Designation";
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox2.Location = new System.Drawing.Point(0, 39);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(800, 267);
+			this.groupBox2.TabIndex = 11;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Salary Grade";
 			// 
 			// WorkerDesignation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(808, 524);
+			this.ClientSize = new System.Drawing.Size(804, 572);
+			this.Controls.Add(this.button2);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.button6);
+			this.Controls.Add(this.button5);
 			this.Controls.Add(this.workerDesignationsDataGridView);
 			this.Controls.Add(this.salaryGradesDataGridView);
-			this.Controls.Add(this.salaryGradesBindingNavigator);
-			this.Name = "WorkerDesignation";
+			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.groupBox2);
+			
 			this.Text = "WorkerDesignation";
 			this.Load += new System.EventHandler(this.WorkerDesignation_Load);
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.salaryGradesBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.salaryGradesBindingNavigator)).EndInit();
-			this.salaryGradesBindingNavigator.ResumeLayout(false);
-			this.salaryGradesBindingNavigator.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.salaryGradesDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsDataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.salaryGradesBindingSource1)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private HomeTextileDBDataSet homeTextileDBDataSet;
+		private HomeTextileDBDataSet1 homeTextileDBDataSet1;
 		private System.Windows.Forms.BindingSource salaryGradesBindingSource;
-		private HomeTextileDBDataSetTableAdapters.SalaryGradesTableAdapter salaryGradesTableAdapter;
-		private HomeTextileDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-		private System.Windows.Forms.BindingNavigator salaryGradesBindingNavigator;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-		private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-		private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-		private System.Windows.Forms.ToolStripButton salaryGradesBindingNavigatorSaveItem;
+		private HomeTextileDBDataSet1TableAdapters.SalaryGradesTableAdapter salaryGradesTableAdapter;
+		private HomeTextileDBDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+		private HomeTextileDBDataSet1TableAdapters.WorkerDesignationsTableAdapter workerDesignationsTableAdapter;
 		private System.Windows.Forms.DataGridView salaryGradesDataGridView;
+		private System.Windows.Forms.BindingSource workerDesignationsBindingSource;
+		private System.Windows.Forms.DataGridView workerDesignationsDataGridView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewComboBoxColumn SalaryGradeId;
+		private System.Windows.Forms.BindingSource salaryGradesBindingSource1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+		private System.Windows.Forms.DataGridViewTextBoxColumn EffectiveDate;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -448,12 +395,11 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-		private HomeTextileDBDataSetTableAdapters.WorkerDesignationsTableAdapter workerDesignationsTableAdapter;
-		private System.Windows.Forms.BindingSource workerDesignationsBindingSource;
-		private System.Windows.Forms.DataGridView workerDesignationsDataGridView;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox groupBox2;
 	}
 }

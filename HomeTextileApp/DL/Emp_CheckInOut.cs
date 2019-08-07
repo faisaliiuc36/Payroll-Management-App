@@ -19,6 +19,8 @@ namespace HomeTextileApp.DL
         public int? MACHINEID { get; set; }
 
 		public bool IsManual { get; set; } 
+		public bool IsAbsent { get; set; } 
+		
 
 		public String UpdatedBy { get; set; }
 

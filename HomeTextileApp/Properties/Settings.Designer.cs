@@ -33,5 +33,29 @@ namespace HomeTextileApp.Properties {
                 return ((string)(this["HomeTextileDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool A {
+            get {
+                return ((bool)(this["A"]));
+            }
+            set {
+                this["A"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool B {
+            get {
+                return ((bool)(this["B"]));
+            }
+            set {
+                this["B"] = value;
+            }
+        }
     }
 }

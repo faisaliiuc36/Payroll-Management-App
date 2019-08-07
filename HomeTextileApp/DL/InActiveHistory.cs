@@ -21,5 +21,19 @@ namespace HomeTextileApp.DL
 		public DateTime From { get; set; }
 
 		public DateTime? To { get; set; }
+
+
+		public DateTime CalculateTo
+		{
+			get
+			{
+				if (this.To == null)
+				{
+					return DateTime.Now;
+				}
+				else
+					return Convert.ToDateTime(this.To);
+			}
+		}
 	}
 }

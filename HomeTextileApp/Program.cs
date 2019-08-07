@@ -17,9 +17,9 @@ namespace HomeTextileApp
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Section());
+			Application.Run(new LeaveSettings());
 
-			//Application.Run(new Section());
+			//Application.Run(new Impo());
 
 		}
 	}

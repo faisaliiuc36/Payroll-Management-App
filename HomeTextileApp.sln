@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTextileApp", "HomeTextileApp\HomeTextileApp.csproj", "{89007D1A-9761-49B3-9A4E-A274E5F8DA2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfHomeTextile", "wpfHomeTextile\wpfHomeTextile.csproj", "{5C83454E-B5AD-4944-A6CC-82B94C80D494}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{89007D1A-9761-49B3-9A4E-A274E5F8DA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89007D1A-9761-49B3-9A4E-A274E5F8DA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89007D1A-9761-49B3-9A4E-A274E5F8DA2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C83454E-B5AD-4944-A6CC-82B94C80D494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C83454E-B5AD-4944-A6CC-82B94C80D494}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C83454E-B5AD-4944-A6CC-82B94C80D494}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C83454E-B5AD-4944-A6CC-82B94C80D494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

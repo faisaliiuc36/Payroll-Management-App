@@ -45,9 +45,17 @@ namespace HomeTextileApp
 
 		private void button5_Click(object sender, EventArgs e)
 		{
-			this.Validate();
-			this.companiesBindingSource.EndEdit();
-			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet1);
+			try
+			{
+				this.Validate();
+				this.companiesBindingSource.EndEdit();
+				this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet1);
+
+			}
+			catch (Exception EX)
+			{
+				MessageBox.Show(EX.ToString());
+			}
 		}
 
 		private void button1_Click(object sender, EventArgs e)

@@ -11,11 +11,7 @@ namespace HomeTextileApp.DL
     {
         public int Id { get; set; }
 
-        [Display(Name = "Select An Employee")]
-        [Required(ErrorMessage = "Please Select Employee")]
         public int EmployeeId { get; set; }
-        [ForeignKey("EmployeeId")]
-        public virtual Employee Employee { get; set; }
 
         [Display(Name = "Select A LeaveType")]
         [Required(ErrorMessage = "Please Select LeaveType")]
@@ -27,11 +23,9 @@ namespace HomeTextileApp.DL
         [Required(ErrorMessage = "Please Input Yearly Count")]
         public int Count { get; set; }
 
-        public int Spent { get; set; }
+        public int Year { get; set; }
 
-        public int LeaveId { get; set; }
-
-        public bool IsManual { get; set; }
+        public bool IsSingleEmployee { get; set; }
 
     }
 }
