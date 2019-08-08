@@ -177,7 +177,7 @@ namespace HomeTextileApp.DL
 
 		public virtual List<Duty_Roster> Duty_Rosters { get; set; }
 		public virtual List<Holiday> Holidays { get; set; }
-		public virtual List<Leave> Leaves { get; set; }
+		
 		public virtual List<Loan> Loans { get; set; }
 		
 		public virtual List<InActiveHistory> InActiveHistories { get; set; }

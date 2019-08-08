@@ -12,11 +12,9 @@ namespace HomeTextileApp.DL
         public int Id { get; set; }
 
 
-        [Display(Name = "Select An Employee")]
-        [Required(ErrorMessage = "Please Select Employee")]
+       
         public int EmployeeId { get; set; }
-        [ForeignKey("EmployeeId")]
-        public virtual Employee Employee { get; set; }
+        
 
         [Display(Name = "Select A LeaveType")]
         [Required(ErrorMessage = "Please Select LeaveType")]
@@ -31,5 +29,13 @@ namespace HomeTextileApp.DL
         [Display(Name = "To")]
         [Required(ErrorMessage = "Please Select Date")]
         public DateTime To { get; set; }
+
+		public int Count
+		{
+			get
+			{
+				return (int)Math.Ceiling((this.To - this.From).TotalDays)+1;
+			}
+		}
     }
 }

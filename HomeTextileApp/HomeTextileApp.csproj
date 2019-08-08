@@ -75,6 +75,7 @@
     <Compile Include="DL\HTAdmins.cs" />
     <Compile Include="DL\InActiveHistory.cs" />
     <Compile Include="DL\Leave.cs" />
+    <Compile Include="DL\LeaveHistory.cs" />
     <Compile Include="DL\LeaveStore.cs" />
     <Compile Include="DL\LeaveType.cs" />
     <Compile Include="DL\Loan.cs" />
@@ -165,11 +166,11 @@
     <Compile Include="Layout.Designer.cs">
       <DependentUpon>Layout.cs</DependentUpon>
     </Compile>
-    <Compile Include="LeaveSetting.cs">
+    <Compile Include="LeaveApplication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LeaveSetting.Designer.cs">
-      <DependentUpon>LeaveSetting.cs</DependentUpon>
+    <Compile Include="LeaveApplication.Designer.cs">
+      <DependentUpon>LeaveApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="LeaveSettings.cs">
       <SubType>Form</SubType>
@@ -247,6 +248,10 @@
     <Compile Include="Migrations\201908070710596_Emp_Id-U.Designer.cs">
       <DependentUpon>201908070710596_Emp_Id-U.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908080427328_Leave-EmpId-U.cs" />
+    <Compile Include="Migrations\201908080427328_Leave-EmpId-U.Designer.cs">
+      <DependentUpon>201908080427328_Leave-EmpId-U.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OtherSettings.cs">
       <SubType>Form</SubType>
@@ -313,8 +318,8 @@
     <EmbeddedResource Include="Layout.resx">
       <DependentUpon>Layout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LeaveSetting.resx">
-      <DependentUpon>LeaveSetting.cs</DependentUpon>
+    <EmbeddedResource Include="LeaveApplication.resx">
+      <DependentUpon>LeaveApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LeaveSettings.resx">
       <DependentUpon>LeaveSettings.cs</DependentUpon>
@@ -369,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908070710596_Emp_Id-U.resx">
       <DependentUpon>201908070710596_Emp_Id-U.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908080427328_Leave-EmpId-U.resx">
+      <DependentUpon>201908080427328_Leave-EmpId-U.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>
