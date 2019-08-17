@@ -242,5 +242,10 @@ namespace HomeTextileApp
 			
 			//leavesBindingSource.Filter = String.Format("From == '{0:yyyy}'", dateTimePicker1.Value.Date.ToString("yyyy"));
 		}
+
+		private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

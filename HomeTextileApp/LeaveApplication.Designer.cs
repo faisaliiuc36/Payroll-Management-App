@@ -375,6 +375,7 @@
 			this.companyComboBox.Size = new System.Drawing.Size(121, 21);
 			this.companyComboBox.TabIndex = 0;
 			this.companyComboBox.ValueMember = "Id";
+			this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
 			// 
 			// fKdboUnitsdboCompaniesCompanyIdBindingSource
 			// 
@@ -430,16 +431,17 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(6, 19);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(315, 347);
+			this.dataGridView1.Size = new System.Drawing.Size(315, 355);
 			this.dataGridView1.TabIndex = 14;
 			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.Red;
-			this.label7.Location = new System.Drawing.Point(157, 387);
+			this.label7.Location = new System.Drawing.Point(72, 387);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(0, 13);
+			this.label7.Size = new System.Drawing.Size(0, 15);
 			this.label7.TabIndex = 13;
 			// 
 			// LeaveApplication

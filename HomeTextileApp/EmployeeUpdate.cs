@@ -895,17 +895,28 @@ namespace HomeTextileApp
 			{
 				DL.Section section = db.Sections.Find(employee.SectionId);
 				LoadCompany();
-				comboBox1.SelectedItem = section.Department.Unit.Company.Name;
-				//LoadCombobox2();
+				//comboBox1.SelectedItem = section.Department.Unit.Company.Name;
+				////LoadCombobox2();
 
-				comboBox2.SelectedItem = section.Department.Unit.Name;
-				comboBox3.SelectedItem = section.Department.Name;
-				sectionIdComboBox.SelectedValue = section.Id;
+				//comboBox2.SelectedItem = section.Department.Unit.Name;
+				//comboBox3.SelectedItem = section.Department.Name;
+				//sectionIdComboBox.SelectedValue = section.Id;
 
-				//Display image
-				
-				
-			}
+					comboBox1.SelectedText = section.Department.Unit.Company.Name;
+					comboBox1.SelectedValue = section.Department.Unit.Company.Id;
+
+					comboBox2.SelectedText = section.Department.Unit.Name;
+					comboBox2.SelectedValue = section.Department.Unit.Id;
+
+					comboBox3.SelectedText = section.Department.Name;
+					comboBox3.SelectedValue = section.Department.Id;
+
+					sectionIdComboBox.SelectedText = section.Name;
+					sectionIdComboBox.SelectedValue = section.Id;
+					//Display image
+
+
+				}
 			else
 			{
 				LoadCompany();

@@ -195,8 +195,9 @@ namespace HomeTextileApp.DL
 
 		public bool IsActive(DateTime d)
 		{
+			List<InActiveHistory> inActiveHistories = db.InActiveHistories.Where(a => a.EmployeeId == this.Id).ToList();
 			
-				var ActiveHistory = db.InActiveHistories.FirstOrDefault(a => a.EmployeeId == this.Id && a.From >= d && a.To <= d);
+				var ActiveHistory = inActiveHistories.FirstOrDefault(a =>a.From <= d && a.CalculateTo >= d);
 				if (ActiveHistory == null)
 				{
 					return true;
