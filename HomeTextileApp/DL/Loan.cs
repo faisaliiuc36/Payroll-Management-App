@@ -9,7 +9,8 @@ namespace HomeTextileApp.DL
 {
     public class Loan
     {
-        public int Id { get; set; }
+		private DatabaseContext db = new DatabaseContext();
+		public int Id { get; set; }
 
 
         [Display(Name = "Select An Employee")]
@@ -30,5 +31,18 @@ namespace HomeTextileApp.DL
         public DateTime Date { get; set; }
 
         public virtual List<Paytime> Paytimes { get; set; }
+
+		public bool IsLoanHas()
+		{
+			var paytime = db.Paytimes.FirstOrDefault(a => a.Loan.EmployeeId == this.EmployeeId && a.Date >= DateTime.Now);
+			if(paytime==null)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
     }
 }
