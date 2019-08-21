@@ -59,6 +59,12 @@
     <Compile Include="AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddHolidays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHolidays.Designer.cs">
+      <DependentUpon>AddHolidays.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalenderColumn.cs" />
     <Compile Include="DL\BloodGroup.cs" />
     <Compile Include="DL\Bonus.cs" />
@@ -258,6 +264,10 @@
     <Compile Include="Migrations\201908080427328_Leave-EmpId-U.Designer.cs">
       <DependentUpon>201908080427328_Leave-EmpId-U.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908210508376_Holiday_U.cs" />
+    <Compile Include="Migrations\201908210508376_Holiday_U.Designer.cs">
+      <DependentUpon>201908210508376_Holiday_U.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OtherSettings.cs">
       <SubType>Form</SubType>
@@ -305,6 +315,9 @@
     </Compile>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddHolidays.resx">
+      <DependentUpon>AddHolidays.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Duty_Roster.resx">
       <DependentUpon>Duty_Roster.cs</DependentUpon>
@@ -392,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908080427328_Leave-EmpId-U.resx">
       <DependentUpon>201908080427328_Leave-EmpId-U.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908210508376_Holiday_U.resx">
+      <DependentUpon>201908210508376_Holiday_U.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>

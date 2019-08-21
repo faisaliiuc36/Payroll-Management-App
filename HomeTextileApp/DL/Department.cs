@@ -23,5 +23,6 @@ namespace HomeTextileApp.DL
         public string Name { get; set; }
 
         public virtual List<Section> Section { get; set; }
+        public virtual List<Holiday> Holidays { get; set; }
     }
 }

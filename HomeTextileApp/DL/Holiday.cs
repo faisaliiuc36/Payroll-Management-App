@@ -12,14 +12,20 @@ namespace HomeTextileApp.DL
         public int Id { get; set; }
 
 
-        [Display(Name = "Select An Employee")]
-        [Required(ErrorMessage = "Please Select Employee")]
-        public int EmployeeId { get; set; }
-        [ForeignKey("EmployeeId")]
-        public virtual Employee Employee { get; set; }
+        [Display(Name = "Select A Department")]
+        [Required(ErrorMessage = "Please Select Department")]
+        public int DepartmentId { get; set; }
+        [ForeignKey("DepartmentId")]
+        public virtual Department Department { get; set; }
 
-        [Display(Name = "Date")]
+		public String HolidayReasons { get; set; }
+
+		[Display(Name = "From")]
         [Required(ErrorMessage = "Please Select Date")]
-        public DateTime Date { get; set; }
-    }
+        public DateTime From { get; set; }
+
+		[Display(Name = "To")]
+		[Required(ErrorMessage = "Please Select Date")]
+		public DateTime To { get; set; }
+	}
 }

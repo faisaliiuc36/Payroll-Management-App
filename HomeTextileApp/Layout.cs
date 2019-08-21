@@ -40,6 +40,8 @@ namespace HomeTextileApp
 			empSubPanel2.Visible = false;
 			settingsSubPanel.Visible = false;
 			LAHPanel.Visible = false;
+			attendancePanel.Visible = false;
+			reportPanel.Visible = false;
 		}
 
 		private void Layout_Load(object sender, EventArgs e)
@@ -77,7 +79,7 @@ namespace HomeTextileApp
 			EmployeeList objForm =new EmployeeList();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		
@@ -112,7 +114,7 @@ namespace HomeTextileApp
 			WorkerDesignation objForm = new WorkerDesignation();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -126,7 +128,7 @@ namespace HomeTextileApp
 			EmployeeUpdate objForm = new EmployeeUpdate();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -139,7 +141,7 @@ namespace HomeTextileApp
 			ImportEmployee objForm = new ImportEmployee();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -152,7 +154,7 @@ namespace HomeTextileApp
 			SalaryAndBonus objForm = new SalaryAndBonus();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -165,7 +167,7 @@ namespace HomeTextileApp
 			Loan objForm = new Loan();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -178,7 +180,7 @@ namespace HomeTextileApp
 			Section objForm = new Section();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -191,7 +193,7 @@ namespace HomeTextileApp
 			OtherSettings objForm = new OtherSettings();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -204,7 +206,7 @@ namespace HomeTextileApp
 			StaffSalarySetting objForm = new StaffSalarySetting();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -235,7 +237,7 @@ namespace HomeTextileApp
 			LeaveApplication objForm = new LeaveApplication();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
@@ -248,7 +250,123 @@ namespace HomeTextileApp
 			LeaveSettings objForm = new LeaveSettings();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
-			objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button17_Click(object sender, EventArgs e)
+		{
+			sidePanel.Height = button2.Height;
+			sidePanel.Top = button2.Top;
+
+
+			if (attendancePanel.Visible == true)
+			{
+				InvisibleAllSubPanel();
+
+			}
+			else
+			{
+				InvisibleAllSubPanel();
+				attendancePanel.Visible = true;
+			}
+		}
+
+		private void button13_Click(object sender, EventArgs e)
+		{
+			sidePanel.Height = button3.Height;
+			sidePanel.Top = button3.Top;
+
+
+			if (reportPanel.Visible == true)
+			{
+				InvisibleAllSubPanel();
+
+			}
+			else
+			{
+				InvisibleAllSubPanel();
+				reportPanel.Visible = true;
+			}
+		}
+
+		private void button16_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			AddHolidays objForm = new AddHolidays();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button20_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			ImportAttendance objForm = new ImportAttendance();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button19_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			Shift objForm = new Shift();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button18_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			Duty_Roster objForm = new Duty_Roster();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button24_Click(object sender, EventArgs e)
+		{
+
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			Manuel_Attendance objForm = new Manuel_Attendance();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button25_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			RangeWiseDutyRoster objForm = new RangeWiseDutyRoster();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}

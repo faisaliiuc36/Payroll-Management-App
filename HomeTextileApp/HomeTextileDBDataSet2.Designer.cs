@@ -102,8 +102,6 @@ namespace HomeTextileApp {
         
         private global::System.Data.DataRelation _relationFK_dbo_Employees_dbo_WorkerDesignations_WorkerDesignationId;
         
-        private global::System.Data.DataRelation _relationFK_dbo_Holidays_dbo_Employees_EmployeeId;
-        
         private global::System.Data.DataRelation _relationFK_dbo_InActiveHistories_dbo_Employees_EmployeeId;
         
         private global::System.Data.DataRelation _relationFK_dbo_Leaves_dbo_Employees_EmployeeId;
@@ -125,6 +123,8 @@ namespace HomeTextileApp {
         private global::System.Data.DataRelation _relationFK_dbo_Units_dbo_Companies_CompanyId;
         
         private global::System.Data.DataRelation _relationFK_dbo_WorkerDesignations_dbo_SalaryGrades_SalaryGradeId;
+        
+        private global::System.Data.DataRelation _relationFK_dbo_Holidays_dbo_Departments_DepartmentId;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -899,7 +899,6 @@ namespace HomeTextileApp {
             this._relationFK_dbo_Employees_dbo_Religions_ReligionId = this.Relations["FK_dbo.Employees_dbo.Religions_ReligionId"];
             this._relationFK_dbo_Employees_dbo_Sections_SectionId = this.Relations["FK_dbo.Employees_dbo.Sections_SectionId"];
             this._relationFK_dbo_Employees_dbo_WorkerDesignations_WorkerDesignationId = this.Relations["FK_dbo.Employees_dbo.WorkerDesignations_WorkerDesignationId"];
-            this._relationFK_dbo_Holidays_dbo_Employees_EmployeeId = this.Relations["FK_dbo.Holidays_dbo.Employees_EmployeeId"];
             this._relationFK_dbo_InActiveHistories_dbo_Employees_EmployeeId = this.Relations["FK_dbo.InActiveHistories_dbo.Employees_EmployeeId"];
             this._relationFK_dbo_Leaves_dbo_Employees_EmployeeId = this.Relations["FK_dbo.Leaves_dbo.Employees_EmployeeId"];
             this._relationFK_dbo_Leaves_dbo_LeaveTypes_LeaveTypeId = this.Relations["FK_dbo.Leaves_dbo.LeaveTypes_LeaveTypeId"];
@@ -911,6 +910,7 @@ namespace HomeTextileApp {
             this._relationFK_dbo_Sections_dbo_Departments_DepartmentId = this.Relations["FK_dbo.Sections_dbo.Departments_DepartmentId"];
             this._relationFK_dbo_Units_dbo_Companies_CompanyId = this.Relations["FK_dbo.Units_dbo.Companies_CompanyId"];
             this._relationFK_dbo_WorkerDesignations_dbo_SalaryGrades_SalaryGradeId = this.Relations["FK_dbo.WorkerDesignations_dbo.SalaryGrades_SalaryGradeId"];
+            this._relationFK_dbo_Holidays_dbo_Departments_DepartmentId = this.Relations["FK_dbo.Holidays_dbo.Departments_DepartmentId"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1021,10 +1021,6 @@ namespace HomeTextileApp {
                         this.tableWorkerDesignations.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEmployees.WorkerDesignationIdColumn}, false);
             this.Relations.Add(this._relationFK_dbo_Employees_dbo_WorkerDesignations_WorkerDesignationId);
-            this._relationFK_dbo_Holidays_dbo_Employees_EmployeeId = new global::System.Data.DataRelation("FK_dbo.Holidays_dbo.Employees_EmployeeId", new global::System.Data.DataColumn[] {
-                        this.tableEmployees.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHolidays.EmployeeIdColumn}, false);
-            this.Relations.Add(this._relationFK_dbo_Holidays_dbo_Employees_EmployeeId);
             this._relationFK_dbo_InActiveHistories_dbo_Employees_EmployeeId = new global::System.Data.DataRelation("FK_dbo.InActiveHistories_dbo.Employees_EmployeeId", new global::System.Data.DataColumn[] {
                         this.tableEmployees.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableInActiveHistories.EmployeeIdColumn}, false);
@@ -1069,6 +1065,10 @@ namespace HomeTextileApp {
                         this.tableSalaryGrades.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableWorkerDesignations.SalaryGradeIdColumn}, false);
             this.Relations.Add(this._relationFK_dbo_WorkerDesignations_dbo_SalaryGrades_SalaryGradeId);
+            this._relationFK_dbo_Holidays_dbo_Departments_DepartmentId = new global::System.Data.DataRelation("FK_dbo.Holidays_dbo.Departments_DepartmentId", new global::System.Data.DataColumn[] {
+                        this.tableDepartments.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHolidays.DepartmentIdColumn}, false);
+            this.Relations.Add(this._relationFK_dbo_Holidays_dbo_Departments_DepartmentId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5120,9 +5120,13 @@ namespace HomeTextileApp {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnEmployeeId;
+            private global::System.Data.DataColumn columnDepartmentId;
             
-            private global::System.Data.DataColumn columnDate;
+            private global::System.Data.DataColumn columnHolidayReasons;
+            
+            private global::System.Data.DataColumn columnFrom;
+            
+            private global::System.Data.DataColumn columnTo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -5167,17 +5171,33 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn EmployeeIdColumn {
+            public global::System.Data.DataColumn DepartmentIdColumn {
                 get {
-                    return this.columnEmployeeId;
+                    return this.columnDepartmentId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
+            public global::System.Data.DataColumn HolidayReasonsColumn {
                 get {
-                    return this.columnDate;
+                    return this.columnHolidayReasons;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FromColumn {
+                get {
+                    return this.columnFrom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ToColumn {
+                get {
+                    return this.columnTo;
                 }
             }
             
@@ -5218,14 +5238,16 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HolidaysRow AddHolidaysRow(EmployeesRow _parentEmployeesRowByFK_dbo_Holidays_dbo_Employees_EmployeeId, System.DateTime Date) {
+            public HolidaysRow AddHolidaysRow(DepartmentsRow _parentDepartmentsRowByFK_dbo_Holidays_dbo_Departments_DepartmentId, string HolidayReasons, System.DateTime From, System.DateTime To) {
                 HolidaysRow rowHolidaysRow = ((HolidaysRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        Date};
-                if ((_parentEmployeesRowByFK_dbo_Holidays_dbo_Employees_EmployeeId != null)) {
-                    columnValuesArray[1] = _parentEmployeesRowByFK_dbo_Holidays_dbo_Employees_EmployeeId[0];
+                        HolidayReasons,
+                        From,
+                        To};
+                if ((_parentDepartmentsRowByFK_dbo_Holidays_dbo_Departments_DepartmentId != null)) {
+                    columnValuesArray[1] = _parentDepartmentsRowByFK_dbo_Holidays_dbo_Departments_DepartmentId[0];
                 }
                 rowHolidaysRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHolidaysRow);
@@ -5257,8 +5279,10 @@ namespace HomeTextileApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnEmployeeId = base.Columns["EmployeeId"];
-                this.columnDate = base.Columns["Date"];
+                this.columnDepartmentId = base.Columns["DepartmentId"];
+                this.columnHolidayReasons = base.Columns["HolidayReasons"];
+                this.columnFrom = base.Columns["From"];
+                this.columnTo = base.Columns["To"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5266,10 +5290,14 @@ namespace HomeTextileApp {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnEmployeeId = new global::System.Data.DataColumn("EmployeeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmployeeId);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
+                this.columnDepartmentId = new global::System.Data.DataColumn("DepartmentId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmentId);
+                this.columnHolidayReasons = new global::System.Data.DataColumn("HolidayReasons", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHolidayReasons);
+                this.columnFrom = new global::System.Data.DataColumn("From", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFrom);
+                this.columnTo = new global::System.Data.DataColumn("To", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -5278,8 +5306,10 @@ namespace HomeTextileApp {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnEmployeeId.AllowDBNull = false;
-                this.columnDate.AllowDBNull = false;
+                this.columnDepartmentId.AllowDBNull = false;
+                this.columnHolidayReasons.MaxLength = 2147483647;
+                this.columnFrom.AllowDBNull = false;
+                this.columnTo.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11123,6 +11153,17 @@ namespace HomeTextileApp {
                     return ((SectionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Sections_dbo.Departments_DepartmentId"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HolidaysRow[] GetHolidaysRows() {
+                if ((this.Table.ChildRelations["FK_dbo.Holidays_dbo.Departments_DepartmentId"] == null)) {
+                    return new HolidaysRow[0];
+                }
+                else {
+                    return ((HolidaysRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Holidays_dbo.Departments_DepartmentId"])));
+                }
+            }
         }
         
         /// <summary>
@@ -12317,17 +12358,6 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HolidaysRow[] GetHolidaysRows() {
-                if ((this.Table.ChildRelations["FK_dbo.Holidays_dbo.Employees_EmployeeId"] == null)) {
-                    return new HolidaysRow[0];
-                }
-                else {
-                    return ((HolidaysRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Holidays_dbo.Employees_EmployeeId"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public InActiveHistoriesRow[] GetInActiveHistoriesRows() {
                 if ((this.Table.ChildRelations["FK_dbo.InActiveHistories_dbo.Employees_EmployeeId"] == null)) {
                     return new InActiveHistoriesRow[0];
@@ -12505,35 +12535,74 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int EmployeeId {
+            public int DepartmentId {
                 get {
-                    return ((int)(this[this.tableHolidays.EmployeeIdColumn]));
+                    return ((int)(this[this.tableHolidays.DepartmentIdColumn]));
                 }
                 set {
-                    this[this.tableHolidays.EmployeeIdColumn] = value;
+                    this[this.tableHolidays.DepartmentIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Date {
+            public string HolidayReasons {
                 get {
-                    return ((global::System.DateTime)(this[this.tableHolidays.DateColumn]));
+                    try {
+                        return ((string)(this[this.tableHolidays.HolidayReasonsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HolidayReasons\' in table \'Holidays\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableHolidays.DateColumn] = value;
+                    this[this.tableHolidays.HolidayReasonsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmployeesRow EmployeesRow {
+            public System.DateTime From {
                 get {
-                    return ((EmployeesRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.Holidays_dbo.Employees_EmployeeId"])));
+                    return ((global::System.DateTime)(this[this.tableHolidays.FromColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.Holidays_dbo.Employees_EmployeeId"]);
+                    this[this.tableHolidays.FromColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime To {
+                get {
+                    return ((global::System.DateTime)(this[this.tableHolidays.ToColumn]));
+                }
+                set {
+                    this[this.tableHolidays.ToColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DepartmentsRow DepartmentsRow {
+                get {
+                    return ((DepartmentsRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.Holidays_dbo.Departments_DepartmentId"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.Holidays_dbo.Departments_DepartmentId"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsHolidayReasonsNull() {
+                return this.IsNull(this.tableHolidays.HolidayReasonsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetHolidayReasonsNull() {
+                this[this.tableHolidays.HolidayReasonsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19708,35 +19777,43 @@ SELECT Id, Emp_Id, EmployeeTypeId, SectionId, EmpFullName, BadgeNumber, DateOfBi
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Holidays";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
-            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("DepartmentId", "DepartmentId");
+            tableMapping.ColumnMappings.Add("HolidayReasons", "HolidayReasons");
+            tableMapping.ColumnMappings.Add("From", "From");
+            tableMapping.ColumnMappings.Add("To", "To");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Holidays] WHERE (([Id] = @Original_Id) AND ([EmployeeId] = @Or" +
-                "iginal_EmployeeId) AND ([Date] = @Original_Date))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Holidays] WHERE (([Id] = @Original_Id) AND ([DepartmentId] = @Origin" +
+                "al_DepartmentId) AND ([From] = @Original_From) AND ([To] = @Original_To))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DepartmentId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_From", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "From", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_To", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "To", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Holidays] ([EmployeeId], [Date]) VALUES (@EmployeeId, @Date);\r" +
-                "\nSELECT Id, EmployeeId, Date FROM Holidays WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Holidays] ([DepartmentId], [From], [HolidayReasons], [To]) VALUES (@" +
+                "DepartmentId, @From, @HolidayReasons, @To);\r\nSELECT Id, DepartmentId, [From], Ho" +
+                "lidayReasons, [To] FROM Holidays WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@From", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "From", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HolidayReasons", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HolidayReasons", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@To", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "To", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Holidays] SET [EmployeeId] = @EmployeeId, [Date] = @Date WHERE (([I" +
-                "d] = @Original_Id) AND ([EmployeeId] = @Original_EmployeeId) AND ([Date] = @Orig" +
-                "inal_Date));\r\nSELECT Id, EmployeeId, Date FROM Holidays WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Holidays] SET [DepartmentId] = @DepartmentId, [From] = @From, [HolidayReasons] = @HolidayReasons, [To] = @To WHERE (([Id] = @Original_Id) AND ([DepartmentId] = @Original_DepartmentId) AND ([From] = @Original_From) AND ([To] = @Original_To));
+SELECT Id, DepartmentId, [From], HolidayReasons, [To] FROM Holidays WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@From", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "From", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HolidayReasons", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HolidayReasons", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@To", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "To", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DepartmentId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_From", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "From", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_To", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "To", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -19753,7 +19830,7 @@ SELECT Id, Emp_Id, EmployeeTypeId, SectionId, EmpFullName, BadgeNumber, DateOfBi
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, EmployeeId, Date FROM dbo.Holidays";
+            this._commandCollection[0].CommandText = "SELECT Id, DepartmentId, [From], HolidayReasons, [To] FROM Holidays";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19814,10 +19891,11 @@ SELECT Id, Emp_Id, EmployeeTypeId, SectionId, EmpFullName, BadgeNumber, DateOfBi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_EmployeeId, System.DateTime Original_Date) {
+        public virtual int Delete(int Original_Id, int Original_DepartmentId, System.DateTime Original_From, System.DateTime Original_To) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_EmployeeId));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_DepartmentId));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_From));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_To));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19838,9 +19916,16 @@ SELECT Id, Emp_Id, EmployeeTypeId, SectionId, EmpFullName, BadgeNumber, DateOfBi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int EmployeeId, System.DateTime Date) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(EmployeeId));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Date));
+        public virtual int Insert(int DepartmentId, System.DateTime From, string HolidayReasons, System.DateTime To) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(DepartmentId));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(From));
+            if ((HolidayReasons == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(HolidayReasons));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(To));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19861,13 +19946,21 @@ SELECT Id, Emp_Id, EmployeeTypeId, SectionId, EmpFullName, BadgeNumber, DateOfBi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int EmployeeId, System.DateTime Date, int Original_Id, int Original_EmployeeId, System.DateTime Original_Date, int Id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(EmployeeId));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Date));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_EmployeeId));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Id));
+        public virtual int Update(int DepartmentId, System.DateTime From, string HolidayReasons, System.DateTime To, int Original_Id, int Original_DepartmentId, System.DateTime Original_From, System.DateTime Original_To, int Id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(DepartmentId));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(From));
+            if ((HolidayReasons == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(HolidayReasons));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(To));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_DepartmentId));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_From));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_To));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19888,8 +19981,8 @@ SELECT Id, Emp_Id, EmployeeTypeId, SectionId, EmpFullName, BadgeNumber, DateOfBi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int EmployeeId, System.DateTime Date, int Original_Id, int Original_EmployeeId, System.DateTime Original_Date) {
-            return this.Update(EmployeeId, Date, Original_Id, Original_EmployeeId, Original_Date, Original_Id);
+        public virtual int Update(int DepartmentId, System.DateTime From, string HolidayReasons, System.DateTime To, int Original_Id, int Original_DepartmentId, System.DateTime Original_From, System.DateTime Original_To) {
+            return this.Update(DepartmentId, From, HolidayReasons, To, Original_Id, Original_DepartmentId, Original_From, Original_To, Original_Id);
         }
     }
     
