@@ -186,7 +186,7 @@ namespace HomeTextileApp.DL
 		{
 			get
 			{
-				return String.Format("{0}-{1}", EmpFullName, Emp_Id);
+				return String.Format("{0}-{1}", Emp_Id, EmpFullName);
 			}
 		}
 

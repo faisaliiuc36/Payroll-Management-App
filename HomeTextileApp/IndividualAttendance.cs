@@ -1,0 +1,370 @@
+﻿using HomeTextileApp.DL;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace HomeTextileApp
+{
+	public partial class IndividualAttendance : Form
+	{
+		private DatabaseContext db = new DatabaseContext();
+		public IndividualAttendance()
+		{
+			InitializeComponent();
+		}
+
+		private void IndividualAttendance_Load(object sender, EventArgs e)
+		{
+			this.employeeBindingSource.DataSource = db.Employees.ToList();
+		}
+
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			//ViewBag.EmployeeId = new SelectList(db.Employees.Where(a => a.ActiveStatus == true), "Id", "NameWithId");
+
+			Employee employee = db.Employees.Find(Convert.ToInt32(comboBox1.SelectedValue));
+			//ViewBag.From = From.ToString("dd/MM/yyyy");
+			//ViewBag.From2 = From;
+
+			//ViewBag.To = To.ToString("dd/MM/yyyy");
+			//ViewBag.To2 = To;
+			//ViewBag.Name = employee.EmpFullName;
+			//ViewBag.Id = employee.Emp_Id;
+			//ViewBag.Id2 = employee.Id;
+
+
+			DateTime FromLoop =Convert.ToDateTime(dateTimePicker1.Text);
+			DateTime ToLoop = Convert.ToDateTime(dateTimePicker2.Text);
+
+
+			List<ViewIndividualAttendance> viewAttendances = new List<ViewIndividualAttendance>();
+
+
+			//Employee Count
+
+			do
+			{
+				List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.IsManual==false && a.IsAbsent==false).ToList();
+
+				ViewIndividualAttendance VW = new ViewIndividualAttendance();
+				VW.Date = FromLoop;
+
+				//Manual Check
+				List<Emp_CheckInOut> Emp_CheckInOutManual = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.IsManual == true && a.UserId == employee.Emp_Id).ToList();
+				List<Emp_CheckInOut> Emp_CheckInOutabsent = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.IsAbsent == true && a.UserId == employee.Emp_Id).ToList();
+				if (Emp_CheckInOutManual.Count > 0)
+				{
+					VW.Status = "Manual!";
+				}
+				else if(Emp_CheckInOutManual.Count>0)
+				{
+					VW.Status = "Absent!";
+				}
+				else
+				{
+					//EMployee CheckInOuts
+					if (emp_CheckInOuts != null)
+					{
+
+
+
+
+						var duty_Roster = db.Duty_Rosters.FirstOrDefault(a => a.Date == FromLoop && a.EmployeeId == employee.Id);
+						// Default Assign
+						if (duty_Roster ==null && employee.IsWorker==false)
+						{
+							List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).ToList();
+							if(duty_Rosters.Count>0)
+							{
+								DateTime date = duty_Rosters.Max(a => a.Date);
+								duty_Roster = duty_Rosters.FirstOrDefault(a => a.Date == date);
+							}
+						}
+
+
+						//List<SalarySetting> salarySettings = db.SalarySettings.Where(a => a.Date <= FromLoop).ToList();
+						//DateTime dateTime = salarySettings.Max(a => a.Date);
+						//var salarySetting = salarySettings.FirstOrDefault(a => a.Date == dateTime);
+						var salarySetting = db.SalarySettings.FirstOrDefault();
+						
+
+						// Is Duty Roster Has
+						if (duty_Roster != null)
+						{
+							VW.Shift = duty_Roster.Shift.Name;
+							List<Emp_CheckInOut> empindividual = emp_CheckInOuts.Where(a => a.UserId == employee.Emp_Id).ToList();
+							//Employee Wise Check in out
+							if (empindividual.Count > 0)
+							{
+								//For C Shift
+								if (duty_Roster.Shift.IsDayToNight == true)
+								{
+									DateTime In = FromLoop.Date + duty_Roster.Shift.From;
+									DateTime Out = FromLoop.Date + duty_Roster.Shift.To;
+
+									Out = Out.AddDays(1);
+
+									DateTime OutCheck = Out.AddHours(2);
+									DateTime InCheck = In.AddHours(-2);
+
+
+									List<Emp_CheckInOut> emp_CheckInOuts2 = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day >= FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.CHECKTIME.Day <= FromLoop.Day + 1 && a.IsManual == false && a.IsAbsent==false).ToList();
+									List<Emp_CheckInOut> empindividual2 = emp_CheckInOuts2.Where(a => a.UserId == employee.Emp_Id).ToList();
+
+									List<Emp_CheckInOut> empIndividualforshift = empindividual2.Where(a => a.CHECKTIME >= InCheck && a.CHECKTIME <= OutCheck).ToList();
+
+									//Shiftwise CheckinOut
+									if (empIndividualforshift.Count > 0)
+									{
+										DateTime Min = (from d in empIndividualforshift select d.CHECKTIME).Min();
+										DateTime Max = (from d in empIndividualforshift select d.CHECKTIME).Max();
+
+										VW.From = Min.TimeOfDay;
+										VW.To = Max.TimeOfDay;
+
+										//Status Calculation
+										DateTime InForStatus = In.AddMinutes(salarySetting.Time);
+										DateTime OutForStatus = Out.AddMinutes(-1 * salarySetting.Time);
+
+										if (Min == Max)
+										{
+											VW.Status = "Invalid";
+										}
+										else if (Min <= InForStatus && Max >= OutForStatus)
+										{
+											VW.Status = "Present";
+										}
+										else if (Min > InForStatus && Max >= OutForStatus)
+										{
+											VW.Status = "Late";
+										}
+
+										else if (Min <= InForStatus && Max < OutForStatus)
+										{
+											VW.Status = "Early Leave";
+										}
+
+										else if (Min > InForStatus && Max < OutForStatus)
+										{
+											VW.Status = "Early Leave+ Late";
+										}
+
+
+									}
+									else
+									{
+										var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == employee.Section.DepartmentId && a.From <= FromLoop && a.To >= FromLoop);
+										var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == employee.Id && a.From >= FromLoop && a.To <= FromLoop);
+
+
+										if (Holiday != null)
+										{
+											VW.Status = "Holiday";
+										}
+										else if (LeaveDay != null)
+										{
+											VW.Status = "Leave";
+										}
+										else if(FromLoop.DayOfWeek.ToString()=="Friday")
+										{
+											VW.Status = "Weekend";
+										}
+										else
+										{
+											VW.Status = "Absent";
+										}
+									}
+
+								}
+								else
+								{
+
+
+									DateTime In = FromLoop.Date + duty_Roster.Shift.From;
+									DateTime Out = FromLoop.Date +duty_Roster.Shift.To;
+
+
+									DateTime OutCheck = Out.AddHours(2);
+									DateTime InCheck = In.AddHours(-2);
+
+									List<Emp_CheckInOut> empIndividualforshift = empindividual.Where(a => a.CHECKTIME >= InCheck && a.CHECKTIME <= OutCheck).ToList();
+									//Shift Wise Check In Out
+									if (empIndividualforshift.Count > 0)
+									{
+										DateTime Min = (from d in empIndividualforshift select d.CHECKTIME).Min();
+										DateTime Max = (from d in empIndividualforshift select d.CHECKTIME).Max();
+
+										VW.From = Min.TimeOfDay;
+										VW.To = Max.TimeOfDay;
+
+										//Status Calculation
+										DateTime InForStatus = In.AddMinutes(salarySetting.Time);
+										DateTime OutForStatus = Out.AddMinutes(-1 * salarySetting.Time);
+										if (Min == Max)
+										{
+											VW.Status = "Invalid";
+										}
+										else if (Min <= InForStatus && Max >= OutForStatus)
+										{
+											VW.Status = "Present";
+										}
+										else if (Min > InForStatus && Max >= OutForStatus)
+										{
+											VW.Status = "Late";
+										}
+
+										else if (Min <= InForStatus && Max < OutForStatus)
+										{
+											VW.Status = "Early Leave";
+										}
+
+										else if (Min > InForStatus && Max < OutForStatus)
+										{
+											VW.Status = "Early Leave+ Late";
+										}
+
+
+									}
+									else
+									{
+										var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == employee.Section.DepartmentId && a.From <= FromLoop && a.To >=FromLoop);
+										var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == employee.Id && a.From >= FromLoop && a.To <= FromLoop);
+
+										if (Holiday != null)
+										{
+											VW.Status = "Holiday";
+										}
+										else if (LeaveDay != null)
+										{
+											VW.Status = "Leave";
+										}
+										else if (FromLoop.DayOfWeek.ToString() == "Friday")
+										{
+											VW.Status = "Weekend";
+										}
+										else
+										{
+											VW.Status = "Absent";
+										}
+									}
+
+								}
+
+
+
+							}
+							else
+							{
+
+								var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == employee.Section.DepartmentId && a.From <= FromLoop && a.To >= FromLoop);
+								var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == employee.Id && a.From >= FromLoop && a.To <= FromLoop);
+
+								if (Holiday != null)
+								{
+									VW.Status = "Holiday";
+								}
+								else if (LeaveDay != null)
+								{
+									VW.Status = "Leave";
+								}
+								else if (FromLoop.DayOfWeek.ToString() == "Friday")
+								{
+									VW.Status = "Weekend";
+								}
+								else
+								{
+									VW.Status = "Absent";
+								}
+
+							}
+						}
+						else
+						{
+							VW.Status = "Duty Roster Not Assign";
+						}
+
+
+					}
+					else
+					{
+						VW.Status = "Absent";
+					}
+				}
+
+				viewAttendances.Add(VW);
+
+
+				FromLoop = FromLoop.AddDays(1);
+			} while (FromLoop <= ToLoop);
+
+
+			viewIndividualAttendanceDataGridView.DataSource = viewAttendances.ToList();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			DGVPrinter printer = new DGVPrinter();
+
+			printer.Title = "Individual Attendance Report";
+
+			printer.SubTitle = string.Format("Date:{0}", DateTime.Now.Date);
+
+			printer.SubTitleFormatFlags = StringFormatFlags.LineLimit |
+
+										  StringFormatFlags.NoClip;
+
+			printer.PageNumbers = true;
+
+			printer.PageNumberInHeader = false;
+
+			printer.PorportionalColumns = true;
+
+			printer.HeaderCellAlignment = StringAlignment.Near;
+
+			printer.Footer = "Saad Musa-Home Textile";
+
+			printer.FooterSpacing = 15;
+
+			printer.PageSettings.Landscape = true;
+
+			printer.PrintDataGridView(viewIndividualAttendanceDataGridView);
+		}
+	}
+}

@@ -77,7 +77,7 @@ namespace HomeTextileApp
 
 
 
-
+			emp_CheckInOutDataGridView.DataSource = null;
 
 			emp_CheckInOutDataGridView.DataSource = emp_CheckInOuts;
 		}

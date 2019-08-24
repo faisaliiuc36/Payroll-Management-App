@@ -38,6 +38,8 @@ namespace HomeTextileApp.DL
     
 
         public int Invalid { get; set; }
+        public int Weekend { get; set; }
+        
 
 
 

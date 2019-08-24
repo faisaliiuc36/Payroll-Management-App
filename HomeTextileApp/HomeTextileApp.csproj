@@ -65,7 +65,14 @@
     <Compile Include="AddHolidays.Designer.cs">
       <DependentUpon>AddHolidays.cs</DependentUpon>
     </Compile>
+    <Compile Include="AttendanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceHistory.Designer.cs">
+      <DependentUpon>AttendanceHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalenderColumn.cs" />
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="DL\BloodGroup.cs" />
     <Compile Include="DL\Bonus.cs" />
     <Compile Include="DL\Company.cs" />
@@ -154,6 +161,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeTextileDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HomeTextileDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeTextileDBDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ImportAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,12 @@
     </Compile>
     <Compile Include="ImportEmployee.Designer.cs">
       <DependentUpon>ImportEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndividualAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndividualAttendance.Designer.cs">
+      <DependentUpon>IndividualAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout.cs">
       <SubType>Form</SubType>
@@ -319,6 +337,9 @@
     <EmbeddedResource Include="AddHolidays.resx">
       <DependentUpon>AddHolidays.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceHistory.resx">
+      <DependentUpon>AttendanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Duty_Roster.resx">
       <DependentUpon>Duty_Roster.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImportEmployee.resx">
       <DependentUpon>ImportEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndividualAttendance.resx">
+      <DependentUpon>IndividualAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout.resx">
       <DependentUpon>Layout.cs</DependentUpon>
@@ -471,6 +495,17 @@
     </None>
     <None Include="HomeTextileDBDataSet2.xss">
       <DependentUpon>HomeTextileDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HomeTextileDBDataSet3.xsc">
+      <DependentUpon>HomeTextileDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="HomeTextileDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HomeTextileDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HomeTextileDBDataSet3.xss">
+      <DependentUpon>HomeTextileDBDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.BloodGroup.datasource" />
