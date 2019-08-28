@@ -16,6 +16,7 @@ namespace HomeTextileApp
 	public partial class EmployeeList : Form
 	{
 		private DatabaseContext db = new DatabaseContext();
+		private DatabaseContext db2 = new DatabaseContext();
 		public EmployeeList()
 		{
 			InitializeComponent();
@@ -228,6 +229,12 @@ namespace HomeTextileApp
 				{
 					checkBox2.Checked = false;
 				}
+
+				Employee empShadow = db2.Employees.Find(employee.Id);
+				ShadowEmployee shadowEmployee = new ShadowEmployee();
+				shadowEmployee.Assign(empShadow);
+				db.ShadowEmployees.Add(shadowEmployee);
+				db.SaveChanges();
 
 
 				db.Entry(employee).State = EntityState.Modified;

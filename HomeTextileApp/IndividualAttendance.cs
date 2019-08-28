@@ -89,6 +89,9 @@ namespace HomeTextileApp
 				//Manual Check
 				List<Emp_CheckInOut> Emp_CheckInOutManual = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.IsManual == true && a.UserId == employee.Emp_Id).ToList();
 				List<Emp_CheckInOut> Emp_CheckInOutabsent = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.IsAbsent == true && a.UserId == employee.Emp_Id).ToList();
+				var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == employee.Section.DepartmentId && a.From <= FromLoop && a.To >= FromLoop);
+				var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == employee.Id && a.From >= FromLoop && a.To <= FromLoop);
+
 				if (Emp_CheckInOutManual.Count > 0)
 				{
 					VW.Status = "Manual!";
@@ -97,6 +100,19 @@ namespace HomeTextileApp
 				{
 					VW.Status = "Absent!";
 				}
+				else if (FromLoop.DayOfWeek.ToString() == "Friday")
+				{
+					VW.Status = "Weekend";
+				}
+				else if (Holiday != null)
+				{
+					VW.Status = "Holiday";
+				}
+				else if (LeaveDay != null)
+				{
+					VW.Status = "Leave";
+				}
+				
 				else
 				{
 					//EMployee CheckInOuts
@@ -190,26 +206,11 @@ namespace HomeTextileApp
 									}
 									else
 									{
-										var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == employee.Section.DepartmentId && a.From <= FromLoop && a.To >= FromLoop);
-										var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == employee.Id && a.From >= FromLoop && a.To <= FromLoop);
+										
 
-
-										if (Holiday != null)
-										{
-											VW.Status = "Holiday";
-										}
-										else if (LeaveDay != null)
-										{
-											VW.Status = "Leave";
-										}
-										else if(FromLoop.DayOfWeek.ToString()=="Friday")
-										{
-											VW.Status = "Weekend";
-										}
-										else
-										{
+									
 											VW.Status = "Absent";
-										}
+										
 									}
 
 								}
@@ -264,25 +265,9 @@ namespace HomeTextileApp
 									}
 									else
 									{
-										var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == employee.Section.DepartmentId && a.From <= FromLoop && a.To >=FromLoop);
-										var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == employee.Id && a.From >= FromLoop && a.To <= FromLoop);
-
-										if (Holiday != null)
-										{
-											VW.Status = "Holiday";
-										}
-										else if (LeaveDay != null)
-										{
-											VW.Status = "Leave";
-										}
-										else if (FromLoop.DayOfWeek.ToString() == "Friday")
-										{
-											VW.Status = "Weekend";
-										}
-										else
-										{
+										
 											VW.Status = "Absent";
-										}
+										
 									}
 
 								}
@@ -293,25 +278,9 @@ namespace HomeTextileApp
 							else
 							{
 
-								var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == employee.Section.DepartmentId && a.From <= FromLoop && a.To >= FromLoop);
-								var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == employee.Id && a.From >= FromLoop && a.To <= FromLoop);
-
-								if (Holiday != null)
-								{
-									VW.Status = "Holiday";
-								}
-								else if (LeaveDay != null)
-								{
-									VW.Status = "Leave";
-								}
-								else if (FromLoop.DayOfWeek.ToString() == "Friday")
-								{
-									VW.Status = "Weekend";
-								}
-								else
-								{
+								
 									VW.Status = "Absent";
-								}
+								
 
 							}
 						}

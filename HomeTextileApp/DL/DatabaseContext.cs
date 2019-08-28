@@ -15,6 +15,8 @@ namespace HomeTextileApp.DL
 		}
 		public virtual DbSet<HTAdmins> HTAdmins { get; set; }
 		public virtual DbSet<Bonus> Bonus { get; set; }
+		public virtual DbSet<ShadowEmployee> ShadowEmployees { get; set; }
+		public virtual DbSet<ShadowSalaryGrade> ShadowSalaryGrades { get; set; }
 
 
 		public virtual DbSet<Emp_CheckInOut> Emp_CheckInOuts { get; set; }

@@ -55,7 +55,7 @@ namespace HomeTextileApp
 
 					emCO.CHECKTIME = NewDate;
 					emCO.UserId = emp.Emp_Id;
-
+					//emCO.UpdatedBy = LoginInfo.UserName;
 
 
 
@@ -64,9 +64,9 @@ namespace HomeTextileApp
 					if (empCheckInOut != null)
 					{
 						emCO = (Emp_CheckInOut)empCheckInOut;
-
+						
 					}
-					//emCO.UpdatedBy =USER;
+					
 					emp_CheckInOuts.Add(emCO);
 					NewDate = NewDate.AddDays(1);
 				} while (date.Month == NewDate.Month);
@@ -96,11 +96,11 @@ namespace HomeTextileApp
 					//In Time Calculation
 
 					DateTime emp = emp_CheckInOuts.Min(a => a.CHECKTIME);
-					emp_CheckInOutDataGridView.Rows[i].Cells[8].Value = emp;
+					emp_CheckInOutDataGridView.Rows[i].Cells[8].Value = emp.TimeOfDay;
 
 					//Out Time Calculation
 					DateTime emp2 = emp_CheckInOuts.Max(a => a.CHECKTIME);
-					emp_CheckInOutDataGridView.Rows[i].Cells[9].Value = emp2;
+					emp_CheckInOutDataGridView.Rows[i].Cells[9].Value = emp2.TimeOfDay;
 
 				}
 			}
@@ -119,6 +119,7 @@ namespace HomeTextileApp
 			{
 				if(E.IsManual==true)
 				{
+					E.UpdatedBy = LoginInfo.UserName;
 					db.Emp_CheckInOuts.Add(E);
 					db.SaveChanges();
 				}

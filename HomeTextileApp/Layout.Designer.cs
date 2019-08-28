@@ -30,6 +30,10 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Layout));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.adminButton = new System.Windows.Forms.Button();
+			this.button13 = new System.Windows.Forms.Button();
+			this.button17 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.button5 = new System.Windows.Forms.Button();
@@ -42,7 +46,6 @@
 			this.sidePanel = new System.Windows.Forms.Panel();
 			this.button4 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
 			this.homeButton = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
@@ -67,18 +70,18 @@
 			this.button15 = new System.Windows.Forms.Button();
 			this.button16 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
-			this.button17 = new System.Windows.Forms.Button();
-			this.button13 = new System.Windows.Forms.Button();
 			this.attendancePanel = new System.Windows.Forms.Panel();
+			this.button24 = new System.Windows.Forms.Button();
+			this.button25 = new System.Windows.Forms.Button();
 			this.button18 = new System.Windows.Forms.Button();
 			this.button19 = new System.Windows.Forms.Button();
 			this.button20 = new System.Windows.Forms.Button();
 			this.reportPanel = new System.Windows.Forms.Panel();
+			this.button26 = new System.Windows.Forms.Button();
 			this.button21 = new System.Windows.Forms.Button();
 			this.button22 = new System.Windows.Forms.Button();
 			this.button23 = new System.Windows.Forms.Button();
-			this.button24 = new System.Windows.Forms.Button();
-			this.button25 = new System.Windows.Forms.Button();
+			this.button27 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -96,6 +99,8 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+			this.panel1.Controls.Add(this.button27);
+			this.panel1.Controls.Add(this.adminButton);
 			this.panel1.Controls.Add(this.button13);
 			this.panel1.Controls.Add(this.button17);
 			this.panel1.Controls.Add(this.button2);
@@ -117,6 +122,68 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(200, 726);
 			this.panel1.TabIndex = 0;
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+			// 
+			// adminButton
+			// 
+			this.adminButton.FlatAppearance.BorderSize = 0;
+			this.adminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.adminButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.adminButton.ForeColor = System.Drawing.Color.White;
+			this.adminButton.Image = ((System.Drawing.Image)(resources.GetObject("adminButton.Image")));
+			this.adminButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.adminButton.Location = new System.Drawing.Point(20, 519);
+			this.adminButton.Name = "adminButton";
+			this.adminButton.Size = new System.Drawing.Size(151, 52);
+			this.adminButton.TabIndex = 19;
+			this.adminButton.Text = "    Admin";
+			this.adminButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.adminButton.UseVisualStyleBackColor = true;
+			this.adminButton.Click += new System.EventHandler(this.button27_Click);
+			// 
+			// button13
+			// 
+			this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
+			this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.button13.FlatAppearance.BorderSize = 0;
+			this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button13.Location = new System.Drawing.Point(171, 470);
+			this.button13.Name = "button13";
+			this.button13.Size = new System.Drawing.Size(30, 23);
+			this.button13.TabIndex = 18;
+			this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button13.UseVisualStyleBackColor = true;
+			this.button13.Click += new System.EventHandler(this.button13_Click);
+			// 
+			// button17
+			// 
+			this.button17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button17.BackgroundImage")));
+			this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.button17.FlatAppearance.BorderSize = 0;
+			this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button17.Location = new System.Drawing.Point(178, 407);
+			this.button17.Name = "button17";
+			this.button17.Size = new System.Drawing.Size(19, 14);
+			this.button17.TabIndex = 17;
+			this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button17.UseVisualStyleBackColor = true;
+			this.button17.Click += new System.EventHandler(this.button17_Click);
+			// 
+			// button2
+			// 
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.ForeColor = System.Drawing.Color.White;
+			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+			this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button2.Location = new System.Drawing.Point(18, 384);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(171, 52);
+			this.button2.TabIndex = 2;
+			this.button2.Text = "   Attendance";
+			this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
@@ -262,22 +329,6 @@
 			this.button3.Text = "    Report";
 			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button3.UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.Color.White;
-			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button2.Location = new System.Drawing.Point(18, 384);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(171, 52);
-			this.button2.TabIndex = 2;
-			this.button2.Text = "   Attendance";
-			this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// homeButton
 			// 
@@ -623,34 +674,6 @@
 			this.label4.TabIndex = 16;
 			this.label4.Text = "Employee Payroll Management System";
 			// 
-			// button17
-			// 
-			this.button17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button17.BackgroundImage")));
-			this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.button17.FlatAppearance.BorderSize = 0;
-			this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button17.Location = new System.Drawing.Point(178, 407);
-			this.button17.Name = "button17";
-			this.button17.Size = new System.Drawing.Size(19, 14);
-			this.button17.TabIndex = 17;
-			this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button17.UseVisualStyleBackColor = true;
-			this.button17.Click += new System.EventHandler(this.button17_Click);
-			// 
-			// button13
-			// 
-			this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
-			this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.button13.FlatAppearance.BorderSize = 0;
-			this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button13.Location = new System.Drawing.Point(171, 470);
-			this.button13.Name = "button13";
-			this.button13.Size = new System.Drawing.Size(30, 23);
-			this.button13.TabIndex = 18;
-			this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button13.UseVisualStyleBackColor = true;
-			this.button13.Click += new System.EventHandler(this.button13_Click);
-			// 
 			// attendancePanel
 			// 
 			this.attendancePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
@@ -664,6 +687,40 @@
 			this.attendancePanel.Size = new System.Drawing.Size(224, 226);
 			this.attendancePanel.TabIndex = 17;
 			this.attendancePanel.Visible = false;
+			// 
+			// button24
+			// 
+			this.button24.FlatAppearance.BorderSize = 0;
+			this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button24.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button24.ForeColor = System.Drawing.Color.White;
+			this.button24.Image = ((System.Drawing.Image)(resources.GetObject("button24.Image")));
+			this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button24.Location = new System.Drawing.Point(10, 159);
+			this.button24.Name = "button24";
+			this.button24.Size = new System.Drawing.Size(210, 41);
+			this.button24.TabIndex = 9;
+			this.button24.Text = "   Manual Attendance";
+			this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button24.UseVisualStyleBackColor = true;
+			this.button24.Click += new System.EventHandler(this.button24_Click);
+			// 
+			// button25
+			// 
+			this.button25.FlatAppearance.BorderSize = 0;
+			this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button25.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button25.ForeColor = System.Drawing.Color.White;
+			this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
+			this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button25.Location = new System.Drawing.Point(9, 111);
+			this.button25.Name = "button25";
+			this.button25.Size = new System.Drawing.Size(211, 51);
+			this.button25.TabIndex = 10;
+			this.button25.Text = "   Duty Roster         (Date_Range)";
+			this.button25.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button25.UseVisualStyleBackColor = true;
+			this.button25.Click += new System.EventHandler(this.button25_Click);
 			// 
 			// button18
 			// 
@@ -719,14 +776,32 @@
 			// reportPanel
 			// 
 			this.reportPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+			this.reportPanel.Controls.Add(this.button26);
 			this.reportPanel.Controls.Add(this.button21);
 			this.reportPanel.Controls.Add(this.button22);
 			this.reportPanel.Controls.Add(this.button23);
 			this.reportPanel.Location = new System.Drawing.Point(199, 476);
 			this.reportPanel.Name = "reportPanel";
-			this.reportPanel.Size = new System.Drawing.Size(224, 196);
+			this.reportPanel.Size = new System.Drawing.Size(224, 213);
 			this.reportPanel.TabIndex = 18;
 			this.reportPanel.Visible = false;
+			// 
+			// button26
+			// 
+			this.button26.FlatAppearance.BorderSize = 0;
+			this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button26.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button26.ForeColor = System.Drawing.Color.White;
+			this.button26.Image = ((System.Drawing.Image)(resources.GetObject("button26.Image")));
+			this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button26.Location = new System.Drawing.Point(9, 149);
+			this.button26.Name = "button26";
+			this.button26.Size = new System.Drawing.Size(186, 55);
+			this.button26.TabIndex = 9;
+			this.button26.Text = "   Salary";
+			this.button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button26.UseVisualStyleBackColor = true;
+			this.button26.Click += new System.EventHandler(this.button26_Click);
 			// 
 			// button21
 			// 
@@ -736,13 +811,14 @@
 			this.button21.ForeColor = System.Drawing.Color.White;
 			this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
 			this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button21.Location = new System.Drawing.Point(10, 93);
+			this.button21.Location = new System.Drawing.Point(9, 115);
 			this.button21.Name = "button21";
-			this.button21.Size = new System.Drawing.Size(192, 41);
+			this.button21.Size = new System.Drawing.Size(214, 41);
 			this.button21.TabIndex = 8;
-			this.button21.Text = "   Leave Setting";
+			this.button21.Text = "   Attendance History";
 			this.button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button21.UseVisualStyleBackColor = true;
+			this.button21.Click += new System.EventHandler(this.button21_Click);
 			// 
 			// button22
 			// 
@@ -752,13 +828,14 @@
 			this.button22.ForeColor = System.Drawing.Color.White;
 			this.button22.Image = ((System.Drawing.Image)(resources.GetObject("button22.Image")));
 			this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button22.Location = new System.Drawing.Point(9, 59);
+			this.button22.Location = new System.Drawing.Point(7, 59);
 			this.button22.Name = "button22";
-			this.button22.Size = new System.Drawing.Size(192, 41);
+			this.button22.Size = new System.Drawing.Size(218, 55);
 			this.button22.TabIndex = 7;
-			this.button22.Text = "   Leave";
+			this.button22.Text = "   Attendance      Section_Wise";
 			this.button22.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button22.UseVisualStyleBackColor = true;
+			this.button22.Click += new System.EventHandler(this.button22_Click);
 			// 
 			// button23
 			// 
@@ -768,47 +845,31 @@
 			this.button23.ForeColor = System.Drawing.Color.White;
 			this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
 			this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button23.Location = new System.Drawing.Point(10, 12);
+			this.button23.Location = new System.Drawing.Point(6, 12);
 			this.button23.Name = "button23";
-			this.button23.Size = new System.Drawing.Size(186, 55);
+			this.button23.Size = new System.Drawing.Size(229, 55);
 			this.button23.TabIndex = 6;
-			this.button23.Text = "   Holiday";
+			this.button23.Text = "   Individual Attendance";
 			this.button23.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button23.UseVisualStyleBackColor = true;
+			this.button23.Click += new System.EventHandler(this.button23_Click);
 			// 
-			// button24
+			// button27
 			// 
-			this.button24.FlatAppearance.BorderSize = 0;
-			this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button24.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button24.ForeColor = System.Drawing.Color.White;
-			this.button24.Image = ((System.Drawing.Image)(resources.GetObject("button24.Image")));
-			this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button24.Location = new System.Drawing.Point(10, 159);
-			this.button24.Name = "button24";
-			this.button24.Size = new System.Drawing.Size(210, 41);
-			this.button24.TabIndex = 9;
-			this.button24.Text = "   Manual Attendance";
-			this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button24.UseVisualStyleBackColor = true;
-			this.button24.Click += new System.EventHandler(this.button24_Click);
-			// 
-			// button25
-			// 
-			this.button25.FlatAppearance.BorderSize = 0;
-			this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button25.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button25.ForeColor = System.Drawing.Color.White;
-			this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
-			this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button25.Location = new System.Drawing.Point(9, 111);
-			this.button25.Name = "button25";
-			this.button25.Size = new System.Drawing.Size(211, 51);
-			this.button25.TabIndex = 10;
-			this.button25.Text = "   Duty Roster         (Date_Range)";
-			this.button25.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button25.UseVisualStyleBackColor = true;
-			this.button25.Click += new System.EventHandler(this.button25_Click);
+			this.button27.FlatAppearance.BorderSize = 0;
+			this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button27.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button27.ForeColor = System.Drawing.Color.White;
+			this.button27.Image = ((System.Drawing.Image)(resources.GetObject("button27.Image")));
+			this.button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button27.Location = new System.Drawing.Point(20, 585);
+			this.button27.Name = "button27";
+			this.button27.Size = new System.Drawing.Size(151, 60);
+			this.button27.TabIndex = 20;
+			this.button27.Text = "    Logout";
+			this.button27.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button27.UseVisualStyleBackColor = true;
+			this.button27.Click += new System.EventHandler(this.button27_Click_1);
 			// 
 			// Layout
 			// 
@@ -816,6 +877,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.ClientSize = new System.Drawing.Size(1025, 726);
+			this.Controls.Add(this.reportPanel);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel4);
@@ -823,7 +885,6 @@
 			this.Controls.Add(this.settingsSubPanel);
 			this.Controls.Add(this.LAHPanel);
 			this.Controls.Add(this.empSubPanel2);
-			this.Controls.Add(this.reportPanel);
 			this.Controls.Add(this.attendancePanel);
 			this.Controls.Add(this.panel6);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -902,5 +963,8 @@
 		private System.Windows.Forms.Button button23;
 		private System.Windows.Forms.Button button24;
 		private System.Windows.Forms.Button button25;
+		private System.Windows.Forms.Button button26;
+		private System.Windows.Forms.Button adminButton;
+		private System.Windows.Forms.Button button27;
 	}
 }

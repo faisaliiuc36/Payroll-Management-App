@@ -36,8 +36,8 @@ namespace HomeTextileApp
 		{
 
 			int id = Convert.ToInt32(comboBox4.SelectedValue);
-			DateTime From = Convert.ToDateTime(dateTimePicker1.Text);
-			DateTime To = Convert.ToDateTime(dateTimePicker2.Text);
+			DateTime From = dateTimePicker1.Value;
+			DateTime To = dateTimePicker2.Value;
 
 
 			List<ViewAttendanceHistory> viewAttendanceHistories = new List<ViewAttendanceHistory>();
@@ -53,7 +53,7 @@ namespace HomeTextileApp
 					viewAttendanceHistory.EmpFullName = emp.EmpFullName;
 					var salarySetting = db.SalarySettings.FirstOrDefault();
 
-					DateTime NewDate = new DateTime(From.Year, From.Month, 1); ;
+					DateTime NewDate = new DateTime(From.Year, From.Month, From.Day); ;
 					do
 					{
 
@@ -72,11 +72,26 @@ namespace HomeTextileApp
 						//Manual Check
 						List<Emp_CheckInOut> Emp_CheckInOutManual = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.IsManual == true && a.UserId == emp.Emp_Id).ToList();
 						List<Emp_CheckInOut> Emp_CheckInOutAbsent = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.IsAbsent == true && a.UserId == emp.Emp_Id).ToList();
+						var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == emp.Section.DepartmentId && a.From <= NewDate && a.To >= NewDate);
+						var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From >= NewDate && a.To <= NewDate);
 						if (Emp_CheckInOutManual.Count > 0)
 						{
 							viewAttendanceHistory.Manuel = viewAttendanceHistory.Manuel + 1;
 							viewAttendanceHistory.Present = viewAttendanceHistory.Present + 1;
 						}
+						else if (NewDate.DayOfWeek.ToString() == "Friday")
+						{
+							viewAttendanceHistory.Weekend = viewAttendanceHistory.Weekend + 1;
+						}
+						else if (Holiday != null)
+						{
+							viewAttendanceHistory.Holiday = viewAttendanceHistory.Holiday + 1;
+						}
+						else if (LeaveDay != null)
+						{
+							viewAttendanceHistory.Leave = viewAttendanceHistory.Leave + 1;
+						}
+						
 						else if (Emp_CheckInOutAbsent.Count > 0)
 						{
 							viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
@@ -167,27 +182,10 @@ namespace HomeTextileApp
 											}
 											else
 											{
-												var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == emp.Section.DepartmentId && a.From <= NewDate && a.To >= NewDate);
-												var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From >= NewDate && a.To <= NewDate);
-
-
-												if (Holiday != null)
-												{
-													viewAttendanceHistory.Holiday = viewAttendanceHistory.Holiday + 1;
-												}
-												else if (LeaveDay != null)
-												{
-													viewAttendanceHistory.Leave = viewAttendanceHistory.Leave + 1;
-												}
-												else if (NewDate.DayOfWeek.ToString() == "Friday")
-												{
-													viewAttendanceHistory.Weekend = viewAttendanceHistory.Weekend + 1;
-												}
-												else
-												{
+												
 													viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-												}
+												
 											}
 
 										}
@@ -241,27 +239,10 @@ namespace HomeTextileApp
 											}
 											else
 											{
-												var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == emp.Section.DepartmentId && a.From <= NewDate && a.To >= NewDate);
-												var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From >= NewDate && a.To <= NewDate);
-
-
-												if (Holiday != null)
-												{
-													viewAttendanceHistory.Holiday = viewAttendanceHistory.Holiday + 1;
-												}
-												else if (NewDate.DayOfWeek.ToString() == "Friday")
-												{
-													viewAttendanceHistory.Weekend = viewAttendanceHistory.Weekend + 1;
-												}
-												else if (LeaveDay != null)
-												{
-													viewAttendanceHistory.Leave = viewAttendanceHistory.Leave + 1;
-												}
-												else
-												{
+												
 													viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-												}
+												
 											}
 
 										}
@@ -272,26 +253,10 @@ namespace HomeTextileApp
 									else
 									{
 
-										var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == emp.Section.DepartmentId && a.From <= NewDate && a.To >= NewDate);
-										var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From >= NewDate && a.To <= NewDate);
-
-										if (Holiday != null)
-										{
-											viewAttendanceHistory.Holiday = viewAttendanceHistory.Holiday + 1;
-										}
-										else if (LeaveDay != null)
-										{
-											viewAttendanceHistory.Leave = viewAttendanceHistory.Leave + 1;
-										}
-										else if (NewDate.DayOfWeek.ToString() == "Friday")
-										{
-											viewAttendanceHistory.Weekend = viewAttendanceHistory.Weekend + 1;
-										}
-										else
-										{
+										
 											viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-										}
+										
 									}
 
 								}
@@ -305,25 +270,10 @@ namespace HomeTextileApp
 							}
 							else
 							{
-								var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == emp.Section.DepartmentId && a.From <= NewDate && a.To >= NewDate);
-								var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From >= NewDate && a.To <= NewDate);
-								if (Holiday != null)
-								{
-									viewAttendanceHistory.Holiday = viewAttendanceHistory.Holiday + 1;
-								}
-								else if (LeaveDay != null)
-								{
-									viewAttendanceHistory.Leave = viewAttendanceHistory.Leave + 1;
-								}
-								else if (NewDate.DayOfWeek.ToString() == "Friday")
-								{
-									viewAttendanceHistory.Weekend = viewAttendanceHistory.Weekend + 1;
-								}
-								else
-								{
+								
 									viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-								}
+								
 
 							}
 						}
@@ -344,7 +294,7 @@ namespace HomeTextileApp
 			}
 
 
-
+			viewAttendanceHistoryDataGridView.DataSource = null;
 			viewAttendanceHistoryDataGridView.DataSource = viewAttendanceHistories;
 
 		}

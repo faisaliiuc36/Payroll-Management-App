@@ -17,6 +17,7 @@ namespace HomeTextileApp
 	public partial class EmployeeUpdate : Form
 	{
 		private DatabaseContext db = new DatabaseContext();
+		private DatabaseContext db2 = new DatabaseContext();
 		public EmployeeUpdate()
 		{
 			InitializeComponent();
@@ -1036,6 +1037,11 @@ namespace HomeTextileApp
 
 
 
+			Employee empShadow = db2.Employees.Find(employee.Id);
+			ShadowEmployee shadowEmployee = new ShadowEmployee();
+			shadowEmployee.Assign(empShadow);
+			db.ShadowEmployees.Add(shadowEmployee);
+			db.SaveChanges();
 
 
 			db.Entry(employee).State = EntityState.Modified;

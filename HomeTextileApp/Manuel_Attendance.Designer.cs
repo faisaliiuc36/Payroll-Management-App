@@ -31,14 +31,14 @@
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.Label emp_IdLabel;
 			System.Windows.Forms.Label cHECKTIMELabel;
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.emp_IdTextBox = new System.Windows.Forms.TextBox();
-			this.cHECKTIMEDateTimePicker = new System.Windows.Forms.DateTimePicker();
-			this.button1 = new System.Windows.Forms.Button();
-			this.emp_CheckInOutBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.homeTextileDBDataSet2 = new HomeTextileApp.HomeTextileDBDataSet2();
 			this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.homeTextileDBDataSet2 = new HomeTextileApp.HomeTextileDBDataSet2();
+			this.cHECKTIMEDateTimePicker = new System.Windows.Forms.DateTimePicker();
+			this.emp_CheckInOutBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.button1 = new System.Windows.Forms.Button();
 			this.employeesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.EmployeesTableAdapter();
 			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager();
 			this.emp_CheckInOutTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.Emp_CheckInOutTableAdapter();
@@ -53,16 +53,16 @@
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.InTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.OutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			emp_IdLabel = new System.Windows.Forms.Label();
 			cHECKTIMELabel = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.emp_CheckInOutBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.emp_CheckInOutBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emp_CheckInOutDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.empCheckInOutBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -76,14 +76,6 @@
 			emp_IdLabel.TabIndex = 1;
 			emp_IdLabel.Text = "Emp Id:";
 			// 
-			// emp_IdTextBox
-			// 
-			this.emp_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Emp_Id", true));
-			this.emp_IdTextBox.Location = new System.Drawing.Point(138, 22);
-			this.emp_IdTextBox.Name = "emp_IdTextBox";
-			this.emp_IdTextBox.Size = new System.Drawing.Size(118, 20);
-			this.emp_IdTextBox.TabIndex = 2;
-			// 
 			// cHECKTIMELabel
 			// 
 			cHECKTIMELabel.AutoSize = true;
@@ -93,6 +85,24 @@
 			cHECKTIMELabel.TabIndex = 2;
 			cHECKTIMELabel.Text = "Date";
 			// 
+			// emp_IdTextBox
+			// 
+			this.emp_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "Emp_Id", true));
+			this.emp_IdTextBox.Location = new System.Drawing.Point(138, 22);
+			this.emp_IdTextBox.Name = "emp_IdTextBox";
+			this.emp_IdTextBox.Size = new System.Drawing.Size(118, 20);
+			this.emp_IdTextBox.TabIndex = 2;
+			// 
+			// employeesBindingSource
+			// 
+			this.employeesBindingSource.DataMember = "Employees";
+			this.employeesBindingSource.DataSource = this.homeTextileDBDataSet2;
+			// 
+			// homeTextileDBDataSet2
+			// 
+			this.homeTextileDBDataSet2.DataSetName = "HomeTextileDBDataSet2";
+			this.homeTextileDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// cHECKTIMEDateTimePicker
 			// 
 			this.cHECKTIMEDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.emp_CheckInOutBindingSource, "CHECKTIME", true));
@@ -100,6 +110,11 @@
 			this.cHECKTIMEDateTimePicker.Name = "cHECKTIMEDateTimePicker";
 			this.cHECKTIMEDateTimePicker.Size = new System.Drawing.Size(200, 20);
 			this.cHECKTIMEDateTimePicker.TabIndex = 3;
+			// 
+			// emp_CheckInOutBindingSource
+			// 
+			this.emp_CheckInOutBindingSource.DataMember = "Emp_CheckInOut";
+			this.emp_CheckInOutBindingSource.DataSource = this.homeTextileDBDataSet2;
 			// 
 			// button1
 			// 
@@ -112,21 +127,6 @@
 			this.button1.Text = "Search";
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// emp_CheckInOutBindingSource
-			// 
-			this.emp_CheckInOutBindingSource.DataMember = "Emp_CheckInOut";
-			this.emp_CheckInOutBindingSource.DataSource = this.homeTextileDBDataSet2;
-			// 
-			// homeTextileDBDataSet2
-			// 
-			this.homeTextileDBDataSet2.DataSetName = "HomeTextileDBDataSet2";
-			this.homeTextileDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// employeesBindingSource
-			// 
-			this.employeesBindingSource.DataMember = "Employees";
-			this.employeesBindingSource.DataSource = this.homeTextileDBDataSet2;
 			// 
 			// employeesTableAdapter
 			// 
@@ -179,15 +179,15 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn6,
             this.InTime,
             this.OutTime});
 			this.emp_CheckInOutDataGridView.DataSource = this.emp_CheckInOutBindingSource;
-			this.emp_CheckInOutDataGridView.Location = new System.Drawing.Point(53, 78);
+			this.emp_CheckInOutDataGridView.Location = new System.Drawing.Point(25, 78);
 			this.emp_CheckInOutDataGridView.Name = "emp_CheckInOutDataGridView";
-			this.emp_CheckInOutDataGridView.Size = new System.Drawing.Size(630, 423);
+			this.emp_CheckInOutDataGridView.Size = new System.Drawing.Size(734, 423);
 			this.emp_CheckInOutDataGridView.TabIndex = 5;
 			// 
 			// label1
@@ -202,7 +202,7 @@
 			// button2
 			// 
 			this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.button2.Location = new System.Drawing.Point(490, 507);
+			this.button2.Location = new System.Drawing.Point(629, 507);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(130, 34);
 			this.button2.TabIndex = 7;
@@ -217,11 +217,15 @@
 			// 
 			// dataGridViewTextBoxColumn7
 			// 
+			dataGridViewCellStyle2.Format = "T";
+			dataGridViewCellStyle2.NullValue = null;
+			this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dataGridViewTextBoxColumn7.HeaderText = "In Time";
 			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
 			// 
 			// dataGridViewTextBoxColumn8
 			// 
+			this.dataGridViewTextBoxColumn8.DataPropertyName = "UpdatedBy";
 			this.dataGridViewTextBoxColumn8.HeaderText = "OutTime";
 			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
 			// 
@@ -259,13 +263,6 @@
 			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
 			this.dataGridViewTextBoxColumn5.Visible = false;
 			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.DataPropertyName = "UpdatedBy";
-			this.dataGridViewTextBoxColumn6.HeaderText = "UpdatedBy";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-			this.dataGridViewTextBoxColumn6.Visible = false;
-			// 
 			// dataGridViewCheckBoxColumn2
 			// 
 			this.dataGridViewCheckBoxColumn2.DataPropertyName = "IsAbsent";
@@ -278,20 +275,23 @@
 			this.dataGridViewCheckBoxColumn1.HeaderText = "IsManual";
 			this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
 			// 
-			// InTime
+			// dataGridViewTextBoxColumn6
 			// 
+			this.dataGridViewTextBoxColumn6.DataPropertyName = "UpdatedBy";
 			dataGridViewCellStyle1.Format = "T";
 			dataGridViewCellStyle1.NullValue = null;
-			this.InTime.DefaultCellStyle = dataGridViewCellStyle1;
+			this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle1;
+			this.dataGridViewTextBoxColumn6.HeaderText = "UpdatedBy";
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			// 
+			// InTime
+			// 
 			this.InTime.HeaderText = "In Time";
 			this.InTime.Name = "InTime";
 			// 
 			// OutTime
 			// 
-			dataGridViewCellStyle2.Format = "T";
-			dataGridViewCellStyle2.NullValue = null;
-			this.OutTime.DefaultCellStyle = dataGridViewCellStyle2;
-			this.OutTime.HeaderText = "OutTime";
+			this.OutTime.HeaderText = "Out Time";
 			this.OutTime.Name = "OutTime";
 			// 
 			// Manuel_Attendance
@@ -310,9 +310,9 @@
 			this.Name = "Manuel_Attendance";
 			this.Text = "Manuel_Attendance";
 			this.Load += new System.EventHandler(this.Manuel_Attendance_Load);
-			((System.ComponentModel.ISupportInitialize)(this.emp_CheckInOutBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.emp_CheckInOutBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emp_CheckInOutDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.empCheckInOutBindingSource)).EndInit();
 			this.ResumeLayout(false);
@@ -335,17 +335,17 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.BindingSource empCheckInOutBindingSource;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn InTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn OutTime;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
 	}
 }

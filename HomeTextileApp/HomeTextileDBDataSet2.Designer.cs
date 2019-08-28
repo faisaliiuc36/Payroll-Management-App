@@ -5453,29 +5453,13 @@ namespace HomeTextileApp {
             
             private global::System.Data.DataColumn columnAttendance;
             
-            private global::System.Data.DataColumn columnSearchAttendance;
-            
-            private global::System.Data.DataColumn columnManual;
-            
-            private global::System.Data.DataColumn columnSetting;
-            
-            private global::System.Data.DataColumn columnLeave;
-            
-            private global::System.Data.DataColumn columnImport;
-            
             private global::System.Data.DataColumn columnEmployee;
             
-            private global::System.Data.DataColumn columnLoan;
+            private global::System.Data.DataColumn columnSettings;
             
-            private global::System.Data.DataColumn columnHoliday;
+            private global::System.Data.DataColumn columnLeaveAndHoliday;
             
-            private global::System.Data.DataColumn columnDutyRoster;
-            
-            private global::System.Data.DataColumn columnShift;
-            
-            private global::System.Data.DataColumn columnSalary;
-            
-            private global::System.Data.DataColumn columnBonus;
+            private global::System.Data.DataColumn columnReport;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -5552,46 +5536,6 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SearchAttendanceColumn {
-                get {
-                    return this.columnSearchAttendance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ManualColumn {
-                get {
-                    return this.columnManual;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SettingColumn {
-                get {
-                    return this.columnSetting;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn LeaveColumn {
-                get {
-                    return this.columnLeave;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ImportColumn {
-                get {
-                    return this.columnImport;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn EmployeeColumn {
                 get {
                     return this.columnEmployee;
@@ -5600,49 +5544,25 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn LoanColumn {
+            public global::System.Data.DataColumn SettingsColumn {
                 get {
-                    return this.columnLoan;
+                    return this.columnSettings;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn HolidayColumn {
+            public global::System.Data.DataColumn LeaveAndHolidayColumn {
                 get {
-                    return this.columnHoliday;
+                    return this.columnLeaveAndHoliday;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DutyRosterColumn {
+            public global::System.Data.DataColumn ReportColumn {
                 get {
-                    return this.columnDutyRoster;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ShiftColumn {
-                get {
-                    return this.columnShift;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SalaryColumn {
-                get {
-                    return this.columnSalary;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BonusColumn {
-                get {
-                    return this.columnBonus;
+                    return this.columnReport;
                 }
             }
             
@@ -5683,23 +5603,7 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HTAdminsRow AddHTAdminsRow(
-                        string UserName, 
-                        string Password, 
-                        bool Admin, 
-                        bool Attendance, 
-                        bool SearchAttendance, 
-                        bool Manual, 
-                        bool Setting, 
-                        bool Leave, 
-                        bool Import, 
-                        bool Employee, 
-                        bool Loan, 
-                        bool Holiday, 
-                        bool DutyRoster, 
-                        bool Shift, 
-                        bool Salary, 
-                        bool Bonus) {
+            public HTAdminsRow AddHTAdminsRow(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool Settings, bool LeaveAndHoliday, bool Report) {
                 HTAdminsRow rowHTAdminsRow = ((HTAdminsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5707,18 +5611,10 @@ namespace HomeTextileApp {
                         Password,
                         Admin,
                         Attendance,
-                        SearchAttendance,
-                        Manual,
-                        Setting,
-                        Leave,
-                        Import,
                         Employee,
-                        Loan,
-                        Holiday,
-                        DutyRoster,
-                        Shift,
-                        Salary,
-                        Bonus};
+                        Settings,
+                        LeaveAndHoliday,
+                        Report};
                 rowHTAdminsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHTAdminsRow);
                 return rowHTAdminsRow;
@@ -5753,18 +5649,10 @@ namespace HomeTextileApp {
                 this.columnPassword = base.Columns["Password"];
                 this.columnAdmin = base.Columns["Admin"];
                 this.columnAttendance = base.Columns["Attendance"];
-                this.columnSearchAttendance = base.Columns["SearchAttendance"];
-                this.columnManual = base.Columns["Manual"];
-                this.columnSetting = base.Columns["Setting"];
-                this.columnLeave = base.Columns["Leave"];
-                this.columnImport = base.Columns["Import"];
                 this.columnEmployee = base.Columns["Employee"];
-                this.columnLoan = base.Columns["Loan"];
-                this.columnHoliday = base.Columns["Holiday"];
-                this.columnDutyRoster = base.Columns["DutyRoster"];
-                this.columnShift = base.Columns["Shift"];
-                this.columnSalary = base.Columns["Salary"];
-                this.columnBonus = base.Columns["Bonus"];
+                this.columnSettings = base.Columns["Settings"];
+                this.columnLeaveAndHoliday = base.Columns["LeaveAndHoliday"];
+                this.columnReport = base.Columns["Report"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5780,30 +5668,14 @@ namespace HomeTextileApp {
                 base.Columns.Add(this.columnAdmin);
                 this.columnAttendance = new global::System.Data.DataColumn("Attendance", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAttendance);
-                this.columnSearchAttendance = new global::System.Data.DataColumn("SearchAttendance", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSearchAttendance);
-                this.columnManual = new global::System.Data.DataColumn("Manual", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnManual);
-                this.columnSetting = new global::System.Data.DataColumn("Setting", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSetting);
-                this.columnLeave = new global::System.Data.DataColumn("Leave", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLeave);
-                this.columnImport = new global::System.Data.DataColumn("Import", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImport);
                 this.columnEmployee = new global::System.Data.DataColumn("Employee", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployee);
-                this.columnLoan = new global::System.Data.DataColumn("Loan", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLoan);
-                this.columnHoliday = new global::System.Data.DataColumn("Holiday", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHoliday);
-                this.columnDutyRoster = new global::System.Data.DataColumn("DutyRoster", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDutyRoster);
-                this.columnShift = new global::System.Data.DataColumn("Shift", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShift);
-                this.columnSalary = new global::System.Data.DataColumn("Salary", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalary);
-                this.columnBonus = new global::System.Data.DataColumn("Bonus", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBonus);
+                this.columnSettings = new global::System.Data.DataColumn("Settings", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSettings);
+                this.columnLeaveAndHoliday = new global::System.Data.DataColumn("LeaveAndHoliday", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveAndHoliday);
+                this.columnReport = new global::System.Data.DataColumn("Report", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReport);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -5816,18 +5688,10 @@ namespace HomeTextileApp {
                 this.columnPassword.MaxLength = 2147483647;
                 this.columnAdmin.AllowDBNull = false;
                 this.columnAttendance.AllowDBNull = false;
-                this.columnSearchAttendance.AllowDBNull = false;
-                this.columnManual.AllowDBNull = false;
-                this.columnSetting.AllowDBNull = false;
-                this.columnLeave.AllowDBNull = false;
-                this.columnImport.AllowDBNull = false;
                 this.columnEmployee.AllowDBNull = false;
-                this.columnLoan.AllowDBNull = false;
-                this.columnHoliday.AllowDBNull = false;
-                this.columnDutyRoster.AllowDBNull = false;
-                this.columnShift.AllowDBNull = false;
-                this.columnSalary.AllowDBNull = false;
-                this.columnBonus.AllowDBNull = false;
+                this.columnSettings.AllowDBNull = false;
+                this.columnLeaveAndHoliday.AllowDBNull = false;
+                this.columnReport.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12687,61 +12551,6 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SearchAttendance {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.SearchAttendanceColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.SearchAttendanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Manual {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.ManualColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.ManualColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Setting {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.SettingColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.SettingColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Leave {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.LeaveColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.LeaveColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Import {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.ImportColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.ImportColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Employee {
                 get {
                     return ((bool)(this[this.tableHTAdmins.EmployeeColumn]));
@@ -12753,67 +12562,34 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Loan {
+            public bool Settings {
                 get {
-                    return ((bool)(this[this.tableHTAdmins.LoanColumn]));
+                    return ((bool)(this[this.tableHTAdmins.SettingsColumn]));
                 }
                 set {
-                    this[this.tableHTAdmins.LoanColumn] = value;
+                    this[this.tableHTAdmins.SettingsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Holiday {
+            public bool LeaveAndHoliday {
                 get {
-                    return ((bool)(this[this.tableHTAdmins.HolidayColumn]));
+                    return ((bool)(this[this.tableHTAdmins.LeaveAndHolidayColumn]));
                 }
                 set {
-                    this[this.tableHTAdmins.HolidayColumn] = value;
+                    this[this.tableHTAdmins.LeaveAndHolidayColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool DutyRoster {
+            public bool Report {
                 get {
-                    return ((bool)(this[this.tableHTAdmins.DutyRosterColumn]));
+                    return ((bool)(this[this.tableHTAdmins.ReportColumn]));
                 }
                 set {
-                    this[this.tableHTAdmins.DutyRosterColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Shift {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.ShiftColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.ShiftColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Salary {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.SalaryColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.SalaryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Bonus {
-                get {
-                    return ((bool)(this[this.tableHTAdmins.BonusColumn]));
-                }
-                set {
-                    this[this.tableHTAdmins.BonusColumn] = value;
+                    this[this.tableHTAdmins.ReportColumn] = value;
                 }
             }
             
@@ -20112,95 +19888,55 @@ SELECT Id, DepartmentId, [From], HolidayReasons, [To] FROM Holidays WHERE (Id = 
             tableMapping.ColumnMappings.Add("Password", "Password");
             tableMapping.ColumnMappings.Add("Admin", "Admin");
             tableMapping.ColumnMappings.Add("Attendance", "Attendance");
-            tableMapping.ColumnMappings.Add("SearchAttendance", "SearchAttendance");
-            tableMapping.ColumnMappings.Add("Manual", "Manual");
-            tableMapping.ColumnMappings.Add("Setting", "Setting");
-            tableMapping.ColumnMappings.Add("Leave", "Leave");
-            tableMapping.ColumnMappings.Add("Import", "Import");
             tableMapping.ColumnMappings.Add("Employee", "Employee");
-            tableMapping.ColumnMappings.Add("Loan", "Loan");
-            tableMapping.ColumnMappings.Add("Holiday", "Holiday");
-            tableMapping.ColumnMappings.Add("DutyRoster", "DutyRoster");
-            tableMapping.ColumnMappings.Add("Shift", "Shift");
-            tableMapping.ColumnMappings.Add("Salary", "Salary");
-            tableMapping.ColumnMappings.Add("Bonus", "Bonus");
+            tableMapping.ColumnMappings.Add("Settings", "Settings");
+            tableMapping.ColumnMappings.Add("LeaveAndHoliday", "LeaveAndHoliday");
+            tableMapping.ColumnMappings.Add("Report", "Report");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[HTAdmins] WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([SearchAttendance] = @Original_SearchAttendance) AND ([Manual] = @Original_Manual) AND ([Setting] = @Original_Setting) AND ([Leave] = @Original_Leave) AND ([Import] = @Original_Import) AND ([Employee] = @Original_Employee) AND ([Loan] = @Original_Loan) AND ([Holiday] = @Original_Holiday) AND ([DutyRoster] = @Original_DutyRoster) AND ([Shift] = @Original_Shift) AND ([Salary] = @Original_Salary) AND ([Bonus] = @Original_Bonus))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [HTAdmins] WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([Employee] = @Original_Employee) AND ([LeaveAndHoliday] = @Original_LeaveAndHoliday) AND ([Report] = @Original_Report) AND ([Settings] = @Original_Settings))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Admin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SearchAttendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SearchAttendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Manual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Setting", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Setting", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Leave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Leave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Import", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Import", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Employee", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Loan", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Holiday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Holiday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DutyRoster", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DutyRoster", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shift", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Salary", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Bonus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bonus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[HTAdmins] ([UserName], [Password], [Admin], [Attendance], [SearchAttendance], [Manual], [Setting], [Leave], [Import], [Employee], [Loan], [Holiday], [DutyRoster], [Shift], [Salary], [Bonus]) VALUES (@UserName, @Password, @Admin, @Attendance, @SearchAttendance, @Manual, @Setting, @Leave, @Import, @Employee, @Loan, @Holiday, @DutyRoster, @Shift, @Salary, @Bonus);
-SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Setting, Leave, Import, Employee, Loan, Holiday, DutyRoster, Shift, Salary, Bonus FROM HTAdmins WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [HTAdmins] ([UserName], [Password], [Admin], [Attendance], [Employee], [LeaveAndHoliday], [Report], [Settings]) VALUES (@UserName, @Password, @Admin, @Attendance, @Employee, @LeaveAndHoliday, @Report, @Settings);
+SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings FROM HTAdmins WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Admin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchAttendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SearchAttendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Setting", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Setting", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Leave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Leave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Import", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Import", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Holiday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Holiday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DutyRoster", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DutyRoster", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shift", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Salary", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bonus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bonus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[HTAdmins] SET [UserName] = @UserName, [Password] = @Password, [Admin] = @Admin, [Attendance] = @Attendance, [SearchAttendance] = @SearchAttendance, [Manual] = @Manual, [Setting] = @Setting, [Leave] = @Leave, [Import] = @Import, [Employee] = @Employee, [Loan] = @Loan, [Holiday] = @Holiday, [DutyRoster] = @DutyRoster, [Shift] = @Shift, [Salary] = @Salary, [Bonus] = @Bonus WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([SearchAttendance] = @Original_SearchAttendance) AND ([Manual] = @Original_Manual) AND ([Setting] = @Original_Setting) AND ([Leave] = @Original_Leave) AND ([Import] = @Original_Import) AND ([Employee] = @Original_Employee) AND ([Loan] = @Original_Loan) AND ([Holiday] = @Original_Holiday) AND ([DutyRoster] = @Original_DutyRoster) AND ([Shift] = @Original_Shift) AND ([Salary] = @Original_Salary) AND ([Bonus] = @Original_Bonus));
-SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Setting, Leave, Import, Employee, Loan, Holiday, DutyRoster, Shift, Salary, Bonus FROM HTAdmins WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [HTAdmins] SET [UserName] = @UserName, [Password] = @Password, [Admin] = @Admin, [Attendance] = @Attendance, [Employee] = @Employee, [LeaveAndHoliday] = @LeaveAndHoliday, [Report] = @Report, [Settings] = @Settings WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([Employee] = @Original_Employee) AND ([LeaveAndHoliday] = @Original_LeaveAndHoliday) AND ([Report] = @Original_Report) AND ([Settings] = @Original_Settings));
+SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings FROM HTAdmins WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Admin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchAttendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SearchAttendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Setting", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Setting", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Leave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Leave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Import", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Import", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Holiday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Holiday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DutyRoster", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DutyRoster", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shift", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Salary", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bonus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bonus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Admin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SearchAttendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SearchAttendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Manual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Setting", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Setting", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Leave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Leave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Import", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Import", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Employee", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Loan", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Holiday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Holiday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DutyRoster", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DutyRoster", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shift", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Salary", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Bonus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bonus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -20217,9 +19953,8 @@ SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Sett
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Setti" +
-                "ng, Leave, Import, Employee, Loan, Holiday, DutyRoster, Shift, Salary, Bonus FRO" +
-                "M dbo.HTAdmins";
+            this._commandCollection[0].CommandText = "SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Repo" +
+                "rt, Settings FROM HTAdmins";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20280,22 +20015,14 @@ SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Sett
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, bool Original_Admin, bool Original_Attendance, bool Original_SearchAttendance, bool Original_Manual, bool Original_Setting, bool Original_Leave, bool Original_Import, bool Original_Employee, bool Original_Loan, bool Original_Holiday, bool Original_DutyRoster, bool Original_Shift, bool Original_Salary, bool Original_Bonus) {
+        public virtual int Delete(int Original_Id, bool Original_Admin, bool Original_Attendance, bool Original_Employee, bool Original_LeaveAndHoliday, bool Original_Report, bool Original_Settings) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((bool)(Original_Admin));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_Attendance));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_SearchAttendance));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_Manual));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((bool)(Original_Setting));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_Leave));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((bool)(Original_Import));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_Employee));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((bool)(Original_Loan));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((bool)(Original_Holiday));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_DutyRoster));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_Shift));
-            this.Adapter.DeleteCommand.Parameters[13].Value = ((bool)(Original_Salary));
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((bool)(Original_Bonus));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_Employee));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_LeaveAndHoliday));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((bool)(Original_Report));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_Settings));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20316,23 +20043,7 @@ SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Sett
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string UserName, 
-                    string Password, 
-                    bool Admin, 
-                    bool Attendance, 
-                    bool SearchAttendance, 
-                    bool Manual, 
-                    bool Setting, 
-                    bool Leave, 
-                    bool Import, 
-                    bool Employee, 
-                    bool Loan, 
-                    bool Holiday, 
-                    bool DutyRoster, 
-                    bool Shift, 
-                    bool Salary, 
-                    bool Bonus) {
+        public virtual int Insert(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool LeaveAndHoliday, bool Report, bool Settings) {
             if ((UserName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -20347,18 +20058,10 @@ SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Sett
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(Admin));
             this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(Attendance));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(SearchAttendance));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(Manual));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Setting));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((bool)(Leave));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(Import));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(Employee));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(Loan));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((bool)(Holiday));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((bool)(DutyRoster));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(Shift));
-            this.Adapter.InsertCommand.Parameters[14].Value = ((bool)(Salary));
-            this.Adapter.InsertCommand.Parameters[15].Value = ((bool)(Bonus));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(Employee));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(LeaveAndHoliday));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Report));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((bool)(Settings));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20384,33 +20087,17 @@ SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Sett
                     string Password, 
                     bool Admin, 
                     bool Attendance, 
-                    bool SearchAttendance, 
-                    bool Manual, 
-                    bool Setting, 
-                    bool Leave, 
-                    bool Import, 
                     bool Employee, 
-                    bool Loan, 
-                    bool Holiday, 
-                    bool DutyRoster, 
-                    bool Shift, 
-                    bool Salary, 
-                    bool Bonus, 
+                    bool LeaveAndHoliday, 
+                    bool Report, 
+                    bool Settings, 
                     int Original_Id, 
                     bool Original_Admin, 
                     bool Original_Attendance, 
-                    bool Original_SearchAttendance, 
-                    bool Original_Manual, 
-                    bool Original_Setting, 
-                    bool Original_Leave, 
-                    bool Original_Import, 
                     bool Original_Employee, 
-                    bool Original_Loan, 
-                    bool Original_Holiday, 
-                    bool Original_DutyRoster, 
-                    bool Original_Shift, 
-                    bool Original_Salary, 
-                    bool Original_Bonus, 
+                    bool Original_LeaveAndHoliday, 
+                    bool Original_Report, 
+                    bool Original_Settings, 
                     int Id) {
             if ((UserName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -20426,34 +20113,18 @@ SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Sett
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(Admin));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(Attendance));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(SearchAttendance));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(Manual));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Setting));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Leave));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Import));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Employee));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Loan));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Holiday));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(DutyRoster));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Shift));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Salary));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(Bonus));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Original_Admin));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(Original_Attendance));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(Original_SearchAttendance));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(Original_Manual));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((bool)(Original_Setting));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(Original_Leave));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((bool)(Original_Import));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(Original_Employee));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((bool)(Original_Loan));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((bool)(Original_Holiday));
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((bool)(Original_DutyRoster));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((bool)(Original_Shift));
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((bool)(Original_Salary));
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((bool)(Original_Bonus));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(Employee));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(LeaveAndHoliday));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Report));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Settings));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_Admin));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_Attendance));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_Employee));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_LeaveAndHoliday));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_Report));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Settings));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20474,39 +20145,8 @@ SELECT Id, UserName, Password, Admin, Attendance, SearchAttendance, Manual, Sett
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string UserName, 
-                    string Password, 
-                    bool Admin, 
-                    bool Attendance, 
-                    bool SearchAttendance, 
-                    bool Manual, 
-                    bool Setting, 
-                    bool Leave, 
-                    bool Import, 
-                    bool Employee, 
-                    bool Loan, 
-                    bool Holiday, 
-                    bool DutyRoster, 
-                    bool Shift, 
-                    bool Salary, 
-                    bool Bonus, 
-                    int Original_Id, 
-                    bool Original_Admin, 
-                    bool Original_Attendance, 
-                    bool Original_SearchAttendance, 
-                    bool Original_Manual, 
-                    bool Original_Setting, 
-                    bool Original_Leave, 
-                    bool Original_Import, 
-                    bool Original_Employee, 
-                    bool Original_Loan, 
-                    bool Original_Holiday, 
-                    bool Original_DutyRoster, 
-                    bool Original_Shift, 
-                    bool Original_Salary, 
-                    bool Original_Bonus) {
-            return this.Update(UserName, Password, Admin, Attendance, SearchAttendance, Manual, Setting, Leave, Import, Employee, Loan, Holiday, DutyRoster, Shift, Salary, Bonus, Original_Id, Original_Admin, Original_Attendance, Original_SearchAttendance, Original_Manual, Original_Setting, Original_Leave, Original_Import, Original_Employee, Original_Loan, Original_Holiday, Original_DutyRoster, Original_Shift, Original_Salary, Original_Bonus, Original_Id);
+        public virtual int Update(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool LeaveAndHoliday, bool Report, bool Settings, int Original_Id, bool Original_Admin, bool Original_Attendance, bool Original_Employee, bool Original_LeaveAndHoliday, bool Original_Report, bool Original_Settings) {
+            return this.Update(UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings, Original_Id, Original_Admin, Original_Attendance, Original_Employee, Original_LeaveAndHoliday, Original_Report, Original_Settings, Original_Id);
         }
     }
     

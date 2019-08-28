@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAdmin.Designer.cs">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,11 +71,23 @@
     <Compile Include="AddHolidays.Designer.cs">
       <DependentUpon>AddHolidays.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="AttendanceHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AttendanceHistory.Designer.cs">
       <DependentUpon>AttendanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceSectionWise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceSectionWise.Designer.cs">
+      <DependentUpon>AttendanceSectionWise.cs</DependentUpon>
     </Compile>
     <Compile Include="CalenderColumn.cs" />
     <Compile Include="DGVPrinter.cs" />
@@ -99,6 +117,8 @@
     <Compile Include="DL\SalaryGrade.cs" />
     <Compile Include="DL\SalarySetting.cs" />
     <Compile Include="DL\Section.cs" />
+    <Compile Include="DL\ShadowEmployee.cs" />
+    <Compile Include="DL\ShadowSalaryGrade.cs" />
     <Compile Include="DL\Shift.cs" />
     <Compile Include="DL\ShowEmployeeShift.cs" />
     <Compile Include="DL\Unit.cs" />
@@ -208,6 +228,13 @@
     <Compile Include="Loan.Designer.cs">
       <DependentUpon>Loan.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginInfo.cs" />
+    <Compile Include="Login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manuel_Attendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +313,14 @@
     <Compile Include="Migrations\201908210508376_Holiday_U.Designer.cs">
       <DependentUpon>201908210508376_Holiday_U.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908270918236_Admin1.cs" />
+    <Compile Include="Migrations\201908270918236_Admin1.Designer.cs">
+      <DependentUpon>201908270918236_Admin1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908280709510_ShadowTable.cs" />
+    <Compile Include="Migrations\201908280709510_ShadowTable.Designer.cs">
+      <DependentUpon>201908280709510_ShadowTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OtherSettings.cs">
       <SubType>Form</SubType>
@@ -306,6 +341,12 @@
     </Compile>
     <Compile Include="SalaryAndBonus.Designer.cs">
       <DependentUpon>SalaryAndBonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Salary_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salary_Report.Designer.cs">
+      <DependentUpon>Salary_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Section.cs">
       <SubType>Form</SubType>
@@ -331,14 +372,23 @@
     <Compile Include="WorkerDesignation.Designer.cs">
       <DependentUpon>WorkerDesignation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAdmin.resx">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddHolidays.resx">
       <DependentUpon>AddHolidays.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AttendanceHistory.resx">
       <DependentUpon>AttendanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceSectionWise.resx">
+      <DependentUpon>AttendanceSectionWise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Duty_Roster.resx">
       <DependentUpon>Duty_Roster.cs</DependentUpon>
@@ -375,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Loan.resx">
       <DependentUpon>Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_Form.resx">
+      <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manuel_Attendance.resx">
       <DependentUpon>Manuel_Attendance.cs</DependentUpon>
@@ -433,6 +486,12 @@
     <EmbeddedResource Include="Migrations\201908210508376_Holiday_U.resx">
       <DependentUpon>201908210508376_Holiday_U.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908270918236_Admin1.resx">
+      <DependentUpon>201908270918236_Admin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908280709510_ShadowTable.resx">
+      <DependentUpon>201908280709510_ShadowTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,12 +503,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RangeWiseDutyRoster.resx">
       <DependentUpon>RangeWiseDutyRoster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryAndBonus.resx">
       <DependentUpon>SalaryAndBonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salary_Report.resx">
+      <DependentUpon>Salary_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Section.resx">
       <DependentUpon>Section.cs</DependentUpon>
@@ -556,6 +619,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Design Image\download.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
