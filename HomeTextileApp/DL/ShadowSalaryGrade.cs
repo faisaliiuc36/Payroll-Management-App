@@ -39,5 +39,35 @@ namespace HomeTextileApp.DL
 		public float Total { get; set; }
 
 		public DateTime EffectiveFrom { get; set; }
+
+		internal void AssignFromOriginal(SalaryGrade salaryGrade)
+		{
+			this.RoWId = salaryGrade.Id;
+
+			this.HTAdminId = LoginInfo.UserID;
+
+			this.GradeId = salaryGrade.GradeId;
+
+			this.GradeName = salaryGrade.GradeName;
+
+			this.Description = salaryGrade.Description;
+
+			this.Salary = salaryGrade.Salary;
+
+			this.YearlyIncrement = salaryGrade.YearlyIncrement;
+
+			this.HouseRent = salaryGrade.HouseRent;
+
+			this.MedicalAllowance = salaryGrade.MedicalAllowance;
+
+			this.TransportAllowance = salaryGrade.TransportAllowance;
+
+			this.FoodAllowance = salaryGrade.FoodAllowance;
+
+			this.Total = salaryGrade.Total;
+
+			this.EffectiveFrom = salaryGrade.EffectiveFrom;
+			this.UpdatedAt = salaryGrade.EffectiveFrom;
+		}
 	}
 }

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.4\lib\netstandard2.0\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -58,6 +61,12 @@
     </Compile>
     <Compile Include="AddAdmin.Designer.cs">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAdvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAdvance.Designer.cs">
+      <DependentUpon>AddAdvance.cs</DependentUpon>
     </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
@@ -91,6 +100,7 @@
     </Compile>
     <Compile Include="CalenderColumn.cs" />
     <Compile Include="DGVPrinter.cs" />
+    <Compile Include="DL\Advance.cs" />
     <Compile Include="DL\BloodGroup.cs" />
     <Compile Include="DL\Bonus.cs" />
     <Compile Include="DL\Company.cs" />
@@ -321,6 +331,18 @@
     <Compile Include="Migrations\201908280709510_ShadowTable.Designer.cs">
       <DependentUpon>201908280709510_ShadowTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909020441532_Advance+Bonus.cs" />
+    <Compile Include="Migrations\201909020441532_Advance+Bonus.Designer.cs">
+      <DependentUpon>201909020441532_Advance+Bonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909020449122_ShadowEmpl.cs" />
+    <Compile Include="Migrations\201909020449122_ShadowEmpl.Designer.cs">
+      <DependentUpon>201909020449122_ShadowEmpl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909020452020_U-Advance.cs" />
+    <Compile Include="Migrations\201909020452020_U-Advance.Designer.cs">
+      <DependentUpon>201909020452020_U-Advance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OtherSettings.cs">
       <SubType>Form</SubType>
@@ -374,6 +396,9 @@
     </Compile>
     <EmbeddedResource Include="AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAdvance.resx">
+      <DependentUpon>AddAdvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
@@ -492,6 +517,15 @@
     <EmbeddedResource Include="Migrations\201908280709510_ShadowTable.resx">
       <DependentUpon>201908280709510_ShadowTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909020441532_Advance+Bonus.resx">
+      <DependentUpon>201909020441532_Advance+Bonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909020449122_ShadowEmpl.resx">
+      <DependentUpon>201909020449122_ShadowEmpl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909020452020_U-Advance.resx">
+      <DependentUpon>201909020452020_U-Advance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -571,6 +605,7 @@
       <DependentUpon>HomeTextileDBDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.Advance.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.BloodGroup.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Bonus.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Company.datasource" />
@@ -586,6 +621,7 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.HTAdmins.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.InActiveHistory.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Leave.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.LeaveHistory.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.LeaveStore.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.LeaveType.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Loan.datasource" />
@@ -596,6 +632,8 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.SalaryGrade.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.SalarySetting.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Section.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ShadowEmployee.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ShadowSalaryGrade.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Shift.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ShowEmployeeShift.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Unit.datasource" />

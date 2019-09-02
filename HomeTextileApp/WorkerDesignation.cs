@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeTextileApp.DL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace HomeTextileApp
 {
 	public partial class WorkerDesignation : Form
 	{
+		private DatabaseContext db = new DatabaseContext();
 		public WorkerDesignation()
 		{
 			InitializeComponent();
@@ -51,12 +53,32 @@ namespace HomeTextileApp
 				this.salaryGradesBindingSource.EndEdit();
 				this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet1);
 
+				Save_Shadow_SalaryGrade();
+
+				MessageBox.Show("Save Sucessfully!");
+
 			}
 			catch (Exception Ex)
 			{
 				MessageBox.Show(Ex.ToString());
 			}
 
+		}
+
+		private void Save_Shadow_SalaryGrade()
+		{
+			List<SalaryGrade> salaryGrades = db.SalaryGrades.ToList();
+			if (salaryGrades.Count > 0)
+			{
+				foreach (SalaryGrade salaryGrade in salaryGrades)
+				{
+					ShadowSalaryGrade shadowSalaryGrade = new ShadowSalaryGrade();
+					shadowSalaryGrade.AssignFromOriginal(salaryGrade);
+
+					db.ShadowSalaryGrades.Add(shadowSalaryGrade);
+					db.SaveChanges();
+				}
+			}
 		}
 
 		private void button6_Click(object sender, EventArgs e)

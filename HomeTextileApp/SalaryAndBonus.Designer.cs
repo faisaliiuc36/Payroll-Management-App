@@ -44,28 +44,29 @@
 			this.salariesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.salariesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.SalariesTableAdapter();
 			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager();
-			this.bonusTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.BonusTableAdapter();
 			this.employeesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.EmployeesTableAdapter();
-			this.bonusBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
-			this.bonusDataGridView = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.button4 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.bonusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bonusTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.BonusTableAdapter();
+			this.bonusDataGridView = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Salary.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.salariesDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.salariesBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bonusBindingSource)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bonusBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bonusDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -77,7 +78,7 @@
 			this.Salary.Controls.Add(this.salariesDataGridView);
 			this.Salary.Location = new System.Drawing.Point(12, 24);
 			this.Salary.Name = "Salary";
-			this.Salary.Size = new System.Drawing.Size(395, 504);
+			this.Salary.Size = new System.Drawing.Size(401, 504);
 			this.Salary.TabIndex = 0;
 			this.Salary.TabStop = false;
 			this.Salary.Text = "Salary";
@@ -193,9 +194,9 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
-			this.tableAdapterManager.BonusTableAdapter = this.bonusTableAdapter;
 			this.tableAdapterManager.CompaniesTableAdapter = null;
 			this.tableAdapterManager.DepartmentsTableAdapter = null;
 			this.tableAdapterManager.DesignationsTableAdapter = null;
@@ -218,33 +219,26 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			this.tableAdapterManager.WorkerDesignationsTableAdapter = null;
 			// 
-			// bonusTableAdapter
-			// 
-			this.bonusTableAdapter.ClearBeforeFill = true;
-			// 
 			// employeesTableAdapter
 			// 
 			this.employeesTableAdapter.ClearBeforeFill = true;
 			// 
-			// bonusBindingSource
-			// 
-			this.bonusBindingSource.DataMember = "Bonus";
-			this.bonusBindingSource.DataSource = this.homeTextileDBDataSet2;
-			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.bonusDataGridView);
 			this.groupBox1.Controls.Add(this.button6);
 			this.groupBox1.Controls.Add(this.button3);
-			this.groupBox1.Controls.Add(this.bonusDataGridView);
 			this.groupBox1.Controls.Add(this.button4);
 			this.groupBox1.Location = new System.Drawing.Point(413, 31);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(388, 497);
+			this.groupBox1.Size = new System.Drawing.Size(396, 517);
 			this.groupBox1.TabIndex = 3;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Bonus";
@@ -272,40 +266,6 @@
 			this.button3.Text = "Delete";
 			this.button3.UseVisualStyleBackColor = false;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
-			// bonusDataGridView
-			// 
-			this.bonusDataGridView.AutoGenerateColumns = false;
-			this.bonusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.bonusDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-			this.bonusDataGridView.DataSource = this.bonusBindingSource;
-			this.bonusDataGridView.Location = new System.Drawing.Point(6, 15);
-			this.bonusDataGridView.Name = "bonusDataGridView";
-			this.bonusDataGridView.Size = new System.Drawing.Size(370, 444);
-			this.bonusDataGridView.TabIndex = 2;
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn6.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-			this.dataGridViewTextBoxColumn6.ReadOnly = true;
-			this.dataGridViewTextBoxColumn6.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn7
-			// 
-			this.dataGridViewTextBoxColumn7.DataPropertyName = "Date";
-			this.dataGridViewTextBoxColumn7.HeaderText = "Date";
-			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-			// 
-			// dataGridViewTextBoxColumn8
-			// 
-			this.dataGridViewTextBoxColumn8.DataPropertyName = "Amount";
-			this.dataGridViewTextBoxColumn8.HeaderText = "Amount(%)";
-			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
 			// 
 			// button4
 			// 
@@ -356,11 +316,61 @@
 			this.dateTimePicker1.TabIndex = 7;
 			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
 			// 
+			// bonusBindingSource
+			// 
+			this.bonusBindingSource.DataMember = "Bonus";
+			this.bonusBindingSource.DataSource = this.homeTextileDBDataSet2;
+			// 
+			// bonusTableAdapter
+			// 
+			this.bonusTableAdapter.ClearBeforeFill = true;
+			// 
+			// bonusDataGridView
+			// 
+			this.bonusDataGridView.AutoGenerateColumns = false;
+			this.bonusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.bonusDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+			this.bonusDataGridView.DataSource = this.bonusBindingSource;
+			this.bonusDataGridView.Location = new System.Drawing.Point(6, 12);
+			this.bonusDataGridView.Name = "bonusDataGridView";
+			this.bonusDataGridView.Size = new System.Drawing.Size(378, 447);
+			this.bonusDataGridView.TabIndex = 5;
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn6.HeaderText = "Id";
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			this.dataGridViewTextBoxColumn6.ReadOnly = true;
+			this.dataGridViewTextBoxColumn6.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn7
+			// 
+			this.dataGridViewTextBoxColumn7.DataPropertyName = "Date";
+			this.dataGridViewTextBoxColumn7.HeaderText = "Date";
+			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+			// 
+			// dataGridViewTextBoxColumn8
+			// 
+			this.dataGridViewTextBoxColumn8.DataPropertyName = "Amount";
+			this.dataGridViewTextBoxColumn8.HeaderText = "Amount";
+			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+			// 
+			// dataGridViewTextBoxColumn9
+			// 
+			this.dataGridViewTextBoxColumn9.DataPropertyName = "Reason";
+			this.dataGridViewTextBoxColumn9.HeaderText = "Reason";
+			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+			// 
 			// SalaryAndBonus
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(804, 572);
+			this.ClientSize = new System.Drawing.Size(809, 572);
 			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.textBox1);
@@ -375,8 +385,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.salariesBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bonusBindingSource)).EndInit();
 			this.groupBox1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.bonusBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bonusDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -393,8 +403,6 @@
 		private System.Windows.Forms.DataGridView salariesDataGridView;
 		private HomeTextileDBDataSet2TableAdapters.EmployeesTableAdapter employeesTableAdapter;
 		private System.Windows.Forms.BindingSource employeesBindingSource;
-		private HomeTextileDBDataSet2TableAdapters.BonusTableAdapter bonusTableAdapter;
-		private System.Windows.Forms.BindingSource bonusBindingSource;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
@@ -409,11 +417,14 @@
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.BindingSource bonusBindingSource;
+		private HomeTextileDBDataSet2TableAdapters.BonusTableAdapter bonusTableAdapter;
 		private System.Windows.Forms.DataGridView bonusDataGridView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
 	}
 }

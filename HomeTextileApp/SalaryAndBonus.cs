@@ -29,6 +29,8 @@ namespace HomeTextileApp
 
 		private void SalaryAndBonus_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Bonus' table. You can move, or remove it, as needed.
+			this.bonusTableAdapter.Fill(this.homeTextileDBDataSet2.Bonus);
 			LoadAll();
 		}
 

@@ -20,5 +20,9 @@ namespace HomeTextileApp.DL
         [Required(ErrorMessage = "Please Input Bonus")]
         [Display(Name = "Bonus(%)")]
         public int Amount { get; set; }
-    }
+
+		[Required(ErrorMessage = "Please Input Reason")]
+		[Display(Name = "Reason")]
+		public string Reason { get; set; }
+	}
 }

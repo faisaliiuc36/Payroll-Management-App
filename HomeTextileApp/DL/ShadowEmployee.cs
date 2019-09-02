@@ -185,12 +185,7 @@ namespace HomeTextileApp.DL
 		public string ImagePath { get; set; }
 		public string ImageFile { get; set; }
 
-		public virtual List<Duty_Roster> Duty_Rosters { get; set; }
-
-
-		public virtual List<Loan> Loans { get; set; }
-
-		public virtual List<InActiveHistory> InActiveHistories { get; set; }
+		
 
 		public string NameWithId
 		{

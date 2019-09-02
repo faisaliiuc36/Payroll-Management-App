@@ -35,17 +35,17 @@
 			this.salarySettingsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.SalarySettingsTableAdapter();
 			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager();
 			this.salarySettingsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.salarySettingsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
 			this.salarySettingsDataGridView = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +82,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -107,6 +108,8 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = this.salarySettingsTableAdapter;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -142,6 +145,31 @@
 			this.salarySettingsBindingNavigator.TabIndex = 0;
 			this.salarySettingsBindingNavigator.Text = "bindingNavigator1";
 			// 
+			// bindingNavigatorAddNewItem
+			// 
+			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorAddNewItem.Text = "Add new";
+			// 
+			// bindingNavigatorCountItem
+			// 
+			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+			this.bindingNavigatorCountItem.Text = "of {0}";
+			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+			// 
+			// bindingNavigatorDeleteItem
+			// 
+			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorDeleteItem.Text = "Delete";
+			// 
 			// bindingNavigatorMoveFirstItem
 			// 
 			this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -174,16 +202,9 @@
 			this.bindingNavigatorPositionItem.Text = "0";
 			this.bindingNavigatorPositionItem.ToolTipText = "Current position";
 			// 
-			// bindingNavigatorCountItem
-			// 
-			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-			this.bindingNavigatorCountItem.Text = "of {0}";
-			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-			// 
 			// bindingNavigatorSeparator1
 			// 
-			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
 			this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
 			// 
 			// bindingNavigatorMoveNextItem
@@ -206,26 +227,8 @@
 			// 
 			// bindingNavigatorSeparator2
 			// 
-			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
 			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-			// 
-			// bindingNavigatorAddNewItem
-			// 
-			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorAddNewItem.Text = "Add new";
-			// 
-			// bindingNavigatorDeleteItem
-			// 
-			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorDeleteItem.Text = "Delete";
 			// 
 			// salarySettingsBindingNavigatorSaveItem
 			// 
