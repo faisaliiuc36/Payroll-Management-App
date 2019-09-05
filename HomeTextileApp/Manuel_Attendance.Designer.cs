@@ -55,6 +55,7 @@
 			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.OT = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.InTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.OutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,6 +136,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -160,6 +162,8 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -181,6 +185,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewCheckBoxColumn1,
+            this.OT,
             this.dataGridViewTextBoxColumn6,
             this.InTime,
             this.OutTime});
@@ -275,6 +280,12 @@
 			this.dataGridViewCheckBoxColumn1.HeaderText = "IsManual";
 			this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
 			// 
+			// OT
+			// 
+			this.OT.DataPropertyName = "OT";
+			this.OT.HeaderText = "OT(Hour)";
+			this.OT.Name = "OT";
+			// 
 			// dataGridViewTextBoxColumn6
 			// 
 			this.dataGridViewTextBoxColumn6.DataPropertyName = "UpdatedBy";
@@ -308,7 +319,7 @@
 			this.Controls.Add(emp_IdLabel);
 			this.Controls.Add(this.emp_IdTextBox);
 			this.Name = "Manuel_Attendance";
-			this.Text = "Manuel_Attendance";
+			this.Text = "Manual_Attendance";
 			this.Load += new System.EventHandler(this.Manuel_Attendance_Load);
 			((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).EndInit();
@@ -344,6 +355,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn OT;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn InTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn OutTime;

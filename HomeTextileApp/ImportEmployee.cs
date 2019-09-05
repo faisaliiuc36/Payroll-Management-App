@@ -99,16 +99,25 @@ namespace HomeTextileApp
 
 				//MessageBox.Show(this.employeesDataGridView.CurrentRow.Cells[1].Value.ToString());
 				var emp =employeesDataGridView.CurrentRow;
-
 				Employee employee= (Employee)emp.DataBoundItem;
-
-
 				db.Employees.Add(employee);
 				db.SaveChanges();
+
+
+				ShadowEmployee shadowEmployee = new ShadowEmployee();
+				shadowEmployee.Assign(employee);
+				db.Employees.Add(employee);
+				db.SaveChanges();
+
 
 				GetEmployee();
 				
 			}
+		}
+
+		private void employeesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }

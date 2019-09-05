@@ -106,12 +106,12 @@ namespace HomeTextileApp
 							viewSalarySheet.Conv = salary.Amount * (salarySetting.convenience / 100);
 							//Medical
 							viewSalarySheet.Medical = salary.Amount * (salarySetting.Medical / 100);
-							//Bonus
-							var Bonus = db.Bonus.FirstOrDefault(a => a.Date.Month == From.Month && a.Date.Year == From.Year);
-							if (Bonus != null && emp.IsTrainee != true)
-							{
-								viewSalarySheet.Bonus = salary.Amount * (Bonus.Amount / 100);
-							}
+							////Bonus
+							//var Bonus = db.Bonus.FirstOrDefault(a => a.Date.Month == From.Month && a.Date.Year == From.Year);
+							//if (Bonus != null && emp.IsTrainee != true)
+							//{
+							//	viewSalarySheet.Bonus = salary.Amount * (Bonus.Amount / 100);
+							//}
 							//DFood
 							viewSalarySheet.DFood = 0;
 							//DTax
@@ -173,7 +173,7 @@ namespace HomeTextileApp
 								{
 									var duty_Roster = db.Duty_Rosters.FirstOrDefault(a => a.Date == From && a.EmployeeId == emp.Id);
 									// Default Assign
-									if (duty_Roster == null && emp.IsWorker == false)
+									if (duty_Roster == null)
 									{
 										List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == emp.Id).ToList();
 										if (duty_Rosters.Count > 0)

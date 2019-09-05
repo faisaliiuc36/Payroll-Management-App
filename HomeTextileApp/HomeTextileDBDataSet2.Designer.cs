@@ -3641,6 +3641,8 @@ namespace HomeTextileApp {
             
             private global::System.Data.DataColumn columnIsAbsent;
             
+            private global::System.Data.DataColumn columnOT;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Emp_CheckInOutDataTable() {
@@ -3740,6 +3742,14 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn OTColumn {
+                get {
+                    return this.columnOT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3775,7 +3785,7 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Emp_CheckInOutRow AddEmp_CheckInOutRow(int UserId, System.DateTime CHECKTIME, int LOGID, int MACHINEID, bool IsManual, string UpdatedBy, bool IsAbsent) {
+            public Emp_CheckInOutRow AddEmp_CheckInOutRow(int UserId, System.DateTime CHECKTIME, int LOGID, int MACHINEID, bool IsManual, string UpdatedBy, bool IsAbsent, int OT) {
                 Emp_CheckInOutRow rowEmp_CheckInOutRow = ((Emp_CheckInOutRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3785,7 +3795,8 @@ namespace HomeTextileApp {
                         MACHINEID,
                         IsManual,
                         UpdatedBy,
-                        IsAbsent};
+                        IsAbsent,
+                        OT};
                 rowEmp_CheckInOutRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEmp_CheckInOutRow);
                 return rowEmp_CheckInOutRow;
@@ -3823,6 +3834,7 @@ namespace HomeTextileApp {
                 this.columnIsManual = base.Columns["IsManual"];
                 this.columnUpdatedBy = base.Columns["UpdatedBy"];
                 this.columnIsAbsent = base.Columns["IsAbsent"];
+                this.columnOT = base.Columns["OT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3844,6 +3856,8 @@ namespace HomeTextileApp {
                 base.Columns.Add(this.columnUpdatedBy);
                 this.columnIsAbsent = new global::System.Data.DataColumn("IsAbsent", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsAbsent);
+                this.columnOT = new global::System.Data.DataColumn("OT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOT);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -3858,6 +3872,7 @@ namespace HomeTextileApp {
                 this.columnIsManual.AllowDBNull = false;
                 this.columnUpdatedBy.MaxLength = 2147483647;
                 this.columnIsAbsent.AllowDBNull = false;
+                this.columnOT.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13137,6 +13152,17 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int OT {
+                get {
+                    return ((int)(this[this.tableEmp_CheckInOut.OTColumn]));
+                }
+                set {
+                    this[this.tableEmp_CheckInOut.OTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsMACHINEIDNull() {
                 return this.IsNull(this.tableEmp_CheckInOut.MACHINEIDColumn);
             }
@@ -20730,10 +20756,11 @@ SELECT Id, EmployeeId, Date, ShiftId FROM Duty_Roster WHERE (Id = @Id)";
             tableMapping.ColumnMappings.Add("IsManual", "IsManual");
             tableMapping.ColumnMappings.Add("UpdatedBy", "UpdatedBy");
             tableMapping.ColumnMappings.Add("IsAbsent", "IsAbsent");
+            tableMapping.ColumnMappings.Add("OT", "OT");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Emp_CheckInOut] WHERE (([Id] = @Original_Id) AND ([UserId] = @Original_UserId) AND ([CHECKTIME] = @Original_CHECKTIME) AND ([LOGID] = @Original_LOGID) AND ((@IsNull_MACHINEID = 1 AND [MACHINEID] IS NULL) OR ([MACHINEID] = @Original_MACHINEID)) AND ([IsManual] = @Original_IsManual) AND ([IsAbsent] = @Original_IsAbsent))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Emp_CheckInOut] WHERE (([Id] = @Original_Id) AND ([UserId] = @Original_UserId) AND ([CHECKTIME] = @Original_CHECKTIME) AND ([LOGID] = @Original_LOGID) AND ((@IsNull_MACHINEID = 1 AND [MACHINEID] IS NULL) OR ([MACHINEID] = @Original_MACHINEID)) AND ([IsManual] = @Original_IsManual) AND ([IsAbsent] = @Original_IsAbsent) AND ([OT] = @Original_OT))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20743,10 +20770,11 @@ SELECT Id, EmployeeId, Date, ShiftId FROM Duty_Roster WHERE (Id = @Id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MACHINEID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MACHINEID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsManual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsManual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsAbsent", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsAbsent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Emp_CheckInOut] ([UserId], [CHECKTIME], [LOGID], [MACHINEID], [IsManual], [UpdatedBy], [IsAbsent]) VALUES (@UserId, @CHECKTIME, @LOGID, @MACHINEID, @IsManual, @UpdatedBy, @IsAbsent);
-SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FROM Emp_CheckInOut WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Emp_CheckInOut] ([UserId], [CHECKTIME], [LOGID], [MACHINEID], [IsManual], [UpdatedBy], [IsAbsent], [OT]) VALUES (@UserId, @CHECKTIME, @LOGID, @MACHINEID, @IsManual, @UpdatedBy, @IsAbsent, @OT);
+SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent, OT FROM Emp_CheckInOut WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHECKTIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHECKTIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20755,10 +20783,11 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsManual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsManual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UpdatedBy", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UpdatedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsAbsent", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsAbsent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Emp_CheckInOut] SET [UserId] = @UserId, [CHECKTIME] = @CHECKTIME, [LOGID] = @LOGID, [MACHINEID] = @MACHINEID, [IsManual] = @IsManual, [UpdatedBy] = @UpdatedBy, [IsAbsent] = @IsAbsent WHERE (([Id] = @Original_Id) AND ([UserId] = @Original_UserId) AND ([CHECKTIME] = @Original_CHECKTIME) AND ([LOGID] = @Original_LOGID) AND ((@IsNull_MACHINEID = 1 AND [MACHINEID] IS NULL) OR ([MACHINEID] = @Original_MACHINEID)) AND ([IsManual] = @Original_IsManual) AND ([IsAbsent] = @Original_IsAbsent));
-SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FROM Emp_CheckInOut WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Emp_CheckInOut] SET [UserId] = @UserId, [CHECKTIME] = @CHECKTIME, [LOGID] = @LOGID, [MACHINEID] = @MACHINEID, [IsManual] = @IsManual, [UpdatedBy] = @UpdatedBy, [IsAbsent] = @IsAbsent, [OT] = @OT WHERE (([Id] = @Original_Id) AND ([UserId] = @Original_UserId) AND ([CHECKTIME] = @Original_CHECKTIME) AND ([LOGID] = @Original_LOGID) AND ((@IsNull_MACHINEID = 1 AND [MACHINEID] IS NULL) OR ([MACHINEID] = @Original_MACHINEID)) AND ([IsManual] = @Original_IsManual) AND ([IsAbsent] = @Original_IsAbsent) AND ([OT] = @Original_OT));
+SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent, OT FROM Emp_CheckInOut WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHECKTIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHECKTIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20767,6 +20796,7 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsManual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsManual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UpdatedBy", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UpdatedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsAbsent", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsAbsent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CHECKTIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHECKTIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20775,6 +20805,7 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MACHINEID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MACHINEID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsManual", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsManual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsAbsent", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsAbsent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -20791,8 +20822,8 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FRO" +
-                "M Emp_CheckInOut";
+            this._commandCollection[0].CommandText = "SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent, OT" +
+                " FROM Emp_CheckInOut";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20853,7 +20884,7 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_UserId, System.DateTime Original_CHECKTIME, int Original_LOGID, global::System.Nullable<int> Original_MACHINEID, bool Original_IsManual, bool Original_IsAbsent) {
+        public virtual int Delete(int Original_Id, int Original_UserId, System.DateTime Original_CHECKTIME, int Original_LOGID, global::System.Nullable<int> Original_MACHINEID, bool Original_IsManual, bool Original_IsAbsent, int Original_OT) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_UserId));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_CHECKTIME));
@@ -20868,6 +20899,7 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
             }
             this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_IsManual));
             this.Adapter.DeleteCommand.Parameters[7].Value = ((bool)(Original_IsAbsent));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_OT));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20888,7 +20920,7 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int UserId, System.DateTime CHECKTIME, int LOGID, global::System.Nullable<int> MACHINEID, bool IsManual, string UpdatedBy, bool IsAbsent) {
+        public virtual int Insert(int UserId, System.DateTime CHECKTIME, int LOGID, global::System.Nullable<int> MACHINEID, bool IsManual, string UpdatedBy, bool IsAbsent, int OT) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(UserId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(CHECKTIME));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(LOGID));
@@ -20906,6 +20938,7 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(UpdatedBy));
             }
             this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(IsAbsent));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(OT));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20926,7 +20959,24 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int UserId, System.DateTime CHECKTIME, int LOGID, global::System.Nullable<int> MACHINEID, bool IsManual, string UpdatedBy, bool IsAbsent, int Original_Id, int Original_UserId, System.DateTime Original_CHECKTIME, int Original_LOGID, global::System.Nullable<int> Original_MACHINEID, bool Original_IsManual, bool Original_IsAbsent, int Id) {
+        public virtual int Update(
+                    int UserId, 
+                    System.DateTime CHECKTIME, 
+                    int LOGID, 
+                    global::System.Nullable<int> MACHINEID, 
+                    bool IsManual, 
+                    string UpdatedBy, 
+                    bool IsAbsent, 
+                    int OT, 
+                    int Original_Id, 
+                    int Original_UserId, 
+                    System.DateTime Original_CHECKTIME, 
+                    int Original_LOGID, 
+                    global::System.Nullable<int> Original_MACHINEID, 
+                    bool Original_IsManual, 
+                    bool Original_IsAbsent, 
+                    int Original_OT, 
+                    int Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(UserId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(CHECKTIME));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(LOGID));
@@ -20944,21 +20994,23 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(UpdatedBy));
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(IsAbsent));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_UserId));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_CHECKTIME));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_LOGID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(OT));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_UserId));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_CHECKTIME));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_LOGID));
             if ((Original_MACHINEID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_MACHINEID.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_MACHINEID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_IsManual));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_IsAbsent));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_IsManual));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(Original_IsAbsent));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_OT));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20979,8 +21031,24 @@ SELECT Id, UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int UserId, System.DateTime CHECKTIME, int LOGID, global::System.Nullable<int> MACHINEID, bool IsManual, string UpdatedBy, bool IsAbsent, int Original_Id, int Original_UserId, System.DateTime Original_CHECKTIME, int Original_LOGID, global::System.Nullable<int> Original_MACHINEID, bool Original_IsManual, bool Original_IsAbsent) {
-            return this.Update(UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent, Original_Id, Original_UserId, Original_CHECKTIME, Original_LOGID, Original_MACHINEID, Original_IsManual, Original_IsAbsent, Original_Id);
+        public virtual int Update(
+                    int UserId, 
+                    System.DateTime CHECKTIME, 
+                    int LOGID, 
+                    global::System.Nullable<int> MACHINEID, 
+                    bool IsManual, 
+                    string UpdatedBy, 
+                    bool IsAbsent, 
+                    int OT, 
+                    int Original_Id, 
+                    int Original_UserId, 
+                    System.DateTime Original_CHECKTIME, 
+                    int Original_LOGID, 
+                    global::System.Nullable<int> Original_MACHINEID, 
+                    bool Original_IsManual, 
+                    bool Original_IsAbsent, 
+                    int Original_OT) {
+            return this.Update(UserId, CHECKTIME, LOGID, MACHINEID, IsManual, UpdatedBy, IsAbsent, OT, Original_Id, Original_UserId, Original_CHECKTIME, Original_LOGID, Original_MACHINEID, Original_IsManual, Original_IsAbsent, Original_OT, Original_Id);
         }
     }
     

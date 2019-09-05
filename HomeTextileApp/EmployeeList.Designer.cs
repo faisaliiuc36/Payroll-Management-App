@@ -127,7 +127,6 @@
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.comboBox5 = new System.Windows.Forms.ComboBox();
 			this.comboBox6 = new System.Windows.Forms.ComboBox();
-			this.isWorkerCheckBox = new System.Windows.Forms.CheckBox();
 			this.workerDesignationIdComboBox = new System.Windows.Forms.ComboBox();
 			this.genderIdComboBox = new System.Windows.Forms.ComboBox();
 			this.designationIdComboBox = new System.Windows.Forms.ComboBox();
@@ -191,6 +190,7 @@
 			this.employeesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.EmployeesTableAdapter();
 			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.checkBox4 = new System.Windows.Forms.CheckBox();
 			this.inActiveDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.inActiveCheckBox = new System.Windows.Forms.CheckBox();
 			this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -203,7 +203,7 @@
 			this.comboBox8 = new System.Windows.Forms.ComboBox();
 			this.comboBox9 = new System.Windows.Forms.ComboBox();
 			this.comboBox10 = new System.Windows.Forms.ComboBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.isWorkerCheckBox = new System.Windows.Forms.CheckBox();
 			this.comboBox11 = new System.Windows.Forms.ComboBox();
 			this.workerDesignationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox12 = new System.Windows.Forms.ComboBox();
@@ -964,7 +964,7 @@
 			this.groupBox2.Controls.Add(this.comboBox3);
 			this.groupBox2.Controls.Add(this.comboBox2);
 			this.groupBox2.Controls.Add(this.companyComboBox);
-			this.groupBox2.Location = new System.Drawing.Point(3, -4);
+			this.groupBox2.Location = new System.Drawing.Point(6, -4);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(780, 43);
 			this.groupBox2.TabIndex = 2;
@@ -1122,7 +1122,7 @@
 			this.groupBox1.Controls.Add(this.groupBox3);
 			this.groupBox1.Controls.Add(this.employeesDataGridView);
 			this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(3, 42);
+			this.groupBox1.Location = new System.Drawing.Point(1, 45);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(174, 474);
 			this.groupBox1.TabIndex = 3;
@@ -1153,7 +1153,6 @@
 			this.groupBox3.Controls.Add(label6);
 			this.groupBox3.Controls.Add(label7);
 			this.groupBox3.Controls.Add(label8);
-			this.groupBox3.Controls.Add(this.isWorkerCheckBox);
 			this.groupBox3.Controls.Add(this.workerDesignationIdComboBox);
 			this.groupBox3.Controls.Add(this.genderIdComboBox);
 			this.groupBox3.Controls.Add(designationIdLabel);
@@ -1283,16 +1282,6 @@
 			this.comboBox6.Name = "comboBox6";
 			this.comboBox6.Size = new System.Drawing.Size(121, 23);
 			this.comboBox6.TabIndex = 115;
-			// 
-			// isWorkerCheckBox
-			// 
-			this.isWorkerCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.employeesBindingSource, "IsWorker", true));
-			this.isWorkerCheckBox.Location = new System.Drawing.Point(406, 109);
-			this.isWorkerCheckBox.Name = "isWorkerCheckBox";
-			this.isWorkerCheckBox.Size = new System.Drawing.Size(104, 24);
-			this.isWorkerCheckBox.TabIndex = 107;
-			this.isWorkerCheckBox.Text = "checkBox1";
-			this.isWorkerCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// workerDesignationIdComboBox
 			// 
@@ -1821,6 +1810,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -1846,6 +1836,8 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = this.sectionsTableAdapter;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = this.unitsTableAdapter;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -1854,6 +1846,7 @@
 			// groupBox4
 			// 
 			this.groupBox4.AutoSize = true;
+			this.groupBox4.Controls.Add(this.checkBox4);
 			this.groupBox4.Controls.Add(this.inActiveDateTimePicker);
 			this.groupBox4.Controls.Add(label43);
 			this.groupBox4.Controls.Add(label42);
@@ -1868,7 +1861,7 @@
 			this.groupBox4.Controls.Add(label10);
 			this.groupBox4.Controls.Add(label11);
 			this.groupBox4.Controls.Add(label12);
-			this.groupBox4.Controls.Add(this.checkBox1);
+			this.groupBox4.Controls.Add(this.isWorkerCheckBox);
 			this.groupBox4.Controls.Add(this.comboBox11);
 			this.groupBox4.Controls.Add(this.comboBox12);
 			this.groupBox4.Controls.Add(label13);
@@ -1933,6 +1926,17 @@
 			this.groupBox4.TabIndex = 7;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Employee Form";
+			// 
+			// checkBox4
+			// 
+			this.checkBox4.AutoSize = true;
+			this.checkBox4.Location = new System.Drawing.Point(531, 31);
+			this.checkBox4.Name = "checkBox4";
+			this.checkBox4.Size = new System.Drawing.Size(83, 19);
+			this.checkBox4.TabIndex = 8;
+			this.checkBox4.Text = "checkBox4";
+			this.checkBox4.UseVisualStyleBackColor = true;
+			this.checkBox4.Visible = false;
 			// 
 			// inActiveDateTimePicker
 			// 
@@ -1999,7 +2003,7 @@
 			// pictureBox2
 			// 
 			this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.pictureBox2.Location = new System.Drawing.Point(406, 14);
+			this.pictureBox2.Location = new System.Drawing.Point(400, 10);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(119, 90);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2042,15 +2046,15 @@
 			this.comboBox10.TabIndex = 115;
 			this.comboBox10.ValueMember = "Id";
 			// 
-			// checkBox1
+			// isWorkerCheckBox
 			// 
-			this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.employeesBindingSource, "IsWorker", true));
-			this.checkBox1.Location = new System.Drawing.Point(406, 102);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(104, 24);
-			this.checkBox1.TabIndex = 107;
-			this.checkBox1.Text = "checkBox1";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.isWorkerCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.employeesBindingSource, "IsWorker", true));
+			this.isWorkerCheckBox.Location = new System.Drawing.Point(406, 102);
+			this.isWorkerCheckBox.Name = "isWorkerCheckBox";
+			this.isWorkerCheckBox.Size = new System.Drawing.Size(104, 24);
+			this.isWorkerCheckBox.TabIndex = 107;
+			this.isWorkerCheckBox.Text = "checkBox1";
+			this.isWorkerCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// comboBox11
 			// 
@@ -2484,7 +2488,7 @@
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.ComboBox comboBox5;
 		private System.Windows.Forms.ComboBox comboBox6;
-		private System.Windows.Forms.CheckBox isWorkerCheckBox;
+		//private System.Windows.Forms.CheckBox isWorkerCheckBox;
 		private System.Windows.Forms.ComboBox workerDesignationIdComboBox;
 		private System.Windows.Forms.ComboBox genderIdComboBox;
 		private System.Windows.Forms.ComboBox designationIdComboBox;
@@ -2519,7 +2523,7 @@
 		private System.Windows.Forms.ComboBox comboBox8;
 		private System.Windows.Forms.ComboBox comboBox9;
 		private System.Windows.Forms.ComboBox comboBox10;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.CheckBox isWorkerCheckBox;
 		private System.Windows.Forms.ComboBox comboBox11;
 		private System.Windows.Forms.ComboBox comboBox12;
 		private System.Windows.Forms.ComboBox comboBox13;
@@ -2568,5 +2572,6 @@
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.DateTimePicker inActiveDateTimePicker;
 		private System.Windows.Forms.CheckBox inActiveCheckBox;
+		private System.Windows.Forms.CheckBox checkBox4;
 	}
 }

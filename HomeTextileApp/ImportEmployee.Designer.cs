@@ -35,43 +35,6 @@
 			this.employeesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.EmployeesTableAdapter();
 			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager();
 			this.employeesDataGridView = new System.Windows.Forms.DataGridView();
-			this.employeesDataGridView1 = new System.Windows.Forms.DataGridView();
-			this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-			this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,7 +50,6 @@
 			this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,6 +68,42 @@
 			this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.deleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.employeesDataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
@@ -129,6 +127,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -154,6 +153,8 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -179,7 +180,6 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewCheckBoxColumn2,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17,
@@ -204,269 +204,7 @@
 			this.employeesDataGridView.Size = new System.Drawing.Size(545, 220);
 			this.employeesDataGridView.TabIndex = 1;
 			this.employeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesDataGridView_CellClick);
-			// 
-			// employeesDataGridView1
-			// 
-			this.employeesDataGridView1.AutoGenerateColumns = false;
-			this.employeesDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.employeesDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36,
-            this.dataGridViewTextBoxColumn37,
-            this.dataGridViewTextBoxColumn38,
-            this.dataGridViewTextBoxColumn39,
-            this.dataGridViewTextBoxColumn40,
-            this.dataGridViewTextBoxColumn41,
-            this.dataGridViewTextBoxColumn42,
-            this.dataGridViewTextBoxColumn43,
-            this.dataGridViewTextBoxColumn44,
-            this.dataGridViewCheckBoxColumn4,
-            this.dataGridViewCheckBoxColumn5,
-            this.dataGridViewTextBoxColumn45,
-            this.dataGridViewTextBoxColumn46,
-            this.dataGridViewTextBoxColumn47,
-            this.dataGridViewTextBoxColumn48,
-            this.dataGridViewTextBoxColumn49,
-            this.dataGridViewTextBoxColumn50,
-            this.dataGridViewCheckBoxColumn6,
-            this.dataGridViewTextBoxColumn51,
-            this.dataGridViewTextBoxColumn52,
-            this.dataGridViewTextBoxColumn53,
-            this.dataGridViewTextBoxColumn54,
-            this.dataGridViewTextBoxColumn55,
-            this.dataGridViewTextBoxColumn56,
-            this.dataGridViewTextBoxColumn57,
-            this.dataGridViewTextBoxColumn58,
-            this.dataGridViewTextBoxColumn59,
-            this.dataGridViewTextBoxColumn60});
-			this.employeesDataGridView1.DataSource = this.employeesBindingSource;
-			this.employeesDataGridView1.Location = new System.Drawing.Point(12, 295);
-			this.employeesDataGridView1.Name = "employeesDataGridView1";
-			this.employeesDataGridView1.Size = new System.Drawing.Size(754, 256);
-			this.employeesDataGridView1.TabIndex = 1;
-			// 
-			// dataGridViewCheckBoxColumn4
-			// 
-			this.dataGridViewCheckBoxColumn4.DataPropertyName = "ActiveStatus";
-			this.dataGridViewCheckBoxColumn4.HeaderText = "ActiveStatus";
-			this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-			// 
-			// dataGridViewCheckBoxColumn5
-			// 
-			this.dataGridViewCheckBoxColumn5.DataPropertyName = "IsEdited";
-			this.dataGridViewCheckBoxColumn5.HeaderText = "IsEdited";
-			this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
-			// 
-			// dataGridViewCheckBoxColumn6
-			// 
-			this.dataGridViewCheckBoxColumn6.DataPropertyName = "IsTrainee";
-			this.dataGridViewCheckBoxColumn6.HeaderText = "IsTrainee";
-			this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(12, 12);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(570, 258);
-			this.groupBox1.TabIndex = 2;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Import Table";
-			// 
-			// groupBox2
-			// 
-			this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox2.Location = new System.Drawing.Point(12, 276);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(780, 284);
-			this.groupBox2.TabIndex = 3;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Employee Table";
-			// 
-			// dataGridViewTextBoxColumn31
-			// 
-			this.dataGridViewTextBoxColumn31.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn31.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-			this.dataGridViewTextBoxColumn31.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn32
-			// 
-			this.dataGridViewTextBoxColumn32.DataPropertyName = "Emp_Id";
-			this.dataGridViewTextBoxColumn32.HeaderText = "Emp_Id";
-			this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-			// 
-			// dataGridViewTextBoxColumn33
-			// 
-			this.dataGridViewTextBoxColumn33.DataPropertyName = "EmployeeTypeId";
-			this.dataGridViewTextBoxColumn33.HeaderText = "EmployeeTypeId";
-			this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-			// 
-			// dataGridViewTextBoxColumn34
-			// 
-			this.dataGridViewTextBoxColumn34.DataPropertyName = "SectionId";
-			this.dataGridViewTextBoxColumn34.HeaderText = "SectionId";
-			this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-			// 
-			// dataGridViewTextBoxColumn35
-			// 
-			this.dataGridViewTextBoxColumn35.DataPropertyName = "EmpFullName";
-			this.dataGridViewTextBoxColumn35.HeaderText = "EmpFullName";
-			this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-			// 
-			// dataGridViewTextBoxColumn36
-			// 
-			this.dataGridViewTextBoxColumn36.DataPropertyName = "BadgeNumber";
-			this.dataGridViewTextBoxColumn36.HeaderText = "BadgeNumber";
-			this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-			// 
-			// dataGridViewTextBoxColumn37
-			// 
-			this.dataGridViewTextBoxColumn37.DataPropertyName = "DateOfBirth";
-			this.dataGridViewTextBoxColumn37.HeaderText = "DateOfBirth";
-			this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-			// 
-			// dataGridViewTextBoxColumn38
-			// 
-			this.dataGridViewTextBoxColumn38.DataPropertyName = "BloodGroupId";
-			this.dataGridViewTextBoxColumn38.HeaderText = "BloodGroupId";
-			this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-			// 
-			// dataGridViewTextBoxColumn39
-			// 
-			this.dataGridViewTextBoxColumn39.DataPropertyName = "HireDate";
-			this.dataGridViewTextBoxColumn39.HeaderText = "HireDate";
-			this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-			// 
-			// dataGridViewTextBoxColumn40
-			// 
-			this.dataGridViewTextBoxColumn40.DataPropertyName = "ReligionId";
-			this.dataGridViewTextBoxColumn40.HeaderText = "ReligionId";
-			this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-			// 
-			// dataGridViewTextBoxColumn41
-			// 
-			this.dataGridViewTextBoxColumn41.DataPropertyName = "MaritialStatusId";
-			this.dataGridViewTextBoxColumn41.HeaderText = "MaritialStatusId";
-			this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
-			// 
-			// dataGridViewTextBoxColumn42
-			// 
-			this.dataGridViewTextBoxColumn42.DataPropertyName = "Address";
-			this.dataGridViewTextBoxColumn42.HeaderText = "Address";
-			this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
-			// 
-			// dataGridViewTextBoxColumn43
-			// 
-			this.dataGridViewTextBoxColumn43.DataPropertyName = "PhoneNumber";
-			this.dataGridViewTextBoxColumn43.HeaderText = "PhoneNumber";
-			this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-			// 
-			// dataGridViewTextBoxColumn44
-			// 
-			this.dataGridViewTextBoxColumn44.DataPropertyName = "Email";
-			this.dataGridViewTextBoxColumn44.HeaderText = "Email";
-			this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
-			// 
-			// dataGridViewTextBoxColumn45
-			// 
-			this.dataGridViewTextBoxColumn45.DataPropertyName = "DesignationId";
-			this.dataGridViewTextBoxColumn45.HeaderText = "DesignationId";
-			this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-			// 
-			// dataGridViewTextBoxColumn46
-			// 
-			this.dataGridViewTextBoxColumn46.DataPropertyName = "FirstName";
-			this.dataGridViewTextBoxColumn46.HeaderText = "FirstName";
-			this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-			// 
-			// dataGridViewTextBoxColumn47
-			// 
-			this.dataGridViewTextBoxColumn47.DataPropertyName = "LastName";
-			this.dataGridViewTextBoxColumn47.HeaderText = "LastName";
-			this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-			// 
-			// dataGridViewTextBoxColumn48
-			// 
-			this.dataGridViewTextBoxColumn48.DataPropertyName = "MiddleName";
-			this.dataGridViewTextBoxColumn48.HeaderText = "MiddleName";
-			this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-			// 
-			// dataGridViewTextBoxColumn49
-			// 
-			this.dataGridViewTextBoxColumn49.DataPropertyName = "EmergencyContact";
-			this.dataGridViewTextBoxColumn49.HeaderText = "EmergencyContact";
-			this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-			// 
-			// dataGridViewTextBoxColumn50
-			// 
-			this.dataGridViewTextBoxColumn50.DataPropertyName = "GenderId";
-			this.dataGridViewTextBoxColumn50.HeaderText = "GenderId";
-			this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-			// 
-			// dataGridViewTextBoxColumn51
-			// 
-			this.dataGridViewTextBoxColumn51.DataPropertyName = "EndDate";
-			this.dataGridViewTextBoxColumn51.HeaderText = "EndDate";
-			this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-			// 
-			// dataGridViewTextBoxColumn52
-			// 
-			this.dataGridViewTextBoxColumn52.DataPropertyName = "InsertDate";
-			this.dataGridViewTextBoxColumn52.HeaderText = "InsertDate";
-			this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-			// 
-			// dataGridViewTextBoxColumn53
-			// 
-			this.dataGridViewTextBoxColumn53.DataPropertyName = "ImagePath";
-			this.dataGridViewTextBoxColumn53.HeaderText = "ImagePath";
-			this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-			// 
-			// dataGridViewTextBoxColumn54
-			// 
-			this.dataGridViewTextBoxColumn54.DataPropertyName = "ImageFile";
-			this.dataGridViewTextBoxColumn54.HeaderText = "ImageFile";
-			this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-			// 
-			// dataGridViewTextBoxColumn55
-			// 
-			this.dataGridViewTextBoxColumn55.DataPropertyName = "IsWorker";
-			this.dataGridViewTextBoxColumn55.HeaderText = "IsWorker";
-			this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
-			// 
-			// dataGridViewTextBoxColumn56
-			// 
-			this.dataGridViewTextBoxColumn56.DataPropertyName = "Password";
-			this.dataGridViewTextBoxColumn56.HeaderText = "Password";
-			this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-			// 
-			// dataGridViewTextBoxColumn57
-			// 
-			this.dataGridViewTextBoxColumn57.DataPropertyName = "Permanent";
-			this.dataGridViewTextBoxColumn57.HeaderText = "Permanent";
-			this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-			// 
-			// dataGridViewTextBoxColumn58
-			// 
-			this.dataGridViewTextBoxColumn58.DataPropertyName = "WorkerDesignationId";
-			this.dataGridViewTextBoxColumn58.HeaderText = "WorkerDesignationId";
-			this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
-			// 
-			// dataGridViewTextBoxColumn59
-			// 
-			this.dataGridViewTextBoxColumn59.DataPropertyName = "TechnicalAllowance";
-			this.dataGridViewTextBoxColumn59.HeaderText = "TechnicalAllowance";
-			this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
-			// 
-			// dataGridViewTextBoxColumn60
-			// 
-			this.dataGridViewTextBoxColumn60.DataPropertyName = "NationalId";
-			this.dataGridViewTextBoxColumn60.HeaderText = "NationalId";
-			this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+			this.employeesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesDataGridView_CellContentClick);
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -570,13 +308,6 @@
 			this.dataGridViewCheckBoxColumn1.HeaderText = "ActiveStatus";
 			this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
 			this.dataGridViewCheckBoxColumn1.Visible = false;
-			// 
-			// dataGridViewCheckBoxColumn2
-			// 
-			this.dataGridViewCheckBoxColumn2.DataPropertyName = "IsEdited";
-			this.dataGridViewCheckBoxColumn2.HeaderText = "IsEdited";
-			this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-			this.dataGridViewCheckBoxColumn2.Visible = false;
 			// 
 			// dataGridViewTextBoxColumn15
 			// 
@@ -708,6 +439,262 @@
 			this.deleteButton.ReadOnly = true;
 			this.deleteButton.Text = "Import(+)";
 			this.deleteButton.UseColumnTextForButtonValue = true;
+			// 
+			// employeesDataGridView1
+			// 
+			this.employeesDataGridView1.AutoGenerateColumns = false;
+			this.employeesDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.employeesDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewTextBoxColumn37,
+            this.dataGridViewTextBoxColumn38,
+            this.dataGridViewTextBoxColumn39,
+            this.dataGridViewTextBoxColumn40,
+            this.dataGridViewTextBoxColumn41,
+            this.dataGridViewTextBoxColumn42,
+            this.dataGridViewTextBoxColumn43,
+            this.dataGridViewTextBoxColumn44,
+            this.dataGridViewCheckBoxColumn4,
+            this.dataGridViewTextBoxColumn45,
+            this.dataGridViewTextBoxColumn46,
+            this.dataGridViewTextBoxColumn47,
+            this.dataGridViewTextBoxColumn48,
+            this.dataGridViewTextBoxColumn49,
+            this.dataGridViewTextBoxColumn50,
+            this.dataGridViewCheckBoxColumn6,
+            this.dataGridViewTextBoxColumn51,
+            this.dataGridViewTextBoxColumn52,
+            this.dataGridViewTextBoxColumn53,
+            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewTextBoxColumn55,
+            this.dataGridViewTextBoxColumn56,
+            this.dataGridViewTextBoxColumn57,
+            this.dataGridViewTextBoxColumn58,
+            this.dataGridViewTextBoxColumn59,
+            this.dataGridViewTextBoxColumn60});
+			this.employeesDataGridView1.DataSource = this.employeesBindingSource;
+			this.employeesDataGridView1.Location = new System.Drawing.Point(12, 295);
+			this.employeesDataGridView1.Name = "employeesDataGridView1";
+			this.employeesDataGridView1.Size = new System.Drawing.Size(754, 256);
+			this.employeesDataGridView1.TabIndex = 1;
+			// 
+			// dataGridViewTextBoxColumn31
+			// 
+			this.dataGridViewTextBoxColumn31.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn31.HeaderText = "Id";
+			this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+			this.dataGridViewTextBoxColumn31.ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn32
+			// 
+			this.dataGridViewTextBoxColumn32.DataPropertyName = "Emp_Id";
+			this.dataGridViewTextBoxColumn32.HeaderText = "Emp_Id";
+			this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+			// 
+			// dataGridViewTextBoxColumn33
+			// 
+			this.dataGridViewTextBoxColumn33.DataPropertyName = "EmployeeTypeId";
+			this.dataGridViewTextBoxColumn33.HeaderText = "EmployeeTypeId";
+			this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+			// 
+			// dataGridViewTextBoxColumn34
+			// 
+			this.dataGridViewTextBoxColumn34.DataPropertyName = "SectionId";
+			this.dataGridViewTextBoxColumn34.HeaderText = "SectionId";
+			this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+			// 
+			// dataGridViewTextBoxColumn35
+			// 
+			this.dataGridViewTextBoxColumn35.DataPropertyName = "EmpFullName";
+			this.dataGridViewTextBoxColumn35.HeaderText = "EmpFullName";
+			this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+			// 
+			// dataGridViewTextBoxColumn36
+			// 
+			this.dataGridViewTextBoxColumn36.DataPropertyName = "BadgeNumber";
+			this.dataGridViewTextBoxColumn36.HeaderText = "BadgeNumber";
+			this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+			// 
+			// dataGridViewTextBoxColumn37
+			// 
+			this.dataGridViewTextBoxColumn37.DataPropertyName = "DateOfBirth";
+			this.dataGridViewTextBoxColumn37.HeaderText = "DateOfBirth";
+			this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+			// 
+			// dataGridViewTextBoxColumn38
+			// 
+			this.dataGridViewTextBoxColumn38.DataPropertyName = "BloodGroupId";
+			this.dataGridViewTextBoxColumn38.HeaderText = "BloodGroupId";
+			this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+			// 
+			// dataGridViewTextBoxColumn39
+			// 
+			this.dataGridViewTextBoxColumn39.DataPropertyName = "HireDate";
+			this.dataGridViewTextBoxColumn39.HeaderText = "HireDate";
+			this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+			// 
+			// dataGridViewTextBoxColumn40
+			// 
+			this.dataGridViewTextBoxColumn40.DataPropertyName = "ReligionId";
+			this.dataGridViewTextBoxColumn40.HeaderText = "ReligionId";
+			this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+			// 
+			// dataGridViewTextBoxColumn41
+			// 
+			this.dataGridViewTextBoxColumn41.DataPropertyName = "MaritialStatusId";
+			this.dataGridViewTextBoxColumn41.HeaderText = "MaritialStatusId";
+			this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+			// 
+			// dataGridViewTextBoxColumn42
+			// 
+			this.dataGridViewTextBoxColumn42.DataPropertyName = "Address";
+			this.dataGridViewTextBoxColumn42.HeaderText = "Address";
+			this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+			// 
+			// dataGridViewTextBoxColumn43
+			// 
+			this.dataGridViewTextBoxColumn43.DataPropertyName = "PhoneNumber";
+			this.dataGridViewTextBoxColumn43.HeaderText = "PhoneNumber";
+			this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+			// 
+			// dataGridViewTextBoxColumn44
+			// 
+			this.dataGridViewTextBoxColumn44.DataPropertyName = "Email";
+			this.dataGridViewTextBoxColumn44.HeaderText = "Email";
+			this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+			// 
+			// dataGridViewCheckBoxColumn4
+			// 
+			this.dataGridViewCheckBoxColumn4.DataPropertyName = "ActiveStatus";
+			this.dataGridViewCheckBoxColumn4.HeaderText = "ActiveStatus";
+			this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+			// 
+			// dataGridViewTextBoxColumn45
+			// 
+			this.dataGridViewTextBoxColumn45.DataPropertyName = "DesignationId";
+			this.dataGridViewTextBoxColumn45.HeaderText = "DesignationId";
+			this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+			// 
+			// dataGridViewTextBoxColumn46
+			// 
+			this.dataGridViewTextBoxColumn46.DataPropertyName = "FirstName";
+			this.dataGridViewTextBoxColumn46.HeaderText = "FirstName";
+			this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+			// 
+			// dataGridViewTextBoxColumn47
+			// 
+			this.dataGridViewTextBoxColumn47.DataPropertyName = "LastName";
+			this.dataGridViewTextBoxColumn47.HeaderText = "LastName";
+			this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+			// 
+			// dataGridViewTextBoxColumn48
+			// 
+			this.dataGridViewTextBoxColumn48.DataPropertyName = "MiddleName";
+			this.dataGridViewTextBoxColumn48.HeaderText = "MiddleName";
+			this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+			// 
+			// dataGridViewTextBoxColumn49
+			// 
+			this.dataGridViewTextBoxColumn49.DataPropertyName = "EmergencyContact";
+			this.dataGridViewTextBoxColumn49.HeaderText = "EmergencyContact";
+			this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+			// 
+			// dataGridViewTextBoxColumn50
+			// 
+			this.dataGridViewTextBoxColumn50.DataPropertyName = "GenderId";
+			this.dataGridViewTextBoxColumn50.HeaderText = "GenderId";
+			this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+			// 
+			// dataGridViewCheckBoxColumn6
+			// 
+			this.dataGridViewCheckBoxColumn6.DataPropertyName = "IsTrainee";
+			this.dataGridViewCheckBoxColumn6.HeaderText = "IsTrainee";
+			this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
+			// 
+			// dataGridViewTextBoxColumn51
+			// 
+			this.dataGridViewTextBoxColumn51.DataPropertyName = "EndDate";
+			this.dataGridViewTextBoxColumn51.HeaderText = "EndDate";
+			this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+			// 
+			// dataGridViewTextBoxColumn52
+			// 
+			this.dataGridViewTextBoxColumn52.DataPropertyName = "InsertDate";
+			this.dataGridViewTextBoxColumn52.HeaderText = "InsertDate";
+			this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+			// 
+			// dataGridViewTextBoxColumn53
+			// 
+			this.dataGridViewTextBoxColumn53.DataPropertyName = "ImagePath";
+			this.dataGridViewTextBoxColumn53.HeaderText = "ImagePath";
+			this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+			// 
+			// dataGridViewTextBoxColumn54
+			// 
+			this.dataGridViewTextBoxColumn54.DataPropertyName = "ImageFile";
+			this.dataGridViewTextBoxColumn54.HeaderText = "ImageFile";
+			this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+			// 
+			// dataGridViewTextBoxColumn55
+			// 
+			this.dataGridViewTextBoxColumn55.DataPropertyName = "IsWorker";
+			this.dataGridViewTextBoxColumn55.HeaderText = "IsWorker";
+			this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+			// 
+			// dataGridViewTextBoxColumn56
+			// 
+			this.dataGridViewTextBoxColumn56.DataPropertyName = "Password";
+			this.dataGridViewTextBoxColumn56.HeaderText = "Password";
+			this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+			// 
+			// dataGridViewTextBoxColumn57
+			// 
+			this.dataGridViewTextBoxColumn57.DataPropertyName = "Permanent";
+			this.dataGridViewTextBoxColumn57.HeaderText = "Permanent";
+			this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+			// 
+			// dataGridViewTextBoxColumn58
+			// 
+			this.dataGridViewTextBoxColumn58.DataPropertyName = "WorkerDesignationId";
+			this.dataGridViewTextBoxColumn58.HeaderText = "WorkerDesignationId";
+			this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+			// 
+			// dataGridViewTextBoxColumn59
+			// 
+			this.dataGridViewTextBoxColumn59.DataPropertyName = "TechnicalAllowance";
+			this.dataGridViewTextBoxColumn59.HeaderText = "TechnicalAllowance";
+			this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+			// 
+			// dataGridViewTextBoxColumn60
+			// 
+			this.dataGridViewTextBoxColumn60.DataPropertyName = "NationalId";
+			this.dataGridViewTextBoxColumn60.HeaderText = "NationalId";
+			this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox1.Location = new System.Drawing.Point(12, 12);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(570, 258);
+			this.groupBox1.TabIndex = 2;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Import Table";
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox2.Location = new System.Drawing.Point(12, 276);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(780, 284);
+			this.groupBox2.TabIndex = 3;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Employee Table";
 			// 
 			// ImportEmployee
 			// 

@@ -59,7 +59,7 @@ namespace HomeTextileApp
 
 
 
-					var empCheckInOut = db.Emp_CheckInOuts.FirstOrDefault(a => a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.CHECKTIME.Day == NewDate.Day && a.IsManual == true);
+					var empCheckInOut = db.Emp_CheckInOuts.FirstOrDefault(a => a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.CHECKTIME.Day == NewDate.Day && a.IsManual == true && a.UserId==emp.Emp_Id);
 
 					if (empCheckInOut != null)
 					{

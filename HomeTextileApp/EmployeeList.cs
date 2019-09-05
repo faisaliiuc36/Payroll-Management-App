@@ -61,7 +61,7 @@ namespace HomeTextileApp
 
 		private void LoadCascadingDropDown()
 		{
-			checkBox2.Checked = false;
+			checkBox4.Checked = false;
 			try
 			{
 				var emp = employeesDataGridView.CurrentRow;
@@ -99,7 +99,7 @@ namespace HomeTextileApp
 				//Image Load
 				pictureBox2.Image = null;
 				pictureBox2.Image = new Bitmap(employee.ImagePath);
-				checkBox2.Checked = false;
+				checkBox4.Checked = false;
 			}
 			catch (Exception Ex)
 			{
@@ -116,7 +116,7 @@ namespace HomeTextileApp
 
 
 				pictureBox2.Image = new Bitmap(opnfd.FileName);
-				checkBox2.Checked = true;
+				checkBox4.Checked = true;
 			}
 		}
 
@@ -217,7 +217,7 @@ namespace HomeTextileApp
 
 
 				//Image Save
-				if (checkBox2.Checked == true)
+				if (checkBox4.Checked == true)
 				{
 					Bitmap B = new Bitmap(pictureBox2.Image);
 					string p = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + DateTime.Now.Millisecond.ToString();
@@ -227,7 +227,7 @@ namespace HomeTextileApp
 				}
 				else
 				{
-					checkBox2.Checked = false;
+					checkBox4.Checked = false;
 				}
 
 				Employee empShadow = db2.Employees.Find(employee.Id);
@@ -358,7 +358,7 @@ namespace HomeTextileApp
 
 		private void LoadEmployee()
 		{
-			checkBox2.Checked = false;
+			checkBox4.Checked = false;
 			List<Employee> employees = db.Employees.ToList();
 			List<Employee> newemployees = employees.Where(a => a.IsEdited == true).ToList();
 

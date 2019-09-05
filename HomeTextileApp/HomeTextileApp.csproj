@@ -137,6 +137,7 @@
     <Compile Include="DL\ViewEmpLeaveStatus.cs" />
     <Compile Include="DL\ViewIndividualAttendance.cs" />
     <Compile Include="DL\ViewLoanWithPayTIme.cs" />
+    <Compile Include="DL\ViewOT.cs" />
     <Compile Include="DL\ViewSalarySheet.cs" />
     <Compile Include="DL\WorkerDesignation.cs" />
     <Compile Include="Duty_Roster.cs">
@@ -343,7 +344,17 @@
     <Compile Include="Migrations\201909020452020_U-Advance.Designer.cs">
       <DependentUpon>201909020452020_U-Advance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909040459311_Emp_CheckInOut_OT.cs" />
+    <Compile Include="Migrations\201909040459311_Emp_CheckInOut_OT.Designer.cs">
+      <DependentUpon>201909040459311_Emp_CheckInOut_OT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="OTDateWise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTDateWise.Designer.cs">
+      <DependentUpon>OTDateWise.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -526,6 +537,12 @@
     <EmbeddedResource Include="Migrations\201909020452020_U-Advance.resx">
       <DependentUpon>201909020452020_U-Advance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909040459311_Emp_CheckInOut_OT.resx">
+      <DependentUpon>201909040459311_Emp_CheckInOut_OT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTDateWise.resx">
+      <DependentUpon>OTDateWise.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -642,6 +659,7 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewEmpLeaveStatus.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewIndividualAttendance.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewLoanWithPayTIme.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewOT.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewSalarySheet.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.WorkerDesignation.datasource" />
     <None Include="Properties\Settings.settings">
@@ -653,6 +671,75 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\ActiveEmployee.rpt" />
+    <None Include="Report\AdvanceDeduction.rpt" />
+    <None Include="Report\AdvanceDeductionTOPSheet.rpt" />
+    <None Include="Report\AttendanceChangeRpt.rpt" />
+    <None Include="Report\AttendanceUpdateHistory.rpt" />
+    <None Include="Report\Copy of TOPSheet.rpt" />
+    <None Include="Report\Daily Employee Movement.rpt" />
+    <None Include="Report\DailyAbsentRpt.rpt" />
+    <None Include="Report\DailyAttendenceDetail.rpt" />
+    <None Include="Report\DailyAttendenceDetailCom.rpt" />
+    <None Include="Report\DailyBeforeORAfterAllocation.rpt" />
+    <None Include="Report\DailyEarlyOut.rpt" />
+    <None Include="Report\DailyFractionOutTime.rpt" />
+    <None Include="Report\DailyInvalid.rpt" />
+    <None Include="Report\DailyLateRpt.rpt" />
+    <None Include="Report\DailyLeave.rpt" />
+    <None Include="Report\DailyManualAttendenceDetail.rpt" />
+    <None Include="Report\DailyMovement.rpt" />
+    <None Include="Report\DailyMovementCom.rpt" />
+    <None Include="Report\DailyOverTimeRpt.rpt" />
+    <None Include="Report\DailyOverTimeRptCom.rpt" />
+    <None Include="Report\DailyPresentAfterAbsent.rpt" />
+    <None Include="Report\DailyPresentRpt.rpt" />
+    <None Include="Report\DailySummarisedAttendance.rpt" />
+    <None Include="Report\DailySummarisedAttendanceCom.rpt" />
+    <None Include="Report\DailySummarisedAttendanceDesgWise.rpt" />
+    <None Include="Report\DailySummarisedAttendanceDesgWiseCom.rpt" />
+    <None Include="Report\DailyTimeWiseOut.rpt" />
+    <None Include="Report\DateWiseEmpSummery.rpt" />
+    <None Include="Report\DateWiseOvertimeSummery.rpt" />
+    <None Include="Report\DateWiseOvertimeSummeryCom.rpt" />
+    <None Include="Report\DetailAttenRepDateWise.rpt" />
+    <None Include="Report\EarlyOutDeduction.rpt" />
+    <None Include="Report\EmpChangeRpt.rpt" />
+    <None Include="Report\EmpJoining.rpt" />
+    <None Include="Report\EmpUpdateHistory.rpt" />
+    <None Include="Report\empWiseAttendence.rpt" />
+    <None Include="Report\empWiseAttendenceCom.rpt" />
+    <None Include="Report\EmpWiseIncrementPromotion.rpt" />
+    <None Include="Report\EmpWiseLoanInfo.rpt" />
+    <None Include="Report\empWiseMultiInOut.rpt" />
+    <None Include="Report\empWiseMultiInOutCom.rpt" />
+    <None Include="Report\FestivalBonus.rpt" />
+    <None Include="Report\FestivalBonusTOPSheet.rpt" />
+    <None Include="Report\fwdhrmdata.zip" />
+    <None Include="Report\IDCard.rpt" />
+    <None Include="Report\IDCard2.rpt" />
+    <None Include="Report\InactiveEmployee.rpt" />
+    <None Include="Report\IncrementPromotion.rpt" />
+    <None Include="Report\IncrementPromotionWithSalPro.rpt" />
+    <None Include="Report\Insurance.rpt" />
+    <None Include="Report\LeaveDetails.rpt" />
+    <None Include="Report\LeaveWithPayReg.rpt" />
+    <None Include="Report\LoanInfo.rpt" />
+    <None Include="Report\OTPaymentRegister.rpt" />
+    <None Include="Report\OTPaymentRegisterCom.rpt" />
+    <None Include="Report\PaymentSheet.rpt" />
+    <None Include="Report\PaymentSheetCom.rpt" />
+    <None Include="Report\PaymentSheetup.rpt" />
+    <None Include="Report\PaySlip.rpt" />
+    <None Include="Report\PaySlipCom.rpt" />
+    <None Include="Report\SalaryReport.rpt" />
+    <None Include="Report\SalaryReportCom.rpt" />
+    <None Include="Report\TestCross.rpt" />
+    <None Include="Report\TestCrossCom.rpt" />
+    <None Include="Report\TOPSheet.rpt" />
+    <None Include="Report\TOPSheetCom.rpt" />
+    <None Include="Report\TOPSheetSal.rpt" />
+    <None Include="Report\WagesAndAllowanceRegister.rpt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

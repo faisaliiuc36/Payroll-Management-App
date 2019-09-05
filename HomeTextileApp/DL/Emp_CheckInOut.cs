@@ -24,5 +24,7 @@ namespace HomeTextileApp.DL
 
 		public String UpdatedBy { get; set; }
 
+		public int  OT { get; set; }
+
     }
 }
