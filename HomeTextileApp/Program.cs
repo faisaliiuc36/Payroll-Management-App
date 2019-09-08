@@ -17,7 +17,7 @@ namespace HomeTextileApp
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new OTDateWise());
+			Application.Run(new BonusReport());
 
 			//Application.Run(new Impo());
 

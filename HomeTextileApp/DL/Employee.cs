@@ -128,13 +128,7 @@ namespace HomeTextileApp.DL
 		public virtual Designation Designation { get; set; }
 
 
-		[Display(Name = "Worker Designation")]
-		public int? WorkerDesignationId { get; set; }
-		[ForeignKey("WorkerDesignationId")]
-		public virtual WorkerDesignation WorkerDesignation { get; set; }
-
-		[Display(Name = "Technical Allowance(Worker)")]
-		public double TechnicalAllowance { get; set; }
+		
 
 		[Display(Name = "First Name")]
 		public string FirstName { get; set; }
@@ -181,6 +175,8 @@ namespace HomeTextileApp.DL
 		public virtual List<Loan> Loans { get; set; }
 		
 		public virtual List<InActiveHistory> InActiveHistories { get; set; }
+
+		
 
 		public string NameWithId
 		{

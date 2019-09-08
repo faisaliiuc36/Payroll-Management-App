@@ -47,7 +47,27 @@ namespace HomeTextileApp.DL
 
 			if(employee.IsWorker==true)
 			{
-				grossSalary = employee.WorkerDesignation.SalaryGrade.Total;
+				List<WorkerDesignationHistory> workerDesignationHistories = db.WorkerDesignationHistories.Where(a => a.EmployeeId == this.EmployeeId && a.From <= this.Date).ToList();
+				if (workerDesignationHistories.Count > 0)
+				{
+					DateTime maxDate = workerDesignationHistories.Max(a => a.From);
+
+					WorkerDesignationHistory workerDesignationHistory = workerDesignationHistories.FirstOrDefault(a => a.From == maxDate);
+
+
+					// Find Salary Grade At That Time
+					DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(workerDesignationHistory.WorkerDesignationId);
+					List<ShadowSalaryGrade> shadowSalaryGrades = db.ShadowSalaryGrades.Where(a => a.UpdatedAt <= this.Date && a.RoWId == workerDesignation.SalaryGrade.Id).ToList();
+					DateTime D2 = DateTime.Now;
+					if (shadowSalaryGrades.Count > 0)
+					{
+						D2 = shadowSalaryGrades.Max(a => a.UpdatedAt);
+						var shadowgrade = shadowSalaryGrades.FirstOrDefault(a => a.RoWId == workerDesignation.SalaryGrade.Id && a.UpdatedAt == D2);
+						grossSalary = shadowgrade.Total;
+					}
+
+					
+				}
 			}
 			else
 			{

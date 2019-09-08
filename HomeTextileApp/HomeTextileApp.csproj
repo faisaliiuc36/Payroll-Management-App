@@ -98,6 +98,12 @@
     <Compile Include="AttendanceSectionWise.Designer.cs">
       <DependentUpon>AttendanceSectionWise.cs</DependentUpon>
     </Compile>
+    <Compile Include="BonusReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BonusReport.Designer.cs">
+      <DependentUpon>BonusReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalenderColumn.cs" />
     <Compile Include="DGVPrinter.cs" />
     <Compile Include="DL\Advance.cs" />
@@ -134,12 +140,14 @@
     <Compile Include="DL\Unit.cs" />
     <Compile Include="DL\ViewAttendance.cs" />
     <Compile Include="DL\ViewAttendanceHistory.cs" />
+    <Compile Include="DL\ViewBonus.cs" />
     <Compile Include="DL\ViewEmpLeaveStatus.cs" />
     <Compile Include="DL\ViewIndividualAttendance.cs" />
     <Compile Include="DL\ViewLoanWithPayTIme.cs" />
     <Compile Include="DL\ViewOT.cs" />
     <Compile Include="DL\ViewSalarySheet.cs" />
     <Compile Include="DL\WorkerDesignation.cs" />
+    <Compile Include="DL\WorkerDesignationHistory.cs" />
     <Compile Include="Duty_Roster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +356,10 @@
     <Compile Include="Migrations\201909040459311_Emp_CheckInOut_OT.Designer.cs">
       <DependentUpon>201909040459311_Emp_CheckInOut_OT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909080617414_WorkerDesignationHistory.cs" />
+    <Compile Include="Migrations\201909080617414_WorkerDesignationHistory.Designer.cs">
+      <DependentUpon>201909080617414_WorkerDesignationHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OTDateWise.cs">
       <SubType>Form</SubType>
@@ -405,6 +417,12 @@
     <Compile Include="WorkerDesignation.Designer.cs">
       <DependentUpon>WorkerDesignation.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkerSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerSalary.Designer.cs">
+      <DependentUpon>WorkerSalary.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AttendanceSectionWise.resx">
       <DependentUpon>AttendanceSectionWise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BonusReport.resx">
+      <DependentUpon>BonusReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Duty_Roster.resx">
       <DependentUpon>Duty_Roster.cs</DependentUpon>
@@ -540,6 +561,9 @@
     <EmbeddedResource Include="Migrations\201909040459311_Emp_CheckInOut_OT.resx">
       <DependentUpon>201909040459311_Emp_CheckInOut_OT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909080617414_WorkerDesignationHistory.resx">
+      <DependentUpon>201909080617414_WorkerDesignationHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OTDateWise.resx">
       <DependentUpon>OTDateWise.cs</DependentUpon>
     </EmbeddedResource>
@@ -576,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerDesignation.resx">
       <DependentUpon>WorkerDesignation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerSalary.resx">
+      <DependentUpon>WorkerSalary.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="HomeTextileDBDataSet.xsc">
       <DependentUpon>HomeTextileDBDataSet.xsd</DependentUpon>
@@ -656,12 +683,14 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.Unit.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewAttendance.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewAttendanceHistory.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewBonus.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewEmpLeaveStatus.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewIndividualAttendance.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewLoanWithPayTIme.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewOT.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewSalarySheet.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.WorkerDesignation.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.WorkerDesignationHistory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

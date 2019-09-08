@@ -251,8 +251,7 @@ namespace HomeTextileApp.DL
 			this.Email = empShadow.Email;
 			this.ActiveStatus = empShadow.ActiveStatus;
 			this.DesignationId = empShadow.DesignationId;
-			this.WorkerDesignationId = empShadow.WorkerDesignationId;
-			this.TechnicalAllowance = empShadow.TechnicalAllowance;
+			
 			this.FirstName = empShadow.FirstName;
 			this.LastName = empShadow.LastName;
 			this.MiddleName = empShadow.MiddleName;

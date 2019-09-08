@@ -293,7 +293,27 @@ namespace HomeTextileApp
 
 		private void DataBindEmployee(Employee employee)
 		{
-			//employee.Address = Convert.ToString(addressTextBox.Text);
+			employee.EmpFullName = Convert.ToString(textBox10.Text);
+			employee.BadgeNumber = Convert.ToString(textBox11.Text);
+			employee.DateOfBirth = Convert.ToDateTime(dateTimePicker4.Text);
+			employee.HireDate = Convert.ToDateTime(dateTimePicker5.Text);
+			employee.Permanent = Convert.ToDateTime(dateTimePicker3.Text);
+			employee.EndDate = Convert.ToDateTime(dateTimePicker1.Text);
+			employee.InsertDate = Convert.ToDateTime(dateTimePicker2.Text);
+
+
+			employee.Address = Convert.ToString(textBox12.Text);
+			employee.Password = Convert.ToString(textBox6.Text);
+			employee.MiddleName = Convert.ToString(textBox4.Text);
+			employee.NationalId = Convert.ToString(textBox8.Text);
+
+			employee.Email = Convert.ToString(textBox14.Text);
+			employee.EmergencyContact = Convert.ToString(textBox5.Text);
+			employee.PhoneNumber = Convert.ToString(textBox13.Text);
+			employee.FirstName = Convert.ToString(textBox2.Text);
+			employee.LastName = Convert.ToString(textBox3.Text);
+
+
 			employee.BloodGroupId = Convert.ToInt32(comboBox17.SelectedValue);
 			if (employee.BloodGroupId == 0)
 			{
@@ -309,8 +329,7 @@ namespace HomeTextileApp
 			}
 
 
-			//employee.Email = Convert.ToString(emailTextBox.Text);
-			//employee.EmergencyContact = Convert.ToString(emergencyContactTextBox.Text);
+		
 			employee.EmployeeTypeId = Convert.ToInt32(comboBox16.SelectedValue);
 
 			if (employee.EmployeeTypeId == 0)
@@ -319,8 +338,7 @@ namespace HomeTextileApp
 			}
 
 			employee.EndDate = Convert.ToDateTime(dateTimePicker1.Text);
-			//employee.FirstName = Convert.ToString(firstNameTextBox.Text);
-			//employee.LastName = Convert.ToString(lastNameTextBox.Text);
+			
 			employee.MaritialStatusId = Convert.ToInt32(comboBox14.SelectedValue);
 			if (employee.MaritialStatusId == 0)
 			{
@@ -328,11 +346,7 @@ namespace HomeTextileApp
 			}
 
 
-			//employee.MiddleName = Convert.ToString(middleNameTextBox.Text);
-			//employee.NationalId = Convert.ToString(nationalIdTextBox.Text);
-
-
-			//employee.PhoneNumber = Convert.ToString(phoneNumberTextBox.Text);
+		
 			employee.ReligionId = Convert.ToInt32(comboBox15.SelectedValue);
 			if (employee.ReligionId == 0)
 			{
@@ -343,17 +357,15 @@ namespace HomeTextileApp
 			{
 				employee.SectionId = null;
 			}
-			//employee.TechnicalAllowance = Convert.ToDouble(technicalAllowanceTextBox.Text);
-			employee.WorkerDesignationId = Convert.ToInt32(comboBox11.SelectedValue);
-			if (employee.WorkerDesignationId == 0)
-			{
-				employee.WorkerDesignationId = null;
-			}
+			
 			employee.GenderId = Convert.ToInt32(comboBox12.SelectedValue);
 			if (employee.GenderId == 0)
 			{
 				employee.GenderId = null;
 			}
+
+			employee.IsTrainee = checkBox3.Checked;
+			
 		}
 
 		private void LoadEmployee()

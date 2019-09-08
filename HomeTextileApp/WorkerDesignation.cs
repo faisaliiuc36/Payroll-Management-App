@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,11 +73,31 @@ namespace HomeTextileApp
 			{
 				foreach (SalaryGrade salaryGrade in salaryGrades)
 				{
-					ShadowSalaryGrade shadowSalaryGrade = new ShadowSalaryGrade();
-					shadowSalaryGrade.AssignFromOriginal(salaryGrade);
+					ShadowSalaryGrade shadowSalaryGrade2 = db.ShadowSalaryGrades.FirstOrDefault(a => a.EffectiveFrom.Month == salaryGrade.EffectiveFrom.Month && a.EffectiveFrom.Year == salaryGrade.EffectiveFrom.Year && a.RoWId == salaryGrade.Id);
+					if(shadowSalaryGrade2 != null)
+					{
+						//Update
+						ShadowSalaryGrade shadowSalaryGrade = db.ShadowSalaryGrades.Find(shadowSalaryGrade2.Id);
 
-					db.ShadowSalaryGrades.Add(shadowSalaryGrade);
-					db.SaveChanges();
+						shadowSalaryGrade.AssignFromOriginal(salaryGrade);
+
+						db.Entry(shadowSalaryGrade).State=EntityState.Modified;
+						db.SaveChanges();
+					}
+					else
+					{
+						// New
+						ShadowSalaryGrade shadowSalaryGrade = new ShadowSalaryGrade();
+						shadowSalaryGrade.AssignFromOriginal(salaryGrade);
+
+						db.ShadowSalaryGrades.Add(shadowSalaryGrade);
+						db.SaveChanges();
+					}
+					
+
+					
+
+
 				}
 			}
 		}

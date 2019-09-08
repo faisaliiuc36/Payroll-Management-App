@@ -48,5 +48,6 @@ namespace HomeTextileApp.DL
 		public virtual DbSet<WorkerDesignation> WorkerDesignations { get; set; }
 		public virtual DbSet<SalaryGrade> SalaryGrades { get; set; }
 		public virtual DbSet<Advance> Advances { get; set; }
+		public virtual DbSet<WorkerDesignationHistory> WorkerDesignationHistories { get; set; }
 	}
 }

@@ -397,40 +397,65 @@ namespace HomeTextileApp
 						//var salary = db.Salaries.FirstOrDefault(a => a.EmployeeId == emp.Id && a.Date == D);
 
 						var salarySetting = db.SalarySettings.FirstOrDefault();
-						if (emp.WorkerDesignationId != null)
-						{
-							//Other
-							viewSalarySheet.Other = emp.TechnicalAllowance;
-							//Gross
-							viewSalarySheet.Gross = emp.WorkerDesignation.SalaryGrade.Total;
-							//Basic
-							viewSalarySheet.Basic = emp.WorkerDesignation.SalaryGrade.Salary;
-							//HouseRent
-							viewSalarySheet.HouseRent = emp.WorkerDesignation.SalaryGrade.HouseRent;
-							//Medical
-							viewSalarySheet.Medical = emp.WorkerDesignation.SalaryGrade.MedicalAllowance;
-							//Bonus
-							var Bonus = db.Bonus.FirstOrDefault(a => a.Date.Month == From.Month && a.Date.Year == From.Year);
-							if (Bonus != null && emp.IsTrainee != true)
-							{
-								viewSalarySheet.Bonus = emp.WorkerDesignation.SalaryGrade.Total * (Bonus.Amount / 100);
-							}
-							//DFood
-							viewSalarySheet.DFood = emp.WorkerDesignation.SalaryGrade.FoodAllowance;
-							//DTax
-							//viewSalarySheet.DTax = salary.Amount * (salarySetting.Tax / 100);
-							//DSTamp
-							viewSalarySheet.DStamp = salarySetting.Stamp;
-							//Dloan
-							var loanPayment = db.Paytimes.FirstOrDefault(a => a.Date.Month == From.Month && a.Date.Year == From.Year && a.Loan.EmployeeId == emp.Id);
-							if (loanPayment != null)
-							{
-								//List<Paytime> ptimes = db.Paytimes.Where(a => a.LoanId == loanPayment.LoanId).ToList();
 
-								viewSalarySheet.DLoan = loanPayment.Loan.Amount / loanPayment.Loan.Installment;
+						List<WorkerDesignationHistory> workerDesignationHistories = db.WorkerDesignationHistories.Where(a => a.EmployeeId == emp.Id && a.From <= From).ToList();
+						if (workerDesignationHistories.Count > 0)
+						{
+							DateTime maxDate = workerDesignationHistories.Max(a => a.From);
+
+							WorkerDesignationHistory workerDesignationHistory = workerDesignationHistories.FirstOrDefault(a => a.From == maxDate);
+
+
+							// Find Salary Grade At That Time
+							DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(workerDesignationHistory.WorkerDesignation.Id);
+							List<ShadowSalaryGrade> shadowSalaryGrades = db.ShadowSalaryGrades.Where(a => a.UpdatedAt <= From && a.RoWId == workerDesignation.SalaryGrade.Id).ToList();
+							DateTime D2 = DateTime.Now;
+							if (shadowSalaryGrades.Count > 0)
+							{
+								D2 = shadowSalaryGrades.Max(a => a.UpdatedAt);
+								var shadowgrade = shadowSalaryGrades.FirstOrDefault(a => a.RoWId == workerDesignation.SalaryGrade.Id && a.UpdatedAt == D2);
+
+								//Other
+								viewSalarySheet.Other = workerDesignationHistory.TechnicalAllowance;
+								//Gross
+								viewSalarySheet.Gross = shadowgrade.Total;
+								//Basic
+								viewSalarySheet.Basic = shadowgrade.Salary;
+								//HouseRent
+								viewSalarySheet.HouseRent = shadowgrade.HouseRent;
+								//Medical
+								viewSalarySheet.Medical = shadowgrade.MedicalAllowance;
+								//Bonus
+								var Bonus = db.Bonus.FirstOrDefault(a => a.Date.Month == From.Month && a.Date.Year == From.Year);
+								if (Bonus != null && emp.IsTrainee != true)
+								{
+									viewSalarySheet.Bonus = shadowgrade.Total * (Bonus.Amount / 100);
+								}
+								//DFood
+								viewSalarySheet.DFood = shadowgrade.FoodAllowance;
+								//DTax
+								//viewSalarySheet.DTax = salary.Amount * (salarySetting.Tax / 100);
+								//DSTamp
+								viewSalarySheet.DStamp = salarySetting.Stamp;
+								//Dloan
+								var loanPayment = db.Paytimes.FirstOrDefault(a => a.Date.Month == From.Month && a.Date.Year == From.Year && a.Loan.EmployeeId == emp.Id);
+								if (loanPayment != null)
+								{
+									//List<Paytime> ptimes = db.Paytimes.Where(a => a.LoanId == loanPayment.LoanId).ToList();
+
+									viewSalarySheet.DLoan = loanPayment.Loan.Amount / loanPayment.Loan.Installment;
+								}
+
+
+
 							}
+
 
 						}
+
+
+
+							
 
 
 						//Salary Days

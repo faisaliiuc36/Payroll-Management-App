@@ -45,8 +45,6 @@
 			System.Windows.Forms.Label isWorkerLabel;
 			System.Windows.Forms.Label passwordLabel;
 			System.Windows.Forms.Label permanentLabel;
-			System.Windows.Forms.Label workerDesignationIdLabel;
-			System.Windows.Forms.Label technicalAllowanceLabel;
 			System.Windows.Forms.Label nationalIdLabel;
 			System.Windows.Forms.Label designationIdLabel;
 			System.Windows.Forms.Label activeStatusLabel;
@@ -104,7 +102,6 @@
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.isWorkerCheckBox = new System.Windows.Forms.CheckBox();
-			this.workerDesignationIdComboBox = new System.Windows.Forms.ComboBox();
 			this.workerDesignationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.genderIdComboBox = new System.Windows.Forms.ComboBox();
 			this.gendersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -120,7 +117,6 @@
 			this.insertDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.passwordTextBox = new System.Windows.Forms.TextBox();
 			this.permanentDateTimePicker = new System.Windows.Forms.DateTimePicker();
-			this.technicalAllowanceTextBox = new System.Windows.Forms.TextBox();
 			this.nationalIdTextBox = new System.Windows.Forms.TextBox();
 			this.maritialStatusIdComboBox = new System.Windows.Forms.ComboBox();
 			this.maritialStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -171,8 +167,6 @@
 			isWorkerLabel = new System.Windows.Forms.Label();
 			passwordLabel = new System.Windows.Forms.Label();
 			permanentLabel = new System.Windows.Forms.Label();
-			workerDesignationIdLabel = new System.Windows.Forms.Label();
-			technicalAllowanceLabel = new System.Windows.Forms.Label();
 			nationalIdLabel = new System.Windows.Forms.Label();
 			designationIdLabel = new System.Windows.Forms.Label();
 			activeStatusLabel = new System.Windows.Forms.Label();
@@ -364,28 +358,10 @@
 			permanentLabel.TabIndex = 78;
 			permanentLabel.Text = "Permanent:";
 			// 
-			// workerDesignationIdLabel
-			// 
-			workerDesignationIdLabel.AutoSize = true;
-			workerDesignationIdLabel.Location = new System.Drawing.Point(279, 198);
-			workerDesignationIdLabel.Name = "workerDesignationIdLabel";
-			workerDesignationIdLabel.Size = new System.Drawing.Size(114, 15);
-			workerDesignationIdLabel.TabIndex = 80;
-			workerDesignationIdLabel.Text = "Worker Designation";
-			// 
-			// technicalAllowanceLabel
-			// 
-			technicalAllowanceLabel.AutoSize = true;
-			technicalAllowanceLabel.Location = new System.Drawing.Point(279, 226);
-			technicalAllowanceLabel.Name = "technicalAllowanceLabel";
-			technicalAllowanceLabel.Size = new System.Drawing.Size(120, 15);
-			technicalAllowanceLabel.TabIndex = 82;
-			technicalAllowanceLabel.Text = "Technical Allowance:";
-			// 
 			// nationalIdLabel
 			// 
 			nationalIdLabel.AutoSize = true;
-			nationalIdLabel.Location = new System.Drawing.Point(327, 254);
+			nationalIdLabel.Location = new System.Drawing.Point(326, 202);
 			nationalIdLabel.Name = "nationalIdLabel";
 			nationalIdLabel.Size = new System.Drawing.Size(69, 15);
 			nationalIdLabel.TabIndex = 84;
@@ -394,7 +370,7 @@
 			// designationIdLabel
 			// 
 			designationIdLabel.AutoSize = true;
-			designationIdLabel.Location = new System.Drawing.Point(321, 302);
+			designationIdLabel.Location = new System.Drawing.Point(320, 250);
 			designationIdLabel.Name = "designationIdLabel";
 			designationIdLabel.Size = new System.Drawing.Size(78, 15);
 			designationIdLabel.TabIndex = 103;
@@ -403,7 +379,7 @@
 			// activeStatusLabel
 			// 
 			activeStatusLabel.AutoSize = true;
-			activeStatusLabel.Location = new System.Drawing.Point(320, 279);
+			activeStatusLabel.Location = new System.Drawing.Point(319, 227);
 			activeStatusLabel.Name = "activeStatusLabel";
 			activeStatusLabel.Size = new System.Drawing.Size(83, 15);
 			activeStatusLabel.TabIndex = 86;
@@ -412,7 +388,7 @@
 			// firstNameLabel
 			// 
 			firstNameLabel.AutoSize = true;
-			firstNameLabel.Location = new System.Drawing.Point(321, 333);
+			firstNameLabel.Location = new System.Drawing.Point(320, 281);
 			firstNameLabel.Name = "firstNameLabel";
 			firstNameLabel.Size = new System.Drawing.Size(67, 15);
 			firstNameLabel.TabIndex = 88;
@@ -421,7 +397,7 @@
 			// lastNameLabel
 			// 
 			lastNameLabel.AutoSize = true;
-			lastNameLabel.Location = new System.Drawing.Point(322, 363);
+			lastNameLabel.Location = new System.Drawing.Point(321, 311);
 			lastNameLabel.Name = "lastNameLabel";
 			lastNameLabel.Size = new System.Drawing.Size(66, 15);
 			lastNameLabel.TabIndex = 90;
@@ -430,7 +406,7 @@
 			// middleNameLabel
 			// 
 			middleNameLabel.AutoSize = true;
-			middleNameLabel.Location = new System.Drawing.Point(322, 391);
+			middleNameLabel.Location = new System.Drawing.Point(321, 339);
 			middleNameLabel.Name = "middleNameLabel";
 			middleNameLabel.Size = new System.Drawing.Size(81, 15);
 			middleNameLabel.TabIndex = 92;
@@ -439,7 +415,7 @@
 			// emergencyContactLabel
 			// 
 			emergencyContactLabel.AutoSize = true;
-			emergencyContactLabel.Location = new System.Drawing.Point(322, 419);
+			emergencyContactLabel.Location = new System.Drawing.Point(321, 367);
 			emergencyContactLabel.Name = "emergencyContactLabel";
 			emergencyContactLabel.Size = new System.Drawing.Size(72, 15);
 			emergencyContactLabel.TabIndex = 94;
@@ -448,7 +424,7 @@
 			// genderIdLabel
 			// 
 			genderIdLabel.AutoSize = true;
-			genderIdLabel.Location = new System.Drawing.Point(345, 447);
+			genderIdLabel.Location = new System.Drawing.Point(344, 395);
 			genderIdLabel.Name = "genderIdLabel";
 			genderIdLabel.Size = new System.Drawing.Size(51, 15);
 			genderIdLabel.TabIndex = 96;
@@ -466,7 +442,7 @@
 			// endDateLabel
 			// 
 			endDateLabel.AutoSize = true;
-			endDateLabel.Location = new System.Drawing.Point(330, 476);
+			endDateLabel.Location = new System.Drawing.Point(329, 424);
 			endDateLabel.Name = "endDateLabel";
 			endDateLabel.Size = new System.Drawing.Size(59, 15);
 			endDateLabel.TabIndex = 99;
@@ -475,7 +451,7 @@
 			// insertDateLabel
 			// 
 			insertDateLabel.AutoSize = true;
-			insertDateLabel.Location = new System.Drawing.Point(330, 504);
+			insertDateLabel.Location = new System.Drawing.Point(329, 452);
 			insertDateLabel.Name = "insertDateLabel";
 			insertDateLabel.Size = new System.Drawing.Size(69, 15);
 			insertDateLabel.TabIndex = 101;
@@ -535,6 +511,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -560,6 +537,8 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -813,7 +792,6 @@
 			this.groupBox1.Controls.Add(label2);
 			this.groupBox1.Controls.Add(label1);
 			this.groupBox1.Controls.Add(this.isWorkerCheckBox);
-			this.groupBox1.Controls.Add(this.workerDesignationIdComboBox);
 			this.groupBox1.Controls.Add(this.genderIdComboBox);
 			this.groupBox1.Controls.Add(designationIdLabel);
 			this.groupBox1.Controls.Add(this.designationIdComboBox);
@@ -840,9 +818,6 @@
 			this.groupBox1.Controls.Add(this.passwordTextBox);
 			this.groupBox1.Controls.Add(permanentLabel);
 			this.groupBox1.Controls.Add(this.permanentDateTimePicker);
-			this.groupBox1.Controls.Add(workerDesignationIdLabel);
-			this.groupBox1.Controls.Add(technicalAllowanceLabel);
-			this.groupBox1.Controls.Add(this.technicalAllowanceTextBox);
 			this.groupBox1.Controls.Add(nationalIdLabel);
 			this.groupBox1.Controls.Add(this.nationalIdTextBox);
 			this.groupBox1.Controls.Add(maritialStatusIdLabel);
@@ -958,20 +933,6 @@
 			this.isWorkerCheckBox.Text = "checkBox1";
 			this.isWorkerCheckBox.UseVisualStyleBackColor = true;
 			// 
-			// workerDesignationIdComboBox
-			// 
-			this.workerDesignationIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "WorkerDesignationId", true));
-			this.workerDesignationIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeesBindingSource, "WorkerDesignationId", true));
-			this.workerDesignationIdComboBox.DataSource = this.workerDesignationsBindingSource;
-			this.workerDesignationIdComboBox.DisplayMember = "Name";
-			this.workerDesignationIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.workerDesignationIdComboBox.FormattingEnabled = true;
-			this.workerDesignationIdComboBox.Location = new System.Drawing.Point(406, 194);
-			this.workerDesignationIdComboBox.Name = "workerDesignationIdComboBox";
-			this.workerDesignationIdComboBox.Size = new System.Drawing.Size(162, 23);
-			this.workerDesignationIdComboBox.TabIndex = 106;
-			this.workerDesignationIdComboBox.ValueMember = "Id";
-			// 
 			// workerDesignationsBindingSource
 			// 
 			this.workerDesignationsBindingSource.DataMember = "WorkerDesignations";
@@ -985,7 +946,7 @@
 			this.genderIdComboBox.DisplayMember = "Name";
 			this.genderIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.genderIdComboBox.FormattingEnabled = true;
-			this.genderIdComboBox.Location = new System.Drawing.Point(406, 447);
+			this.genderIdComboBox.Location = new System.Drawing.Point(405, 395);
 			this.genderIdComboBox.Name = "genderIdComboBox";
 			this.genderIdComboBox.Size = new System.Drawing.Size(162, 23);
 			this.genderIdComboBox.TabIndex = 105;
@@ -1004,7 +965,7 @@
 			this.designationIdComboBox.DisplayMember = "Name";
 			this.designationIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.designationIdComboBox.FormattingEnabled = true;
-			this.designationIdComboBox.Location = new System.Drawing.Point(406, 301);
+			this.designationIdComboBox.Location = new System.Drawing.Point(405, 249);
 			this.designationIdComboBox.Name = "designationIdComboBox";
 			this.designationIdComboBox.Size = new System.Drawing.Size(162, 23);
 			this.designationIdComboBox.TabIndex = 104;
@@ -1018,7 +979,7 @@
 			// activeStatusCheckBox
 			// 
 			this.activeStatusCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.employeesBindingSource, "IsWorker", true));
-			this.activeStatusCheckBox.Location = new System.Drawing.Point(406, 275);
+			this.activeStatusCheckBox.Location = new System.Drawing.Point(405, 223);
 			this.activeStatusCheckBox.Name = "activeStatusCheckBox";
 			this.activeStatusCheckBox.Size = new System.Drawing.Size(158, 24);
 			this.activeStatusCheckBox.TabIndex = 87;
@@ -1028,7 +989,7 @@
 			// firstNameTextBox
 			// 
 			this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "FirstName", true));
-			this.firstNameTextBox.Location = new System.Drawing.Point(406, 333);
+			this.firstNameTextBox.Location = new System.Drawing.Point(405, 281);
 			this.firstNameTextBox.Name = "firstNameTextBox";
 			this.firstNameTextBox.Size = new System.Drawing.Size(162, 22);
 			this.firstNameTextBox.TabIndex = 89;
@@ -1036,7 +997,7 @@
 			// lastNameTextBox
 			// 
 			this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "LastName", true));
-			this.lastNameTextBox.Location = new System.Drawing.Point(406, 363);
+			this.lastNameTextBox.Location = new System.Drawing.Point(405, 311);
 			this.lastNameTextBox.Name = "lastNameTextBox";
 			this.lastNameTextBox.Size = new System.Drawing.Size(162, 22);
 			this.lastNameTextBox.TabIndex = 91;
@@ -1044,7 +1005,7 @@
 			// middleNameTextBox
 			// 
 			this.middleNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "MiddleName", true));
-			this.middleNameTextBox.Location = new System.Drawing.Point(406, 391);
+			this.middleNameTextBox.Location = new System.Drawing.Point(405, 339);
 			this.middleNameTextBox.Name = "middleNameTextBox";
 			this.middleNameTextBox.Size = new System.Drawing.Size(162, 22);
 			this.middleNameTextBox.TabIndex = 93;
@@ -1052,7 +1013,7 @@
 			// emergencyContactTextBox
 			// 
 			this.emergencyContactTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "EmergencyContact", true));
-			this.emergencyContactTextBox.Location = new System.Drawing.Point(406, 419);
+			this.emergencyContactTextBox.Location = new System.Drawing.Point(405, 367);
 			this.emergencyContactTextBox.Name = "emergencyContactTextBox";
 			this.emergencyContactTextBox.Size = new System.Drawing.Size(162, 22);
 			this.emergencyContactTextBox.TabIndex = 95;
@@ -1070,7 +1031,7 @@
 			// endDateDateTimePicker
 			// 
 			this.endDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.employeesBindingSource, "EndDate", true));
-			this.endDateDateTimePicker.Location = new System.Drawing.Point(406, 476);
+			this.endDateDateTimePicker.Location = new System.Drawing.Point(405, 424);
 			this.endDateDateTimePicker.Name = "endDateDateTimePicker";
 			this.endDateDateTimePicker.Size = new System.Drawing.Size(162, 22);
 			this.endDateDateTimePicker.TabIndex = 100;
@@ -1078,7 +1039,7 @@
 			// insertDateDateTimePicker
 			// 
 			this.insertDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.employeesBindingSource, "InsertDate", true));
-			this.insertDateDateTimePicker.Location = new System.Drawing.Point(406, 504);
+			this.insertDateDateTimePicker.Location = new System.Drawing.Point(405, 452);
 			this.insertDateDateTimePicker.Name = "insertDateDateTimePicker";
 			this.insertDateDateTimePicker.Size = new System.Drawing.Size(162, 22);
 			this.insertDateDateTimePicker.TabIndex = 102;
@@ -1099,18 +1060,10 @@
 			this.permanentDateTimePicker.Size = new System.Drawing.Size(162, 22);
 			this.permanentDateTimePicker.TabIndex = 79;
 			// 
-			// technicalAllowanceTextBox
-			// 
-			this.technicalAllowanceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "TechnicalAllowance", true));
-			this.technicalAllowanceTextBox.Location = new System.Drawing.Point(406, 223);
-			this.technicalAllowanceTextBox.Name = "technicalAllowanceTextBox";
-			this.technicalAllowanceTextBox.Size = new System.Drawing.Size(162, 22);
-			this.technicalAllowanceTextBox.TabIndex = 83;
-			// 
 			// nationalIdTextBox
 			// 
 			this.nationalIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "NationalId", true));
-			this.nationalIdTextBox.Location = new System.Drawing.Point(406, 251);
+			this.nationalIdTextBox.Location = new System.Drawing.Point(405, 199);
 			this.nationalIdTextBox.Name = "nationalIdTextBox";
 			this.nationalIdTextBox.Size = new System.Drawing.Size(162, 22);
 			this.nationalIdTextBox.TabIndex = 85;
@@ -1414,7 +1367,6 @@
 		private System.Windows.Forms.DateTimePicker dateOfBirthDateTimePicker;
 		private System.Windows.Forms.ComboBox bloodGroupIdComboBox;
 		private System.Windows.Forms.DateTimePicker hireDateDateTimePicker;
-		private System.Windows.Forms.ComboBox workerDesignationIdComboBox;
 		private System.Windows.Forms.ComboBox genderIdComboBox;
 		private System.Windows.Forms.ComboBox designationIdComboBox;
 		private System.Windows.Forms.CheckBox activeStatusCheckBox;
@@ -1427,7 +1379,6 @@
 		private System.Windows.Forms.DateTimePicker insertDateDateTimePicker;
 		private System.Windows.Forms.TextBox passwordTextBox;
 		private System.Windows.Forms.DateTimePicker permanentDateTimePicker;
-		private System.Windows.Forms.TextBox technicalAllowanceTextBox;
 		private System.Windows.Forms.TextBox nationalIdTextBox;
 		private System.Windows.Forms.CheckBox isWorkerCheckBox;
 		private System.Windows.Forms.BindingSource employeeTypesBindingSource;

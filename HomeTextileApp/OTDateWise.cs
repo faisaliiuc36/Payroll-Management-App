@@ -76,23 +76,22 @@ namespace HomeTextileApp
 
 
 						double Gross = 0;
-						//if (emp.IsWorker == true)
-						//{
-							viewOT.Grade = emp.WorkerDesignation.SalaryGrade.GradeName;
 
 
+						try
+						{
 							// Find Employee At That Time
-							List<ShadowEmployee> shadowEmployees = db.ShadowEmployees.Where(a => a.UpdatedAt <= From && a.RoWId == emp.Id).ToList();
+							List<WorkerDesignationHistory> workerDesignationHistories = db.WorkerDesignationHistories.Where(a => a.From <= From && a.EmployeeId == emp.Id).ToList();
 							DateTime D = DateTime.Now;
-							if (shadowEmployees.Count > 0)
+							if (workerDesignationHistories.Count > 0)
 							{
-								D = shadowEmployees.Max(a => a.UpdatedAt);
+								D = workerDesignationHistories.Max(a => a.From);
 							}
 
-							var shadowEmp = shadowEmployees.FirstOrDefault(a => a.RoWId == emp.Id && a.UpdatedAt == D);
-						    
+							var shadowEmp = workerDesignationHistories.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From == D);
+
 							// Find Salary Grade At That Time
-							DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(shadowEmp.WorkerDesignation.Id);
+							DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(shadowEmp.WorkerDesignationId);
 							List<ShadowSalaryGrade> shadowSalaryGrades = db.ShadowSalaryGrades.Where(a => a.UpdatedAt <= From && a.RoWId == workerDesignation.SalaryGrade.Id).ToList();
 							DateTime D2 = DateTime.Now;
 							if (shadowSalaryGrades.Count > 0)
@@ -102,21 +101,19 @@ namespace HomeTextileApp
 								Gross = shadowgrade.Total;
 							}
 
-							
-						
-						//else
-						//{
-						//	List<Salary> salaries = db.Salaries.Where(a => a.Date <= From && a.EmployeeId == emp.Id).ToList();
-						//	DateTime D = DateTime.Now;
-						//	if (salaries.Count > 0)
-						//	{
-						//		D = salaries.Max(a => a.Date);
-						//		var salary = salaries.FirstOrDefault(a => a.EmployeeId == emp.Id && a.Date == D);
-						//		Gross = salary.Amount;
-						//	}
+							viewOT.Grade = shadowEmp.WorkerDesignation.Name;
+						}
+						catch(Exception Ex)
+						{
+							break;
+						}
 
-							
-						//}
+
+						
+
+
+
+						
 
 
 						viewOT.Gross = Gross;

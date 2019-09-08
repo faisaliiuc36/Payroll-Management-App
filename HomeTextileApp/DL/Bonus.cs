@@ -24,5 +24,13 @@ namespace HomeTextileApp.DL
 		[Required(ErrorMessage = "Please Input Reason")]
 		[Display(Name = "Reason")]
 		public string Reason { get; set; }
+
+		public string ReasonWithDate
+		{
+			get
+			{
+				return String.Format("{0}-{1}", Reason, Date.ToString("dd-MM-yyyy"));
+			}
+		}
 	}
 }

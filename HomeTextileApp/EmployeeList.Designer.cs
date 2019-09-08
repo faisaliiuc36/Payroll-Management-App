@@ -67,7 +67,6 @@
 			System.Windows.Forms.Label label11;
 			System.Windows.Forms.Label label12;
 			System.Windows.Forms.Label label13;
-			System.Windows.Forms.Label label14;
 			System.Windows.Forms.Label label15;
 			System.Windows.Forms.Label label16;
 			System.Windows.Forms.Label label17;
@@ -80,8 +79,6 @@
 			System.Windows.Forms.Label label24;
 			System.Windows.Forms.Label label25;
 			System.Windows.Forms.Label label26;
-			System.Windows.Forms.Label label27;
-			System.Windows.Forms.Label label28;
 			System.Windows.Forms.Label label29;
 			System.Windows.Forms.Label label30;
 			System.Windows.Forms.Label label31;
@@ -204,13 +201,11 @@
 			this.comboBox9 = new System.Windows.Forms.ComboBox();
 			this.comboBox10 = new System.Windows.Forms.ComboBox();
 			this.isWorkerCheckBox = new System.Windows.Forms.CheckBox();
-			this.comboBox11 = new System.Windows.Forms.ComboBox();
 			this.workerDesignationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox12 = new System.Windows.Forms.ComboBox();
 			this.gendersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox13 = new System.Windows.Forms.ComboBox();
 			this.designationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.textBox4 = new System.Windows.Forms.TextBox();
@@ -220,7 +215,6 @@
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.textBox6 = new System.Windows.Forms.TextBox();
 			this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.textBox8 = new System.Windows.Forms.TextBox();
 			this.comboBox14 = new System.Windows.Forms.ComboBox();
 			this.maritialStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -283,7 +277,6 @@
 			label11 = new System.Windows.Forms.Label();
 			label12 = new System.Windows.Forms.Label();
 			label13 = new System.Windows.Forms.Label();
-			label14 = new System.Windows.Forms.Label();
 			label15 = new System.Windows.Forms.Label();
 			label16 = new System.Windows.Forms.Label();
 			label17 = new System.Windows.Forms.Label();
@@ -296,8 +289,6 @@
 			label24 = new System.Windows.Forms.Label();
 			label25 = new System.Windows.Forms.Label();
 			label26 = new System.Windows.Forms.Label();
-			label27 = new System.Windows.Forms.Label();
-			label28 = new System.Windows.Forms.Label();
 			label29 = new System.Windows.Forms.Label();
 			label30 = new System.Windows.Forms.Label();
 			label31 = new System.Windows.Forms.Label();
@@ -675,25 +666,16 @@
 			// label13
 			// 
 			label13.AutoSize = true;
-			label13.Location = new System.Drawing.Point(321, 280);
+			label13.Location = new System.Drawing.Point(321, 219);
 			label13.Name = "label13";
 			label13.Size = new System.Drawing.Size(78, 15);
 			label13.TabIndex = 103;
 			label13.Text = "Designation :";
 			// 
-			// label14
-			// 
-			label14.AutoSize = true;
-			label14.Location = new System.Drawing.Point(320, 260);
-			label14.Name = "label14";
-			label14.Size = new System.Drawing.Size(83, 15);
-			label14.TabIndex = 86;
-			label14.Text = "Active Status:";
-			// 
 			// label15
 			// 
 			label15.AutoSize = true;
-			label15.Location = new System.Drawing.Point(321, 308);
+			label15.Location = new System.Drawing.Point(321, 247);
 			label15.Name = "label15";
 			label15.Size = new System.Drawing.Size(67, 15);
 			label15.TabIndex = 88;
@@ -702,7 +684,7 @@
 			// label16
 			// 
 			label16.AutoSize = true;
-			label16.Location = new System.Drawing.Point(322, 335);
+			label16.Location = new System.Drawing.Point(322, 274);
 			label16.Name = "label16";
 			label16.Size = new System.Drawing.Size(66, 15);
 			label16.TabIndex = 90;
@@ -711,7 +693,7 @@
 			// label17
 			// 
 			label17.AutoSize = true;
-			label17.Location = new System.Drawing.Point(322, 363);
+			label17.Location = new System.Drawing.Point(322, 302);
 			label17.Name = "label17";
 			label17.Size = new System.Drawing.Size(81, 15);
 			label17.TabIndex = 92;
@@ -720,7 +702,7 @@
 			// label18
 			// 
 			label18.AutoSize = true;
-			label18.Location = new System.Drawing.Point(322, 391);
+			label18.Location = new System.Drawing.Point(322, 330);
 			label18.Name = "label18";
 			label18.Size = new System.Drawing.Size(72, 15);
 			label18.TabIndex = 94;
@@ -729,7 +711,7 @@
 			// label19
 			// 
 			label19.AutoSize = true;
-			label19.Location = new System.Drawing.Point(345, 419);
+			label19.Location = new System.Drawing.Point(345, 358);
 			label19.Name = "label19";
 			label19.Size = new System.Drawing.Size(51, 15);
 			label19.TabIndex = 96;
@@ -747,7 +729,7 @@
 			// label21
 			// 
 			label21.AutoSize = true;
-			label21.Location = new System.Drawing.Point(330, 448);
+			label21.Location = new System.Drawing.Point(330, 387);
 			label21.Name = "label21";
 			label21.Size = new System.Drawing.Size(59, 15);
 			label21.TabIndex = 99;
@@ -756,7 +738,7 @@
 			// label22
 			// 
 			label22.AutoSize = true;
-			label22.Location = new System.Drawing.Point(327, 476);
+			label22.Location = new System.Drawing.Point(327, 415);
 			label22.Name = "label22";
 			label22.Size = new System.Drawing.Size(69, 15);
 			label22.TabIndex = 101;
@@ -798,28 +780,10 @@
 			label26.TabIndex = 78;
 			label26.Text = "Permanent:";
 			// 
-			// label27
-			// 
-			label27.AutoSize = true;
-			label27.Location = new System.Drawing.Point(279, 185);
-			label27.Name = "label27";
-			label27.Size = new System.Drawing.Size(114, 15);
-			label27.TabIndex = 80;
-			label27.Text = "Worker Designation";
-			// 
-			// label28
-			// 
-			label28.AutoSize = true;
-			label28.Location = new System.Drawing.Point(279, 210);
-			label28.Name = "label28";
-			label28.Size = new System.Drawing.Size(120, 15);
-			label28.TabIndex = 82;
-			label28.Text = "Technical Allowance:";
-			// 
 			// label29
 			// 
 			label29.AutoSize = true;
-			label29.Location = new System.Drawing.Point(327, 235);
+			label29.Location = new System.Drawing.Point(326, 186);
 			label29.Name = "label29";
 			label29.Size = new System.Drawing.Size(69, 15);
 			label29.TabIndex = 84;
@@ -936,7 +900,7 @@
 			// label42
 			// 
 			label42.AutoSize = true;
-			label42.Location = new System.Drawing.Point(9, 509);
+			label42.Location = new System.Drawing.Point(332, 445);
 			label42.Name = "label42";
 			label42.Size = new System.Drawing.Size(59, 15);
 			label42.TabIndex = 123;
@@ -945,7 +909,7 @@
 			// label43
 			// 
 			label43.AutoSize = true;
-			label43.Location = new System.Drawing.Point(292, 505);
+			label43.Location = new System.Drawing.Point(294, 476);
 			label43.Name = "label43";
 			label43.Size = new System.Drawing.Size(107, 15);
 			label43.TabIndex = 124;
@@ -1862,12 +1826,9 @@
 			this.groupBox4.Controls.Add(label11);
 			this.groupBox4.Controls.Add(label12);
 			this.groupBox4.Controls.Add(this.isWorkerCheckBox);
-			this.groupBox4.Controls.Add(this.comboBox11);
 			this.groupBox4.Controls.Add(this.comboBox12);
 			this.groupBox4.Controls.Add(label13);
 			this.groupBox4.Controls.Add(this.comboBox13);
-			this.groupBox4.Controls.Add(label14);
-			this.groupBox4.Controls.Add(this.checkBox2);
 			this.groupBox4.Controls.Add(label15);
 			this.groupBox4.Controls.Add(this.textBox2);
 			this.groupBox4.Controls.Add(label16);
@@ -1889,9 +1850,6 @@
 			this.groupBox4.Controls.Add(this.textBox6);
 			this.groupBox4.Controls.Add(label26);
 			this.groupBox4.Controls.Add(this.dateTimePicker3);
-			this.groupBox4.Controls.Add(label27);
-			this.groupBox4.Controls.Add(label28);
-			this.groupBox4.Controls.Add(this.textBox7);
 			this.groupBox4.Controls.Add(label29);
 			this.groupBox4.Controls.Add(this.textBox8);
 			this.groupBox4.Controls.Add(label30);
@@ -1922,7 +1880,7 @@
 			this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox4.Location = new System.Drawing.Point(181, 43);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(623, 546);
+			this.groupBox4.Size = new System.Drawing.Size(623, 526);
 			this.groupBox4.TabIndex = 7;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Employee Form";
@@ -1940,7 +1898,7 @@
 			// 
 			// inActiveDateTimePicker
 			// 
-			this.inActiveDateTimePicker.Location = new System.Drawing.Point(406, 502);
+			this.inActiveDateTimePicker.Location = new System.Drawing.Point(408, 473);
 			this.inActiveDateTimePicker.Name = "inActiveDateTimePicker";
 			this.inActiveDateTimePicker.Size = new System.Drawing.Size(162, 22);
 			this.inActiveDateTimePicker.TabIndex = 125;
@@ -1948,7 +1906,7 @@
 			// inActiveCheckBox
 			// 
 			this.inActiveCheckBox.AutoSize = true;
-			this.inActiveCheckBox.Location = new System.Drawing.Point(104, 506);
+			this.inActiveCheckBox.Location = new System.Drawing.Point(407, 445);
 			this.inActiveCheckBox.Name = "inActiveCheckBox";
 			this.inActiveCheckBox.Size = new System.Drawing.Size(83, 19);
 			this.inActiveCheckBox.TabIndex = 122;
@@ -2056,20 +2014,6 @@
 			this.isWorkerCheckBox.Text = "checkBox1";
 			this.isWorkerCheckBox.UseVisualStyleBackColor = true;
 			// 
-			// comboBox11
-			// 
-			this.comboBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "WorkerDesignationId", true));
-			this.comboBox11.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeesBindingSource, "WorkerDesignationId", true));
-			this.comboBox11.DataSource = this.workerDesignationsBindingSource;
-			this.comboBox11.DisplayMember = "Name";
-			this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox11.FormattingEnabled = true;
-			this.comboBox11.Location = new System.Drawing.Point(406, 181);
-			this.comboBox11.Name = "comboBox11";
-			this.comboBox11.Size = new System.Drawing.Size(162, 23);
-			this.comboBox11.TabIndex = 106;
-			this.comboBox11.ValueMember = "Id";
-			// 
 			// workerDesignationsBindingSource
 			// 
 			this.workerDesignationsBindingSource.DataMember = "WorkerDesignations";
@@ -2083,7 +2027,7 @@
 			this.comboBox12.DisplayMember = "Name";
 			this.comboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox12.FormattingEnabled = true;
-			this.comboBox12.Location = new System.Drawing.Point(406, 419);
+			this.comboBox12.Location = new System.Drawing.Point(406, 358);
 			this.comboBox12.Name = "comboBox12";
 			this.comboBox12.Size = new System.Drawing.Size(162, 23);
 			this.comboBox12.TabIndex = 105;
@@ -2102,7 +2046,7 @@
 			this.comboBox13.DisplayMember = "Name";
 			this.comboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox13.FormattingEnabled = true;
-			this.comboBox13.Location = new System.Drawing.Point(406, 279);
+			this.comboBox13.Location = new System.Drawing.Point(406, 218);
 			this.comboBox13.Name = "comboBox13";
 			this.comboBox13.Size = new System.Drawing.Size(162, 23);
 			this.comboBox13.TabIndex = 104;
@@ -2113,20 +2057,10 @@
 			this.designationsBindingSource.DataMember = "Designations";
 			this.designationsBindingSource.DataSource = this.homeTextileDBDataSet2;
 			// 
-			// checkBox2
-			// 
-			this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.employeesBindingSource, "IsWorker", true));
-			this.checkBox2.Location = new System.Drawing.Point(406, 256);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(158, 24);
-			this.checkBox2.TabIndex = 87;
-			this.checkBox2.Text = "checkBox1";
-			this.checkBox2.UseVisualStyleBackColor = true;
-			// 
 			// textBox2
 			// 
 			this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "FirstName", true));
-			this.textBox2.Location = new System.Drawing.Point(406, 308);
+			this.textBox2.Location = new System.Drawing.Point(406, 247);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(162, 22);
 			this.textBox2.TabIndex = 89;
@@ -2134,7 +2068,7 @@
 			// textBox3
 			// 
 			this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "LastName", true));
-			this.textBox3.Location = new System.Drawing.Point(406, 335);
+			this.textBox3.Location = new System.Drawing.Point(406, 274);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(162, 22);
 			this.textBox3.TabIndex = 91;
@@ -2142,7 +2076,7 @@
 			// textBox4
 			// 
 			this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "MiddleName", true));
-			this.textBox4.Location = new System.Drawing.Point(406, 363);
+			this.textBox4.Location = new System.Drawing.Point(406, 302);
 			this.textBox4.Name = "textBox4";
 			this.textBox4.Size = new System.Drawing.Size(162, 22);
 			this.textBox4.TabIndex = 93;
@@ -2150,7 +2084,7 @@
 			// textBox5
 			// 
 			this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "EmergencyContact", true));
-			this.textBox5.Location = new System.Drawing.Point(406, 391);
+			this.textBox5.Location = new System.Drawing.Point(406, 330);
 			this.textBox5.Name = "textBox5";
 			this.textBox5.Size = new System.Drawing.Size(162, 22);
 			this.textBox5.TabIndex = 95;
@@ -2168,7 +2102,7 @@
 			// dateTimePicker1
 			// 
 			this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.employeesBindingSource, "EndDate", true));
-			this.dateTimePicker1.Location = new System.Drawing.Point(406, 448);
+			this.dateTimePicker1.Location = new System.Drawing.Point(406, 387);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(162, 22);
 			this.dateTimePicker1.TabIndex = 100;
@@ -2176,7 +2110,7 @@
 			// dateTimePicker2
 			// 
 			this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.employeesBindingSource, "InsertDate", true));
-			this.dateTimePicker2.Location = new System.Drawing.Point(406, 476);
+			this.dateTimePicker2.Location = new System.Drawing.Point(406, 415);
 			this.dateTimePicker2.Name = "dateTimePicker2";
 			this.dateTimePicker2.Size = new System.Drawing.Size(162, 22);
 			this.dateTimePicker2.TabIndex = 102;
@@ -2197,18 +2131,10 @@
 			this.dateTimePicker3.Size = new System.Drawing.Size(162, 22);
 			this.dateTimePicker3.TabIndex = 79;
 			// 
-			// textBox7
-			// 
-			this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "TechnicalAllowance", true));
-			this.textBox7.Location = new System.Drawing.Point(406, 207);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(162, 22);
-			this.textBox7.TabIndex = 83;
-			// 
 			// textBox8
 			// 
 			this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "NationalId", true));
-			this.textBox8.Location = new System.Drawing.Point(406, 232);
+			this.textBox8.Location = new System.Drawing.Point(405, 183);
 			this.textBox8.Name = "textBox8";
 			this.textBox8.Size = new System.Drawing.Size(162, 22);
 			this.textBox8.TabIndex = 85;
@@ -2524,10 +2450,8 @@
 		private System.Windows.Forms.ComboBox comboBox9;
 		private System.Windows.Forms.ComboBox comboBox10;
 		private System.Windows.Forms.CheckBox isWorkerCheckBox;
-		private System.Windows.Forms.ComboBox comboBox11;
 		private System.Windows.Forms.ComboBox comboBox12;
 		private System.Windows.Forms.ComboBox comboBox13;
-		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.TextBox textBox4;
@@ -2537,7 +2461,6 @@
 		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 		private System.Windows.Forms.TextBox textBox6;
 		private System.Windows.Forms.DateTimePicker dateTimePicker3;
-		private System.Windows.Forms.TextBox textBox7;
 		private System.Windows.Forms.TextBox textBox8;
 		private System.Windows.Forms.ComboBox comboBox14;
 		private System.Windows.Forms.ComboBox comboBox15;

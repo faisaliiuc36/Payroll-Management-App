@@ -127,12 +127,7 @@ namespace HomeTextileApp
 			{
 				employee.SectionId = null;
 			}
-			employee.TechnicalAllowance = Convert.ToDouble(technicalAllowanceTextBox.Text);
-			employee.WorkerDesignationId = Convert.ToInt32(workerDesignationIdComboBox.SelectedValue);
-			if (employee.WorkerDesignationId == 0)
-			{
-				employee.WorkerDesignationId = null;
-			}
+			
 			employee.GenderId = Convert.ToInt32(genderIdComboBox.SelectedValue);
 			if (employee.GenderId == 0)
 			{
@@ -1053,6 +1048,16 @@ namespace HomeTextileApp
 			//this.Validate();
 			//this.employeesBindingSource.EndEdit();
 			//this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
+
+		}
+
+		private void technicalAllowanceLabel_Click_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void technicalAllowanceTextBox_TextChanged_1(object sender, EventArgs e)
+		{
 
 		}
 	}
