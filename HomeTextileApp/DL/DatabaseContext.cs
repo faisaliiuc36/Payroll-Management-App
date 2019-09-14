@@ -20,6 +20,7 @@ namespace HomeTextileApp.DL
 
 
 		public virtual DbSet<Emp_CheckInOut> Emp_CheckInOuts { get; set; }
+		public virtual DbSet<EmployeeDue> EmployeeDues { get; set; }
 		public virtual DbSet<Employee> Employees { get; set; }
 		public virtual DbSet<EmployeeType> EmployeeTypes { get; set; }
 		public virtual DbSet<Company> Companies { get; set; }

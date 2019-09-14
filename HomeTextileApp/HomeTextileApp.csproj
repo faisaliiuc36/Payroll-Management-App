@@ -74,6 +74,12 @@
     <Compile Include="AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEmployeeDue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeeDue.Designer.cs">
+      <DependentUpon>AddEmployeeDue.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddHolidays.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,7 @@
     <Compile Include="DL\Designation.cs" />
     <Compile Include="DL\Duty_Roster.cs" />
     <Compile Include="DL\Employee.cs" />
+    <Compile Include="DL\EmployeeDue.cs" />
     <Compile Include="DL\EmployeeType.cs" />
     <Compile Include="DL\Emp_CheckInOut.cs" />
     <Compile Include="DL\Gender.cs" />
@@ -360,6 +367,14 @@
     <Compile Include="Migrations\201909080617414_WorkerDesignationHistory.Designer.cs">
       <DependentUpon>201909080617414_WorkerDesignationHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909140830415_EmployeeDue.cs" />
+    <Compile Include="Migrations\201909140830415_EmployeeDue.Designer.cs">
+      <DependentUpon>201909140830415_EmployeeDue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909140916026_EmployeeDue-U.cs" />
+    <Compile Include="Migrations\201909140916026_EmployeeDue-U.Designer.cs">
+      <DependentUpon>201909140916026_EmployeeDue-U.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OTDateWise.cs">
       <SubType>Form</SubType>
@@ -372,6 +387,12 @@
     </Compile>
     <Compile Include="OtherSettings.Designer.cs">
       <DependentUpon>OtherSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OTMonthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTMonthlyReport.Designer.cs">
+      <DependentUpon>OTMonthlyReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -431,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployeeDue.resx">
+      <DependentUpon>AddEmployeeDue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddHolidays.resx">
       <DependentUpon>AddHolidays.cs</DependentUpon>
@@ -564,11 +588,20 @@
     <EmbeddedResource Include="Migrations\201909080617414_WorkerDesignationHistory.resx">
       <DependentUpon>201909080617414_WorkerDesignationHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909140830415_EmployeeDue.resx">
+      <DependentUpon>201909140830415_EmployeeDue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909140916026_EmployeeDue-U.resx">
+      <DependentUpon>201909140916026_EmployeeDue-U.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OTDateWise.resx">
       <DependentUpon>OTDateWise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTMonthlyReport.resx">
+      <DependentUpon>OTMonthlyReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -658,6 +691,7 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.Designation.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Duty_Roster.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Employee.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.EmployeeDue.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.EmployeeType.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Emp_CheckInOut.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Gender.datasource" />

@@ -15,8 +15,23 @@ namespace HomeTextileApp.DL
 
 
 		public double Gross { get; set; }
+		public double Year { get; set; }
 
 		public double Basic { get; set; }
+		public double BonusC
+		{
+			get
+			{
+				if (this.Year < 1)
+				{
+					return 0;
+				}
+				else
+				{
+					return this.Basic;
+				}
+			}
+		}
 
 		public double CompanyPercentage { get; set; }
 
@@ -25,8 +40,11 @@ namespace HomeTextileApp.DL
 		{
 			get
 			{
-
-				if (this.Days >= 213)
+				if(this.Year<1)
+				{
+					return 0;
+				}
+				else if (this.Days >= 213)
 				{
 					return this.Gross * (100 / this.CompanyPercentage);
 				}

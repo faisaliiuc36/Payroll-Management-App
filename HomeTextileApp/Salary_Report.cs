@@ -407,7 +407,7 @@ namespace HomeTextileApp
 
 
 							// Find Salary Grade At That Time
-							DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(workerDesignationHistory.WorkerDesignation.Id);
+							DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(workerDesignationHistory.WorkerDesignationId);
 							List<ShadowSalaryGrade> shadowSalaryGrades = db.ShadowSalaryGrades.Where(a => a.UpdatedAt <= From && a.RoWId == workerDesignation.SalaryGrade.Id).ToList();
 							DateTime D2 = DateTime.Now;
 							if (shadowSalaryGrades.Count > 0)

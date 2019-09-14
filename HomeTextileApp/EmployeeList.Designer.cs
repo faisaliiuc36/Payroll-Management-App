@@ -47,7 +47,7 @@
 			System.Windows.Forms.Label isWorkerLabel;
 			System.Windows.Forms.Label passwordLabel;
 			System.Windows.Forms.Label permanentLabel;
-			System.Windows.Forms.Label workerDesignationIdLabel;
+		
 			System.Windows.Forms.Label technicalAllowanceLabel;
 			System.Windows.Forms.Label nationalIdLabel;
 			System.Windows.Forms.Label maritialStatusIdLabel;
@@ -124,7 +124,7 @@
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.comboBox5 = new System.Windows.Forms.ComboBox();
 			this.comboBox6 = new System.Windows.Forms.ComboBox();
-			this.workerDesignationIdComboBox = new System.Windows.Forms.ComboBox();
+		
 			this.genderIdComboBox = new System.Windows.Forms.ComboBox();
 			this.designationIdComboBox = new System.Windows.Forms.ComboBox();
 			this.activeStatusCheckBox = new System.Windows.Forms.CheckBox();
@@ -257,7 +257,7 @@
 			isWorkerLabel = new System.Windows.Forms.Label();
 			passwordLabel = new System.Windows.Forms.Label();
 			permanentLabel = new System.Windows.Forms.Label();
-			workerDesignationIdLabel = new System.Windows.Forms.Label();
+		
 			technicalAllowanceLabel = new System.Windows.Forms.Label();
 			nationalIdLabel = new System.Windows.Forms.Label();
 			maritialStatusIdLabel = new System.Windows.Forms.Label();
@@ -492,15 +492,7 @@
 			permanentLabel.TabIndex = 78;
 			permanentLabel.Text = "Permanent:";
 			// 
-			// workerDesignationIdLabel
-			// 
-			workerDesignationIdLabel.AutoSize = true;
-			workerDesignationIdLabel.Location = new System.Drawing.Point(279, 198);
-			workerDesignationIdLabel.Name = "workerDesignationIdLabel";
-			workerDesignationIdLabel.Size = new System.Drawing.Size(114, 15);
-			workerDesignationIdLabel.TabIndex = 80;
-			workerDesignationIdLabel.Text = "Worker Designation";
-			// 
+		
 			// technicalAllowanceLabel
 			// 
 			technicalAllowanceLabel.AutoSize = true;
@@ -1117,7 +1109,7 @@
 			this.groupBox3.Controls.Add(label6);
 			this.groupBox3.Controls.Add(label7);
 			this.groupBox3.Controls.Add(label8);
-			this.groupBox3.Controls.Add(this.workerDesignationIdComboBox);
+			
 			this.groupBox3.Controls.Add(this.genderIdComboBox);
 			this.groupBox3.Controls.Add(designationIdLabel);
 			this.groupBox3.Controls.Add(this.designationIdComboBox);
@@ -1144,7 +1136,7 @@
 			this.groupBox3.Controls.Add(this.passwordTextBox);
 			this.groupBox3.Controls.Add(permanentLabel);
 			this.groupBox3.Controls.Add(this.permanentDateTimePicker);
-			this.groupBox3.Controls.Add(workerDesignationIdLabel);
+		
 			this.groupBox3.Controls.Add(technicalAllowanceLabel);
 			this.groupBox3.Controls.Add(this.technicalAllowanceTextBox);
 			this.groupBox3.Controls.Add(nationalIdLabel);
@@ -1249,16 +1241,7 @@
 			// 
 			// workerDesignationIdComboBox
 			// 
-			this.workerDesignationIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "WorkerDesignationId", true));
-			this.workerDesignationIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeesBindingSource, "WorkerDesignationId", true));
-			this.workerDesignationIdComboBox.DisplayMember = "Name";
-			this.workerDesignationIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.workerDesignationIdComboBox.FormattingEnabled = true;
-			this.workerDesignationIdComboBox.Location = new System.Drawing.Point(406, 194);
-			this.workerDesignationIdComboBox.Name = "workerDesignationIdComboBox";
-			this.workerDesignationIdComboBox.Size = new System.Drawing.Size(162, 23);
-			this.workerDesignationIdComboBox.TabIndex = 106;
-			this.workerDesignationIdComboBox.ValueMember = "Id";
+			
 			// 
 			// genderIdComboBox
 			// 
@@ -1748,10 +1731,7 @@
 			// 
 			// dataGridViewTextBoxColumn28
 			// 
-			this.dataGridViewTextBoxColumn28.DataPropertyName = "WorkerDesignationId";
-			this.dataGridViewTextBoxColumn28.HeaderText = "WorkerDesignationId";
-			this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-			this.dataGridViewTextBoxColumn28.Visible = false;
+		
 			// 
 			// dataGridViewTextBoxColumn29
 			// 
@@ -2415,7 +2395,7 @@
 		private System.Windows.Forms.ComboBox comboBox5;
 		private System.Windows.Forms.ComboBox comboBox6;
 		//private System.Windows.Forms.CheckBox isWorkerCheckBox;
-		private System.Windows.Forms.ComboBox workerDesignationIdComboBox;
+		
 		private System.Windows.Forms.ComboBox genderIdComboBox;
 		private System.Windows.Forms.ComboBox designationIdComboBox;
 		private System.Windows.Forms.CheckBox activeStatusCheckBox;

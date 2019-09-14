@@ -90,12 +90,28 @@ namespace HomeTextileApp
 
 			DateTime To = bonus.Date;
 			DateTime From = To.AddYears(-1);
+			
 
 			List<ViewBonus> viewBonus = new List<ViewBonus>();
 
 			foreach(Employee employee in employees)
 			{
+				
+
 				ViewBonus view = new ViewBonus();
+				try
+				{
+
+					DateTime JoiningDate = Convert.ToDateTime(employee.HireDate);
+					TimeSpan timeSpan = To.Subtract(JoiningDate);
+					view.Year = timeSpan.TotalDays / 365;
+				}
+				catch
+				{
+
+				}
+
+
 				view.CompanyPercentage = bonus.Amount;
 				view.Emp_Id = employee.Emp_Id;
 				view.Name = employee.EmpFullName;
@@ -160,6 +176,7 @@ namespace HomeTextileApp
 			}
 
 			viewBonusDataGridView.DataSource = viewBonus.ToList();
+			viewBonusDataGridView1.DataSource = viewBonus.ToList();
 		}
 
 		private void button3_Click(object sender, EventArgs e)

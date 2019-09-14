@@ -86,22 +86,23 @@ namespace HomeTextileApp
 							if (workerDesignationHistories.Count > 0)
 							{
 								D = workerDesignationHistories.Max(a => a.From);
+
+
+								var shadowEmp = workerDesignationHistories.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From == D);
+
+								// Find Salary Grade At That Time
+								DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(shadowEmp.WorkerDesignationId);
+								List<ShadowSalaryGrade> shadowSalaryGrades = db.ShadowSalaryGrades.Where(a => a.UpdatedAt <= From && a.RoWId == workerDesignation.SalaryGrade.Id).ToList();
+								DateTime D2 = DateTime.Now;
+								if (shadowSalaryGrades.Count > 0)
+								{
+									D2 = shadowSalaryGrades.Max(a => a.UpdatedAt);
+									var shadowgrade = shadowSalaryGrades.FirstOrDefault(a => a.RoWId == workerDesignation.SalaryGrade.Id && a.UpdatedAt == D2);
+									Gross = shadowgrade.Total;
+								}
+
+								viewOT.Grade = shadowEmp.WorkerDesignation.Name;
 							}
-
-							var shadowEmp = workerDesignationHistories.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From == D);
-
-							// Find Salary Grade At That Time
-							DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(shadowEmp.WorkerDesignationId);
-							List<ShadowSalaryGrade> shadowSalaryGrades = db.ShadowSalaryGrades.Where(a => a.UpdatedAt <= From && a.RoWId == workerDesignation.SalaryGrade.Id).ToList();
-							DateTime D2 = DateTime.Now;
-							if (shadowSalaryGrades.Count > 0)
-							{
-								D2 = shadowSalaryGrades.Max(a => a.UpdatedAt);
-								var shadowgrade = shadowSalaryGrades.FirstOrDefault(a => a.RoWId == workerDesignation.SalaryGrade.Id && a.UpdatedAt == D2);
-								Gross = shadowgrade.Total;
-							}
-
-							viewOT.Grade = shadowEmp.WorkerDesignation.Name;
 						}
 						catch(Exception Ex)
 						{
@@ -263,6 +264,7 @@ namespace HomeTextileApp
 
 
 				viewOTDataGridView.DataSource = viewOTs.ToList();
+				viewOTDataGridView1.DataSource = viewOTs.ToList();
 
 
 
@@ -279,16 +281,131 @@ namespace HomeTextileApp
 			List<Employee> employeesALL = db.Employees.Where(a => a.Section.DepartmentId == id).ToList();
 			List<Employee> employees = employeesALL.Where(a => a.IsActive(From) && a.IsEdited == true).ToList();
 
-			//try
-			//{
-			//	PopulateGrid(employees);
-			//}
-			//catch
-			//{
+			try
+			{
+				PopulateGrid(employees);
+			}
+			catch
+			{
 
-			//}
+			}
 
-			PopulateGrid(employees);
+		
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void groupBox2_Enter(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label6_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void sectionsBindingSource_CurrentChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void departmentsBindingSource_CurrentChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void unitsBindingSource_CurrentChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void companiesBindingSource_CurrentChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void viewOTBindingSource_CurrentChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void viewOTDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void viewOTDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void groupBox1_Enter(object sender, EventArgs e)
+		{
+
+		}
+
+		private void groupBox3_Enter(object sender, EventArgs e)
+		{
+
 		}
 	}
 	}
