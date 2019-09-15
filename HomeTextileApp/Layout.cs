@@ -494,6 +494,32 @@ namespace HomeTextileApp
 			Login_Form login_Form = new Login_Form();
 			login_Form.Show();
 		}
+
+		private void button28_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			AddEmployeeDue objForm = new AddEmployeeDue();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button29_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			AddAdvance objForm = new AddAdvance();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
 	}
 }
                                                                                   

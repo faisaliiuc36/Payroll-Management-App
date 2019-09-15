@@ -129,6 +129,13 @@ namespace HomeTextileApp
 
 						}
 
+						//Advance
+
+						List<Advance> advances = db.Advances.Where(a => a.EmployeeId == emp.Id && a.Date.Month == From.Month && a.Date.Year == From.Year).ToList();
+						if(advances.Count>0)
+						{
+							viewSalarySheet.DAdvance = advances.Sum(a => a.Amount);
+						}
 
 						//Salary Days
 						viewSalarySheet.SalaryDays = DateTime.DaysInMonth(From.Year, From.Month); ;
@@ -432,7 +439,7 @@ namespace HomeTextileApp
 									viewSalarySheet.Bonus = shadowgrade.Total * (Bonus.Amount / 100);
 								}
 								//DFood
-								viewSalarySheet.DFood = shadowgrade.FoodAllowance;
+								viewSalarySheet.DFood = 0;
 								//DTax
 								//viewSalarySheet.DTax = salary.Amount * (salarySetting.Tax / 100);
 								//DSTamp
@@ -455,8 +462,14 @@ namespace HomeTextileApp
 
 
 
-							
 
+						//Advance
+
+						List<Advance> advances = db.Advances.Where(a => a.EmployeeId == emp.Id && a.Date.Month == From.Month && a.Date.Year == From.Year).ToList();
+						if (advances.Count > 0)
+						{
+							viewSalarySheet.DAdvance = advances.Sum(a => a.Amount);
+						}
 
 						//Salary Days
 						viewSalarySheet.SalaryDays = DateTime.DaysInMonth(From.Year, From.Month); ;

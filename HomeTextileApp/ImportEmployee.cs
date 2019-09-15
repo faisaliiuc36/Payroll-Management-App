@@ -80,7 +80,8 @@ namespace HomeTextileApp
 
 
 			employeesDataGridView.DataSource = employees2.ToList();
-			employeesDataGridView1.DataSource = db.Employees.ToList();
+			List<Employee> employeesUnedited = db.Employees.OrderByDescending(a => a.Id).ToList();
+			employeesDataGridView1.DataSource =employeesUnedited.Where(a=>a.IsEdited==false).ToList();
 
 		}
 
@@ -94,7 +95,7 @@ namespace HomeTextileApp
 
 		private void employeesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if(e.ColumnIndex==33)
+			if(e.ColumnIndex==30)
 			{
 
 				//MessageBox.Show(this.employeesDataGridView.CurrentRow.Cells[1].Value.ToString());
@@ -106,7 +107,7 @@ namespace HomeTextileApp
 
 				ShadowEmployee shadowEmployee = new ShadowEmployee();
 				shadowEmployee.Assign(employee);
-				db.Employees.Add(employee);
+				db.ShadowEmployees.Add(shadowEmployee);
 				db.SaveChanges();
 
 
@@ -118,6 +119,26 @@ namespace HomeTextileApp
 		private void employeesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			var emp = employeesDataGridView1.CurrentRow;
+			Employee employee = (Employee)emp.DataBoundItem;
+			Employee employeeD = db.Employees.Find(employee.Id);
+			ShadowEmployee shadowEmployee = db.ShadowEmployees.FirstOrDefault(a => a.RoWId == employee.Id);
+
+			db.Employees.Remove(employeeD);
+			db.SaveChanges();
+
+
+			//ShadowEmployee shadowEmployee = db.ShadowEmployees.FirstOrDefault(a=>a.Emp_Id==employee.Emp_Id);
+		
+			db.ShadowEmployees.Remove(shadowEmployee);
+			db.SaveChanges();
+
+
+			GetEmployee();
 		}
 	}
 }

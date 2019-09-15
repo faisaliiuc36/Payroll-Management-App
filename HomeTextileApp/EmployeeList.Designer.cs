@@ -48,7 +48,6 @@
 			System.Windows.Forms.Label passwordLabel;
 			System.Windows.Forms.Label permanentLabel;
 		
-			System.Windows.Forms.Label technicalAllowanceLabel;
 			System.Windows.Forms.Label nationalIdLabel;
 			System.Windows.Forms.Label maritialStatusIdLabel;
 			System.Windows.Forms.Label emp_IdLabel;
@@ -124,7 +123,6 @@
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.comboBox5 = new System.Windows.Forms.ComboBox();
 			this.comboBox6 = new System.Windows.Forms.ComboBox();
-		
 			this.genderIdComboBox = new System.Windows.Forms.ComboBox();
 			this.designationIdComboBox = new System.Windows.Forms.ComboBox();
 			this.activeStatusCheckBox = new System.Windows.Forms.CheckBox();
@@ -137,7 +135,7 @@
 			this.insertDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.passwordTextBox = new System.Windows.Forms.TextBox();
 			this.permanentDateTimePicker = new System.Windows.Forms.DateTimePicker();
-			this.technicalAllowanceTextBox = new System.Windows.Forms.TextBox();
+		
 			this.nationalIdTextBox = new System.Windows.Forms.TextBox();
 			this.maritialStatusIdComboBox = new System.Windows.Forms.ComboBox();
 			this.religionIdComboBox = new System.Windows.Forms.ComboBox();
@@ -182,7 +180,6 @@
 			this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.employeesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.EmployeesTableAdapter();
 			this.tableAdapterManager = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager();
@@ -201,7 +198,6 @@
 			this.comboBox9 = new System.Windows.Forms.ComboBox();
 			this.comboBox10 = new System.Windows.Forms.ComboBox();
 			this.isWorkerCheckBox = new System.Windows.Forms.CheckBox();
-			this.workerDesignationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox12 = new System.Windows.Forms.ComboBox();
 			this.gendersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox13 = new System.Windows.Forms.ComboBox();
@@ -232,6 +228,7 @@
 			this.textBox12 = new System.Windows.Forms.TextBox();
 			this.textBox13 = new System.Windows.Forms.TextBox();
 			this.textBox14 = new System.Windows.Forms.TextBox();
+			this.workerDesignationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.religionsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.ReligionsTableAdapter();
 			this.workerDesignationsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.WorkerDesignationsTableAdapter();
 			this.designationsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.DesignationsTableAdapter();
@@ -258,7 +255,6 @@
 			passwordLabel = new System.Windows.Forms.Label();
 			permanentLabel = new System.Windows.Forms.Label();
 		
-			technicalAllowanceLabel = new System.Windows.Forms.Label();
 			nationalIdLabel = new System.Windows.Forms.Label();
 			maritialStatusIdLabel = new System.Windows.Forms.Label();
 			emp_IdLabel = new System.Windows.Forms.Label();
@@ -321,13 +317,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gendersBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.designationsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.maritialStatusBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.religionsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.employeeTypesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bloodGroupsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// sectionIdLabel
@@ -493,14 +489,6 @@
 			permanentLabel.Text = "Permanent:";
 			// 
 		
-			// technicalAllowanceLabel
-			// 
-			technicalAllowanceLabel.AutoSize = true;
-			technicalAllowanceLabel.Location = new System.Drawing.Point(279, 226);
-			technicalAllowanceLabel.Name = "technicalAllowanceLabel";
-			technicalAllowanceLabel.Size = new System.Drawing.Size(120, 15);
-			technicalAllowanceLabel.TabIndex = 82;
-			technicalAllowanceLabel.Text = "Technical Allowance:";
 			// 
 			// nationalIdLabel
 			// 
@@ -1109,7 +1097,6 @@
 			this.groupBox3.Controls.Add(label6);
 			this.groupBox3.Controls.Add(label7);
 			this.groupBox3.Controls.Add(label8);
-			
 			this.groupBox3.Controls.Add(this.genderIdComboBox);
 			this.groupBox3.Controls.Add(designationIdLabel);
 			this.groupBox3.Controls.Add(this.designationIdComboBox);
@@ -1136,9 +1123,8 @@
 			this.groupBox3.Controls.Add(this.passwordTextBox);
 			this.groupBox3.Controls.Add(permanentLabel);
 			this.groupBox3.Controls.Add(this.permanentDateTimePicker);
-		
-			this.groupBox3.Controls.Add(technicalAllowanceLabel);
-			this.groupBox3.Controls.Add(this.technicalAllowanceTextBox);
+			
+			
 			this.groupBox3.Controls.Add(nationalIdLabel);
 			this.groupBox3.Controls.Add(this.nationalIdTextBox);
 			this.groupBox3.Controls.Add(maritialStatusIdLabel);
@@ -1191,6 +1177,7 @@
 			// 
 			this.employeesBindingSource.DataMember = "Employees";
 			this.employeesBindingSource.DataSource = this.homeTextileDBDataSet2;
+			this.employeesBindingSource.CurrentChanged += new System.EventHandler(this.employeesBindingSource_CurrentChanged);
 			// 
 			// button1
 			// 
@@ -1238,10 +1225,6 @@
 			this.comboBox6.Name = "comboBox6";
 			this.comboBox6.Size = new System.Drawing.Size(121, 23);
 			this.comboBox6.TabIndex = 115;
-			// 
-			// workerDesignationIdComboBox
-			// 
-			
 			// 
 			// genderIdComboBox
 			// 
@@ -1353,14 +1336,7 @@
 			this.permanentDateTimePicker.Size = new System.Drawing.Size(162, 22);
 			this.permanentDateTimePicker.TabIndex = 79;
 			// 
-			// technicalAllowanceTextBox
-			// 
-			this.technicalAllowanceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "TechnicalAllowance", true));
-			this.technicalAllowanceTextBox.Location = new System.Drawing.Point(406, 223);
-			this.technicalAllowanceTextBox.Name = "technicalAllowanceTextBox";
-			this.technicalAllowanceTextBox.Size = new System.Drawing.Size(162, 22);
-			this.technicalAllowanceTextBox.TabIndex = 83;
-			// 
+			
 			// nationalIdTextBox
 			// 
 			this.nationalIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeesBindingSource, "NationalId", true));
@@ -1518,7 +1494,6 @@
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
             this.dataGridViewTextBoxColumn30});
 			this.employeesDataGridView.DataSource = this.employeesBindingSource;
 			this.employeesDataGridView.Location = new System.Drawing.Point(9, 19);
@@ -1731,14 +1706,7 @@
 			// 
 			// dataGridViewTextBoxColumn28
 			// 
-		
-			// 
-			// dataGridViewTextBoxColumn29
-			// 
-			this.dataGridViewTextBoxColumn29.DataPropertyName = "TechnicalAllowance";
-			this.dataGridViewTextBoxColumn29.HeaderText = "TechnicalAllowance";
-			this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-			this.dataGridViewTextBoxColumn29.Visible = false;
+			this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
 			// 
 			// dataGridViewTextBoxColumn30
 			// 
@@ -1763,6 +1731,7 @@
 			this.tableAdapterManager.DesignationsTableAdapter = null;
 			this.tableAdapterManager.Duty_RosterTableAdapter = null;
 			this.tableAdapterManager.Emp_CheckInOutTableAdapter = null;
+			this.tableAdapterManager.EmployeeDuesTableAdapter = null;
 			this.tableAdapterManager.EmployeesTableAdapter = this.employeesTableAdapter;
 			this.tableAdapterManager.EmployeeTypesTableAdapter = null;
 			this.tableAdapterManager.GendersTableAdapter = null;
@@ -1785,6 +1754,7 @@
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = this.unitsTableAdapter;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+			this.tableAdapterManager.WorkerDesignationHistoriesTableAdapter = null;
 			this.tableAdapterManager.WorkerDesignationsTableAdapter = null;
 			// 
 			// groupBox4
@@ -1993,11 +1963,6 @@
 			this.isWorkerCheckBox.TabIndex = 107;
 			this.isWorkerCheckBox.Text = "checkBox1";
 			this.isWorkerCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// workerDesignationsBindingSource
-			// 
-			this.workerDesignationsBindingSource.DataMember = "WorkerDesignations";
-			this.workerDesignationsBindingSource.DataSource = this.homeTextileDBDataSet2;
 			// 
 			// comboBox12
 			// 
@@ -2257,6 +2222,11 @@
 			this.textBox14.Size = new System.Drawing.Size(162, 22);
 			this.textBox14.TabIndex = 27;
 			// 
+			// workerDesignationsBindingSource
+			// 
+			this.workerDesignationsBindingSource.DataMember = "WorkerDesignations";
+			this.workerDesignationsBindingSource.DataSource = this.homeTextileDBDataSet2;
+			// 
 			// religionsTableAdapter
 			// 
 			this.religionsTableAdapter.ClearBeforeFill = true;
@@ -2316,13 +2286,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gendersBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.designationsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.maritialStatusBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.religionsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.employeeTypesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bloodGroupsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.workerDesignationsBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -2408,7 +2378,7 @@
 		private System.Windows.Forms.DateTimePicker insertDateDateTimePicker;
 		private System.Windows.Forms.TextBox passwordTextBox;
 		private System.Windows.Forms.DateTimePicker permanentDateTimePicker;
-		private System.Windows.Forms.TextBox technicalAllowanceTextBox;
+		
 		private System.Windows.Forms.TextBox nationalIdTextBox;
 		private System.Windows.Forms.ComboBox maritialStatusIdComboBox;
 		private System.Windows.Forms.ComboBox religionIdComboBox;

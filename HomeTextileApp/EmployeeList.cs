@@ -250,7 +250,7 @@ namespace HomeTextileApp
 
 				MessageBox.Show("Save Sucessfully!");
 			}
-			catch (Exception)
+			catch (Exception Ex)
 			{
 				LoadEmployee();
 			}
@@ -379,6 +379,11 @@ namespace HomeTextileApp
 		}
 
 		private void employeesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void employeesBindingSource_CurrentChanged(object sender, EventArgs e)
 		{
 
 		}

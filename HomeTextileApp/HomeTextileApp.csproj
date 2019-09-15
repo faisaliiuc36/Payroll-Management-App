@@ -432,6 +432,12 @@
     <Compile Include="StaffSalarySetting.Designer.cs">
       <DependentUpon>StaffSalarySetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransferHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferHoliday.Designer.cs">
+      <DependentUpon>TransferHoliday.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkerDesignation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +636,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffSalarySetting.resx">
       <DependentUpon>StaffSalarySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransferHoliday.resx">
+      <DependentUpon>TransferHoliday.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerDesignation.resx">
       <DependentUpon>WorkerDesignation.cs</DependentUpon>

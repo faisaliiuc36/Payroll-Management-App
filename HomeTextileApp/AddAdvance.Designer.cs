@@ -41,13 +41,7 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.advanceDataGridView = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.advanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bloodGroupsTableAdapter1 = new HomeTextileApp.HomeTextileDBDataSet1TableAdapters.BloodGroupsTableAdapter();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,6 +50,11 @@
 			this.dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.amountTextBox = new System.Windows.Forms.TextBox();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			idLabel = new System.Windows.Forms.Label();
 			employeeIdLabel = new System.Windows.Forms.Label();
 			dateLabel = new System.Windows.Forms.Label();
@@ -185,7 +184,6 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
 			this.advanceDataGridView.DataSource = this.advanceBindingSource;
 			this.advanceDataGridView.Location = new System.Drawing.Point(12, 58);
@@ -195,52 +193,9 @@
 			this.advanceDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advanceDataGridView_CellClick);
 			this.advanceDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advanceDataGridView_CellContentClick);
 			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.DataPropertyName = "EmployeeId";
-			this.dataGridViewTextBoxColumn2.DataSource = this.employeeBindingSource;
-			this.dataGridViewTextBoxColumn2.DisplayMember = "NameWithId";
-			this.dataGridViewTextBoxColumn2.HeaderText = "EmployeeId";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.dataGridViewTextBoxColumn2.ValueMember = "Id";
-			// 
 			// employeeBindingSource
 			// 
 			this.employeeBindingSource.DataSource = typeof(HomeTextileApp.DL.Employee);
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this.dataGridViewTextBoxColumn3.DataPropertyName = "Employee";
-			this.dataGridViewTextBoxColumn3.HeaderText = "Employee";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this.dataGridViewTextBoxColumn4.DataPropertyName = "Amount";
-			this.dataGridViewTextBoxColumn4.HeaderText = "Amount";
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			// 
-			// dataGridViewTextBoxColumn5
-			// 
-			this.dataGridViewTextBoxColumn5.DataPropertyName = "Installment";
-			this.dataGridViewTextBoxColumn5.HeaderText = "Installment";
-			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.DataPropertyName = "Date";
-			this.dataGridViewTextBoxColumn6.HeaderText = "Date";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
 			// 
 			// advanceBindingSource
 			// 
@@ -268,7 +223,7 @@
 			this.groupBox1.Size = new System.Drawing.Size(310, 344);
 			this.groupBox1.TabIndex = 16;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "groupBox1";
+			this.groupBox1.Text = "Advance_Form";
 			// 
 			// idTextBox
 			// 
@@ -311,6 +266,43 @@
 			// 
 			this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
 			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.DataPropertyName = "EmployeeId";
+			this.dataGridViewTextBoxColumn2.DataSource = this.employeeBindingSource;
+			this.dataGridViewTextBoxColumn2.DisplayMember = "NameWithId";
+			this.dataGridViewTextBoxColumn2.HeaderText = "EmployeeId";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.dataGridViewTextBoxColumn2.ValueMember = "Id";
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this.dataGridViewTextBoxColumn3.DataPropertyName = "Employee";
+			this.dataGridViewTextBoxColumn3.HeaderText = "Employee";
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			this.dataGridViewTextBoxColumn3.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this.dataGridViewTextBoxColumn4.DataPropertyName = "Amount";
+			this.dataGridViewTextBoxColumn4.HeaderText = "Amount";
+			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this.dataGridViewTextBoxColumn6.DataPropertyName = "Date";
+			this.dataGridViewTextBoxColumn6.HeaderText = "Date";
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			// 
 			// AddAdvance
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,12 +339,6 @@
 		private System.Windows.Forms.BindingSource advanceBindingSource;
 		private System.Windows.Forms.DataGridView advanceDataGridView;
 		private System.Windows.Forms.BindingSource employeeBindingSource;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 		private HomeTextileDBDataSet1TableAdapters.BloodGroupsTableAdapter bloodGroupsTableAdapter1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.TextBox idTextBox;
@@ -360,5 +346,10 @@
 		private System.Windows.Forms.DateTimePicker dateDateTimePicker;
 		private System.Windows.Forms.TextBox amountTextBox;
 		private System.ComponentModel.BackgroundWorker backgroundWorker1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 	}
 }

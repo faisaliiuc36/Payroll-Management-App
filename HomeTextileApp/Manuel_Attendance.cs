@@ -90,17 +90,18 @@ namespace HomeTextileApp
 				for (int i = 0; i < emp_CheckInOutDataGridView.Rows.Count; i++)
 				{
 					DateTime date =Convert.ToDateTime(emp_CheckInOutDataGridView.Rows[i].Cells[2].Value.ToString());
-				List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Month == date.Month && a.CHECKTIME.Year == date.Year && a.CHECKTIME.Day == date.Day && a.IsManual==false).ToList();
+					int id =Convert.ToInt32(emp_IdTextBox.Text);
+				List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Month == date.Month && a.CHECKTIME.Year == date.Year && a.CHECKTIME.Day == date.Day && a.IsManual==false && a.UserId==id).ToList();
 				if(emp_CheckInOuts.Count>0)
 				{
 					//In Time Calculation
 
 					DateTime emp = emp_CheckInOuts.Min(a => a.CHECKTIME);
-					emp_CheckInOutDataGridView.Rows[i].Cells[8].Value = emp.TimeOfDay;
+					emp_CheckInOutDataGridView.Rows[i].Cells[9].Value = emp.TimeOfDay;
 
 					//Out Time Calculation
 					DateTime emp2 = emp_CheckInOuts.Max(a => a.CHECKTIME);
-					emp_CheckInOutDataGridView.Rows[i].Cells[9].Value = emp2.TimeOfDay;
+					emp_CheckInOutDataGridView.Rows[i].Cells[10].Value = emp2.TimeOfDay;
 
 				}
 			}
