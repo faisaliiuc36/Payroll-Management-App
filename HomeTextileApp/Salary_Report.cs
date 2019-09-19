@@ -34,34 +34,101 @@ namespace HomeTextileApp
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			DGVPrinter printer = new DGVPrinter();
+			var emp = viewSalarySheetDataGridView.DataSource;
 
-			printer.Title = "Salary Report";
-			printer.SubTitle = "Saad Musa Group of Industries";
+			List<ViewSalarySheet> viewSalarySheets = (List<ViewSalarySheet>)emp;
 
-			printer.SubTitle = string.Format("Date:{0}", dateTimePicker1.Value.Date);
 
-			printer.SubTitleFormatFlags = StringFormatFlags.LineLimit |
+			DateTime From = dateTimePicker1.Value;
+			DateTime Loop = new DateTime(From.Year,From.Month,1);
+			int id = Convert.ToInt32(comboBox4.SelectedValue);
+			DL.Section section = db.Sections.Find(id);
 
-										  StringFormatFlags.NoClip;
 
-			printer.PageNumbers = true;
+			SalaryReportParameter salaryReportParameter = new SalaryReportParameter();
+			salaryReportParameter.Unit = section.Department.Unit.Name;
+			salaryReportParameter.Department = section.Department.Name;
+			salaryReportParameter.Section = section.Name;
+			salaryReportParameter.Date = From;
+			do
+			{
+				salaryReportParameter.Days = salaryReportParameter.Days + 1;
+				salaryReportParameter.Weekend = salaryReportParameter.Weekend+ 1;
+				var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == section.DepartmentId && a.From <= Loop && a.To >= Loop);
+				if(Holiday != null)
+				{
+					salaryReportParameter.Holiday = salaryReportParameter.Holiday + 1;
+				}
+				Loop = Loop.AddDays(1);
+			} while (Loop.Month == From.Month);
 
-			printer.PageNumberInHeader = false;
-			printer.PrintMargins.Left = 10;
-			printer.PrintMargins.Right = 10;
-			printer.PorportionalColumns = true;
+			using (SalaryCrystalReport salaryCrystalReport = new SalaryCrystalReport(salaryReportParameter,viewSalarySheets))
+			{
+				salaryCrystalReport.ShowDialog();
+			}
 
-			printer.HeaderCellAlignment = StringAlignment.Near;
 
-			printer.Footer = "Saad Musa-Home Textile";
 
-			printer.FooterSpacing = 15;
+		//	public partial class SalaryCrystalReport : Form
+		//{
+		//	List<ViewSalarySheet> viewSalarySheets = new List<ViewSalarySheet>();
+		//	SalaryReportParameter SalaryReportParameter = new SalaryReportParameter();
 
-			printer.PageSettings.Landscape = true;
+		//	public SalaryCrystalReport(SalaryReportParameter salaryReportParameter, List<ViewSalarySheet> vS)
+		//	{
+		//		InitializeComponent();
+		//		viewSalarySheets = vS;
+		//		SalaryReportParameter = salaryReportParameter;
+		//	}
 
-			printer.PrintDataGridView(viewSalarySheetDataGridView);
-		}
+		//	private void crystalReportViewer1_Load(object sender, EventArgs e)
+		//	{
+
+		//	}
+
+		//	private void SalaryCrystalReport_Load(object sender, EventArgs e)
+		//	{
+		//		salaryReport1.SetDataSource(viewSalarySheets);
+		//		salaryReport1.SetParameterValue("Date", SalaryReportParameter.Date.ToString("dd/MM/yyyy"));
+		//		salaryReport1.SetParameterValue("Days", SalaryReportParameter.Days);
+		//		salaryReport1.SetParameterValue("Weekend", SalaryReportParameter.Weekend);
+		//		salaryReport1.SetParameterValue("Holiday", SalaryReportParameter.Holiday);
+		//		salaryReport1.SetParameterValue("Dept", SalaryReportParameter.Department);
+		//		salaryReport1.SetParameterValue("Unit", SalaryReportParameter.Unit);
+		//		salaryReport1.SetParameterValue("Section", SalaryReportParameter.Section);
+		//		crystalReportViewer1.ReportSource = salaryReport1;
+		//		crystalReportViewer1.Refresh();
+		//	}
+		//}
+
+		//DGVPrinter printer = new DGVPrinter();
+
+		//printer.Title = "Salary Report";
+		//printer.SubTitle = "Saad Musa Group of Industries";
+
+		//printer.SubTitle = string.Format("Date:{0}", dateTimePicker1.Value.Date);
+
+		//printer.SubTitleFormatFlags = StringFormatFlags.LineLimit |
+
+		//							  StringFormatFlags.NoClip;
+
+		//printer.PageNumbers = true;
+
+		//printer.PageNumberInHeader = false;
+		//printer.PrintMargins.Left = 10;
+		//printer.PrintMargins.Right = 10;
+		//printer.PorportionalColumns = true;
+
+		//printer.HeaderCellAlignment = StringAlignment.Near;
+
+		//printer.Footer = "Saad Musa-Home Textile";
+
+		//printer.FooterSpacing = 15;
+
+		//printer.PageSettings.Landscape = true;
+
+		//printer.PrintDataGridView(viewSalarySheetDataGridView);
+	}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
