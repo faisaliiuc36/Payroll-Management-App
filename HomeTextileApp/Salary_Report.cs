@@ -53,7 +53,11 @@ namespace HomeTextileApp
 			do
 			{
 				salaryReportParameter.Days = salaryReportParameter.Days + 1;
-				salaryReportParameter.Weekend = salaryReportParameter.Weekend+ 1;
+				if(Loop.DayOfWeek.ToString() == "Friday")
+				{
+					salaryReportParameter.Weekend = salaryReportParameter.Weekend + 1;
+				}
+				
 				var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == section.DepartmentId && a.From <= Loop && a.To >= Loop);
 				if(Holiday != null)
 				{
@@ -147,6 +151,8 @@ namespace HomeTextileApp
 					ViewSalarySheet viewSalarySheet = new ViewSalarySheet();
 					viewSalarySheet.Emp_Id = emp.Emp_Id;
 					viewSalarySheet.Name = emp.EmpFullName;
+					viewSalarySheet.Designation = emp.Designation.Name;
+					viewSalarySheet.JoiningDate = Convert.ToDateTime(emp.HireDate);
 					if(emp.IsWorker ==false)
 					{
 						List<Salary> salaries = db.Salaries.Where(a => a.Date <= From && a.EmployeeId == emp.Id).ToList();
@@ -217,6 +223,24 @@ namespace HomeTextileApp
 							if (leave != null)
 							{
 								viewSalarySheet.Leave = viewSalarySheet.Leave + 1;
+
+								if(leave.LeaveType.Tags=="CL")
+								{
+									viewSalarySheet.CL = viewSalarySheet.CL + 1;
+								}
+								if (leave.LeaveType.Tags=="ML")
+								{
+									viewSalarySheet.ML = viewSalarySheet.ML + 1;
+								}
+								if (leave.LeaveType.Tags == "EL")
+								{
+									viewSalarySheet.EL = viewSalarySheet.EL + 1;
+								}
+								if (leave.LeaveType.Tags == "SL")
+								{
+									viewSalarySheet.SL = viewSalarySheet.SL + 1;
+								}
+
 							}
 							//Absent
 							int Late = 0;
@@ -454,9 +478,7 @@ namespace HomeTextileApp
 							NewDate = NewDate.AddDays(1);
 						} while (From.Month == NewDate.Month);
 
-						viewSalarySheet.DAbsent = (viewSalarySheet.Gross / viewSalarySheet.SalaryDays) * viewSalarySheet.Absent;
-						viewSalarySheet.NetSalary = viewSalarySheet.Gross + viewSalarySheet.Bonus - (viewSalarySheet.DAbsent + viewSalarySheet.DAdvance + viewSalarySheet.DFood + viewSalarySheet.DLoan + viewSalarySheet.DStamp + viewSalarySheet.DTax);
-						viewSalarySheets.Add(viewSalarySheet);
+						
 
 					}
 					else
@@ -482,13 +504,18 @@ namespace HomeTextileApp
 
 							// Find Salary Grade At That Time
 							DL.WorkerDesignation workerDesignation = db.WorkerDesignations.Find(workerDesignationHistory.WorkerDesignationId);
+
+							// Designation Add
+							viewSalarySheet.Designation = workerDesignation.Name;
+
 							List<ShadowSalaryGrade> shadowSalaryGrades = db.ShadowSalaryGrades.Where(a => a.UpdatedAt <= From && a.RoWId == workerDesignation.SalaryGrade.Id).ToList();
 							DateTime D2 = DateTime.Now;
 							if (shadowSalaryGrades.Count > 0)
 							{
 								D2 = shadowSalaryGrades.Max(a => a.UpdatedAt);
 								var shadowgrade = shadowSalaryGrades.FirstOrDefault(a => a.RoWId == workerDesignation.SalaryGrade.Id && a.UpdatedAt == D2);
-
+								//Grade
+								viewSalarySheet.Grade = shadowgrade.GradeName;
 								//Other
 								viewSalarySheet.Other = workerDesignationHistory.TechnicalAllowance;
 								//Gross
@@ -551,6 +578,22 @@ namespace HomeTextileApp
 							if (leave != null)
 							{
 								viewSalarySheet.Leave = viewSalarySheet.Leave + 1;
+								if (leave.LeaveType.Tags == "CL")
+								{
+									viewSalarySheet.CL = viewSalarySheet.CL + 1;
+								}
+								if (leave.LeaveType.Tags == "ML")
+								{
+									viewSalarySheet.ML = viewSalarySheet.ML + 1;
+								}
+								if (leave.LeaveType.Tags == "EL")
+								{
+									viewSalarySheet.EL = viewSalarySheet.EL + 1;
+								}
+								if (leave.LeaveType.Tags == "SL")
+								{
+									viewSalarySheet.SL = viewSalarySheet.SL + 1;
+								}
 							}
 							//Absent
 							int Late = 0;
@@ -788,11 +831,14 @@ namespace HomeTextileApp
 							NewDate = NewDate.AddDays(1);
 						} while (From.Month == NewDate.Month);
 
-						viewSalarySheet.DAbsent = (viewSalarySheet.Gross / viewSalarySheet.SalaryDays) * viewSalarySheet.Absent;
-						viewSalarySheet.NetSalary = viewSalarySheet.Gross + viewSalarySheet.Bonus - (viewSalarySheet.DAbsent + viewSalarySheet.DAdvance + viewSalarySheet.DFood + viewSalarySheet.DLoan + viewSalarySheet.DStamp + viewSalarySheet.DTax);
-						viewSalarySheets.Add(viewSalarySheet);
+					
 
 					}
+
+					viewSalarySheet.DAbsent = (viewSalarySheet.Basic / viewSalarySheet.SalaryDays) * viewSalarySheet.Absent;
+					
+					viewSalarySheet.SalaryDays = viewSalarySheet.SalaryDays - viewSalarySheet.Absent;
+					viewSalarySheets.Add(viewSalarySheet);
 
 				}
 			}

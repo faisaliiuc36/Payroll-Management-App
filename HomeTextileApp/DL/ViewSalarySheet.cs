@@ -26,16 +26,36 @@ namespace HomeTextileApp.DL
 
         public int LeavePay { get; set; }//Loop
         public double Basic { get; set; }
-        public double BasicPay { get; set; }
+        public double BasicPay {
+			get
+			{
+				return this.Basic - this.DAbsent;
+			}
+				}
         public double HouseRent { get; set; }
         public double Conv { get; set; }
         public double Medical { get; set; }
         public double Other { get; set; }
-        public double AttendanceAllowance { get; set; }
-        public double TotalPayable { get; set; }
+        public double AttendanceAllowance { get {
+
+				if (this.Leave ==0 && this.Absent==0)
+				{
+					return 300;
+				}
+				else
+				{
+					return 0;
+				}
+					}
+		}
+        public double TotalPayable { get { return this.AttendanceAllowance + this.GrossPay; } }
 
         public double Gross { get; set; }
-        public double GrossPay { get; set; }
+        public double GrossPay { get
+			{
+				return this.HouseRent + this.Medical + this.BasicPay;
+			}
+				}
 
         public double Bonus { get; set; }
 
@@ -48,9 +68,9 @@ namespace HomeTextileApp.DL
         public double DStamp { get; set; }
         public double DOther { get; set; }
         public double DTax { get; set; }
-        public double TotalD { get; set; }
+        public double TotalD { get { return this.DAdvance + this.DBus + this.DCard + this.DOther + this.DStamp; } }
 
-        public double NetSalary { get; set; }//afterloop
+        public double NetSalary { get { return TotalPayable - TotalD; } }//afterloop
 
 
     }
