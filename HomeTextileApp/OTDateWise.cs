@@ -73,6 +73,7 @@ namespace HomeTextileApp
 						ViewOT viewOT = new ViewOT();
 						viewOT.Emp_Id = emp.Emp_Id;
 						viewOT.Name = emp.EmpFullName;
+						viewOT.Type = "Worker";
 
 
 						double Gross = 0;
@@ -144,6 +145,11 @@ namespace HomeTextileApp
 
 						}
 
+						if(duty_Roster !=null)
+						{
+							viewOT.AllocationTime =From.Date+duty_Roster.Shift.To;
+						}
+
 						//Employee Count
 
 
@@ -195,10 +201,10 @@ namespace HomeTextileApp
 
 										Out = Out.AddDays(1);
 
-										DateTime OutCheck = FromND.Date + duty_RosterND.Shift.To;
+										DateTime OutCheck = FromND.Date + duty_RosterND.Shift.From;
 										OutCheck = OutCheck.AddHours(-4);
 										DateTime InCheck = In.AddHours(-2);
-
+										
 
 										List<Emp_CheckInOut> emp_CheckInOuts2 = db.Emp_CheckInOuts.Where(a => a.CHECKTIME >= InCheck && a.CHECKTIME <= OutCheck && a.IsAbsent != true && a.IsManual != true).ToList();
 										List<Emp_CheckInOut> empIndividualforshift = emp_CheckInOuts2.Where(a => a.UserId == emp.Emp_Id).ToList();
@@ -210,7 +216,7 @@ namespace HomeTextileApp
 											DateTime Min = (from d in empIndividualforshift select d.CHECKTIME).Min();
 											DateTime Max = (from d in empIndividualforshift select d.CHECKTIME).Max();
 											viewOT.InTime = Min;
-											viewOT.OutTime = Out;
+											viewOT.OutTime = Max;
 
 
 											Max = Max.AddMinutes(10); // Minute Consider
@@ -220,12 +226,19 @@ namespace HomeTextileApp
 											if (From.DayOfWeek.ToString() == "Friday" || Holiday != null)
 											{
 												TimeSpan timeSpan = Max - Min;
-												viewOT.TotalHour = (int)Math.Abs(timeSpan.TotalHours);
+												if(timeSpan.TotalHours>0)
+												{
+													viewOT.TotalHour = (int)Math.Abs(timeSpan.TotalHours);
+												}
+												
 											}
 											else
 											{
 												TimeSpan timeSpan = Max - Out;
-												viewOT.TotalHour = (int)Math.Abs(timeSpan.TotalHours);
+												if (timeSpan.TotalHours > 0)
+												{
+													viewOT.TotalHour = (int)Math.Abs(timeSpan.TotalHours);
+												}
 											}
 
 										}
@@ -247,9 +260,11 @@ namespace HomeTextileApp
 						if(viewOT.TotalHour>2)
 						{
 							viewOT.TotalHourC = 2;
+							viewOT.OutTimeC = viewOT.AllocationTime.AddHours(2);
 						}
 						else
 						{
+							viewOT.OutTimeC = viewOT.OutTime;
 							viewOT.TotalHourC = viewOT.TotalHour;
 						}
 
@@ -295,12 +310,50 @@ namespace HomeTextileApp
 
 		private void button5_Click(object sender, EventArgs e)
 		{
+			var emp = viewOTDataGridView.DataSource;
 
+			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
+
+
+			DateTime From = dateTimePicker1.Value;
+			int id = Convert.ToInt32(comboBox4.SelectedValue);
+			DL.Section section = db.Sections.Find(id);
+
+
+			SalaryReportParameter salaryReportParameter = new SalaryReportParameter();
+			salaryReportParameter.Unit = section.Department.Unit.Name;
+			salaryReportParameter.Department = section.Department.Name;
+			salaryReportParameter.Section = section.Name;
+			salaryReportParameter.Date = From;
+
+			using (OTDateWiseComCrystalReport salaryCrystalReport = new OTDateWiseComCrystalReport(salaryReportParameter, viewSalarySheets))
+			{
+				salaryCrystalReport.ShowDialog();
+			}
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
+			var emp = viewOTDataGridView.DataSource;
 
+			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
+
+
+			DateTime From = dateTimePicker1.Value;
+			int id = Convert.ToInt32(comboBox4.SelectedValue);
+			DL.Section section = db.Sections.Find(id);
+
+
+			SalaryReportParameter salaryReportParameter = new SalaryReportParameter();
+			salaryReportParameter.Unit = section.Department.Unit.Name;
+			salaryReportParameter.Department = section.Department.Name;
+			salaryReportParameter.Section = section.Name;
+			salaryReportParameter.Date = DateTime.Now;
+			
+			using (OTDateWiseCrystalReport salaryCrystalReport = new OTDateWiseCrystalReport(salaryReportParameter, viewSalarySheets))
+			{
+				salaryCrystalReport.ShowDialog();
+			}
 		}
 
 		private void groupBox2_Enter(object sender, EventArgs e)

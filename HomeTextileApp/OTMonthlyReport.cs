@@ -55,6 +55,7 @@ namespace HomeTextileApp
 						ViewOT viewOT = new ViewOT();
 						viewOT.Emp_Id = emp.Emp_Id;
 						viewOT.Name = emp.EmpFullName;
+						
 
 
 						double Gross = 0;
@@ -83,7 +84,7 @@ namespace HomeTextileApp
 									Gross = shadowgrade.Total;
 								}
 
-								viewOT.Grade = shadowEmp.WorkerDesignation.Name;
+								viewOT.Grade = shadowEmp.WorkerDesignation.SalaryGrade.GradeName;
 							}
 						}
 						catch (Exception Ex)
@@ -183,7 +184,7 @@ namespace HomeTextileApp
 
 											Out = Out.AddDays(1);
 
-											DateTime OutCheck = FromND.Date + duty_RosterND.Shift.To;
+											DateTime OutCheck = FromND.Date + duty_RosterND.Shift.From;
 											OutCheck = OutCheck.AddHours(-4);
 											DateTime InCheck = In.AddHours(-2);
 
@@ -307,14 +308,55 @@ namespace HomeTextileApp
 
 			try
 			{
-				
+				PopulateGrid(employees);
 			}
 			catch
 			{
 
 			}
-			PopulateGrid(employees);
+	
 
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			var emp = viewOTDataGridView.DataSource;
+
+			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
+
+
+			DateTime From = dateTimePicker1.Value;
+			DateTime Loop = new DateTime(From.Year, From.Month, 1);
+			int id = Convert.ToInt32(comboBox4.SelectedValue);
+			DL.Section section = db.Sections.Find(id);
+
+
+			SalaryReportParameter salaryReportParameter = new SalaryReportParameter();
+			salaryReportParameter.Unit = section.Department.Unit.Name;
+			salaryReportParameter.Department = section.Department.Name;
+			salaryReportParameter.Section = section.Name;
+			salaryReportParameter.Date = From;
+			do
+			{
+				salaryReportParameter.Days = salaryReportParameter.Days + 1;
+				if (Loop.DayOfWeek.ToString() == "Friday")
+				{
+					salaryReportParameter.Weekend = salaryReportParameter.Weekend + 1;
+				}
+
+				var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == section.DepartmentId && a.From <= Loop && a.To >= Loop);
+				if (Holiday != null)
+				{
+					salaryReportParameter.Holiday = salaryReportParameter.Holiday + 1;
+				}
+				Loop = Loop.AddDays(1);
+			} while (Loop.Month == From.Month);
+
+
+			using (OTPaymentCrystalReport salaryCrystalReport = new OTPaymentCrystalReport(salaryReportParameter, viewSalarySheets))
+			{
+				salaryCrystalReport.ShowDialog();
+			}
 		}
 	}
 }

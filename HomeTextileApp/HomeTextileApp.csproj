@@ -384,11 +384,29 @@
       <DependentUpon>201909140916026_EmployeeDue-U.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="OT-Daily_Rep_Com.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OT-Daily_Rep_Com.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="OTDateWise.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OTDateWise.Designer.cs">
       <DependentUpon>OTDateWise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OTDateWiseComCrystalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTDateWiseComCrystalReport.Designer.cs">
+      <DependentUpon>OTDateWiseComCrystalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OTDateWiseCrystalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTDateWiseCrystalReport.Designer.cs">
+      <DependentUpon>OTDateWiseCrystalReport.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherSettings.cs">
       <SubType>Form</SubType>
@@ -401,6 +419,24 @@
     </Compile>
     <Compile Include="OTMonthlyReport.Designer.cs">
       <DependentUpon>OTMonthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OTPaymentCrystalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTPaymentCrystalReport.Designer.cs">
+      <DependentUpon>OTPaymentCrystalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OTPaymentReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OTPaymentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OT_Daily_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OT_Daily_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -621,14 +657,35 @@
     <EmbeddedResource Include="Migrations\201909140916026_EmployeeDue-U.resx">
       <DependentUpon>201909140916026_EmployeeDue-U.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OT-Daily_Rep_Com.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OT-Daily_Rep_Com.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="OTDateWise.resx">
       <DependentUpon>OTDateWise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTDateWiseComCrystalReport.resx">
+      <DependentUpon>OTDateWiseComCrystalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTDateWiseCrystalReport.resx">
+      <DependentUpon>OTDateWiseCrystalReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OTMonthlyReport.resx">
       <DependentUpon>OTMonthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTPaymentCrystalReport.resx">
+      <DependentUpon>OTPaymentCrystalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTPaymentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OTPaymentReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OT_Daily_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OT_Daily_Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

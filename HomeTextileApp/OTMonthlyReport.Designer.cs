@@ -31,10 +31,27 @@
 			this.components = new System.ComponentModel.Container();
 			this.viewOTBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.viewOTDataGridView = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.viewOTDataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.button5 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
@@ -58,23 +75,6 @@
 			this.departmentsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.DepartmentsTableAdapter();
 			this.sectionsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.SectionsTableAdapter();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label5 = new System.Windows.Forms.Label();
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			((System.ComponentModel.ISupportInitialize)(this.viewOTBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.viewOTDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.viewOTDataGridView1)).BeginInit();
@@ -107,6 +107,37 @@
 			this.viewOTDataGridView.Size = new System.Drawing.Size(747, 221);
 			this.viewOTDataGridView.TabIndex = 23;
 			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.DataPropertyName = "Emp_Id";
+			this.dataGridViewTextBoxColumn1.HeaderText = "Emp_Id";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.DataPropertyName = "Grade";
+			this.dataGridViewTextBoxColumn2.HeaderText = "Grade";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this.dataGridViewTextBoxColumn3.DataPropertyName = "Name";
+			this.dataGridViewTextBoxColumn3.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this.dataGridViewTextBoxColumn6.DataPropertyName = "TotalHour";
+			this.dataGridViewTextBoxColumn6.HeaderText = "TotalHour";
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			// 
+			// dataGridViewTextBoxColumn7
+			// 
+			this.dataGridViewTextBoxColumn7.DataPropertyName = "Amount";
+			this.dataGridViewTextBoxColumn7.HeaderText = "Amount";
+			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+			this.dataGridViewTextBoxColumn7.ReadOnly = true;
+			// 
 			// viewOTDataGridView1
 			// 
 			this.viewOTDataGridView1.AutoGenerateColumns = false;
@@ -127,6 +158,73 @@
 			this.viewOTDataGridView1.Name = "viewOTDataGridView1";
 			this.viewOTDataGridView1.Size = new System.Drawing.Size(747, 203);
 			this.viewOTDataGridView1.TabIndex = 17;
+			// 
+			// dataGridViewTextBoxColumn8
+			// 
+			this.dataGridViewTextBoxColumn8.DataPropertyName = "Emp_Id";
+			this.dataGridViewTextBoxColumn8.HeaderText = "Emp_Id";
+			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+			// 
+			// dataGridViewTextBoxColumn9
+			// 
+			this.dataGridViewTextBoxColumn9.DataPropertyName = "Grade";
+			this.dataGridViewTextBoxColumn9.HeaderText = "Grade";
+			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+			// 
+			// dataGridViewTextBoxColumn10
+			// 
+			this.dataGridViewTextBoxColumn10.DataPropertyName = "Name";
+			this.dataGridViewTextBoxColumn10.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+			// 
+			// dataGridViewTextBoxColumn11
+			// 
+			this.dataGridViewTextBoxColumn11.DataPropertyName = "InTime";
+			this.dataGridViewTextBoxColumn11.HeaderText = "InTime";
+			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+			this.dataGridViewTextBoxColumn11.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn12
+			// 
+			this.dataGridViewTextBoxColumn12.DataPropertyName = "OutTime";
+			this.dataGridViewTextBoxColumn12.HeaderText = "OutTime";
+			this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+			this.dataGridViewTextBoxColumn12.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn13
+			// 
+			this.dataGridViewTextBoxColumn13.DataPropertyName = "TotalHour";
+			this.dataGridViewTextBoxColumn13.HeaderText = "TotalHour";
+			this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+			this.dataGridViewTextBoxColumn13.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn14
+			// 
+			this.dataGridViewTextBoxColumn14.DataPropertyName = "Amount";
+			this.dataGridViewTextBoxColumn14.HeaderText = "Amount";
+			this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+			this.dataGridViewTextBoxColumn14.ReadOnly = true;
+			this.dataGridViewTextBoxColumn14.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn15
+			// 
+			this.dataGridViewTextBoxColumn15.DataPropertyName = "Gross";
+			this.dataGridViewTextBoxColumn15.HeaderText = "Gross";
+			this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+			this.dataGridViewTextBoxColumn15.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn16
+			// 
+			this.dataGridViewTextBoxColumn16.DataPropertyName = "TotalHourC";
+			this.dataGridViewTextBoxColumn16.HeaderText = "Total Hour";
+			this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+			// 
+			// dataGridViewTextBoxColumn17
+			// 
+			this.dataGridViewTextBoxColumn17.DataPropertyName = "AmountC";
+			this.dataGridViewTextBoxColumn17.HeaderText = "Amount";
+			this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+			this.dataGridViewTextBoxColumn17.ReadOnly = true;
 			// 
 			// button5
 			// 
@@ -149,6 +247,7 @@
 			this.button2.TabIndex = 22;
 			this.button2.Text = "Print";
 			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// groupBox2
 			// 
@@ -172,6 +271,24 @@
 			this.groupBox2.Size = new System.Drawing.Size(797, 109);
 			this.groupBox2.TabIndex = 21;
 			this.groupBox2.TabStop = false;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(301, 65);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(21, 15);
+			this.label5.TabIndex = 14;
+			this.label5.Text = "To";
+			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateTimePicker2.Location = new System.Drawing.Point(304, 83);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(169, 22);
+			this.dateTimePicker2.TabIndex = 13;
 			// 
 			// button3
 			// 
@@ -366,122 +483,6 @@
 			this.groupBox3.TabIndex = 26;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Complience_Report";
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.DataPropertyName = "Emp_Id";
-			this.dataGridViewTextBoxColumn1.HeaderText = "Emp_Id";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.DataPropertyName = "Grade";
-			this.dataGridViewTextBoxColumn2.HeaderText = "Grade";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this.dataGridViewTextBoxColumn3.DataPropertyName = "Name";
-			this.dataGridViewTextBoxColumn3.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.DataPropertyName = "TotalHour";
-			this.dataGridViewTextBoxColumn6.HeaderText = "TotalHour";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-			// 
-			// dataGridViewTextBoxColumn7
-			// 
-			this.dataGridViewTextBoxColumn7.DataPropertyName = "Amount";
-			this.dataGridViewTextBoxColumn7.HeaderText = "Amount";
-			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-			this.dataGridViewTextBoxColumn7.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn8
-			// 
-			this.dataGridViewTextBoxColumn8.DataPropertyName = "Emp_Id";
-			this.dataGridViewTextBoxColumn8.HeaderText = "Emp_Id";
-			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-			// 
-			// dataGridViewTextBoxColumn9
-			// 
-			this.dataGridViewTextBoxColumn9.DataPropertyName = "Grade";
-			this.dataGridViewTextBoxColumn9.HeaderText = "Grade";
-			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-			// 
-			// dataGridViewTextBoxColumn10
-			// 
-			this.dataGridViewTextBoxColumn10.DataPropertyName = "Name";
-			this.dataGridViewTextBoxColumn10.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-			// 
-			// dataGridViewTextBoxColumn11
-			// 
-			this.dataGridViewTextBoxColumn11.DataPropertyName = "InTime";
-			this.dataGridViewTextBoxColumn11.HeaderText = "InTime";
-			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-			this.dataGridViewTextBoxColumn11.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn12
-			// 
-			this.dataGridViewTextBoxColumn12.DataPropertyName = "OutTime";
-			this.dataGridViewTextBoxColumn12.HeaderText = "OutTime";
-			this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-			this.dataGridViewTextBoxColumn12.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn13
-			// 
-			this.dataGridViewTextBoxColumn13.DataPropertyName = "TotalHour";
-			this.dataGridViewTextBoxColumn13.HeaderText = "TotalHour";
-			this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-			this.dataGridViewTextBoxColumn13.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn14
-			// 
-			this.dataGridViewTextBoxColumn14.DataPropertyName = "Amount";
-			this.dataGridViewTextBoxColumn14.HeaderText = "Amount";
-			this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-			this.dataGridViewTextBoxColumn14.ReadOnly = true;
-			this.dataGridViewTextBoxColumn14.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn15
-			// 
-			this.dataGridViewTextBoxColumn15.DataPropertyName = "Gross";
-			this.dataGridViewTextBoxColumn15.HeaderText = "Gross";
-			this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-			this.dataGridViewTextBoxColumn15.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn16
-			// 
-			this.dataGridViewTextBoxColumn16.DataPropertyName = "TotalHourC";
-			this.dataGridViewTextBoxColumn16.HeaderText = "Total Hour";
-			this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-			// 
-			// dataGridViewTextBoxColumn17
-			// 
-			this.dataGridViewTextBoxColumn17.DataPropertyName = "AmountC";
-			this.dataGridViewTextBoxColumn17.HeaderText = "Amount";
-			this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-			this.dataGridViewTextBoxColumn17.ReadOnly = true;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(301, 65);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(21, 15);
-			this.label5.TabIndex = 14;
-			this.label5.Text = "To";
-			// 
-			// dateTimePicker2
-			// 
-			this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker2.Location = new System.Drawing.Point(304, 83);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.Size = new System.Drawing.Size(169, 22);
-			this.dateTimePicker2.TabIndex = 13;
 			// 
 			// OTMonthlyReport
 			// 
