@@ -9,7 +9,10 @@ namespace HomeTextileApp.DL
 	public class ViewBonus
 	{
 		public int Emp_Id { get; set; }
+		public DateTime JoiningDate { get; set; }
+	
 		public string Grade { get; set; }
+		public Section section { get; set; }
 		public string Name { get; set; }
 		public double Days { get; set; }
 

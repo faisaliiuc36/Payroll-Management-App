@@ -111,6 +111,18 @@
     <Compile Include="AttendanceSectionWise.Designer.cs">
       <DependentUpon>AttendanceSectionWise.cs</DependentUpon>
     </Compile>
+    <Compile Include="BonusCrystalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BonusCrystalReport.Designer.cs">
+      <DependentUpon>BonusCrystalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BonusCrystalReportCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BonusCrystalReportCom.Designer.cs">
+      <DependentUpon>BonusCrystalReportCom.cs</DependentUpon>
+    </Compile>
     <Compile Include="BonusReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,7 @@
     <Compile Include="DL\Advance.cs" />
     <Compile Include="DL\BloodGroup.cs" />
     <Compile Include="DL\Bonus.cs" />
+    <Compile Include="DL\BonusCrystalPar.cs" />
     <Compile Include="DL\Company.cs" />
     <Compile Include="DL\DatabaseContext.cs" />
     <Compile Include="DL\Department.cs" />
@@ -187,6 +200,18 @@
     </Compile>
     <Compile Include="EmployeeUpdate.Designer.cs">
       <DependentUpon>EmployeeUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FestivalBonus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FestivalBonus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FestivalBonusCom.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FestivalBonusCom.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>UserControl</SubType>
@@ -420,6 +445,12 @@
     <Compile Include="OTMonthlyReport.Designer.cs">
       <DependentUpon>OTMonthlyReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="OTPaymentCrystalComReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTPaymentCrystalComReport.Designer.cs">
+      <DependentUpon>OTPaymentCrystalComReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="OTPaymentCrystalReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,6 +461,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OTPaymentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OTPaymentReprtCom.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OTPaymentReprtCom.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="OT_Daily_Report.cs">
@@ -531,6 +568,12 @@
     <EmbeddedResource Include="AttendanceSectionWise.resx">
       <DependentUpon>AttendanceSectionWise.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BonusCrystalReport.resx">
+      <DependentUpon>BonusCrystalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BonusCrystalReportCom.resx">
+      <DependentUpon>BonusCrystalReportCom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BonusReport.resx">
       <DependentUpon>BonusReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +588,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeUpdate.resx">
       <DependentUpon>EmployeeUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FestivalBonus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FestivalBonus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FestivalBonusCom.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FestivalBonusCom.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -676,12 +727,19 @@
     <EmbeddedResource Include="OTMonthlyReport.resx">
       <DependentUpon>OTMonthlyReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OTPaymentCrystalComReport.resx">
+      <DependentUpon>OTPaymentCrystalComReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OTPaymentCrystalReport.resx">
       <DependentUpon>OTPaymentCrystalReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OTPaymentReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OTPaymentReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTPaymentReprtCom.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OTPaymentReprtCom.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OT_Daily_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -76,6 +76,9 @@
 			this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
+			this.button5 = new System.Windows.Forms.Button();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
@@ -95,8 +98,8 @@
 			this.groupBox2.Controls.Add(this.comboBox1);
 			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Controls.Add(this.button3);
-			this.groupBox2.Controls.Add(this.button1);
 			this.groupBox2.Controls.Add(this.label4);
+			this.groupBox2.Controls.Add(this.button1);
 			this.groupBox2.Controls.Add(this.label6);
 			this.groupBox2.Controls.Add(this.dateTimePicker1);
 			this.groupBox2.Controls.Add(this.label3);
@@ -152,7 +155,7 @@
 			this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.Location = new System.Drawing.Point(530, 62);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(92, 48);
+			this.button1.Size = new System.Drawing.Size(100, 48);
 			this.button1.TabIndex = 11;
 			this.button1.Text = "Search By Section";
 			this.button1.UseVisualStyleBackColor = false;
@@ -328,7 +331,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
 			this.viewBonusDataGridView.DataSource = this.viewBonusBindingSource;
-			this.viewBonusDataGridView.Location = new System.Drawing.Point(76, 12);
+			this.viewBonusDataGridView.Location = new System.Drawing.Point(53, 19);
 			this.viewBonusDataGridView.Name = "viewBonusDataGridView";
 			this.viewBonusDataGridView.Size = new System.Drawing.Size(656, 220);
 			this.viewBonusDataGridView.TabIndex = 7;
@@ -386,18 +389,19 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.viewBonusDataGridView);
+			this.groupBox1.Controls.Add(this.viewBonusDataGridView1);
 			this.groupBox1.Location = new System.Drawing.Point(28, 126);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(741, 235);
+			this.groupBox1.Size = new System.Drawing.Size(709, 196);
 			this.groupBox1.TabIndex = 8;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Company";
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.viewBonusDataGridView1);
-			this.groupBox3.Location = new System.Drawing.Point(28, 364);
+			this.groupBox3.Controls.Add(this.viewBonusDataGridView);
+			this.groupBox3.Controls.Add(this.button2);
+			this.groupBox3.Location = new System.Drawing.Point(28, 321);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(741, 295);
 			this.groupBox3.TabIndex = 9;
@@ -420,9 +424,9 @@
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18});
 			this.viewBonusDataGridView1.DataSource = this.viewBonusBindingSource;
-			this.viewBonusDataGridView1.Location = new System.Drawing.Point(76, 19);
+			this.viewBonusDataGridView1.Location = new System.Drawing.Point(53, 51);
 			this.viewBonusDataGridView1.Name = "viewBonusDataGridView1";
-			this.viewBonusDataGridView1.Size = new System.Drawing.Size(656, 264);
+			this.viewBonusDataGridView1.Size = new System.Drawing.Size(656, 201);
 			this.viewBonusDataGridView1.TabIndex = 0;
 			// 
 			// dataGridViewTextBoxColumn9
@@ -492,11 +496,48 @@
 			this.dataGridViewTextBoxColumn18.ReadOnly = true;
 			this.dataGridViewTextBoxColumn18.Visible = false;
 			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.Lime;
+			this.button2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Location = new System.Drawing.Point(705, 257);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(67, 26);
+			this.button2.TabIndex = 12;
+			this.button2.Text = "Print";
+			this.button2.UseVisualStyleBackColor = false;
+			// 
+			// button4
+			// 
+			this.button4.BackColor = System.Drawing.Color.Lime;
+			this.button4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button4.Location = new System.Drawing.Point(738, 534);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(67, 26);
+			this.button4.TabIndex = 12;
+			this.button4.Text = "Print";
+			this.button4.UseVisualStyleBackColor = false;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
+			// button5
+			// 
+			this.button5.BackColor = System.Drawing.Color.Lime;
+			this.button5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button5.Location = new System.Drawing.Point(738, 289);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(67, 26);
+			this.button5.TabIndex = 13;
+			this.button5.Text = "Print";
+			this.button5.UseVisualStyleBackColor = false;
+			this.button5.Click += new System.EventHandler(this.button5_Click);
+			// 
 			// BonusReport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(820, 659);
+			this.ClientSize = new System.Drawing.Size(804, 572);
+			this.Controls.Add(this.button5);
+			this.Controls.Add(this.button4);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
@@ -568,5 +609,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button button5;
 	}
 }

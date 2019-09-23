@@ -358,5 +358,46 @@ namespace HomeTextileApp
 				salaryCrystalReport.ShowDialog();
 			}
 		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			var emp = viewOTDataGridView.DataSource;
+
+			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
+
+
+			DateTime From = dateTimePicker1.Value;
+			DateTime Loop = new DateTime(From.Year, From.Month, 1);
+			int id = Convert.ToInt32(comboBox4.SelectedValue);
+			DL.Section section = db.Sections.Find(id);
+
+
+			SalaryReportParameter salaryReportParameter = new SalaryReportParameter();
+			salaryReportParameter.Unit = section.Department.Unit.Name;
+			salaryReportParameter.Department = section.Department.Name;
+			salaryReportParameter.Section = section.Name;
+			salaryReportParameter.Date = From;
+			do
+			{
+				salaryReportParameter.Days = salaryReportParameter.Days + 1;
+				if (Loop.DayOfWeek.ToString() == "Friday")
+				{
+					salaryReportParameter.Weekend = salaryReportParameter.Weekend + 1;
+				}
+
+				var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == section.DepartmentId && a.From <= Loop && a.To >= Loop);
+				if (Holiday != null)
+				{
+					salaryReportParameter.Holiday = salaryReportParameter.Holiday + 1;
+				}
+				Loop = Loop.AddDays(1);
+			} while (Loop.Month == From.Month);
+
+
+			using (OTPaymentCrystalComReport salaryCrystalReport = new OTPaymentCrystalComReport(salaryReportParameter, viewSalarySheets))
+			{
+				salaryCrystalReport.ShowDialog();
+			}
+		}
 	}
 }
