@@ -99,6 +99,24 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdvanceDeduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvanceDeduction.Designer.cs">
+      <DependentUpon>AdvanceDeduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedeductionCrystalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedeductionCrystalReport.Designer.cs">
+      <DependentUpon>AdvancedeductionCrystalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvanceDeductionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvanceDeductionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AttendanceHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +150,7 @@
     <Compile Include="CalenderColumn.cs" />
     <Compile Include="DGVPrinter.cs" />
     <Compile Include="DL\Advance.cs" />
+    <Compile Include="DL\AdvanceDeduction.cs" />
     <Compile Include="DL\BloodGroup.cs" />
     <Compile Include="DL\Bonus.cs" />
     <Compile Include="DL\BonusCrystalPar.cs" />
@@ -562,6 +581,16 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdvanceDeduction.resx">
+      <DependentUpon>AdvanceDeduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvancedeductionCrystalReport.resx">
+      <DependentUpon>AdvancedeductionCrystalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvanceDeductionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvanceDeductionReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="AttendanceHistory.resx">
       <DependentUpon>AttendanceHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -836,8 +865,10 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Advance.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.AdvanceDeduction.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.BloodGroup.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Bonus.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.BonusCrystalPar.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Company.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.DatabaseContext.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Department.datasource" />
@@ -861,6 +892,7 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.Religion.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Salary.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.SalaryGrade.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.SalaryReportParameter.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.SalarySetting.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.Section.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ShadowEmployee.datasource" />

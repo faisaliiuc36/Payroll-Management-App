@@ -1,6 +1,6 @@
 ﻿namespace HomeTextileApp
 {
-	partial class AttendanceHistory
+	partial class AdvanceDeduction
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,15 +29,14 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.viewOTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.button2 = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -49,28 +48,19 @@
 			this.comboBox3 = new System.Windows.Forms.ComboBox();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.companyComboBox = new System.Windows.Forms.ComboBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.companiesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.CompaniesTableAdapter();
 			this.unitsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.UnitsTableAdapter();
 			this.departmentsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.DepartmentsTableAdapter();
 			this.sectionsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.SectionsTableAdapter();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.button2 = new System.Windows.Forms.Button();
-			this.viewAttendanceHistoryDataGridView = new System.Windows.Forms.DataGridView();
+			this.advanceDeductionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.advanceDeductionDataGridView = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Weekend = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.viewAttendanceHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.button3 = new System.Windows.Forms.Button();
-			this.label7 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.viewOTBindingSource)).BeginInit();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
@@ -78,43 +68,55 @@
 			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).BeginInit();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceHistoryDataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceHistoryBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.advanceDeductionBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.advanceDeductionDataGridView)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// viewOTBindingSource
+			// 
+			this.viewOTBindingSource.DataSource = typeof(HomeTextileApp.DL.ViewOT);
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.Lime;
+			this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Location = new System.Drawing.Point(711, 470);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(49, 31);
+			this.button2.TabIndex = 22;
+			this.button2.Text = "Print";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// groupBox2
 			// 
 			this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-			this.groupBox2.Controls.Add(this.label7);
-			this.groupBox2.Controls.Add(this.button3);
 			this.groupBox2.Controls.Add(this.button1);
 			this.groupBox2.Controls.Add(this.label4);
 			this.groupBox2.Controls.Add(this.label6);
 			this.groupBox2.Controls.Add(this.dateTimePicker1);
-			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Controls.Add(this.label3);
-			this.groupBox2.Controls.Add(this.dateTimePicker2);
 			this.groupBox2.Controls.Add(this.label2);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.comboBox4);
 			this.groupBox2.Controls.Add(this.comboBox3);
 			this.groupBox2.Controls.Add(this.comboBox2);
 			this.groupBox2.Controls.Add(this.companyComboBox);
-			this.groupBox2.Location = new System.Drawing.Point(1, 2);
+			this.groupBox2.Location = new System.Drawing.Point(-11, -3);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(780, 125);
-			this.groupBox2.TabIndex = 3;
+			this.groupBox2.Size = new System.Drawing.Size(797, 109);
+			this.groupBox2.TabIndex = 21;
 			this.groupBox2.TabStop = false;
 			// 
 			// button1
 			// 
 			this.button1.BackColor = System.Drawing.Color.Lime;
-			this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(407, 61);
+			this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Location = new System.Drawing.Point(384, 53);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(117, 47);
+			this.button1.Size = new System.Drawing.Size(68, 39);
 			this.button1.TabIndex = 11;
-			this.button1.Text = "Search Section Wise";
+			this.button1.Text = "Search";
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
@@ -132,29 +134,19 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(108, 61);
+			this.label6.Location = new System.Drawing.Point(108, 52);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(34, 15);
+			this.label6.Size = new System.Drawing.Size(75, 15);
 			this.label6.TabIndex = 9;
-			this.label6.Text = "From";
+			this.label6.Text = "Select A Day";
 			// 
 			// dateTimePicker1
 			// 
 			this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker1.Location = new System.Drawing.Point(111, 79);
+			this.dateTimePicker1.Location = new System.Drawing.Point(111, 70);
 			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(133, 22);
+			this.dateTimePicker1.Size = new System.Drawing.Size(233, 22);
 			this.dateTimePicker1.TabIndex = 7;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(259, 61);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(21, 15);
-			this.label5.TabIndex = 10;
-			this.label5.Text = "To";
 			// 
 			// label3
 			// 
@@ -165,14 +157,6 @@
 			this.label3.Size = new System.Drawing.Size(33, 15);
 			this.label3.TabIndex = 6;
 			this.label3.Text = "Unit:";
-			// 
-			// dateTimePicker2
-			// 
-			this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker2.Location = new System.Drawing.Point(262, 80);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.Size = new System.Drawing.Size(139, 22);
-			this.dateTimePicker2.TabIndex = 8;
 			// 
 			// label2
 			// 
@@ -271,6 +255,16 @@
 			this.companyComboBox.TabIndex = 0;
 			this.companyComboBox.ValueMember = "Id";
 			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.advanceDeductionDataGridView);
+			this.groupBox1.Location = new System.Drawing.Point(3, 106);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(757, 358);
+			this.groupBox1.TabIndex = 25;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Advance_Deduction_Report";
+			// 
 			// companiesTableAdapter
 			// 
 			this.companiesTableAdapter.ClearBeforeFill = true;
@@ -287,184 +281,69 @@
 			// 
 			this.sectionsTableAdapter.ClearBeforeFill = true;
 			// 
-			// groupBox1
+			// advanceDeductionBindingSource
 			// 
-			this.groupBox1.Controls.Add(this.button2);
-			this.groupBox1.Controls.Add(this.viewAttendanceHistoryDataGridView);
-			this.groupBox1.Location = new System.Drawing.Point(1, 133);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(797, 558);
-			this.groupBox1.TabIndex = 4;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Employee Attendance History";
+			this.advanceDeductionBindingSource.DataSource = typeof(HomeTextileApp.DL.AdvanceDeduction);
 			// 
-			// button2
+			// advanceDeductionDataGridView
 			// 
-			this.button2.BackColor = System.Drawing.Color.Lime;
-			this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(721, 244);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 40);
-			this.button2.TabIndex = 12;
-			this.button2.Text = "Print";
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// viewAttendanceHistoryDataGridView
-			// 
-			this.viewAttendanceHistoryDataGridView.AutoGenerateColumns = false;
-			this.viewAttendanceHistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.viewAttendanceHistoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.advanceDeductionDataGridView.AutoGenerateColumns = false;
+			this.advanceDeductionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.advanceDeductionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.Weekend,
-            this.dataGridViewTextBoxColumn11});
-			this.viewAttendanceHistoryDataGridView.DataSource = this.viewAttendanceHistoryBindingSource;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.viewAttendanceHistoryDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-			this.viewAttendanceHistoryDataGridView.Location = new System.Drawing.Point(6, 19);
-			this.viewAttendanceHistoryDataGridView.Margin = new System.Windows.Forms.Padding(0);
-			this.viewAttendanceHistoryDataGridView.Name = "viewAttendanceHistoryDataGridView";
-			this.viewAttendanceHistoryDataGridView.RowHeadersWidth = 10;
-			this.viewAttendanceHistoryDataGridView.RowTemplate.ReadOnly = true;
-			this.viewAttendanceHistoryDataGridView.Size = new System.Drawing.Size(791, 220);
-			this.viewAttendanceHistoryDataGridView.TabIndex = 0;
+            this.dataGridViewTextBoxColumn5});
+			this.advanceDeductionDataGridView.DataSource = this.advanceDeductionBindingSource;
+			this.advanceDeductionDataGridView.Location = new System.Drawing.Point(9, 19);
+			this.advanceDeductionDataGridView.Name = "advanceDeductionDataGridView";
+			this.advanceDeductionDataGridView.Size = new System.Drawing.Size(742, 320);
+			this.advanceDeductionDataGridView.TabIndex = 0;
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
-			this.dataGridViewTextBoxColumn1.DataPropertyName = "Emp_Id";
-			this.dataGridViewTextBoxColumn1.HeaderText = "Emp_Id";
+			this.dataGridViewTextBoxColumn1.DataPropertyName = "FacCode";
+			this.dataGridViewTextBoxColumn1.HeaderText = "FacCode";
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.Width = 80;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
-			this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-			this.dataGridViewTextBoxColumn2.DataPropertyName = "EmpFullName";
-			this.dataGridViewTextBoxColumn2.HeaderText = "EmpFullName";
+			this.dataGridViewTextBoxColumn2.DataPropertyName = "FullName";
+			this.dataGridViewTextBoxColumn2.HeaderText = "FullName";
 			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.Width = 97;
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
-			this.dataGridViewTextBoxColumn3.DataPropertyName = "Late";
-			this.dataGridViewTextBoxColumn3.HeaderText = "Late";
+			this.dataGridViewTextBoxColumn3.DataPropertyName = "Gross";
+			this.dataGridViewTextBoxColumn3.HeaderText = "Gross";
 			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.Width = 80;
 			// 
 			// dataGridViewTextBoxColumn4
 			// 
-			this.dataGridViewTextBoxColumn4.DataPropertyName = "Roster";
-			this.dataGridViewTextBoxColumn4.HeaderText = "Roster Not Assign";
+			this.dataGridViewTextBoxColumn4.DataPropertyName = "Advance";
+			this.dataGridViewTextBoxColumn4.HeaderText = "Advance";
 			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
 			// 
 			// dataGridViewTextBoxColumn5
 			// 
-			this.dataGridViewTextBoxColumn5.DataPropertyName = "EarlyLeave";
-			this.dataGridViewTextBoxColumn5.HeaderText = "EarlyLeave";
+			this.dataGridViewTextBoxColumn5.DataPropertyName = "Payable";
+			this.dataGridViewTextBoxColumn5.HeaderText = "Payable";
 			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-			this.dataGridViewTextBoxColumn5.Width = 80;
+			this.dataGridViewTextBoxColumn5.ReadOnly = true;
 			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.DataPropertyName = "Present";
-			this.dataGridViewTextBoxColumn6.HeaderText = "Present";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-			this.dataGridViewTextBoxColumn6.Width = 80;
-			// 
-			// dataGridViewTextBoxColumn7
-			// 
-			this.dataGridViewTextBoxColumn7.DataPropertyName = "Absent";
-			this.dataGridViewTextBoxColumn7.HeaderText = "Absent";
-			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-			this.dataGridViewTextBoxColumn7.Width = 80;
-			// 
-			// dataGridViewTextBoxColumn8
-			// 
-			this.dataGridViewTextBoxColumn8.DataPropertyName = "Leave";
-			this.dataGridViewTextBoxColumn8.HeaderText = "Leave";
-			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-			this.dataGridViewTextBoxColumn8.Width = 80;
-			// 
-			// dataGridViewTextBoxColumn9
-			// 
-			this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-			this.dataGridViewTextBoxColumn9.DataPropertyName = "Manuel";
-			this.dataGridViewTextBoxColumn9.HeaderText = "Manuel";
-			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-			this.dataGridViewTextBoxColumn9.Width = 67;
-			// 
-			// dataGridViewTextBoxColumn10
-			// 
-			this.dataGridViewTextBoxColumn10.DataPropertyName = "Holiday";
-			this.dataGridViewTextBoxColumn10.HeaderText = "Holiday";
-			this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-			this.dataGridViewTextBoxColumn10.Width = 80;
-			// 
-			// Weekend
-			// 
-			this.Weekend.DataPropertyName = "Weekend";
-			this.Weekend.HeaderText = "Weekend";
-			this.Weekend.Name = "Weekend";
-			this.Weekend.Width = 80;
-			// 
-			// dataGridViewTextBoxColumn11
-			// 
-			this.dataGridViewTextBoxColumn11.DataPropertyName = "Invalid";
-			this.dataGridViewTextBoxColumn11.HeaderText = "Invalid";
-			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-			this.dataGridViewTextBoxColumn11.Width = 80;
-			// 
-			// viewAttendanceHistoryBindingSource
-			// 
-			this.viewAttendanceHistoryBindingSource.DataSource = typeof(HomeTextileApp.DL.ViewAttendanceHistory);
-			// 
-			// button3
-			// 
-			this.button3.BackColor = System.Drawing.Color.Lime;
-			this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.Location = new System.Drawing.Point(530, 61);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(134, 47);
-			this.button3.TabIndex = 12;
-			this.button3.Text = "Search Department Wise";
-			this.button3.UseVisualStyleBackColor = false;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(721, 33);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(35, 13);
-			this.label7.TabIndex = 13;
-			this.label7.Text = "label7";
-			this.label7.Visible = false;
-			// 
-			// AttendanceHistory
+			// AdvanceDeduction
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(804, 691);
-			this.Controls.Add(this.groupBox1);
+			this.ClientSize = new System.Drawing.Size(804, 572);
+			this.Controls.Add(this.button2);
 			this.Controls.Add(this.groupBox2);
-			this.Name = "AttendanceHistory";
-			this.Text = "AttendanceHistory";
-			this.Load += new System.EventHandler(this.AttendanceHistory_Load);
+			this.Controls.Add(this.groupBox1);
+			this.Name = "AdvanceDeduction";
+			this.Text = "AdvanceDeduction";
+			this.Load += new System.EventHandler(this.AdvanceDeduction_Load);
+			((System.ComponentModel.ISupportInitialize)(this.viewOTBindingSource)).EndInit();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).EndInit();
@@ -473,54 +352,44 @@
 			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).EndInit();
 			this.groupBox1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceHistoryDataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceHistoryBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.advanceDeductionBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.advanceDeductionDataGridView)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
+		private System.Windows.Forms.BindingSource viewOTBindingSource;
+		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox comboBox4;
+		private System.Windows.Forms.BindingSource sectionsBindingSource;
+		private System.Windows.Forms.BindingSource departmentsBindingSource;
+		private System.Windows.Forms.BindingSource unitsBindingSource;
+		private System.Windows.Forms.BindingSource companiesBindingSource;
+		private HomeTextileDBDataSet2 homeTextileDBDataSet2;
 		private System.Windows.Forms.ComboBox comboBox3;
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.ComboBox companyComboBox;
-		private HomeTextileDBDataSet2 homeTextileDBDataSet2;
-		private System.Windows.Forms.BindingSource companiesBindingSource;
-		private HomeTextileDBDataSet2TableAdapters.CompaniesTableAdapter companiesTableAdapter;
-		private System.Windows.Forms.BindingSource unitsBindingSource;
-		private HomeTextileDBDataSet2TableAdapters.UnitsTableAdapter unitsTableAdapter;
-		private System.Windows.Forms.BindingSource departmentsBindingSource;
-		private HomeTextileDBDataSet2TableAdapters.DepartmentsTableAdapter departmentsTableAdapter;
-		private System.Windows.Forms.BindingSource sectionsBindingSource;
-		private HomeTextileDBDataSet2TableAdapters.SectionsTableAdapter sectionsTableAdapter;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.BindingSource viewAttendanceHistoryBindingSource;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.DataGridView viewAttendanceHistoryDataGridView;
+		private HomeTextileDBDataSet2TableAdapters.CompaniesTableAdapter companiesTableAdapter;
+		private HomeTextileDBDataSet2TableAdapters.UnitsTableAdapter unitsTableAdapter;
+		private HomeTextileDBDataSet2TableAdapters.DepartmentsTableAdapter departmentsTableAdapter;
+		private HomeTextileDBDataSet2TableAdapters.SectionsTableAdapter sectionsTableAdapter;
+		private System.Windows.Forms.DataGridView advanceDeductionDataGridView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Weekend;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.BindingSource advanceDeductionBindingSource;
 	}
 }

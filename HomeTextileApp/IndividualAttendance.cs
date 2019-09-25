@@ -95,8 +95,26 @@ namespace HomeTextileApp
 				if (Emp_CheckInOutManual.Count > 0)
 				{
 					VW.Status = "Manual!";
+
+
+					var duty_Roster = db.Duty_Rosters.FirstOrDefault(a => a.Date == FromLoop && a.EmployeeId == employee.Id);
+					// Default Assign
+					if (duty_Roster == null)
+					{
+						List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).ToList();
+						if (duty_Rosters.Count > 0)
+						{
+							DateTime date = duty_Rosters.Max(a => a.Date);
+							duty_Roster = duty_Rosters.FirstOrDefault(a => a.Date == date);
+						}
+					}
+
+
+					VW.Shift = duty_Roster.Shift.Name;
+					VW.From = duty_Roster.Shift.From;
+					VW.To = duty_Roster.Shift.To;
 				}
-				else if(Emp_CheckInOutManual.Count>0)
+				else if(Emp_CheckInOutabsent.Count>0)
 				{
 					VW.Status = "Absent!";
 				}
@@ -124,7 +142,7 @@ namespace HomeTextileApp
 
 						var duty_Roster = db.Duty_Rosters.FirstOrDefault(a => a.Date == FromLoop && a.EmployeeId == employee.Id);
 						// Default Assign
-						if (duty_Roster ==null && employee.IsWorker==false)
+						if (duty_Roster ==null)
 						{
 							List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).ToList();
 							if(duty_Rosters.Count>0)
@@ -305,15 +323,21 @@ namespace HomeTextileApp
 
 
 			viewIndividualAttendanceDataGridView.DataSource = viewAttendances.ToList();
+
+			label4.Text=employee.NameWithId.ToString();
+			
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
 			DGVPrinter printer = new DGVPrinter();
 
-			printer.Title = "Individual Attendance Report";
-
-			printer.SubTitle = string.Format("Date:{0}", DateTime.Now.Date);
+			printer.Title = "Saad Musa-Home Textile";
+			
+			DateTime date1 = dateTimePicker1.Value;
+			DateTime date2 = dateTimePicker2.Value;
+			//printer.SubTitle = string.Format("Date:{0}-{0}",date1.Date,date2.Date);
+			printer.SubTitle = "Individual Attendance Report"+Environment.NewLine+ date1.ToString("dd/MM/yyyy")+"-" + date2.ToString("dd/MM/yyyy") + Environment.NewLine+"Employee:" +label4.Text.ToString() + Environment.NewLine + " ";
 
 			printer.SubTitleFormatFlags = StringFormatFlags.LineLimit |
 
@@ -327,7 +351,7 @@ namespace HomeTextileApp
 
 			printer.HeaderCellAlignment = StringAlignment.Near;
 
-			printer.Footer = "Saad Musa-Home Textile";
+			printer.Footer = "Developed By- Saad Musa IT Department";
 
 			printer.FooterSpacing = 15;
 

@@ -30,6 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.button3 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
@@ -38,17 +39,17 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.comboBox4 = new System.Windows.Forms.ComboBox();
+			this.sectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.homeTextileDBDataSet2 = new HomeTextileApp.HomeTextileDBDataSet2();
 			this.comboBox3 = new System.Windows.Forms.ComboBox();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.companyComboBox = new System.Windows.Forms.ComboBox();
-			this.homeTextileDBDataSet2 = new HomeTextileApp.HomeTextileDBDataSet2();
-			this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.companiesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.CompaniesTableAdapter();
-			this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.unitsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.UnitsTableAdapter();
-			this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.departmentsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.DepartmentsTableAdapter();
-			this.sectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.sectionsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.SectionsTableAdapter();
 			this.viewAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.viewAttendanceDataGridView = new System.Windows.Forms.DataGridView();
@@ -59,12 +60,13 @@
 			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.button2 = new System.Windows.Forms.Button();
+			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceDataGridView)).BeginInit();
 			this.SuspendLayout();
@@ -72,6 +74,7 @@
 			// groupBox2
 			// 
 			this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+			this.groupBox2.Controls.Add(this.button3);
 			this.groupBox2.Controls.Add(this.button1);
 			this.groupBox2.Controls.Add(this.label4);
 			this.groupBox2.Controls.Add(this.label6);
@@ -89,15 +92,27 @@
 			this.groupBox2.TabIndex = 4;
 			this.groupBox2.TabStop = false;
 			// 
+			// button3
+			// 
+			this.button3.BackColor = System.Drawing.Color.Lime;
+			this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button3.Location = new System.Drawing.Point(494, 70);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(170, 40);
+			this.button3.TabIndex = 12;
+			this.button3.Text = "Search By Department";
+			this.button3.UseVisualStyleBackColor = false;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
 			// button1
 			// 
 			this.button1.BackColor = System.Drawing.Color.Lime;
 			this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(489, 70);
+			this.button1.Location = new System.Drawing.Point(350, 70);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 40);
+			this.button1.Size = new System.Drawing.Size(138, 40);
 			this.button1.TabIndex = 11;
-			this.button1.Text = "Search";
+			this.button1.Text = "Search By Section";
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
@@ -115,7 +130,7 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(247, 60);
+			this.label6.Location = new System.Drawing.Point(108, 70);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(75, 15);
 			this.label6.TabIndex = 9;
@@ -124,7 +139,7 @@
 			// dateTimePicker1
 			// 
 			this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker1.Location = new System.Drawing.Point(250, 78);
+			this.dateTimePicker1.Location = new System.Drawing.Point(111, 88);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(233, 22);
 			this.dateTimePicker1.TabIndex = 7;
@@ -172,6 +187,31 @@
 			this.comboBox4.TabIndex = 3;
 			this.comboBox4.ValueMember = "Id";
 			// 
+			// sectionsBindingSource
+			// 
+			this.sectionsBindingSource.DataMember = "FK_dbo.Sections_dbo.Departments_DepartmentId";
+			this.sectionsBindingSource.DataSource = this.departmentsBindingSource;
+			// 
+			// departmentsBindingSource
+			// 
+			this.departmentsBindingSource.DataMember = "FK_dbo.Departments_dbo.Units_UnitId";
+			this.departmentsBindingSource.DataSource = this.unitsBindingSource;
+			// 
+			// unitsBindingSource
+			// 
+			this.unitsBindingSource.DataMember = "FK_dbo.Units_dbo.Companies_CompanyId";
+			this.unitsBindingSource.DataSource = this.companiesBindingSource;
+			// 
+			// companiesBindingSource
+			// 
+			this.companiesBindingSource.DataMember = "Companies";
+			this.companiesBindingSource.DataSource = this.homeTextileDBDataSet2;
+			// 
+			// homeTextileDBDataSet2
+			// 
+			this.homeTextileDBDataSet2.DataSetName = "HomeTextileDBDataSet2";
+			this.homeTextileDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// comboBox3
 			// 
 			this.comboBox3.DataSource = this.departmentsBindingSource;
@@ -211,42 +251,17 @@
 			this.companyComboBox.TabIndex = 0;
 			this.companyComboBox.ValueMember = "Id";
 			// 
-			// homeTextileDBDataSet2
-			// 
-			this.homeTextileDBDataSet2.DataSetName = "HomeTextileDBDataSet2";
-			this.homeTextileDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// companiesBindingSource
-			// 
-			this.companiesBindingSource.DataMember = "Companies";
-			this.companiesBindingSource.DataSource = this.homeTextileDBDataSet2;
-			// 
 			// companiesTableAdapter
 			// 
 			this.companiesTableAdapter.ClearBeforeFill = true;
-			// 
-			// unitsBindingSource
-			// 
-			this.unitsBindingSource.DataMember = "FK_dbo.Units_dbo.Companies_CompanyId";
-			this.unitsBindingSource.DataSource = this.companiesBindingSource;
 			// 
 			// unitsTableAdapter
 			// 
 			this.unitsTableAdapter.ClearBeforeFill = true;
 			// 
-			// departmentsBindingSource
-			// 
-			this.departmentsBindingSource.DataMember = "FK_dbo.Departments_dbo.Units_UnitId";
-			this.departmentsBindingSource.DataSource = this.unitsBindingSource;
-			// 
 			// departmentsTableAdapter
 			// 
 			this.departmentsTableAdapter.ClearBeforeFill = true;
-			// 
-			// sectionsBindingSource
-			// 
-			this.sectionsBindingSource.DataMember = "FK_dbo.Sections_dbo.Departments_DepartmentId";
-			this.sectionsBindingSource.DataSource = this.departmentsBindingSource;
 			// 
 			// sectionsTableAdapter
 			// 
@@ -321,11 +336,22 @@
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(701, 192);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(35, 13);
+			this.label5.TabIndex = 14;
+			this.label5.Text = "label5";
+			this.label5.Visible = false;
+			// 
 			// AttendanceSectionWise
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(820, 572);
+			this.Controls.Add(this.label5);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.viewAttendanceDataGridView);
 			this.Controls.Add(this.groupBox2);
@@ -334,14 +360,15 @@
 			this.Load += new System.EventHandler(this.AttendanceSectionWise_Load);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.sectionsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.homeTextileDBDataSet2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.viewAttendanceDataGridView)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -377,5 +404,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Button button3;
 	}
 }

@@ -61,6 +61,8 @@
 			this.button10 = new System.Windows.Forms.Button();
 			this.workerDesignationButton = new System.Windows.Forms.Button();
 			this.empSubPanel2 = new System.Windows.Forms.Panel();
+			this.button29 = new System.Windows.Forms.Button();
+			this.button28 = new System.Windows.Forms.Button();
 			this.button9 = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
@@ -82,8 +84,6 @@
 			this.button21 = new System.Windows.Forms.Button();
 			this.button22 = new System.Windows.Forms.Button();
 			this.button23 = new System.Windows.Forms.Button();
-			this.button28 = new System.Windows.Forms.Button();
-			this.button29 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -413,7 +413,7 @@
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(-1, 60);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 16);
+			this.label1.Size = new System.Drawing.Size(102, 16);
 			this.label1.TabIndex = 3;
 			this.label1.Text = "Home Textile";
 			// 
@@ -528,9 +528,9 @@
 			// empSubPanel2
 			// 
 			this.empSubPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+			this.empSubPanel2.Controls.Add(this.button9);
 			this.empSubPanel2.Controls.Add(this.button29);
 			this.empSubPanel2.Controls.Add(this.button28);
-			this.empSubPanel2.Controls.Add(this.button9);
 			this.empSubPanel2.Controls.Add(this.button8);
 			this.empSubPanel2.Controls.Add(this.button7);
 			this.empSubPanel2.Controls.Add(this.upadteEmployeeButton);
@@ -540,6 +540,42 @@
 			this.empSubPanel2.Size = new System.Drawing.Size(198, 212);
 			this.empSubPanel2.TabIndex = 15;
 			this.empSubPanel2.Visible = false;
+			// 
+			// button29
+			// 
+			this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button29.FlatAppearance.BorderSize = 0;
+			this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button29.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button29.ForeColor = System.Drawing.Color.White;
+			this.button29.Image = ((System.Drawing.Image)(resources.GetObject("button29.Image")));
+			this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button29.Location = new System.Drawing.Point(8, 179);
+			this.button29.Name = "button29";
+			this.button29.Size = new System.Drawing.Size(186, 30);
+			this.button29.TabIndex = 12;
+			this.button29.Text = "   Advance";
+			this.button29.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button29.UseVisualStyleBackColor = true;
+			this.button29.Click += new System.EventHandler(this.button29_Click);
+			// 
+			// button28
+			// 
+			this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button28.FlatAppearance.BorderSize = 0;
+			this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button28.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button28.ForeColor = System.Drawing.Color.White;
+			this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
+			this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button28.Location = new System.Drawing.Point(8, 153);
+			this.button28.Name = "button28";
+			this.button28.Size = new System.Drawing.Size(186, 30);
+			this.button28.TabIndex = 11;
+			this.button28.Text = "   Employee Due";
+			this.button28.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button28.UseVisualStyleBackColor = true;
+			this.button28.Click += new System.EventHandler(this.button28_Click);
 			// 
 			// button9
 			// 
@@ -801,9 +837,9 @@
 			this.reportPanel.Controls.Add(this.button21);
 			this.reportPanel.Controls.Add(this.button22);
 			this.reportPanel.Controls.Add(this.button23);
-			this.reportPanel.Location = new System.Drawing.Point(199, 476);
+			this.reportPanel.Location = new System.Drawing.Point(199, 316);
 			this.reportPanel.Name = "reportPanel";
-			this.reportPanel.Size = new System.Drawing.Size(224, 213);
+			this.reportPanel.Size = new System.Drawing.Size(224, 398);
 			this.reportPanel.TabIndex = 18;
 			this.reportPanel.Visible = false;
 			// 
@@ -875,49 +911,12 @@
 			this.button23.UseVisualStyleBackColor = true;
 			this.button23.Click += new System.EventHandler(this.button23_Click);
 			// 
-			// button28
-			// 
-			this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button28.FlatAppearance.BorderSize = 0;
-			this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button28.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button28.ForeColor = System.Drawing.Color.White;
-			this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
-			this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button28.Location = new System.Drawing.Point(8, 153);
-			this.button28.Name = "button28";
-			this.button28.Size = new System.Drawing.Size(186, 30);
-			this.button28.TabIndex = 11;
-			this.button28.Text = "   Employee Due";
-			this.button28.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button28.UseVisualStyleBackColor = true;
-			this.button28.Click += new System.EventHandler(this.button28_Click);
-			// 
-			// button29
-			// 
-			this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button29.FlatAppearance.BorderSize = 0;
-			this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button29.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button29.ForeColor = System.Drawing.Color.White;
-			this.button29.Image = ((System.Drawing.Image)(resources.GetObject("button29.Image")));
-			this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button29.Location = new System.Drawing.Point(8, 179);
-			this.button29.Name = "button29";
-			this.button29.Size = new System.Drawing.Size(186, 30);
-			this.button29.TabIndex = 12;
-			this.button29.Text = "   Advance";
-			this.button29.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button29.UseVisualStyleBackColor = true;
-			this.button29.Click += new System.EventHandler(this.button29_Click);
-			// 
 			// Layout
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.ClientSize = new System.Drawing.Size(1025, 726);
-			this.Controls.Add(this.empSubPanel2);
 			this.Controls.Add(this.reportPanel);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.panel2);
@@ -927,6 +926,7 @@
 			this.Controls.Add(this.LAHPanel);
 			this.Controls.Add(this.attendancePanel);
 			this.Controls.Add(this.panel6);
+			this.Controls.Add(this.empSubPanel2);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Layout";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

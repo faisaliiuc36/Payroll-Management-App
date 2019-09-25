@@ -38,12 +38,21 @@ namespace HomeTextileApp
 
 			int id = Convert.ToInt32(comboBox4.SelectedValue);
 			DateTime From = dateTimePicker1.Value;
+			List<Employee> employeesALL = db.Employees.Where(a => a.SectionId == id).ToList();
+			List<Employee> employees = employeesALL.Where(a => a.IsActive(From)).ToList();
+			PopulateGrid(employees);
+
+			DL.Section section = db.Sections.Find(id);
+			label7.Text="U: "+section.Department.Unit.Name+";  D: "+section.Department.Name+";  S: " + section.Name;
+		}
+
+		private void PopulateGrid(List<Employee> employees)
+		{
+			int id = Convert.ToInt32(comboBox4.SelectedValue);
+			DateTime From = dateTimePicker1.Value;
 			DateTime To = dateTimePicker2.Value;
 
-
 			List<ViewAttendanceHistory> viewAttendanceHistories = new List<ViewAttendanceHistory>();
-			List<Employee> employeesALL = db.Employees.Where(a=>a.SectionId==id).ToList();
-			List<Employee> employees = employeesALL.Where(a => a.IsActive(From)).ToList();
 
 			if (employees.Count > 0)
 			{
@@ -66,7 +75,7 @@ namespace HomeTextileApp
 						//Employee Count
 
 
-						List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.IsAbsent != true && a.IsManual !=true).ToList();
+						List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.IsAbsent != true && a.IsManual != true).ToList();
 
 
 
@@ -92,11 +101,11 @@ namespace HomeTextileApp
 						{
 							viewAttendanceHistory.Leave = viewAttendanceHistory.Leave + 1;
 						}
-						
+
 						else if (Emp_CheckInOutAbsent.Count > 0)
 						{
 							viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
-							
+
 						}
 
 						else
@@ -106,7 +115,7 @@ namespace HomeTextileApp
 							{
 								var duty_Roster = db.Duty_Rosters.FirstOrDefault(a => a.Date == NewDate && a.EmployeeId == emp.Id);
 								// Default Assign
-								if (duty_Roster == null && emp.IsWorker == false)
+								if (duty_Roster == null)
 								{
 									List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == emp.Id).ToList();
 									if (duty_Rosters.Count > 0)
@@ -138,7 +147,7 @@ namespace HomeTextileApp
 											DateTime InCheck = In.AddHours(-2);
 
 
-											List<Emp_CheckInOut> emp_CheckInOuts2 = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day >= NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.CHECKTIME.Day <= NewDate.Day + 1 && a.IsAbsent != true && a.IsManual !=true).ToList();
+											List<Emp_CheckInOut> emp_CheckInOuts2 = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day >= NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.CHECKTIME.Day <= NewDate.Day + 1 && a.IsAbsent != true && a.IsManual != true).ToList();
 											List<Emp_CheckInOut> empindividual2 = emp_CheckInOuts2.Where(a => a.UserId == emp.Emp_Id).ToList();
 
 											List<Emp_CheckInOut> empIndividualforshift = empindividual2.Where(a => a.CHECKTIME >= InCheck && a.CHECKTIME <= OutCheck).ToList();
@@ -183,10 +192,10 @@ namespace HomeTextileApp
 											}
 											else
 											{
-												
-													viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-												
+												viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
+
+
 											}
 
 										}
@@ -240,10 +249,10 @@ namespace HomeTextileApp
 											}
 											else
 											{
-												
-													viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-												
+												viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
+
+
 											}
 
 										}
@@ -254,10 +263,10 @@ namespace HomeTextileApp
 									else
 									{
 
-										
-											viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-										
+										viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
+
+
 									}
 
 								}
@@ -271,10 +280,10 @@ namespace HomeTextileApp
 							}
 							else
 							{
-								
-									viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
 
-								
+								viewAttendanceHistory.Absent = viewAttendanceHistory.Absent + 1;
+
+
 
 							}
 						}
@@ -304,9 +313,9 @@ namespace HomeTextileApp
 		{
 			DGVPrinter printer = new DGVPrinter();
 
-			printer.Title = "Attendance History Report";
+			printer.Title = "Saad Musa-Home Textile";
+			printer.SubTitle = "Attendance History" + Environment.NewLine + "Date:" + dateTimePicker1.Value.ToString("dd/MM/yyyy")+"-"+ dateTimePicker2.Value.ToString("dd/MM/yyyy") + Environment.NewLine + label7.Text.ToString() + Environment.NewLine + " ";
 
-			printer.SubTitle = string.Format("Date:{0}", DateTime.Now.Date);
 
 			printer.SubTitleFormatFlags = StringFormatFlags.LineLimit |
 
@@ -321,13 +330,26 @@ namespace HomeTextileApp
 
 			printer.HeaderCellAlignment = StringAlignment.Near;
 
-			printer.Footer = "Saad Musa-Home Textile";
+			printer.Footer = "Saad Musa-IT Department";
 
 			printer.FooterSpacing = 15;
 
 			printer.PageSettings.Landscape = true;
 
 			printer.PrintDataGridView(viewAttendanceHistoryDataGridView);
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			int id = Convert.ToInt32(comboBox3.SelectedValue);
+			DateTime From = dateTimePicker1.Value;
+			List<Employee> employeesALL = db.Employees.Where(a => a.Section.DepartmentId == id).ToList();
+			List<Employee> employees = employeesALL.Where(a => a.IsActive(From)).ToList();
+			PopulateGrid(employees);
+
+			DL.Department section = db.Departments.Find(id);
+			label7.Text = "U: " + section.Unit.Name + ";  D: " + section.Name ;
+
 		}
 	}
 }

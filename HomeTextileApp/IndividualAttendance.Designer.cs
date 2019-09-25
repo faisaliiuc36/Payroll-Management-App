@@ -38,6 +38,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button2 = new System.Windows.Forms.Button();
 			this.viewIndividualAttendanceDataGridView = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +46,7 @@
 			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.viewIndividualAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.button2 = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.viewIndividualAttendanceDataGridView)).BeginInit();
@@ -145,6 +146,18 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Individual Attendance Report";
 			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Location = new System.Drawing.Point(469, 450);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(85, 38);
+			this.button2.TabIndex = 1;
+			this.button2.Text = "Print";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
 			// viewIndividualAttendanceDataGridView
 			// 
 			this.viewIndividualAttendanceDataGridView.AutoGenerateColumns = false;
@@ -195,23 +208,22 @@
 			// 
 			this.viewIndividualAttendanceBindingSource.DataSource = typeof(HomeTextileApp.DL.ViewIndividualAttendance);
 			// 
-			// button2
+			// label4
 			// 
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-			this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(469, 450);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(85, 38);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "Print";
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(579, 87);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(38, 15);
+			this.label4.TabIndex = 8;
+			this.label4.Text = "label4";
+			this.label4.Visible = false;
 			// 
 			// IndividualAttendance
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(804, 572);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label3);
@@ -252,5 +264,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
 		private System.Windows.Forms.BindingSource viewIndividualAttendanceBindingSource;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label label4;
 	}
 }
