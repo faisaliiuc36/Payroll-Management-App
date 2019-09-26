@@ -53,7 +53,6 @@ namespace HomeTextileApp
 					emp_CheckInOutsForTransfer.Add(emp_CheckInOut);
 				}
 			}
-
 			emp_CheckInOutDataGridView.DataSource = emp_CheckInOutsForTransfer.ToList();
 		}
 
