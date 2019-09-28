@@ -8959,8 +8959,6 @@ namespace HomeTextileApp {
             
             private global::System.Data.DataColumn columnFoodAllowance;
             
-            private global::System.Data.DataColumn columnTotal;
-            
             private global::System.Data.DataColumn columnEffectiveFrom;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9078,14 +9076,6 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TotalColumn {
-                get {
-                    return this.columnTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn EffectiveFromColumn {
                 get {
                     return this.columnEffectiveFrom;
@@ -9129,7 +9119,7 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SalaryGradesRow AddSalaryGradesRow(int GradeId, string GradeName, string Description, float Salary, float YearlyIncrement, float HouseRent, float MedicalAllowance, float TransportAllowance, float FoodAllowance, float Total, System.DateTime EffectiveFrom) {
+            public SalaryGradesRow AddSalaryGradesRow(int GradeId, string GradeName, string Description, float Salary, float YearlyIncrement, float HouseRent, float MedicalAllowance, float TransportAllowance, float FoodAllowance, System.DateTime EffectiveFrom) {
                 SalaryGradesRow rowSalaryGradesRow = ((SalaryGradesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9142,7 +9132,6 @@ namespace HomeTextileApp {
                         MedicalAllowance,
                         TransportAllowance,
                         FoodAllowance,
-                        Total,
                         EffectiveFrom};
                 rowSalaryGradesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalaryGradesRow);
@@ -9183,7 +9172,6 @@ namespace HomeTextileApp {
                 this.columnMedicalAllowance = base.Columns["MedicalAllowance"];
                 this.columnTransportAllowance = base.Columns["TransportAllowance"];
                 this.columnFoodAllowance = base.Columns["FoodAllowance"];
-                this.columnTotal = base.Columns["Total"];
                 this.columnEffectiveFrom = base.Columns["EffectiveFrom"];
             }
             
@@ -9210,8 +9198,6 @@ namespace HomeTextileApp {
                 base.Columns.Add(this.columnTransportAllowance);
                 this.columnFoodAllowance = new global::System.Data.DataColumn("FoodAllowance", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFoodAllowance);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal);
                 this.columnEffectiveFrom = new global::System.Data.DataColumn("EffectiveFrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEffectiveFrom);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -9231,7 +9217,6 @@ namespace HomeTextileApp {
                 this.columnMedicalAllowance.AllowDBNull = false;
                 this.columnTransportAllowance.AllowDBNull = false;
                 this.columnFoodAllowance.AllowDBNull = false;
-                this.columnTotal.AllowDBNull = false;
                 this.columnEffectiveFrom.AllowDBNull = false;
             }
             
@@ -16155,17 +16140,6 @@ namespace HomeTextileApp {
                 }
                 set {
                     this[this.tableSalaryGrades.FoodAllowanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public float Total {
-                get {
-                    return ((float)(this[this.tableSalaryGrades.TotalColumn]));
-                }
-                set {
-                    this[this.tableSalaryGrades.TotalColumn] = value;
                 }
             }
             
@@ -27571,12 +27545,11 @@ SELECT Id, EmployeeId, Amount, Date, TechnicalAllowance FROM Salaries WHERE (Id 
             tableMapping.ColumnMappings.Add("MedicalAllowance", "MedicalAllowance");
             tableMapping.ColumnMappings.Add("TransportAllowance", "TransportAllowance");
             tableMapping.ColumnMappings.Add("FoodAllowance", "FoodAllowance");
-            tableMapping.ColumnMappings.Add("Total", "Total");
             tableMapping.ColumnMappings.Add("EffectiveFrom", "EffectiveFrom");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[SalaryGrades] WHERE (([Id] = @Original_Id) AND ([GradeId] = @Original_GradeId) AND ([Salary] = @Original_Salary) AND ([YearlyIncrement] = @Original_YearlyIncrement) AND ([HouseRent] = @Original_HouseRent) AND ([MedicalAllowance] = @Original_MedicalAllowance) AND ([TransportAllowance] = @Original_TransportAllowance) AND ([FoodAllowance] = @Original_FoodAllowance) AND ([Total] = @Original_Total) AND ([EffectiveFrom] = @Original_EffectiveFrom))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [SalaryGrades] WHERE (([Id] = @Original_Id) AND ([GradeId] = @Original_GradeId) AND ([Salary] = @Original_Salary) AND ([YearlyIncrement] = @Original_YearlyIncrement) AND ([HouseRent] = @Original_HouseRent) AND ([MedicalAllowance] = @Original_MedicalAllowance) AND ([TransportAllowance] = @Original_TransportAllowance) AND ([FoodAllowance] = @Original_FoodAllowance) AND ([EffectiveFrom] = @Original_EffectiveFrom))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GradeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GradeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -27586,12 +27559,11 @@ SELECT Id, EmployeeId, Amount, Date, TechnicalAllowance FROM Salaries WHERE (Id 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MedicalAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicalAllowance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransportAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransportAllowance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FoodAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FoodAllowance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EffectiveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EffectiveFrom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[SalaryGrades] ([GradeId], [GradeName], [Description], [Salary], [YearlyIncrement], [HouseRent], [MedicalAllowance], [TransportAllowance], [FoodAllowance], [Total], [EffectiveFrom]) VALUES (@GradeId, @GradeName, @Description, @Salary, @YearlyIncrement, @HouseRent, @MedicalAllowance, @TransportAllowance, @FoodAllowance, @Total, @EffectiveFrom);
-SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, MedicalAllowance, TransportAllowance, FoodAllowance, Total, EffectiveFrom FROM SalaryGrades WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [SalaryGrades] ([GradeId], [GradeName], [Description], [Salary], [YearlyIncrement], [HouseRent], [MedicalAllowance], [TransportAllowance], [FoodAllowance], [EffectiveFrom]) VALUES (@GradeId, @GradeName, @Description, @Salary, @YearlyIncrement, @HouseRent, @MedicalAllowance, @TransportAllowance, @FoodAllowance, @EffectiveFrom);
+SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, MedicalAllowance, TransportAllowance, FoodAllowance, EffectiveFrom FROM SalaryGrades WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GradeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GradeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GradeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GradeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -27602,12 +27574,11 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MedicalAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicalAllowance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransportAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransportAllowance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FoodAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FoodAllowance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EffectiveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EffectiveFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[SalaryGrades] SET [GradeId] = @GradeId, [GradeName] = @GradeName, [Description] = @Description, [Salary] = @Salary, [YearlyIncrement] = @YearlyIncrement, [HouseRent] = @HouseRent, [MedicalAllowance] = @MedicalAllowance, [TransportAllowance] = @TransportAllowance, [FoodAllowance] = @FoodAllowance, [Total] = @Total, [EffectiveFrom] = @EffectiveFrom WHERE (([Id] = @Original_Id) AND ([GradeId] = @Original_GradeId) AND ([Salary] = @Original_Salary) AND ([YearlyIncrement] = @Original_YearlyIncrement) AND ([HouseRent] = @Original_HouseRent) AND ([MedicalAllowance] = @Original_MedicalAllowance) AND ([TransportAllowance] = @Original_TransportAllowance) AND ([FoodAllowance] = @Original_FoodAllowance) AND ([Total] = @Original_Total) AND ([EffectiveFrom] = @Original_EffectiveFrom));
-SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, MedicalAllowance, TransportAllowance, FoodAllowance, Total, EffectiveFrom FROM SalaryGrades WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [SalaryGrades] SET [GradeId] = @GradeId, [GradeName] = @GradeName, [Description] = @Description, [Salary] = @Salary, [YearlyIncrement] = @YearlyIncrement, [HouseRent] = @HouseRent, [MedicalAllowance] = @MedicalAllowance, [TransportAllowance] = @TransportAllowance, [FoodAllowance] = @FoodAllowance, [EffectiveFrom] = @EffectiveFrom WHERE (([Id] = @Original_Id) AND ([GradeId] = @Original_GradeId) AND ([Salary] = @Original_Salary) AND ([YearlyIncrement] = @Original_YearlyIncrement) AND ([HouseRent] = @Original_HouseRent) AND ([MedicalAllowance] = @Original_MedicalAllowance) AND ([TransportAllowance] = @Original_TransportAllowance) AND ([FoodAllowance] = @Original_FoodAllowance) AND ([EffectiveFrom] = @Original_EffectiveFrom));
+SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, MedicalAllowance, TransportAllowance, FoodAllowance, EffectiveFrom FROM SalaryGrades WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GradeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GradeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GradeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GradeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -27618,7 +27589,6 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MedicalAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicalAllowance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransportAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransportAllowance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FoodAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FoodAllowance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EffectiveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EffectiveFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GradeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GradeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -27628,7 +27598,6 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MedicalAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicalAllowance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransportAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransportAllowance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FoodAllowance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FoodAllowance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EffectiveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EffectiveFrom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -27647,8 +27616,8 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, M" +
-                "edicalAllowance, TransportAllowance, FoodAllowance, Total, EffectiveFrom FROM db" +
-                "o.SalaryGrades";
+                "edicalAllowance, TransportAllowance, FoodAllowance, EffectiveFrom FROM SalaryGra" +
+                "des";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -27709,7 +27678,7 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_GradeId, float Original_Salary, float Original_YearlyIncrement, float Original_HouseRent, float Original_MedicalAllowance, float Original_TransportAllowance, float Original_FoodAllowance, float Original_Total, System.DateTime Original_EffectiveFrom) {
+        public virtual int Delete(int Original_Id, int Original_GradeId, float Original_Salary, float Original_YearlyIncrement, float Original_HouseRent, float Original_MedicalAllowance, float Original_TransportAllowance, float Original_FoodAllowance, System.DateTime Original_EffectiveFrom) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_GradeId));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((float)(Original_Salary));
@@ -27718,8 +27687,7 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
             this.Adapter.DeleteCommand.Parameters[5].Value = ((float)(Original_MedicalAllowance));
             this.Adapter.DeleteCommand.Parameters[6].Value = ((float)(Original_TransportAllowance));
             this.Adapter.DeleteCommand.Parameters[7].Value = ((float)(Original_FoodAllowance));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((float)(Original_Total));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_EffectiveFrom));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_EffectiveFrom));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27740,7 +27708,7 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int GradeId, string GradeName, string Description, float Salary, float YearlyIncrement, float HouseRent, float MedicalAllowance, float TransportAllowance, float FoodAllowance, float Total, System.DateTime EffectiveFrom) {
+        public virtual int Insert(int GradeId, string GradeName, string Description, float Salary, float YearlyIncrement, float HouseRent, float MedicalAllowance, float TransportAllowance, float FoodAllowance, System.DateTime EffectiveFrom) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(GradeId));
             if ((GradeName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -27760,8 +27728,7 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
             this.Adapter.InsertCommand.Parameters[6].Value = ((float)(MedicalAllowance));
             this.Adapter.InsertCommand.Parameters[7].Value = ((float)(TransportAllowance));
             this.Adapter.InsertCommand.Parameters[8].Value = ((float)(FoodAllowance));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((float)(Total));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(EffectiveFrom));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(EffectiveFrom));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27792,7 +27759,6 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
                     float MedicalAllowance, 
                     float TransportAllowance, 
                     float FoodAllowance, 
-                    float Total, 
                     System.DateTime EffectiveFrom, 
                     int Original_Id, 
                     int Original_GradeId, 
@@ -27802,7 +27768,6 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
                     float Original_MedicalAllowance, 
                     float Original_TransportAllowance, 
                     float Original_FoodAllowance, 
-                    float Original_Total, 
                     System.DateTime Original_EffectiveFrom, 
                     int Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(GradeId));
@@ -27824,19 +27789,17 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
             this.Adapter.UpdateCommand.Parameters[6].Value = ((float)(MedicalAllowance));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((float)(TransportAllowance));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((float)(FoodAllowance));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((float)(Total));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(EffectiveFrom));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_GradeId));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((float)(Original_Salary));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((float)(Original_YearlyIncrement));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((float)(Original_HouseRent));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((float)(Original_MedicalAllowance));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((float)(Original_TransportAllowance));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((float)(Original_FoodAllowance));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((float)(Original_Total));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_EffectiveFrom));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(EffectiveFrom));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_GradeId));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((float)(Original_Salary));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((float)(Original_YearlyIncrement));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((float)(Original_HouseRent));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((float)(Original_MedicalAllowance));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((float)(Original_TransportAllowance));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((float)(Original_FoodAllowance));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_EffectiveFrom));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27867,7 +27830,6 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
                     float MedicalAllowance, 
                     float TransportAllowance, 
                     float FoodAllowance, 
-                    float Total, 
                     System.DateTime EffectiveFrom, 
                     int Original_Id, 
                     int Original_GradeId, 
@@ -27877,9 +27839,8 @@ SELECT Id, GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, 
                     float Original_MedicalAllowance, 
                     float Original_TransportAllowance, 
                     float Original_FoodAllowance, 
-                    float Original_Total, 
                     System.DateTime Original_EffectiveFrom) {
-            return this.Update(GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, MedicalAllowance, TransportAllowance, FoodAllowance, Total, EffectiveFrom, Original_Id, Original_GradeId, Original_Salary, Original_YearlyIncrement, Original_HouseRent, Original_MedicalAllowance, Original_TransportAllowance, Original_FoodAllowance, Original_Total, Original_EffectiveFrom, Original_Id);
+            return this.Update(GradeId, GradeName, Description, Salary, YearlyIncrement, HouseRent, MedicalAllowance, TransportAllowance, FoodAllowance, EffectiveFrom, Original_Id, Original_GradeId, Original_Salary, Original_YearlyIncrement, Original_HouseRent, Original_MedicalAllowance, Original_TransportAllowance, Original_FoodAllowance, Original_EffectiveFrom, Original_Id);
         }
     }
     

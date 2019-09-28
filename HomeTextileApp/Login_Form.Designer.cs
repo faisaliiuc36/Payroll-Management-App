@@ -172,6 +172,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -180,6 +181,7 @@
 			this.tableAdapterManager.DesignationsTableAdapter = null;
 			this.tableAdapterManager.Duty_RosterTableAdapter = null;
 			this.tableAdapterManager.Emp_CheckInOutTableAdapter = null;
+			this.tableAdapterManager.EmployeeDuesTableAdapter = null;
 			this.tableAdapterManager.EmployeesTableAdapter = null;
 			this.tableAdapterManager.EmployeeTypesTableAdapter = null;
 			this.tableAdapterManager.GendersTableAdapter = null;
@@ -197,13 +199,17 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+			this.tableAdapterManager.WorkerDesignationHistoriesTableAdapter = null;
 			this.tableAdapterManager.WorkerDesignationsTableAdapter = null;
 			// 
 			// Login_Form
 			// 
+			this.AcceptButton = this.button1;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;

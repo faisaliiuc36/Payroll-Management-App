@@ -24,7 +24,7 @@ namespace HomeTextileApp
 		{
 			this.Validate();
 			this.workerDesignationsBindingSource.EndEdit();
-			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet1);
+			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
 
 		}
 
@@ -32,28 +32,29 @@ namespace HomeTextileApp
 		{
 			this.Validate();
 			this.salaryGradesBindingSource.EndEdit();
-			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet1);
+			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
 
 		}
 
 		private void WorkerDesignation_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet1.WorkerDesignations' table. You can move, or remove it, as needed.
-			this.workerDesignationsTableAdapter.Fill(this.homeTextileDBDataSet1.WorkerDesignations);
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet1.SalaryGrades' table. You can move, or remove it, as needed.
-			this.salaryGradesTableAdapter.Fill(this.homeTextileDBDataSet1.SalaryGrades);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.WorkerDesignations' table. You can move, or remove it, as needed.
+			this.workerDesignationsTableAdapter.Fill(this.homeTextileDBDataSet2.WorkerDesignations);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.SalaryGrades' table. You can move, or remove it, as needed.
+			this.salaryGradesTableAdapter.Fill(this.homeTextileDBDataSet2.SalaryGrades);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.WorkerDesignations' table. You can move, or remove it, as needed.
+			this.workerDesignationsTableAdapter.Fill(this.homeTextileDBDataSet2.WorkerDesignations);
 
 		}
 
 		private void button5_Click(object sender, EventArgs e)
 		{
 			try
-			 {
+			{
 
 				this.Validate();
 				this.salaryGradesBindingSource.EndEdit();
-				this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet1);
-
+				this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
 				Save_Shadow_SalaryGrade();
 
 				MessageBox.Show("Save Sucessfully!");
@@ -104,10 +105,13 @@ namespace HomeTextileApp
 
 		private void button6_Click(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet1.WorkerDesignations' table. You can move, or remove it, as needed.
-			this.workerDesignationsTableAdapter.Fill(this.homeTextileDBDataSet1.WorkerDesignations);
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet1.SalaryGrades' table. You can move, or remove it, as needed.
-			this.salaryGradesTableAdapter.Fill(this.homeTextileDBDataSet1.SalaryGrades);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.WorkerDesignations' table. You can move, or remove it, as needed.
+			this.workerDesignationsTableAdapter.Fill(this.homeTextileDBDataSet2.WorkerDesignations);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.SalaryGrades' table. You can move, or remove it, as needed.
+			this.salaryGradesTableAdapter.Fill(this.homeTextileDBDataSet2.SalaryGrades);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.WorkerDesignations' table. You can move, or remove it, as needed.
+			this.workerDesignationsTableAdapter.Fill(this.homeTextileDBDataSet2.WorkerDesignations);
+
 
 		}
 
@@ -119,6 +123,14 @@ namespace HomeTextileApp
 		private void button2_Click(object sender, EventArgs e)
 		{
 			this.workerDesignationsBindingSource.RemoveCurrent();
+		}
+
+		private void salaryGradesBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+		{
+			this.Validate();
+			this.salaryGradesBindingSource.EndEdit();
+			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
+
 		}
 	}
 }

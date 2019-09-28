@@ -28,8 +28,13 @@ namespace HomeTextileApp.DL
 
 		public float FoodAllowance { get; set; }
 
-		public float Total { get; set; }
-
+		public float Total
+		{
+			get
+			{
+				return Salary + HouseRent + MedicalAllowance + TransportAllowance + FoodAllowance;
+			}
+		}
 		public DateTime EffectiveFrom { get; set; }
 	}
 }

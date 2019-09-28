@@ -50,6 +50,7 @@ namespace HomeTextileApp
 				this.Validate();
 				this.companiesBindingSource.EndEdit();
 				this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet1);
+				MessageBox.Show("Saved Changes!");
 
 			}
 			catch (Exception EX)

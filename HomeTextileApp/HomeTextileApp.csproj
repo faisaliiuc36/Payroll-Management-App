@@ -427,6 +427,10 @@
     <Compile Include="Migrations\201909140916026_EmployeeDue-U.Designer.cs">
       <DependentUpon>201909140916026_EmployeeDue-U.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909280937271_SalaryGrade-U.cs" />
+    <Compile Include="Migrations\201909280937271_SalaryGrade-U.Designer.cs">
+      <DependentUpon>201909280937271_SalaryGrade-U.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OT-Daily_Rep_Com.cs">
       <AutoGen>True</AutoGen>
@@ -736,6 +740,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909140916026_EmployeeDue-U.resx">
       <DependentUpon>201909140916026_EmployeeDue-U.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909280937271_SalaryGrade-U.resx">
+      <DependentUpon>201909280937271_SalaryGrade-U.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OT-Daily_Rep_Com.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
