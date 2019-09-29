@@ -75,6 +75,18 @@
     <Compile Include="AddAdvance.Designer.cs">
       <DependentUpon>AddAdvance.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddBonus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBonus.Designer.cs">
+      <DependentUpon>AddBonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEarnLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEarnLeave.Designer.cs">
+      <DependentUpon>AddEarnLeave.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,12 @@
     </Compile>
     <Compile Include="AddHolidays.Designer.cs">
       <DependentUpon>AddHolidays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSalary.Designer.cs">
+      <DependentUpon>AddSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
@@ -193,6 +211,7 @@
     <Compile Include="DL\ViewLoanWithPayTIme.cs" />
     <Compile Include="DL\ViewOT.cs" />
     <Compile Include="DL\ViewSalarySheet.cs" />
+    <Compile Include="DL\ViewYearlyLeave.cs" />
     <Compile Include="DL\WorkerDesignation.cs" />
     <Compile Include="DL\WorkerDesignationHistory.cs" />
     <Compile Include="Duty_Roster.cs">
@@ -573,6 +592,12 @@
     <EmbeddedResource Include="AddAdvance.resx">
       <DependentUpon>AddAdvance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddBonus.resx">
+      <DependentUpon>AddBonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEarnLeave.resx">
+      <DependentUpon>AddEarnLeave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -581,6 +606,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddHolidays.resx">
       <DependentUpon>AddHolidays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSalary.resx">
+      <DependentUpon>AddSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -915,6 +943,7 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewLoanWithPayTIme.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewOT.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewSalarySheet.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewYearlyLeave.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.WorkerDesignation.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.WorkerDesignationHistory.datasource" />
     <None Include="Properties\Settings.settings">

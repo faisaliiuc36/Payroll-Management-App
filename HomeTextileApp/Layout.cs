@@ -195,7 +195,7 @@ namespace HomeTextileApp
 			InvisibleAllSubPanel();
 			//Form Load
 			panel6.Controls.Clear();
-			SalaryAndBonus objForm = new SalaryAndBonus();
+			AddSalary objForm = new AddSalary();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
 			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -592,6 +592,32 @@ namespace HomeTextileApp
 			//Form Load
 			panel6.Controls.Clear();
 			TransferHoliday objForm = new TransferHoliday();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button36_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			AddEarnLeave objForm = new AddEarnLeave();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button37_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			AddBonus objForm = new AddBonus();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
 			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

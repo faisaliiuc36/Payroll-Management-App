@@ -61,6 +61,7 @@
 			this.button10 = new System.Windows.Forms.Button();
 			this.workerDesignationButton = new System.Windows.Forms.Button();
 			this.empSubPanel2 = new System.Windows.Forms.Panel();
+			this.button34 = new System.Windows.Forms.Button();
 			this.button9 = new System.Windows.Forms.Button();
 			this.button29 = new System.Windows.Forms.Button();
 			this.button28 = new System.Windows.Forms.Button();
@@ -69,6 +70,8 @@
 			this.upadteEmployeeButton = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.LAHPanel = new System.Windows.Forms.Panel();
+			this.button36 = new System.Windows.Forms.Button();
+			this.button35 = new System.Windows.Forms.Button();
 			this.button14 = new System.Windows.Forms.Button();
 			this.button15 = new System.Windows.Forms.Button();
 			this.button16 = new System.Windows.Forms.Button();
@@ -80,16 +83,15 @@
 			this.button19 = new System.Windows.Forms.Button();
 			this.button20 = new System.Windows.Forms.Button();
 			this.reportPanel = new System.Windows.Forms.Panel();
+			this.button33 = new System.Windows.Forms.Button();
+			this.button32 = new System.Windows.Forms.Button();
+			this.button31 = new System.Windows.Forms.Button();
+			this.button30 = new System.Windows.Forms.Button();
 			this.button26 = new System.Windows.Forms.Button();
 			this.button21 = new System.Windows.Forms.Button();
 			this.button22 = new System.Windows.Forms.Button();
 			this.button23 = new System.Windows.Forms.Button();
-			this.button30 = new System.Windows.Forms.Button();
-			this.button31 = new System.Windows.Forms.Button();
-			this.button32 = new System.Windows.Forms.Button();
-			this.button33 = new System.Windows.Forms.Button();
-			this.button35 = new System.Windows.Forms.Button();
-			this.button34 = new System.Windows.Forms.Button();
+			this.button37 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -419,7 +421,7 @@
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(-1, 60);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 16);
+			this.label1.Size = new System.Drawing.Size(102, 16);
 			this.label1.TabIndex = 3;
 			this.label1.Text = "Home Textile";
 			// 
@@ -534,6 +536,7 @@
 			// empSubPanel2
 			// 
 			this.empSubPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+			this.empSubPanel2.Controls.Add(this.button37);
 			this.empSubPanel2.Controls.Add(this.button34);
 			this.empSubPanel2.Controls.Add(this.button9);
 			this.empSubPanel2.Controls.Add(this.button29);
@@ -544,9 +547,25 @@
 			this.empSubPanel2.Controls.Add(this.empListButton);
 			this.empSubPanel2.Location = new System.Drawing.Point(200, 178);
 			this.empSubPanel2.Name = "empSubPanel2";
-			this.empSubPanel2.Size = new System.Drawing.Size(198, 258);
+			this.empSubPanel2.Size = new System.Drawing.Size(198, 286);
 			this.empSubPanel2.TabIndex = 15;
 			this.empSubPanel2.Visible = false;
+			// 
+			// button34
+			// 
+			this.button34.FlatAppearance.BorderSize = 0;
+			this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button34.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button34.ForeColor = System.Drawing.Color.White;
+			this.button34.Image = ((System.Drawing.Image)(resources.GetObject("button34.Image")));
+			this.button34.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button34.Location = new System.Drawing.Point(7, 235);
+			this.button34.Name = "button34";
+			this.button34.Size = new System.Drawing.Size(192, 41);
+			this.button34.TabIndex = 13;
+			this.button34.Text = "   Worker Salary ";
+			this.button34.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button34.UseVisualStyleBackColor = true;
 			// 
 			// button9
 			// 
@@ -557,7 +576,7 @@
 			this.button9.ForeColor = System.Drawing.Color.White;
 			this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
 			this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button9.Location = new System.Drawing.Point(8, 125);
+			this.button9.Location = new System.Drawing.Point(8, 157);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(186, 30);
 			this.button9.TabIndex = 10;
@@ -575,7 +594,7 @@
 			this.button29.ForeColor = System.Drawing.Color.White;
 			this.button29.Image = ((System.Drawing.Image)(resources.GetObject("button29.Image")));
 			this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button29.Location = new System.Drawing.Point(8, 179);
+			this.button29.Location = new System.Drawing.Point(8, 211);
 			this.button29.Name = "button29";
 			this.button29.Size = new System.Drawing.Size(186, 30);
 			this.button29.TabIndex = 12;
@@ -593,7 +612,7 @@
 			this.button28.ForeColor = System.Drawing.Color.White;
 			this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
 			this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button28.Location = new System.Drawing.Point(8, 153);
+			this.button28.Location = new System.Drawing.Point(8, 185);
 			this.button28.Name = "button28";
 			this.button28.Size = new System.Drawing.Size(186, 30);
 			this.button28.TabIndex = 11;
@@ -615,7 +634,7 @@
 			this.button8.Name = "button8";
 			this.button8.Size = new System.Drawing.Size(186, 30);
 			this.button8.TabIndex = 9;
-			this.button8.Text = "   Salary And Bonus";
+			this.button8.Text = "   Add Salary(Staff) ";
 			this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button8.UseVisualStyleBackColor = true;
 			this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -667,15 +686,50 @@
 			// LAHPanel
 			// 
 			this.LAHPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+			this.LAHPanel.Controls.Add(this.button36);
 			this.LAHPanel.Controls.Add(this.button35);
 			this.LAHPanel.Controls.Add(this.button14);
 			this.LAHPanel.Controls.Add(this.button15);
 			this.LAHPanel.Controls.Add(this.button16);
 			this.LAHPanel.Location = new System.Drawing.Point(200, 328);
 			this.LAHPanel.Name = "LAHPanel";
-			this.LAHPanel.Size = new System.Drawing.Size(219, 185);
+			this.LAHPanel.Size = new System.Drawing.Size(219, 225);
 			this.LAHPanel.TabIndex = 15;
 			this.LAHPanel.Visible = false;
+			// 
+			// button36
+			// 
+			this.button36.FlatAppearance.BorderSize = 0;
+			this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button36.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button36.ForeColor = System.Drawing.Color.White;
+			this.button36.Image = ((System.Drawing.Image)(resources.GetObject("button36.Image")));
+			this.button36.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button36.Location = new System.Drawing.Point(10, 162);
+			this.button36.Name = "button36";
+			this.button36.Size = new System.Drawing.Size(186, 55);
+			this.button36.TabIndex = 10;
+			this.button36.Text = "   Add Earn Leave";
+			this.button36.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button36.UseVisualStyleBackColor = true;
+			this.button36.Click += new System.EventHandler(this.button36_Click);
+			// 
+			// button35
+			// 
+			this.button35.FlatAppearance.BorderSize = 0;
+			this.button35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button35.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button35.ForeColor = System.Drawing.Color.White;
+			this.button35.Image = ((System.Drawing.Image)(resources.GetObject("button35.Image")));
+			this.button35.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button35.Location = new System.Drawing.Point(10, 120);
+			this.button35.Name = "button35";
+			this.button35.Size = new System.Drawing.Size(186, 55);
+			this.button35.TabIndex = 9;
+			this.button35.Text = "   Transfer Holiday";
+			this.button35.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button35.UseVisualStyleBackColor = true;
+			this.button35.Click += new System.EventHandler(this.button35_Click);
 			// 
 			// button14
 			// 
@@ -855,6 +909,74 @@
 			this.reportPanel.TabIndex = 18;
 			this.reportPanel.Visible = false;
 			// 
+			// button33
+			// 
+			this.button33.FlatAppearance.BorderSize = 0;
+			this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button33.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button33.ForeColor = System.Drawing.Color.White;
+			this.button33.Image = ((System.Drawing.Image)(resources.GetObject("button33.Image")));
+			this.button33.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button33.Location = new System.Drawing.Point(9, 304);
+			this.button33.Name = "button33";
+			this.button33.Size = new System.Drawing.Size(211, 40);
+			this.button33.TabIndex = 13;
+			this.button33.Text = "   Advance Deduction";
+			this.button33.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button33.UseVisualStyleBackColor = true;
+			this.button33.Click += new System.EventHandler(this.button33_Click);
+			// 
+			// button32
+			// 
+			this.button32.FlatAppearance.BorderSize = 0;
+			this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button32.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button32.ForeColor = System.Drawing.Color.White;
+			this.button32.Image = ((System.Drawing.Image)(resources.GetObject("button32.Image")));
+			this.button32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button32.Location = new System.Drawing.Point(9, 269);
+			this.button32.Name = "button32";
+			this.button32.Size = new System.Drawing.Size(186, 40);
+			this.button32.TabIndex = 12;
+			this.button32.Text = "   O.T Payment";
+			this.button32.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button32.UseVisualStyleBackColor = true;
+			this.button32.Click += new System.EventHandler(this.button32_Click);
+			// 
+			// button31
+			// 
+			this.button31.FlatAppearance.BorderSize = 0;
+			this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button31.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button31.ForeColor = System.Drawing.Color.White;
+			this.button31.Image = ((System.Drawing.Image)(resources.GetObject("button31.Image")));
+			this.button31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button31.Location = new System.Drawing.Point(9, 231);
+			this.button31.Name = "button31";
+			this.button31.Size = new System.Drawing.Size(186, 40);
+			this.button31.TabIndex = 11;
+			this.button31.Text = "   O.T(Daily)";
+			this.button31.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button31.UseVisualStyleBackColor = true;
+			this.button31.Click += new System.EventHandler(this.button31_Click);
+			// 
+			// button30
+			// 
+			this.button30.FlatAppearance.BorderSize = 0;
+			this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button30.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button30.ForeColor = System.Drawing.Color.White;
+			this.button30.Image = ((System.Drawing.Image)(resources.GetObject("button30.Image")));
+			this.button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button30.Location = new System.Drawing.Point(9, 194);
+			this.button30.Name = "button30";
+			this.button30.Size = new System.Drawing.Size(186, 40);
+			this.button30.TabIndex = 10;
+			this.button30.Text = "   Bonus";
+			this.button30.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button30.UseVisualStyleBackColor = true;
+			this.button30.Click += new System.EventHandler(this.button30_Click);
+			// 
 			// button26
 			// 
 			this.button26.FlatAppearance.BorderSize = 0;
@@ -923,106 +1045,23 @@
 			this.button23.UseVisualStyleBackColor = true;
 			this.button23.Click += new System.EventHandler(this.button23_Click);
 			// 
-			// button30
+			// button37
 			// 
-			this.button30.FlatAppearance.BorderSize = 0;
-			this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button30.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button30.ForeColor = System.Drawing.Color.White;
-			this.button30.Image = ((System.Drawing.Image)(resources.GetObject("button30.Image")));
-			this.button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button30.Location = new System.Drawing.Point(9, 194);
-			this.button30.Name = "button30";
-			this.button30.Size = new System.Drawing.Size(186, 40);
-			this.button30.TabIndex = 10;
-			this.button30.Text = "   Bonus";
-			this.button30.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button30.UseVisualStyleBackColor = true;
-			this.button30.Click += new System.EventHandler(this.button30_Click);
-			// 
-			// button31
-			// 
-			this.button31.FlatAppearance.BorderSize = 0;
-			this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button31.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button31.ForeColor = System.Drawing.Color.White;
-			this.button31.Image = ((System.Drawing.Image)(resources.GetObject("button31.Image")));
-			this.button31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button31.Location = new System.Drawing.Point(9, 231);
-			this.button31.Name = "button31";
-			this.button31.Size = new System.Drawing.Size(186, 40);
-			this.button31.TabIndex = 11;
-			this.button31.Text = "   O.T(Daily)";
-			this.button31.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button31.UseVisualStyleBackColor = true;
-			this.button31.Click += new System.EventHandler(this.button31_Click);
-			// 
-			// button32
-			// 
-			this.button32.FlatAppearance.BorderSize = 0;
-			this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button32.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button32.ForeColor = System.Drawing.Color.White;
-			this.button32.Image = ((System.Drawing.Image)(resources.GetObject("button32.Image")));
-			this.button32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button32.Location = new System.Drawing.Point(9, 269);
-			this.button32.Name = "button32";
-			this.button32.Size = new System.Drawing.Size(186, 40);
-			this.button32.TabIndex = 12;
-			this.button32.Text = "   O.T Payment";
-			this.button32.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button32.UseVisualStyleBackColor = true;
-			this.button32.Click += new System.EventHandler(this.button32_Click);
-			// 
-			// button33
-			// 
-			this.button33.FlatAppearance.BorderSize = 0;
-			this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button33.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button33.ForeColor = System.Drawing.Color.White;
-			this.button33.Image = ((System.Drawing.Image)(resources.GetObject("button33.Image")));
-			this.button33.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button33.Location = new System.Drawing.Point(9, 304);
-			this.button33.Name = "button33";
-			this.button33.Size = new System.Drawing.Size(211, 40);
-			this.button33.TabIndex = 13;
-			this.button33.Text = "   Advance Deduction";
-			this.button33.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button33.UseVisualStyleBackColor = true;
-			this.button33.Click += new System.EventHandler(this.button33_Click);
-			// 
-			// button35
-			// 
-			this.button35.FlatAppearance.BorderSize = 0;
-			this.button35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button35.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button35.ForeColor = System.Drawing.Color.White;
-			this.button35.Image = ((System.Drawing.Image)(resources.GetObject("button35.Image")));
-			this.button35.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button35.Location = new System.Drawing.Point(10, 120);
-			this.button35.Name = "button35";
-			this.button35.Size = new System.Drawing.Size(186, 55);
-			this.button35.TabIndex = 9;
-			this.button35.Text = "   Transfer Holiday";
-			this.button35.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button35.UseVisualStyleBackColor = true;
-			this.button35.Click += new System.EventHandler(this.button35_Click);
-			// 
-			// button34
-			// 
-			this.button34.FlatAppearance.BorderSize = 0;
-			this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button34.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button34.ForeColor = System.Drawing.Color.White;
-			this.button34.Image = ((System.Drawing.Image)(resources.GetObject("button34.Image")));
-			this.button34.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button34.Location = new System.Drawing.Point(7, 203);
-			this.button34.Name = "button34";
-			this.button34.Size = new System.Drawing.Size(192, 41);
-			this.button34.TabIndex = 13;
-			this.button34.Text = " Worker Salary ";
-			this.button34.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button34.UseVisualStyleBackColor = true;
+			this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button37.FlatAppearance.BorderSize = 0;
+			this.button37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button37.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button37.ForeColor = System.Drawing.Color.White;
+			this.button37.Image = ((System.Drawing.Image)(resources.GetObject("button37.Image")));
+			this.button37.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button37.Location = new System.Drawing.Point(6, 128);
+			this.button37.Name = "button37";
+			this.button37.Size = new System.Drawing.Size(186, 30);
+			this.button37.TabIndex = 14;
+			this.button37.Text = "   Add Bonus ";
+			this.button37.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button37.UseVisualStyleBackColor = true;
+			this.button37.Click += new System.EventHandler(this.button37_Click);
 			// 
 			// Layout
 			// 
@@ -1030,13 +1069,13 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.ClientSize = new System.Drawing.Size(1025, 726);
+			this.Controls.Add(this.empSubPanel2);
 			this.Controls.Add(this.LAHPanel);
 			this.Controls.Add(this.attendancePanel);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.empSubPanel2);
 			this.Controls.Add(this.settingsSubPanel);
 			this.Controls.Add(this.reportPanel);
 			this.Controls.Add(this.panel6);
@@ -1127,5 +1166,7 @@
 		private System.Windows.Forms.Button button33;
 		private System.Windows.Forms.Button button35;
 		private System.Windows.Forms.Button button34;
+		private System.Windows.Forms.Button button36;
+		private System.Windows.Forms.Button button37;
 	}
 }

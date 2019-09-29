@@ -29,15 +29,15 @@ namespace HomeTextileApp
 
 		private void SalaryAndBonus_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Bonus' table. You can move, or remove it, as needed.
-			this.bonusTableAdapter.Fill(this.homeTextileDBDataSet2.Bonus);
-			LoadAll();
+				// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Employees' table. You can move, or remove it, as needed.
+			this.employeesTableAdapter.Fill(this.homeTextileDBDataSet2.Employees);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Salaries' table. You can move, or remove it, as needed.
+			this.salariesTableAdapter.Fill(this.homeTextileDBDataSet2.Salaries);
+		
 		}
 
 		private void LoadAll()
 		{
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Bonus' table. You can move, or remove it, as needed.
-			this.bonusTableAdapter.Fill(this.homeTextileDBDataSet2.Bonus);
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Employees' table. You can move, or remove it, as needed.
 			this.employeesTableAdapter.Fill(this.homeTextileDBDataSet2.Employees);
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Salaries' table. You can move, or remove it, as needed.
@@ -53,10 +53,9 @@ namespace HomeTextileApp
 
 		private void SaveAll()
 		{
-			this.Validate();
-			this.salariesBindingSource.EndEdit();
-			this.bonusBindingSource.EndEdit();
+		
 			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
+			
 
 		}
 
@@ -90,7 +89,7 @@ namespace HomeTextileApp
 				return;
 			}
 
-			this.bonusBindingSource.RemoveCurrent();
+		
 
 			SaveAll();
 			MessageBox.Show("Deleted Sucessfully!");
@@ -112,17 +111,6 @@ namespace HomeTextileApp
 
 		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
 		{
-			try
-			{
-				DateTime date = dateTimePicker1.Value;
-				String.Format("{0:yyyy-MM-dd} 00:00:00", date);
-
-				bonusBindingSource.Filter = String.Format("Date >= '{0:yyyy-MM-dd}' AND Date < '{1:yyyy-MM-dd}'", date, date.AddYears(1));
-			}
-			catch(Exception Ex)
-			{
-
-			}
 		}
 
 		private void button5_Click(object sender, EventArgs e)
@@ -136,9 +124,7 @@ namespace HomeTextileApp
 
 		private void button6_Click(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Bonus' table. You can move, or remove it, as needed.
-			this.bonusTableAdapter.Fill(this.homeTextileDBDataSet2.Bonus);
-
+			
 		}
 	}
 }

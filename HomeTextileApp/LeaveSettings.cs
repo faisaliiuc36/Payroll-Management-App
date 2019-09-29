@@ -43,11 +43,17 @@ namespace HomeTextileApp
 		private void button2_Click(object sender, EventArgs e)
 		{
 			this.leaveTypesBindingSource.RemoveCurrent();
+			this.Validate();
+			this.leaveTypesBindingSource.EndEdit();
+			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			this.leaveStoresBindingSource.RemoveCurrent();
+			this.Validate();
+			this.leaveTypesBindingSource.EndEdit();
+			this.tableAdapterManager.UpdateAll(this.homeTextileDBDataSet2);
 		}
 
 		private void button3_Click(object sender, EventArgs e)

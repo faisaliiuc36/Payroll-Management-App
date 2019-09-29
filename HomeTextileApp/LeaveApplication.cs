@@ -82,42 +82,23 @@ namespace HomeTextileApp
 
 		private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			BindLeavesBinding();
+		
 		}
 
-		private void BindLeavesBinding()
-		{
-			int value = Convert.ToInt32(comboBox4.SelectedValue);
-			int Year = dateTimePicker1.Value.Year;
-
-
-
-			List<Leave> leaves2 = new List<Leave>();
-			List<Leave> leaves = db.Leaves.ToList();
-
-			foreach (Leave L in leaves)
-			{
-				var CHeck = db.Employees.FirstOrDefault(a => a.Emp_Id == L.EmployeeId && a.SectionId == value);
-				if (CHeck != null && L.From.Year == Year)
-				{
-					leaves2.Add(L);
-				}
-
-			}
-
-
-
-
-			leavesDataGridView.DataSource = leaves2.ToList();
-		}
+		
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
 			try
 			{
 				int EmpId = Convert.ToInt32(textBox1.Text);
+				//Filter Holidays
+				DateTime date = new DateTime(dateTimePicker1.Value.Year, 1, 1);
+				DateTime date2 = new DateTime(dateTimePicker1.Value.Year, 12, 31);
+				String.Format("{0:yyyy-MM-dd} 00:00:00", date);
 
-				leavesBindingSource.Filter = "EmployeeId=" + EmpId;
+				leavesBindingSource.Filter = String.Format("From >= '{0:yyyy-MM-dd}' AND From < '{1:yyyy-MM-dd}' And EmployeeId=" + EmpId, date, date2);
+				
 				GetLeaveHistory();
 			}
 			catch(Exception)
@@ -232,14 +213,30 @@ namespace HomeTextileApp
 		{
 			try
 			{
+				int EmpId = Convert.ToInt32(textBox1.Text);
+				//Filter
+				DateTime date = new DateTime(dateTimePicker1.Value.Year, 1, 1);
+				DateTime date2 = new DateTime(dateTimePicker1.Value.Year, 12, 31);
+				String.Format("{0:yyyy-MM-dd} 00:00:00", date);
+
+				
+				leavesBindingSource.Filter = String.Format("From >= '{0:yyyy-MM-dd}' AND From < '{1:yyyy-MM-dd}' And EmployeeId=" + EmpId, date, date2);
+
 				GetLeaveHistory();
-				BindLeavesBinding();
+				
 			}
 			catch(Exception)
 			{
 
+				DateTime date = new DateTime(dateTimePicker1.Value.Year, 1, 1);
+				DateTime date2 = new DateTime(dateTimePicker1.Value.Year, 12, 31);
+				String.Format("{0:yyyy-MM-dd} 00:00:00", date);
+
+
+				leavesBindingSource.Filter = String.Format("From >= '{0:yyyy-MM-dd}' AND From < '{1:yyyy-MM-dd}'" , date, date2);
+
 			}
-			
+
 			//leavesBindingSource.Filter = String.Format("From == '{0:yyyy}'", dateTimePicker1.Value.Date.ToString("yyyy"));
 		}
 

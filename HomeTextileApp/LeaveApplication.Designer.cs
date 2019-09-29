@@ -48,18 +48,10 @@
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.comboBox4 = new System.Windows.Forms.ComboBox();
 			this.sectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.companyComboBox = new System.Windows.Forms.ComboBox();
 			this.fKdboUnitsdboCompaniesCompanyIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.companiesTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.CompaniesTableAdapter();
 			this.unitsTableAdapter = new HomeTextileApp.HomeTextileDBDataSet2TableAdapters.UnitsTableAdapter();
@@ -200,6 +192,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -208,6 +201,7 @@
 			this.tableAdapterManager.DesignationsTableAdapter = null;
 			this.tableAdapterManager.Duty_RosterTableAdapter = null;
 			this.tableAdapterManager.Emp_CheckInOutTableAdapter = null;
+			this.tableAdapterManager.EmployeeDuesTableAdapter = null;
 			this.tableAdapterManager.EmployeesTableAdapter = null;
 			this.tableAdapterManager.EmployeeTypesTableAdapter = null;
 			this.tableAdapterManager.GendersTableAdapter = null;
@@ -225,9 +219,12 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+			this.tableAdapterManager.WorkerDesignationHistoriesTableAdapter = null;
 			this.tableAdapterManager.WorkerDesignationsTableAdapter = null;
 			// 
 			// leaveTypesTableAdapter
@@ -237,15 +234,9 @@
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.textBox1);
+			this.groupBox2.Controls.Add(this.dateTimePicker1);
 			this.groupBox2.Controls.Add(this.label5);
-			this.groupBox2.Controls.Add(this.label4);
-			this.groupBox2.Controls.Add(this.label3);
-			this.groupBox2.Controls.Add(this.label2);
-			this.groupBox2.Controls.Add(this.label1);
-			this.groupBox2.Controls.Add(this.comboBox4);
-			this.groupBox2.Controls.Add(this.comboBox3);
-			this.groupBox2.Controls.Add(this.comboBox2);
-			this.groupBox2.Controls.Add(this.companyComboBox);
+			this.groupBox2.Controls.Add(this.label6);
 			this.groupBox2.Location = new System.Drawing.Point(12, 12);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(780, 77);
@@ -255,7 +246,7 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(578, 41);
+			this.textBox1.Location = new System.Drawing.Point(26, 43);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(146, 20);
 			this.textBox1.TabIndex = 9;
@@ -264,61 +255,11 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(575, 24);
+			this.label5.Location = new System.Drawing.Point(23, 26);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(120, 13);
 			this.label5.TabIndex = 8;
 			this.label5.Text = "Search By Employee Id:";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(297, 24);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(65, 13);
-			this.label4.TabIndex = 7;
-			this.label4.Text = "Department:";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(163, 24);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(29, 13);
-			this.label3.TabIndex = 6;
-			this.label3.Text = "Unit:";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(443, 24);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(43, 13);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "Section";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(24, 24);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(54, 13);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "Company:";
-			// 
-			// comboBox4
-			// 
-			this.comboBox4.DataSource = this.sectionsBindingSource;
-			this.comboBox4.DisplayMember = "Name";
-			this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox4.FormattingEnabled = true;
-			this.comboBox4.Location = new System.Drawing.Point(446, 41);
-			this.comboBox4.Name = "comboBox4";
-			this.comboBox4.Size = new System.Drawing.Size(121, 21);
-			this.comboBox4.TabIndex = 3;
-			this.comboBox4.ValueMember = "Id";
-			this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
 			// 
 			// sectionsBindingSource
 			// 
@@ -339,43 +280,6 @@
 			// 
 			this.companiesBindingSource.DataMember = "Companies";
 			this.companiesBindingSource.DataSource = this.homeTextileDBDataSet2;
-			// 
-			// comboBox3
-			// 
-			this.comboBox3.DataSource = this.departmentsBindingSource;
-			this.comboBox3.DisplayMember = "Name";
-			this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(300, 41);
-			this.comboBox3.Name = "comboBox3";
-			this.comboBox3.Size = new System.Drawing.Size(121, 21);
-			this.comboBox3.TabIndex = 2;
-			this.comboBox3.ValueMember = "Id";
-			// 
-			// comboBox2
-			// 
-			this.comboBox2.DataSource = this.unitsBindingSource;
-			this.comboBox2.DisplayMember = "Name";
-			this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(166, 41);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(121, 21);
-			this.comboBox2.TabIndex = 1;
-			this.comboBox2.ValueMember = "Id";
-			// 
-			// companyComboBox
-			// 
-			this.companyComboBox.DataSource = this.companiesBindingSource;
-			this.companyComboBox.DisplayMember = "Name";
-			this.companyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.companyComboBox.FormattingEnabled = true;
-			this.companyComboBox.Location = new System.Drawing.Point(27, 41);
-			this.companyComboBox.Name = "companyComboBox";
-			this.companyComboBox.Size = new System.Drawing.Size(121, 21);
-			this.companyComboBox.TabIndex = 0;
-			this.companyComboBox.ValueMember = "Id";
-			this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
 			// 
 			// fKdboUnitsdboCompaniesCompanyIdBindingSource
 			// 
@@ -401,7 +305,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(471, 102);
+			this.label6.Location = new System.Drawing.Point(199, 26);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(32, 13);
 			this.label6.TabIndex = 10;
@@ -409,7 +313,7 @@
 			// 
 			// dateTimePicker1
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(506, 99);
+			this.dateTimePicker1.Location = new System.Drawing.Point(202, 43);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
 			this.dateTimePicker1.TabIndex = 11;
@@ -431,7 +335,7 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(6, 19);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(315, 355);
+			this.dataGridView1.Size = new System.Drawing.Size(315, 349);
 			this.dataGridView1.TabIndex = 14;
 			// 
 			// label7
@@ -450,8 +354,6 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(804, 572);
 			this.Controls.Add(this.groupBox3);
-			this.Controls.Add(this.dateTimePicker1);
-			this.Controls.Add(this.label6);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "LeaveApplication";
@@ -474,7 +376,6 @@
 			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -497,10 +398,6 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.ComboBox comboBox4;
-		private System.Windows.Forms.ComboBox comboBox3;
-		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.ComboBox companyComboBox;
 		private System.Windows.Forms.BindingSource companiesBindingSource;
 		private HomeTextileDBDataSet2TableAdapters.CompaniesTableAdapter companiesTableAdapter;
 		private System.Windows.Forms.BindingSource fKdboUnitsdboCompaniesCompanyIdBindingSource;
@@ -510,10 +407,6 @@
 		private HomeTextileDBDataSet2TableAdapters.DepartmentsTableAdapter departmentsTableAdapter;
 		private System.Windows.Forms.BindingSource sectionsBindingSource;
 		private HomeTextileDBDataSet2TableAdapters.SectionsTableAdapter sectionsTableAdapter;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
