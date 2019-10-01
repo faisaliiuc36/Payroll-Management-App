@@ -57,6 +57,20 @@ namespace HomeTextileApp
 				{
 					DateTime dateTime = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).Max(a => a.Date);
 					var dutyRoster = db.Duty_Rosters.First(a => a.Date == dateTime && a.EmployeeId == employee.Id);
+
+					//Default Duty Roster
+					if (dutyRoster == null)
+					{
+						List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).ToList();
+						if (duty_Rosters.Count > 0)
+						{
+							DateTime date2 = duty_Rosters.Max(a => a.Date);
+							dutyRoster = duty_Rosters.FirstOrDefault(a => a.Date == date2);
+						}
+					}
+
+
+
 					DataRow dr = null;
 
 					dr = dt.NewRow();
@@ -156,6 +170,11 @@ namespace HomeTextileApp
 
 			MessageBox.Show("Save Sucessfully!");
 			LoadEmployee();
+		}
+
+		private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

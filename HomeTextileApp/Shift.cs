@@ -29,7 +29,6 @@ namespace HomeTextileApp
 		{
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Shifts' table. You can move, or remove it, as needed.
 			this.shiftsTableAdapter.Fill(this.homeTextileDBDataSet2.Shifts);
-
 		}
 	}
 }

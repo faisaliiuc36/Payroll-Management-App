@@ -70,6 +70,7 @@
 			this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
 			this.dateTimePicker2.TabIndex = 5;
 			this.dateTimePicker2.Value = new System.DateTime(2019, 8, 3, 14, 33, 30, 0);
+			this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
 			// 
 			// dataGridView1
 			// 

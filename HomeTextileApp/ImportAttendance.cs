@@ -91,7 +91,7 @@ namespace HomeTextileApp
 
 			db.Emp_CheckInOuts.AddRange(emp_CheckInOuts);
 			db.SaveChanges();
-
+			MessageBox.Show("Attendance Imported Sucessfully!");
 			GetEmployeeCheckInOut();
 		}
 	}

@@ -66,6 +66,19 @@ namespace HomeTextileApp
 				foreach (Employee employee in employees)
 				{
 					var dutyRoster = db.Duty_Rosters.FirstOrDefault(a => a.Date == date && a.EmployeeId == employee.Id);
+
+					//Default Duty Roster
+					if (dutyRoster == null)
+					{
+						List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).ToList();
+						if (duty_Rosters.Count > 0)
+						{
+							DateTime date2 = duty_Rosters.Max(a => a.Date);
+							dutyRoster = duty_Rosters.FirstOrDefault(a => a.Date == date2);
+						}
+					}
+
+
 					DataRow dr = null;
 
 					dr = dt.NewRow();
@@ -145,6 +158,18 @@ namespace HomeTextileApp
 				foreach (Employee employee in employees)
 				{
 					var dutyRoster = db.Duty_Rosters.FirstOrDefault(a => a.Date == date && a.EmployeeId==employee.Id);
+
+					//Default Duty Roster
+					if(dutyRoster ==null)
+					{
+						List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).ToList();
+						if (duty_Rosters.Count > 0)
+						{
+							DateTime date2 = duty_Rosters.Max(a => a.Date);
+							dutyRoster = duty_Rosters.FirstOrDefault(a => a.Date == date2);
+						}
+					}
+
 					DataRow dr = null;
 
 					dr = dt.NewRow();
@@ -266,7 +291,7 @@ namespace HomeTextileApp
 			{
 				SetGridView();
 			}
-			else
+			else if(comboBox1.Text == "Staff")
 			{
 				SetGridViewForEmployee();
 			}
