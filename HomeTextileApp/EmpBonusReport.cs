@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace HomeTextileApp
 {
-	public partial class BonusReport : Form
+	public partial class EmpBonusReport : Form
 	{
 		DatabaseContext db = new DatabaseContext();
-		public BonusReport()
+		public EmpBonusReport()
 		{
 			InitializeComponent();
 			dateTimePicker1.Format = DateTimePickerFormat.Custom;
@@ -22,26 +22,6 @@ namespace HomeTextileApp
 			dateTimePicker1.ShowUpDown = true;
 			PopulateBonus();
 		}
-
-		private void BonusReport_Load(object sender, EventArgs e)
-		{
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Sections' table. You can move, or remove it, as needed.
-			this.sectionsTableAdapter.Fill(this.homeTextileDBDataSet2.Sections);
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Departments' table. You can move, or remove it, as needed.
-			this.departmentsTableAdapter.Fill(this.homeTextileDBDataSet2.Departments);
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Units' table. You can move, or remove it, as needed.
-			this.unitsTableAdapter.Fill(this.homeTextileDBDataSet2.Units);
-			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Companies' table. You can move, or remove it, as needed.
-			this.companiesTableAdapter.Fill(this.homeTextileDBDataSet2.Companies);
-
-		}
-
-		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-		{
-
-			PopulateBonus();
-		}
-
 		private void PopulateBonus()
 		{
 			try
@@ -57,6 +37,40 @@ namespace HomeTextileApp
 			{
 
 			}
+		}
+		private void EmpBonusReport_Load(object sender, EventArgs e)
+		{
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Sections' table. You can move, or remove it, as needed.
+			this.sectionsTableAdapter.Fill(this.homeTextileDBDataSet2.Sections);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Departments' table. You can move, or remove it, as needed.
+			this.departmentsTableAdapter.Fill(this.homeTextileDBDataSet2.Departments);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Units' table. You can move, or remove it, as needed.
+			this.unitsTableAdapter.Fill(this.homeTextileDBDataSet2.Units);
+			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Companies' table. You can move, or remove it, as needed.
+			this.companiesTableAdapter.Fill(this.homeTextileDBDataSet2.Companies);
+
+		}
+
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+			PopulateBonus();
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			int bonusId = Convert.ToInt32(comboBox1.SelectedValue);
+			Bonus bonus = db.Bonus.Find(bonusId);
+
+
+			DateTime To = bonus.Date;
+			DateTime From = To.AddYears(-1);
+
+			int id = Convert.ToInt32(comboBox3.SelectedValue);
+			List<Employee> employeesALL = db.Employees.Where(a => a.Section.DepartmentId == id).ToList();
+			List<Employee> employees = employeesALL.Where(a => a.IsActive(To) && a.IsEdited == true).ToList();
+
+			PopulateGrid(employees);
+
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -90,13 +104,13 @@ namespace HomeTextileApp
 
 			DateTime To = bonus.Date;
 			DateTime From = To.AddYears(-1);
-			
+
 
 			List<ViewBonus> viewBonus = new List<ViewBonus>();
 
-			foreach(Employee employee in employees)
+			foreach (Employee employee in employees)
 			{
-				
+
 
 				ViewBonus view = new ViewBonus();
 				try
@@ -135,7 +149,7 @@ namespace HomeTextileApp
 						{
 							D2 = shadowSalaryGrades.Max(a => a.UpdatedAt);
 							var shadowgrade = shadowSalaryGrades.FirstOrDefault(a => a.RoWId == workerDesignation.SalaryGrade.Id && a.UpdatedAt == D2);
-							view.Grade = workerDesignation.Name ;
+							view.Grade = workerDesignation.Name;
 							view.Gross = shadowgrade.Total;
 							view.Basic = shadowgrade.Salary;
 						}
@@ -157,27 +171,27 @@ namespace HomeTextileApp
 
 
 						List<SalarySetting> salarySettings = db.SalarySettings.Where(a => a.Date <= To).ToList();
-						if(salarySettings.Count>0)
+						if (salarySettings.Count > 0)
 						{
 							DateTime maxDate2 = salarySettings.Max(a => a.Date);
 							SalarySetting settings = salarySettings.FirstOrDefault(a => a.Date == maxDate2);
-							view.Basic = salary.Amount*(100/ settings.Basic);
+							view.Basic = salary.Amount * (100 / settings.Basic);
 						}
 					}
 				}
 
 
 				//Count Employee attendance
-				List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a=>a.UserId==employee.Emp_Id).ToList();
+				List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.UserId == employee.Emp_Id).ToList();
 
-				var DayCount = emp_CheckInOuts.Where(a => a.CHECKTIME >= From && a.CHECKTIME <= To ).GroupBy(a => a.CHECKTIME.Date).ToList();
+				var DayCount = emp_CheckInOuts.Where(a => a.CHECKTIME >= From && a.CHECKTIME <= To).GroupBy(a => a.CHECKTIME.Date).ToList();
 				view.Days = DayCount.Count - 1;
-				
+
 				viewBonus.Add(view);
 			}
 
 			viewBonusDataGridView.DataSource = viewBonus.ToList();
-		//	viewBonusDataGridView1.DataSource = viewBonus.ToList();
+			//viewBonusDataGridView1.DataSource = viewBonus.ToList();
 		}
 		private List<ViewBonus> GetList(List<Employee> employees)
 		{
@@ -273,35 +287,9 @@ namespace HomeTextileApp
 				viewBonus.Add(view);
 			}
 
-		 return viewBonus.ToList();
-			
+			return viewBonus.ToList();
+
 		}
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-			int bonusId = Convert.ToInt32(comboBox1.SelectedValue);
-			Bonus bonus = db.Bonus.Find(bonusId);
-
-
-			DateTime To = bonus.Date;
-			DateTime From = To.AddYears(-1);
-
-			int id = Convert.ToInt32(comboBox3.SelectedValue);
-			List<Employee> employeesALL = db.Employees.Where(a => a.Section.DepartmentId == id).ToList();
-			List<Employee> employees = employeesALL.Where(a => a.IsActive(To) && a.IsEdited == true).ToList();
-
-			PopulateGrid(employees);
-
-			//try
-			//{
-			//	PopulateGrid(employees);
-			//}
-			//catch
-			//{
-
-			//}
-		}
-
 		private void button4_Click(object sender, EventArgs e)
 		{
 			var emp = viewBonusDataGridView.DataSource;
@@ -364,73 +352,6 @@ namespace HomeTextileApp
 
 
 			using (BonusCrystalReportCom salaryCrystalReport = new BonusCrystalReportCom(salaryReportParameter, viewSalarySheets))
-			{
-				salaryCrystalReport.ShowDialog();
-			}
-		}
-
-		private void button5_Click(object sender, EventArgs e)
-		{
-			var emp = viewBonusDataGridView.DataSource;
-
-			List<DL.ViewBonus> viewSalarySheets = (List<ViewBonus>)emp;
-
-
-
-			int bonusId = Convert.ToInt32(comboBox1.SelectedValue);
-			Bonus bonus = db.Bonus.Find(bonusId);
-
-			DateTime To = bonus.Date;
-			DateTime From = To.AddYears(-1);
-
-			int id = Convert.ToInt32(comboBox3.SelectedValue);
-			DL.Department department = db.Departments.Find(id);
-
-			int id2 = Convert.ToInt32(comboBox4.SelectedValue);
-			DL.Section section = db.Sections.Find(id2);
-
-
-
-			BonusCrystalPar salaryReportParameter = new BonusCrystalPar();
-			salaryReportParameter.Unit = department.Unit.Name;
-			salaryReportParameter.Department = department.Name;
-			salaryReportParameter.Section = section.Name;
-			salaryReportParameter.Date = DateTime.Now;
-			salaryReportParameter.BonusDate = bonus.Date;
-			salaryReportParameter.Festival = bonus.Reason;
-
-			// Calculate Company Wise
-			List<Employee> employeesALL = db.Employees.Where(a => a.Section.Department.Unit.CompanyId == department.Unit.CompanyId).ToList();
-			List<Employee> employees = employeesALL.Where(a => a.IsActive(To) && a.IsEdited == true).ToList();
-
-			try
-			{
-				List<ViewBonus> viewSalarySheetsCompany= GetList(employees);
-				salaryReportParameter.CTE = viewSalarySheetsCompany.Sum(a => a.Bonus).ToString();
-				salaryReportParameter.UTE = viewSalarySheetsCompany.Where(a=>a.section.Department.UnitId==department.UnitId).Sum(a => a.Bonus).ToString();
-				salaryReportParameter.DTE = viewSalarySheetsCompany.Where(a => a.section.DepartmentId == department.Id).Sum(a => a.Bonus).ToString();
-				salaryReportParameter.STE = viewSalarySheets.Sum(a => a.Bonus).ToString();
-
-
-				salaryReportParameter.CTB = viewSalarySheetsCompany.Count.ToString();
-				salaryReportParameter.UTB = viewSalarySheetsCompany.Count(a => a.section.Department.UnitId ==department.UnitId).ToString();
-				salaryReportParameter.DTB = viewSalarySheetsCompany.Count(a => a.section.DepartmentId == department.Id).ToString();
-				salaryReportParameter.STB = viewSalarySheets.Count.ToString();
-			}
-			catch
-			{
-
-			}
-
-
-
-			
-			
-
-
-			
-
-			using (BonusCrystalReport salaryCrystalReport = new BonusCrystalReport(salaryReportParameter, viewSalarySheets))
 			{
 				salaryCrystalReport.ShowDialog();
 			}

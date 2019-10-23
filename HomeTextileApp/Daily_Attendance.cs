@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace HomeTextileApp
 {
-	public partial class AttendanceSectionWise : Form
+	public partial class Daily_Attendance : Form
 	{
 		private DatabaseContext db = new DatabaseContext();
-		public AttendanceSectionWise()
+		public Daily_Attendance()
 		{
 			InitializeComponent();
 		}
 
-		private void AttendanceSectionWise_Load(object sender, EventArgs e)
+		private void Daily_Attendance_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Sections' table. You can move, or remove it, as needed.
 			this.sectionsTableAdapter.Fill(this.homeTextileDBDataSet2.Sections);
@@ -29,7 +29,6 @@ namespace HomeTextileApp
 			this.unitsTableAdapter.Fill(this.homeTextileDBDataSet2.Units);
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Companies' table. You can move, or remove it, as needed.
 			this.companiesTableAdapter.Fill(this.homeTextileDBDataSet2.Companies);
-
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -42,8 +41,9 @@ namespace HomeTextileApp
 			PopulateGrid(employees);
 
 			DL.Section section = db.Sections.Find(id);
-			label5.Text="U: "+section.Department.Unit.Name+ ";  D: "+section.Department.Name+";  S: "+ section.Name;
+			label5.Text = "U: " + section.Department.Unit.Name + ";  D: " + section.Department.Name + ";  S: " + section.Name;
 		}
+
 
 		private void PopulateGrid(List<Employee> employees)
 		{
@@ -87,11 +87,15 @@ namespace HomeTextileApp
 						if (duty_Rosterformanual != null)
 						{
 							VW.From = duty_Rosterformanual.Shift.From;
-
 							DateTime dateTime = DateTime.Now.Date + duty_Rosterformanual.Shift.To;
-							
-							dateTime = dateTime.AddHours(Emp_CheckInOutManual[0].OT);
-							
+							if (Emp_CheckInOutManual[0].OT > 2)
+							{
+								dateTime = dateTime.AddHours(2);
+							}
+							else
+							{
+								dateTime = dateTime.AddHours(Emp_CheckInOutManual[0].OT);
+							}
 
 							VW.To = dateTime.TimeOfDay;
 
@@ -168,7 +172,20 @@ namespace HomeTextileApp
 											DateTime Max = (from d in empIndividualforshift select d.CHECKTIME).Max();
 
 											VW.From = Min.TimeOfDay;
-											VW.To = Max.TimeOfDay;
+											TimeSpan To = Max.TimeOfDay;
+											//Calculation for Complience
+											TimeSpan timeSpan = To - Out.TimeOfDay;
+
+											if (timeSpan.Hours>2)
+											{
+												DateTime dateTime = Out.AddHours(2);
+												VW.To = dateTime.TimeOfDay;
+											}
+											else
+											{
+												VW.To = To;
+											}
+
 
 											//Status Calculation
 											DateTime InForStatus = In.AddMinutes(salarySetting.Time);
@@ -294,14 +311,26 @@ namespace HomeTextileApp
 			viewAttendanceDataGridView.DataSource = viewAttendances.ToList();
 		}
 
+		private void button3_Click(object sender, EventArgs e)
+		{
+			DateTime From = dateTimePicker1.Value;
+			int id = Convert.ToInt32(comboBox3.SelectedValue);
+			List<Employee> employeesALL = db.Employees.Where(a => a.Section.DepartmentId == id).ToList();
+			List<Employee> employees = employeesALL.Where(a => a.IsActive(From)).ToList();
+
+			PopulateGrid(employees);
+
+			DL.Department section = db.Departments.Find(id);
+			label5.Text = "U: " + section.Unit.Name + ";  D: " + section.Name;
+		}
+
 		private void button2_Click(object sender, EventArgs e)
 		{
 			DGVPrinter printer = new DGVPrinter();
 
 			printer.Title = "Saad Musa-Home Textile";
-			printer.SubTitle = "Daily Attendance Report"+Environment.NewLine+ "Date-"+ dateTimePicker1.Value.ToString("dd/MM/yyyy")+Environment.NewLine+label5.Text.ToString()+Environment.NewLine+" ";
+			printer.SubTitle = "Daily Attendance Report" + Environment.NewLine + "Date-" + dateTimePicker1.Value.ToString("dd/MM/yyyy") + Environment.NewLine + label5.Text.ToString() + Environment.NewLine + " ";
 			printer.SubTitleFormatFlags = StringFormatFlags.LineLimit |
-
 										  StringFormatFlags.NoClip;
 
 			printer.PageNumbers = true;
@@ -317,21 +346,9 @@ namespace HomeTextileApp
 
 			printer.FooterSpacing = 15;
 
+		
 
 			printer.PrintDataGridView(viewAttendanceDataGridView);
-		}
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-			DateTime From = dateTimePicker1.Value;
-			int id = Convert.ToInt32(comboBox3.SelectedValue);
-			List<Employee> employeesALL = db.Employees.Where(a => a.Section.DepartmentId == id).ToList();
-			List<Employee> employees = employeesALL.Where(a => a.IsActive(From)).ToList();
-
-			PopulateGrid(employees);
-
-			DL.Department section = db.Departments.Find(id);
-			label5.Text = "U: " + section.Unit.Name + ";  D: " + section.Name ;
 		}
 	}
 }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,47 +11,17 @@ using System.Windows.Forms;
 
 namespace HomeTextileApp
 {
-	public partial class IndividualAttendance : Form
+	public partial class Individual_Attendance : Form
 	{
 		private DatabaseContext db = new DatabaseContext();
-		public IndividualAttendance()
+		public Individual_Attendance()
 		{
 			InitializeComponent();
 		}
 
-		private void IndividualAttendance_Load(object sender, EventArgs e)
+		private void Individual_Attendance_Load(object sender, EventArgs e)
 		{
 			this.employeeBindingSource.DataSource = db.Employees.ToList();
-		}
-
-		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label2_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-		{
-
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -70,7 +39,7 @@ namespace HomeTextileApp
 			//ViewBag.Id2 = employee.Id;
 
 
-			DateTime FromLoop =Convert.ToDateTime(dateTimePicker1.Text);
+			DateTime FromLoop = Convert.ToDateTime(dateTimePicker1.Text);
 			DateTime ToLoop = Convert.ToDateTime(dateTimePicker2.Text);
 
 
@@ -81,7 +50,7 @@ namespace HomeTextileApp
 
 			do
 			{
-				List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.IsManual==false && a.IsAbsent==false).ToList();
+				List<Emp_CheckInOut> emp_CheckInOuts = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.IsManual == false && a.IsAbsent == false).ToList();
 
 				ViewIndividualAttendance VW = new ViewIndividualAttendance();
 				VW.Date = FromLoop;
@@ -113,13 +82,18 @@ namespace HomeTextileApp
 					VW.Shift = duty_Roster.Shift.Name;
 					VW.From = duty_Roster.Shift.From;
 					DateTime dateTime = DateTime.Now.Date + duty_Roster.Shift.To;
-					
-					dateTime = dateTime.AddHours(Emp_CheckInOutManual[0].OT);
-					
+					if (Emp_CheckInOutManual[0].OT>2)
+					{
+						dateTime = dateTime.AddHours(2);
+					}
+					else
+					{
+						dateTime = dateTime.AddHours(Emp_CheckInOutManual[0].OT);
+					}
 
 					VW.To = dateTime.TimeOfDay;
 				}
-				else if(Emp_CheckInOutabsent.Count>0)
+				else if (Emp_CheckInOutabsent.Count > 0)
 				{
 					VW.Status = "Absent!";
 				}
@@ -135,7 +109,7 @@ namespace HomeTextileApp
 				{
 					VW.Status = "Leave";
 				}
-				
+
 				else
 				{
 					//EMployee CheckInOuts
@@ -147,10 +121,10 @@ namespace HomeTextileApp
 
 						var duty_Roster = db.Duty_Rosters.FirstOrDefault(a => a.Date == FromLoop && a.EmployeeId == employee.Id);
 						// Default Assign
-						if (duty_Roster ==null)
+						if (duty_Roster == null)
 						{
 							List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == employee.Id).ToList();
-							if(duty_Rosters.Count>0)
+							if (duty_Rosters.Count > 0)
 							{
 								DateTime date = duty_Rosters.Max(a => a.Date);
 								duty_Roster = duty_Rosters.FirstOrDefault(a => a.Date == date);
@@ -162,7 +136,7 @@ namespace HomeTextileApp
 						//DateTime dateTime = salarySettings.Max(a => a.Date);
 						//var salarySetting = salarySettings.FirstOrDefault(a => a.Date == dateTime);
 						var salarySetting = db.SalarySettings.FirstOrDefault();
-						
+
 
 						// Is Duty Roster Has
 						if (duty_Roster != null)
@@ -184,7 +158,7 @@ namespace HomeTextileApp
 									DateTime InCheck = In.AddHours(-2);
 
 
-									List<Emp_CheckInOut> emp_CheckInOuts2 = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day >= FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.CHECKTIME.Day <= FromLoop.Day + 1 && a.IsManual == false && a.IsAbsent==false).ToList();
+									List<Emp_CheckInOut> emp_CheckInOuts2 = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day >= FromLoop.Day && a.CHECKTIME.Year == FromLoop.Year && a.CHECKTIME.Month == FromLoop.Month && a.CHECKTIME.Day <= FromLoop.Day + 1 && a.IsManual == false && a.IsAbsent == false).ToList();
 									List<Emp_CheckInOut> empindividual2 = emp_CheckInOuts2.Where(a => a.UserId == employee.Emp_Id).ToList();
 
 									List<Emp_CheckInOut> empIndividualforshift = empindividual2.Where(a => a.CHECKTIME >= InCheck && a.CHECKTIME <= OutCheck).ToList();
@@ -196,7 +170,20 @@ namespace HomeTextileApp
 										DateTime Max = (from d in empIndividualforshift select d.CHECKTIME).Max();
 
 										VW.From = Min.TimeOfDay;
-										VW.To = Max.TimeOfDay;
+										TimeSpan To = Max.TimeOfDay;
+										//Calculation for Complience
+										TimeSpan timeSpan = To - Out.TimeOfDay;
+
+										if (timeSpan.Hours > 2)
+										{
+											DateTime dateTime = Out.AddHours(2);
+											VW.To = dateTime.TimeOfDay;
+										}
+										else
+										{
+											VW.To = To;
+										}
+
 
 										//Status Calculation
 										DateTime InForStatus = In.AddMinutes(salarySetting.Time);
@@ -229,11 +216,11 @@ namespace HomeTextileApp
 									}
 									else
 									{
-										
 
-									
-											VW.Status = "Absent";
-										
+
+
+										VW.Status = "Absent";
+
 									}
 
 								}
@@ -242,7 +229,7 @@ namespace HomeTextileApp
 
 
 									DateTime In = FromLoop.Date + duty_Roster.Shift.From;
-									DateTime Out = FromLoop.Date +duty_Roster.Shift.To;
+									DateTime Out = FromLoop.Date + duty_Roster.Shift.To;
 
 
 									DateTime OutCheck = Out.AddHours(2);
@@ -288,9 +275,9 @@ namespace HomeTextileApp
 									}
 									else
 									{
-										
-											VW.Status = "Absent";
-										
+
+										VW.Status = "Absent";
+
 									}
 
 								}
@@ -301,9 +288,9 @@ namespace HomeTextileApp
 							else
 							{
 
-								
-									VW.Status = "Absent";
-								
+
+								VW.Status = "Absent";
+
 
 							}
 						}
@@ -329,20 +316,21 @@ namespace HomeTextileApp
 
 			viewIndividualAttendanceDataGridView.DataSource = viewAttendances.ToList();
 
-			label4.Text=employee.NameWithId.ToString();
-			
+			label4.Text = employee.NameWithId.ToString();
+
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
 			DGVPrinter printer = new DGVPrinter();
+			
 
 			printer.Title = "Saad Musa-Home Textile";
-			
+
 			DateTime date1 = dateTimePicker1.Value;
 			DateTime date2 = dateTimePicker2.Value;
 			//printer.SubTitle = string.Format("Date:{0}-{0}",date1.Date,date2.Date);
-			printer.SubTitle = "Individual Attendance Report"+Environment.NewLine+ date1.ToString("dd/MM/yyyy")+"-" + date2.ToString("dd/MM/yyyy") + Environment.NewLine+"Employee:" +label4.Text.ToString() + Environment.NewLine + " ";
+			printer.SubTitle = "Individual Attendance Report" + Environment.NewLine + date1.ToString("dd/MM/yyyy") + "-" + date2.ToString("dd/MM/yyyy") + Environment.NewLine + "Employee:" + label4.Text.ToString() + Environment.NewLine + " ";
 
 			printer.SubTitleFormatFlags = StringFormatFlags.LineLimit |
 
@@ -360,7 +348,7 @@ namespace HomeTextileApp
 
 			printer.FooterSpacing = 15;
 
-			printer.PageSettings.Landscape = true;
+			//printer.PageSettings.Landscape = true;
 
 			printer.PrintDataGridView(viewIndividualAttendanceDataGridView);
 		}

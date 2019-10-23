@@ -166,6 +166,12 @@
       <DependentUpon>BonusReport.cs</DependentUpon>
     </Compile>
     <Compile Include="CalenderColumn.cs" />
+    <Compile Include="Daily_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily_Attendance.Designer.cs">
+      <DependentUpon>Daily_Attendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="DGVPrinter.cs" />
     <Compile Include="DL\Advance.cs" />
     <Compile Include="DL\AdvanceDeduction.cs" />
@@ -219,6 +225,12 @@
     </Compile>
     <Compile Include="Duty_Roster.Designer.cs">
       <DependentUpon>Duty_Roster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpBonusReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpBonusReport.Designer.cs">
+      <DependentUpon>EmpBonusReport.cs</DependentUpon>
     </Compile>
     <Compile Include="employeeControl.cs">
       <SubType>UserControl</SubType>
@@ -283,6 +295,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeTextileDBDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Home_Layout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_Layout.Designer.cs">
+      <DependentUpon>Home_Layout.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +318,12 @@
     </Compile>
     <Compile Include="IndividualAttendance.Designer.cs">
       <DependentUpon>IndividualAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Individual_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Individual_Attendance.Designer.cs">
+      <DependentUpon>Individual_Attendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout.cs">
       <SubType>Form</SubType>
@@ -450,6 +474,14 @@
     <Compile Include="Migrations\201909280937271_SalaryGrade-U.Designer.cs">
       <DependentUpon>201909280937271_SalaryGrade-U.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910170604118_Paytime-Amount.cs" />
+    <Compile Include="Migrations\201910170604118_Paytime-Amount.Designer.cs">
+      <DependentUpon>201910170604118_Paytime-Amount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910230630233_Complience.cs" />
+    <Compile Include="Migrations\201910230630233_Complience.Designer.cs">
+      <DependentUpon>201910230630233_Complience.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OT-Daily_Rep_Com.cs">
       <AutoGen>True</AutoGen>
@@ -475,6 +507,12 @@
     <Compile Include="OTDateWiseCrystalReport.Designer.cs">
       <DependentUpon>OTDateWiseCrystalReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="OTDateWisePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTDateWisePayment.Designer.cs">
+      <DependentUpon>OTDateWisePayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +524,12 @@
     </Compile>
     <Compile Include="OTMonthlyReport.Designer.cs">
       <DependentUpon>OTMonthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OTPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTPayment.Designer.cs">
+      <DependentUpon>OTPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="OTPaymentCrystalComReport.cs">
       <SubType>Form</SubType>
@@ -542,6 +586,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SalaryReport.rpt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SalaryReportCom.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalaryReportCom.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Salary_Report.cs">
@@ -638,8 +688,14 @@
     <EmbeddedResource Include="BonusReport.resx">
       <DependentUpon>BonusReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Daily_Attendance.resx">
+      <DependentUpon>Daily_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Duty_Roster.resx">
       <DependentUpon>Duty_Roster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpBonusReport.resx">
+      <DependentUpon>EmpBonusReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="employeeControl.resx">
       <DependentUpon>employeeControl.cs</DependentUpon>
@@ -661,6 +717,9 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home_Layout.resx">
+      <DependentUpon>Home_Layout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportAttendance.resx">
       <DependentUpon>ImportAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -669,6 +728,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IndividualAttendance.resx">
       <DependentUpon>IndividualAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Individual_Attendance.resx">
+      <DependentUpon>Individual_Attendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout.resx">
       <DependentUpon>Layout.cs</DependentUpon>
@@ -772,6 +834,12 @@
     <EmbeddedResource Include="Migrations\201909280937271_SalaryGrade-U.resx">
       <DependentUpon>201909280937271_SalaryGrade-U.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910170604118_Paytime-Amount.resx">
+      <DependentUpon>201910170604118_Paytime-Amount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910230630233_Complience.resx">
+      <DependentUpon>201910230630233_Complience.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OT-Daily_Rep_Com.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OT-Daily_Rep_Com.cs</LastGenOutput>
@@ -785,11 +853,17 @@
     <EmbeddedResource Include="OTDateWiseCrystalReport.resx">
       <DependentUpon>OTDateWiseCrystalReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OTDateWisePayment.resx">
+      <DependentUpon>OTDateWisePayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtherSettings.resx">
       <DependentUpon>OtherSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OTMonthlyReport.resx">
       <DependentUpon>OTMonthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTPayment.resx">
+      <DependentUpon>OTPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OTPaymentCrystalComReport.resx">
       <DependentUpon>OTPaymentCrystalComReport.cs</DependentUpon>
@@ -832,6 +906,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SalaryReport.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalaryReportCom.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalaryReportCom.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Salary_Report.resx">
       <DependentUpon>Salary_Report.cs</DependentUpon>

@@ -5724,6 +5724,8 @@ namespace HomeTextileApp {
             
             private global::System.Data.DataColumn columnReport;
             
+            private global::System.Data.DataColumn columnComplience;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public HTAdminsDataTable() {
@@ -5831,6 +5833,14 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ComplienceColumn {
+                get {
+                    return this.columnComplience;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5866,7 +5876,7 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HTAdminsRow AddHTAdminsRow(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool Settings, bool LeaveAndHoliday, bool Report) {
+            public HTAdminsRow AddHTAdminsRow(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool Settings, bool LeaveAndHoliday, bool Report, bool Complience) {
                 HTAdminsRow rowHTAdminsRow = ((HTAdminsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5877,7 +5887,8 @@ namespace HomeTextileApp {
                         Employee,
                         Settings,
                         LeaveAndHoliday,
-                        Report};
+                        Report,
+                        Complience};
                 rowHTAdminsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHTAdminsRow);
                 return rowHTAdminsRow;
@@ -5916,6 +5927,7 @@ namespace HomeTextileApp {
                 this.columnSettings = base.Columns["Settings"];
                 this.columnLeaveAndHoliday = base.Columns["LeaveAndHoliday"];
                 this.columnReport = base.Columns["Report"];
+                this.columnComplience = base.Columns["Complience"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5939,6 +5951,8 @@ namespace HomeTextileApp {
                 base.Columns.Add(this.columnLeaveAndHoliday);
                 this.columnReport = new global::System.Data.DataColumn("Report", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReport);
+                this.columnComplience = new global::System.Data.DataColumn("Complience", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnComplience);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -5955,6 +5969,7 @@ namespace HomeTextileApp {
                 this.columnSettings.AllowDBNull = false;
                 this.columnLeaveAndHoliday.AllowDBNull = false;
                 this.columnReport.AllowDBNull = false;
+                this.columnComplience.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8034,6 +8049,8 @@ namespace HomeTextileApp {
             
             private global::System.Data.DataColumn columnPaid;
             
+            private global::System.Data.DataColumn columnAmount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PaytimesDataTable() {
@@ -8101,6 +8118,14 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AmountColumn {
+                get {
+                    return this.columnAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8136,13 +8161,14 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PaytimesRow AddPaytimesRow(LoansRow _parentLoansRowByFK_dbo_Paytimes_dbo_Loans_LoanId, System.DateTime Date, bool Paid) {
+            public PaytimesRow AddPaytimesRow(LoansRow _parentLoansRowByFK_dbo_Paytimes_dbo_Loans_LoanId, System.DateTime Date, bool Paid, double Amount) {
                 PaytimesRow rowPaytimesRow = ((PaytimesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Date,
-                        Paid};
+                        Paid,
+                        Amount};
                 if ((_parentLoansRowByFK_dbo_Paytimes_dbo_Loans_LoanId != null)) {
                     columnValuesArray[1] = _parentLoansRowByFK_dbo_Paytimes_dbo_Loans_LoanId[0];
                 }
@@ -8179,6 +8205,7 @@ namespace HomeTextileApp {
                 this.columnLoanId = base.Columns["LoanId"];
                 this.columnDate = base.Columns["Date"];
                 this.columnPaid = base.Columns["Paid"];
+                this.columnAmount = base.Columns["Amount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8192,6 +8219,8 @@ namespace HomeTextileApp {
                 base.Columns.Add(this.columnDate);
                 this.columnPaid = new global::System.Data.DataColumn("Paid", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPaid);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -8203,6 +8232,7 @@ namespace HomeTextileApp {
                 this.columnLoanId.AllowDBNull = false;
                 this.columnDate.AllowDBNull = false;
                 this.columnPaid.AllowDBNull = false;
+                this.columnAmount.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15207,6 +15237,17 @@ namespace HomeTextileApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Complience {
+                get {
+                    return ((bool)(this[this.tableHTAdmins.ComplienceColumn]));
+                }
+                set {
+                    this[this.tableHTAdmins.ComplienceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsUserNameNull() {
                 return this.IsNull(this.tableHTAdmins.UserNameColumn);
             }
@@ -15854,6 +15895,17 @@ namespace HomeTextileApp {
                 }
                 set {
                     this[this.tablePaytimes.PaidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double Amount {
+                get {
+                    return ((double)(this[this.tablePaytimes.AmountColumn]));
+                }
+                set {
+                    this[this.tablePaytimes.AmountColumn] = value;
                 }
             }
             
@@ -24211,10 +24263,11 @@ SELECT Id, DepartmentId, [From], HolidayReasons, [To] FROM Holidays WHERE (Id = 
             tableMapping.ColumnMappings.Add("Settings", "Settings");
             tableMapping.ColumnMappings.Add("LeaveAndHoliday", "LeaveAndHoliday");
             tableMapping.ColumnMappings.Add("Report", "Report");
+            tableMapping.ColumnMappings.Add("Complience", "Complience");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [HTAdmins] WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([Employee] = @Original_Employee) AND ([LeaveAndHoliday] = @Original_LeaveAndHoliday) AND ([Report] = @Original_Report) AND ([Settings] = @Original_Settings))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [HTAdmins] WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([Employee] = @Original_Employee) AND ([LeaveAndHoliday] = @Original_LeaveAndHoliday) AND ([Report] = @Original_Report) AND ([Settings] = @Original_Settings) AND ([Complience] = @Original_Complience))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Admin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -24223,10 +24276,11 @@ SELECT Id, DepartmentId, [From], HolidayReasons, [To] FROM Holidays WHERE (Id = 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Complience", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Complience", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [HTAdmins] ([UserName], [Password], [Admin], [Attendance], [Employee], [LeaveAndHoliday], [Report], [Settings]) VALUES (@UserName, @Password, @Admin, @Attendance, @Employee, @LeaveAndHoliday, @Report, @Settings);
-SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings FROM HTAdmins WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [HTAdmins] ([UserName], [Password], [Admin], [Attendance], [Employee], [LeaveAndHoliday], [Report], [Settings], [Complience]) VALUES (@UserName, @Password, @Admin, @Attendance, @Employee, @LeaveAndHoliday, @Report, @Settings, @Complience);
+SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings, Complience FROM HTAdmins WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24236,10 +24290,11 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Complience", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Complience", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [HTAdmins] SET [UserName] = @UserName, [Password] = @Password, [Admin] = @Admin, [Attendance] = @Attendance, [Employee] = @Employee, [LeaveAndHoliday] = @LeaveAndHoliday, [Report] = @Report, [Settings] = @Settings WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([Employee] = @Original_Employee) AND ([LeaveAndHoliday] = @Original_LeaveAndHoliday) AND ([Report] = @Original_Report) AND ([Settings] = @Original_Settings));
-SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings FROM HTAdmins WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [HTAdmins] SET [UserName] = @UserName, [Password] = @Password, [Admin] = @Admin, [Attendance] = @Attendance, [Employee] = @Employee, [LeaveAndHoliday] = @LeaveAndHoliday, [Report] = @Report, [Settings] = @Settings, [Complience] = @Complience WHERE (([Id] = @Original_Id) AND ([Admin] = @Original_Admin) AND ([Attendance] = @Original_Attendance) AND ([Employee] = @Original_Employee) AND ([LeaveAndHoliday] = @Original_LeaveAndHoliday) AND ([Report] = @Original_Report) AND ([Settings] = @Original_Settings) AND ([Complience] = @Original_Complience));
+SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings, Complience FROM HTAdmins WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24249,6 +24304,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Complience", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Complience", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Admin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -24256,6 +24312,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveAndHoliday", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveAndHoliday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Report", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Report", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Settings", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Settings", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Complience", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Complience", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -24273,7 +24330,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Repo" +
-                "rt, Settings FROM HTAdmins";
+                "rt, Settings, Complience FROM HTAdmins";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -24334,7 +24391,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, bool Original_Admin, bool Original_Attendance, bool Original_Employee, bool Original_LeaveAndHoliday, bool Original_Report, bool Original_Settings) {
+        public virtual int Delete(int Original_Id, bool Original_Admin, bool Original_Attendance, bool Original_Employee, bool Original_LeaveAndHoliday, bool Original_Report, bool Original_Settings, bool Original_Complience) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((bool)(Original_Admin));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_Attendance));
@@ -24342,6 +24399,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
             this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_LeaveAndHoliday));
             this.Adapter.DeleteCommand.Parameters[5].Value = ((bool)(Original_Report));
             this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_Settings));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((bool)(Original_Complience));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24362,7 +24420,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool LeaveAndHoliday, bool Report, bool Settings) {
+        public virtual int Insert(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool LeaveAndHoliday, bool Report, bool Settings, bool Complience) {
             if ((UserName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -24381,6 +24439,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
             this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(LeaveAndHoliday));
             this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Report));
             this.Adapter.InsertCommand.Parameters[7].Value = ((bool)(Settings));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(Complience));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24410,6 +24469,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
                     bool LeaveAndHoliday, 
                     bool Report, 
                     bool Settings, 
+                    bool Complience, 
                     int Original_Id, 
                     bool Original_Admin, 
                     bool Original_Attendance, 
@@ -24417,6 +24477,7 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
                     bool Original_LeaveAndHoliday, 
                     bool Original_Report, 
                     bool Original_Settings, 
+                    bool Original_Complience, 
                     int Id) {
             if ((UserName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -24436,14 +24497,16 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
             this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(LeaveAndHoliday));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Report));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Settings));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_Admin));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_Attendance));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_Employee));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_LeaveAndHoliday));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_Report));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Settings));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Complience));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_Admin));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_Attendance));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_Employee));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_LeaveAndHoliday));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Report));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(Original_Settings));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((bool)(Original_Complience));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24464,8 +24527,25 @@ SELECT Id, UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Rep
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string UserName, string Password, bool Admin, bool Attendance, bool Employee, bool LeaveAndHoliday, bool Report, bool Settings, int Original_Id, bool Original_Admin, bool Original_Attendance, bool Original_Employee, bool Original_LeaveAndHoliday, bool Original_Report, bool Original_Settings) {
-            return this.Update(UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings, Original_Id, Original_Admin, Original_Attendance, Original_Employee, Original_LeaveAndHoliday, Original_Report, Original_Settings, Original_Id);
+        public virtual int Update(
+                    string UserName, 
+                    string Password, 
+                    bool Admin, 
+                    bool Attendance, 
+                    bool Employee, 
+                    bool LeaveAndHoliday, 
+                    bool Report, 
+                    bool Settings, 
+                    bool Complience, 
+                    int Original_Id, 
+                    bool Original_Admin, 
+                    bool Original_Attendance, 
+                    bool Original_Employee, 
+                    bool Original_LeaveAndHoliday, 
+                    bool Original_Report, 
+                    bool Original_Settings, 
+                    bool Original_Complience) {
+            return this.Update(UserName, Password, Admin, Attendance, Employee, LeaveAndHoliday, Report, Settings, Complience, Original_Id, Original_Admin, Original_Attendance, Original_Employee, Original_LeaveAndHoliday, Original_Report, Original_Settings, Original_Complience, Original_Id);
         }
     }
     
@@ -26594,37 +26674,43 @@ SELECT Id, EmployeeId, Amount, Date, Installment FROM Loans WHERE (Id = @Id)";
             tableMapping.ColumnMappings.Add("LoanId", "LoanId");
             tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("Paid", "Paid");
+            tableMapping.ColumnMappings.Add("Amount", "Amount");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Paytimes] WHERE (([Id] = @Original_Id) AND ([LoanId] = @Origin" +
-                "al_LoanId) AND ([Date] = @Original_Date) AND ([Paid] = @Original_Paid))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Paytimes] WHERE (([Id] = @Original_Id) AND ([LoanId] = @Original_Loa" +
+                "nId) AND ([Date] = @Original_Date) AND ([Paid] = @Original_Paid) AND ([Amount] =" +
+                " @Original_Amount))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LoanId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoanId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Paytimes] ([LoanId], [Date], [Paid]) VALUES (@LoanId, @Date, @" +
-                "Paid);\r\nSELECT Id, LoanId, Date, Paid FROM Paytimes WHERE (Id = SCOPE_IDENTITY()" +
-                ")";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Paytimes] ([LoanId], [Date], [Paid], [Amount]) VALUES (@LoanId, @Dat" +
+                "e, @Paid, @Amount);\r\nSELECT Id, LoanId, Date, Paid, Amount FROM Paytimes WHERE (" +
+                "Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoanId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoanId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Paytimes] SET [LoanId] = @LoanId, [Date] = @Date, [Paid] = @Paid WHERE (([Id] = @Original_Id) AND ([LoanId] = @Original_LoanId) AND ([Date] = @Original_Date) AND ([Paid] = @Original_Paid));
-SELECT Id, LoanId, Date, Paid FROM Paytimes WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Paytimes] SET [LoanId] = @LoanId, [Date] = @Date, [Paid] = @Paid, [Amount] = @Amount WHERE (([Id] = @Original_Id) AND ([LoanId] = @Original_LoanId) AND ([Date] = @Original_Date) AND ([Paid] = @Original_Paid) AND ([Amount] = @Original_Amount));
+SELECT Id, LoanId, Date, Paid, Amount FROM Paytimes WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoanId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoanId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LoanId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoanId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -26641,7 +26727,7 @@ SELECT Id, LoanId, Date, Paid FROM Paytimes WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, LoanId, Date, Paid FROM dbo.Paytimes";
+            this._commandCollection[0].CommandText = "SELECT Id, LoanId, Date, Paid, Amount FROM Paytimes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -26702,11 +26788,12 @@ SELECT Id, LoanId, Date, Paid FROM Paytimes WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_LoanId, System.DateTime Original_Date, bool Original_Paid) {
+        public virtual int Delete(int Original_Id, int Original_LoanId, System.DateTime Original_Date, bool Original_Paid, double Original_Amount) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_LoanId));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Date));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_Paid));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((double)(Original_Amount));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26727,10 +26814,11 @@ SELECT Id, LoanId, Date, Paid FROM Paytimes WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int LoanId, System.DateTime Date, bool Paid) {
+        public virtual int Insert(int LoanId, System.DateTime Date, bool Paid, double Amount) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(LoanId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Date));
             this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(Paid));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Amount));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26751,15 +26839,17 @@ SELECT Id, LoanId, Date, Paid FROM Paytimes WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int LoanId, System.DateTime Date, bool Paid, int Original_Id, int Original_LoanId, System.DateTime Original_Date, bool Original_Paid, int Id) {
+        public virtual int Update(int LoanId, System.DateTime Date, bool Paid, double Amount, int Original_Id, int Original_LoanId, System.DateTime Original_Date, bool Original_Paid, double Original_Amount, int Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(LoanId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Date));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(Paid));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_LoanId));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Original_Paid));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(Amount));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_LoanId));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_Paid));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(Original_Amount));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26780,8 +26870,8 @@ SELECT Id, LoanId, Date, Paid FROM Paytimes WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int LoanId, System.DateTime Date, bool Paid, int Original_Id, int Original_LoanId, System.DateTime Original_Date, bool Original_Paid) {
-            return this.Update(LoanId, Date, Paid, Original_Id, Original_LoanId, Original_Date, Original_Paid, Original_Id);
+        public virtual int Update(int LoanId, System.DateTime Date, bool Paid, double Amount, int Original_Id, int Original_LoanId, System.DateTime Original_Date, bool Original_Paid, double Original_Amount) {
+            return this.Update(LoanId, Date, Paid, Amount, Original_Id, Original_LoanId, Original_Date, Original_Paid, Original_Amount, Original_Id);
         }
     }
     

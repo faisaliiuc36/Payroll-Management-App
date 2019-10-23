@@ -68,10 +68,6 @@
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.paytimesDataGridView = new System.Windows.Forms.DataGridView();
-			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.loanIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.paidDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.paytimesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.button2 = new System.Windows.Forms.Button();
 			this.paytimesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -79,6 +75,10 @@
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.loanIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			empFullNameLabel = new System.Windows.Forms.Label();
 			designationIdLabel1 = new System.Windows.Forms.Label();
 			idLabel = new System.Windows.Forms.Label();
@@ -170,6 +170,7 @@
 			// tableAdapterManager
 			// 
 			this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+			this.tableAdapterManager.AdvancesTableAdapter = null;
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.BloodGroupsTableAdapter = null;
 			this.tableAdapterManager.BonusTableAdapter = null;
@@ -178,6 +179,7 @@
 			this.tableAdapterManager.DesignationsTableAdapter = this.designationsTableAdapter;
 			this.tableAdapterManager.Duty_RosterTableAdapter = null;
 			this.tableAdapterManager.Emp_CheckInOutTableAdapter = null;
+			this.tableAdapterManager.EmployeeDuesTableAdapter = null;
 			this.tableAdapterManager.EmployeesTableAdapter = this.employeesTableAdapter;
 			this.tableAdapterManager.EmployeeTypesTableAdapter = null;
 			this.tableAdapterManager.GendersTableAdapter = null;
@@ -195,9 +197,12 @@
 			this.tableAdapterManager.SalaryGradesTableAdapter = null;
 			this.tableAdapterManager.SalarySettingsTableAdapter = null;
 			this.tableAdapterManager.SectionsTableAdapter = null;
+			this.tableAdapterManager.ShadowEmployeesTableAdapter = null;
+			this.tableAdapterManager.ShadowSalaryGradesTableAdapter = null;
 			this.tableAdapterManager.ShiftsTableAdapter = null;
 			this.tableAdapterManager.UnitsTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = HomeTextileApp.HomeTextileDBDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+			this.tableAdapterManager.WorkerDesignationHistoriesTableAdapter = null;
 			this.tableAdapterManager.WorkerDesignationsTableAdapter = null;
 			// 
 			// designationsTableAdapter
@@ -457,38 +462,12 @@
             this.idDataGridViewTextBoxColumn,
             this.loanIdDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.paidDataGridViewCheckBoxColumn});
+            this.amountDataGridViewTextBoxColumn});
 			this.paytimesDataGridView.DataSource = this.paytimesBindingSource;
-			this.paytimesDataGridView.Location = new System.Drawing.Point(9, 21);
+			this.paytimesDataGridView.Location = new System.Drawing.Point(6, 21);
 			this.paytimesDataGridView.Name = "paytimesDataGridView";
-			this.paytimesDataGridView.Size = new System.Drawing.Size(452, 220);
-			this.paytimesDataGridView.TabIndex = 13;
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			this.idDataGridViewTextBoxColumn.ReadOnly = true;
-			this.idDataGridViewTextBoxColumn.Visible = false;
-			// 
-			// loanIdDataGridViewTextBoxColumn
-			// 
-			this.loanIdDataGridViewTextBoxColumn.DataPropertyName = "LoanId";
-			this.loanIdDataGridViewTextBoxColumn.HeaderText = "LoanId";
-			this.loanIdDataGridViewTextBoxColumn.Name = "loanIdDataGridViewTextBoxColumn";
-			// 
-			// dateDataGridViewTextBoxColumn
-			// 
-			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-			this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-			// 
-			// paidDataGridViewCheckBoxColumn
-			// 
-			this.paidDataGridViewCheckBoxColumn.DataPropertyName = "Paid";
-			this.paidDataGridViewCheckBoxColumn.HeaderText = "Paid";
-			this.paidDataGridViewCheckBoxColumn.Name = "paidDataGridViewCheckBoxColumn";
+			this.paytimesDataGridView.Size = new System.Drawing.Size(455, 220);
+			this.paytimesDataGridView.TabIndex = 11;
 			// 
 			// paytimesBindingSource
 			// 
@@ -537,6 +516,32 @@
 			this.dataGridViewTextBoxColumn5.DataPropertyName = "Installment";
 			this.dataGridViewTextBoxColumn5.HeaderText = "Installment";
 			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn.Visible = false;
+			// 
+			// loanIdDataGridViewTextBoxColumn
+			// 
+			this.loanIdDataGridViewTextBoxColumn.DataPropertyName = "LoanId";
+			this.loanIdDataGridViewTextBoxColumn.HeaderText = "LoanId";
+			this.loanIdDataGridViewTextBoxColumn.Name = "loanIdDataGridViewTextBoxColumn";
+			// 
+			// dateDataGridViewTextBoxColumn
+			// 
+			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+			this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+			// 
+			// amountDataGridViewTextBoxColumn
+			// 
+			this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+			this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+			this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
 			// 
 			// Loan
 			// 
@@ -609,6 +614,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn loanIdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewCheckBoxColumn paidDataGridViewCheckBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
 	}
 }

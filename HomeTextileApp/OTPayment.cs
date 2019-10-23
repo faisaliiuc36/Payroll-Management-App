@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace HomeTextileApp
 {
-	public partial class OTMonthlyReport : Form
+	public partial class OTPayment : Form
 	{
 		DatabaseContext db = new DatabaseContext();
-		public OTMonthlyReport()
+		public OTPayment()
 		{
 			InitializeComponent();
 		}
 
-		private void OTMonthlyReport_Load(object sender, EventArgs e)
+		private void OTPayment_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Sections' table. You can move, or remove it, as needed.
 			this.sectionsTableAdapter.Fill(this.homeTextileDBDataSet2.Sections);
@@ -32,22 +32,21 @@ namespace HomeTextileApp
 
 		}
 
-
 		private void PopulateGrid(List<Employee> employees)
 		{
 			List<ViewOT> viewOTs = new List<ViewOT>();
 			if (employees.Count > 0)
 			{
-				
+
 				foreach (Employee emp in employees)
 				{
 
 					DateTime From = Convert.ToDateTime(dateTimePicker1.Text);
 					DateTime To = Convert.ToDateTime(dateTimePicker2.Text);
-				
 
 
-				
+
+
 
 
 					if (emp.IsWorker == true)
@@ -55,7 +54,7 @@ namespace HomeTextileApp
 						ViewOT viewOT = new ViewOT();
 						viewOT.Emp_Id = emp.Emp_Id;
 						viewOT.Name = emp.EmpFullName;
-						
+
 
 
 						double Gross = 0;
@@ -240,11 +239,11 @@ namespace HomeTextileApp
 							//Complience Calculate
 							if (totalHour > 2)
 							{
-								viewOT.TotalHourC = viewOT.TotalHourC+2;
+								viewOT.TotalHourC = viewOT.TotalHourC + 2;
 							}
 							else
 							{
-								viewOT.TotalHourC = viewOT.TotalHourC+ totalHour;
+								viewOT.TotalHourC = viewOT.TotalHourC + totalHour;
 							}
 
 
@@ -254,7 +253,6 @@ namespace HomeTextileApp
 
 
 
-					
 
 
 
@@ -264,21 +262,22 @@ namespace HomeTextileApp
 
 
 
-					From = From.AddDays(1);
-				} while (From <= To) ;
+
+							From = From.AddDays(1);
+						} while (From <= To);
 
 
 						viewOTs.Add(viewOT);
 
 					}
-				
+
 				}
 
-	
+
 
 
 			}
-			viewOTDataGridView.DataSource = viewOTs.ToList();
+			//viewOTDataGridView.DataSource = viewOTs.ToList();
 			viewOTDataGridView1.DataSource = viewOTs.ToList();
 
 
@@ -286,7 +285,6 @@ namespace HomeTextileApp
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-
 			DateTime From = dateTimePicker1.Value;
 			int id = Convert.ToInt32(comboBox4.SelectedValue);
 			List<Employee> employeesALL = db.Employees.Where(a => a.SectionId == id).ToList();
@@ -317,54 +315,11 @@ namespace HomeTextileApp
 			{
 
 			}
-	
-
-		}
-
-		private void button2_Click(object sender, EventArgs e)
-		{
-			var emp = viewOTDataGridView.DataSource;
-
-			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
-
-
-			DateTime From = dateTimePicker1.Value;
-			DateTime Loop = new DateTime(From.Year, From.Month, 1);
-			int id = Convert.ToInt32(comboBox4.SelectedValue);
-			DL.Section section = db.Sections.Find(id);
-
-
-			SalaryReportParameter salaryReportParameter = new SalaryReportParameter();
-			salaryReportParameter.Unit = section.Department.Unit.Name;
-			salaryReportParameter.Department = section.Department.Name;
-			salaryReportParameter.Section = section.Name;
-			salaryReportParameter.Date = From;
-			do
-			{
-				salaryReportParameter.Days = salaryReportParameter.Days + 1;
-				if (Loop.DayOfWeek.ToString() == "Friday")
-				{
-					salaryReportParameter.Weekend = salaryReportParameter.Weekend + 1;
-				}
-
-				var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == section.DepartmentId && a.From <= Loop && a.To >= Loop);
-				if (Holiday != null)
-				{
-					salaryReportParameter.Holiday = salaryReportParameter.Holiday + 1;
-				}
-				Loop = Loop.AddDays(1);
-			} while (Loop.Month == From.Month);
-
-
-			using (OTPaymentCrystalReport salaryCrystalReport = new OTPaymentCrystalReport(salaryReportParameter, viewSalarySheets))
-			{
-				salaryCrystalReport.ShowDialog();
-			}
 		}
 
 		private void button5_Click(object sender, EventArgs e)
 		{
-			var emp = viewOTDataGridView.DataSource;
+			var emp = viewOTDataGridView1.DataSource;
 
 			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
 

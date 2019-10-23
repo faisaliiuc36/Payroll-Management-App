@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace HomeTextileApp
 {
-	public partial class OTDateWise : Form
+	public partial class OTDateWisePayment : Form
 	{
 		DatabaseContext db = new DatabaseContext();
-		public OTDateWise()
+		public OTDateWisePayment()
 		{
 			InitializeComponent();
 		}
 
-		private void OTDateWise_Load(object sender, EventArgs e)
+		private void OTDateWisePayment_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Sections' table. You can move, or remove it, as needed.
 			this.sectionsTableAdapter.Fill(this.homeTextileDBDataSet2.Sections);
@@ -29,41 +29,18 @@ namespace HomeTextileApp
 			this.unitsTableAdapter.Fill(this.homeTextileDBDataSet2.Units);
 			// TODO: This line of code loads data into the 'homeTextileDBDataSet2.Companies' table. You can move, or remove it, as needed.
 			this.companiesTableAdapter.Fill(this.homeTextileDBDataSet2.Companies);
-
 		}
 
-		private void viewOTDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			DateTime From = dateTimePicker1.Value;
-			int id = Convert.ToInt32(comboBox4.SelectedValue);
-			List<Employee> employeesALL = db.Employees.Where(a => a.SectionId == id).ToList();
-			List<Employee> employees = employeesALL.Where(a => a.IsActive(From) && a.IsEdited==true).ToList();
-
-			try
-			{
-				PopulateGrid(employees);
-			}
-			catch
-			{
-
-			}
-			
-		}
 
 		private void PopulateGrid(List<Employee> employees)
 		{
 
 			DateTime From = dateTimePicker1.Value;
 			DateTime FromND = From.AddDays(1);
-		
+
 
 			List<ViewOT> viewOTs = new List<ViewOT>();
-			
+
 			if (employees.Count > 0)
 			{
 				foreach (Employee emp in employees)
@@ -105,17 +82,17 @@ namespace HomeTextileApp
 								viewOT.Grade = shadowEmp.WorkerDesignation.Name;
 							}
 						}
-						catch(Exception Ex)
+						catch (Exception Ex)
 						{
 							break;
 						}
 
 
-						
 
 
 
-						
+
+
 
 
 						viewOT.Gross = Gross;
@@ -145,9 +122,9 @@ namespace HomeTextileApp
 
 						}
 
-						if(duty_Roster !=null)
+						if (duty_Roster != null)
 						{
-							viewOT.AllocationTime =From.Date+duty_Roster.Shift.To;
+							viewOT.AllocationTime = From.Date + duty_Roster.Shift.To;
 						}
 
 						//Employee Count
@@ -158,18 +135,18 @@ namespace HomeTextileApp
 
 
 						//Manual Check
-						List<Emp_CheckInOut> Emp_CheckInOutManual = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == From.Day && a.CHECKTIME.Year == From.Year && a.CHECKTIME.Month == From.Month && a.IsManual == true && a.IsAbsent !=true && a.UserId == emp.Emp_Id).ToList();
+						List<Emp_CheckInOut> Emp_CheckInOutManual = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == From.Day && a.CHECKTIME.Year == From.Year && a.CHECKTIME.Month == From.Month && a.IsManual == true && a.IsAbsent != true && a.UserId == emp.Emp_Id).ToList();
 
 
 						if (Emp_CheckInOutManual.Count > 0)
 						{
 							viewOT.TotalHour = viewOT.TotalHour + Emp_CheckInOutManual[0].OT;
-							if(duty_Roster !=null)
+							if (duty_Roster != null)
 							{
 								viewOT.InTime = From.Date + duty_Roster.Shift.From;
 								viewOT.OutTime = From.Date + duty_Roster.Shift.To;
 								viewOT.OutTime = viewOT.OutTime.AddHours(Emp_CheckInOutManual[0].OT);
-								if(duty_Roster.Shift.IsDayToNight==true)
+								if (duty_Roster.Shift.IsDayToNight == true)
 								{
 									viewOT.OutTime = viewOT.OutTime.AddDays(1);
 								}
@@ -199,16 +176,16 @@ namespace HomeTextileApp
 										DateTime In = From.Date + duty_Roster.Shift.From;
 										DateTime Out = From.Date + duty_Roster.Shift.To;
 
-										if(duty_Roster.Shift.IsDayToNight==true)
+										if (duty_Roster.Shift.IsDayToNight == true)
 										{
 											Out = Out.AddDays(1);
 										}
-										
+
 
 										DateTime OutCheck = FromND.Date + duty_RosterND.Shift.From;
 										OutCheck = OutCheck.AddHours(-4);
 										DateTime InCheck = In.AddHours(-2);
-										
+
 
 										List<Emp_CheckInOut> emp_CheckInOuts2 = db.Emp_CheckInOuts.Where(a => a.CHECKTIME >= InCheck && a.CHECKTIME <= OutCheck && a.IsAbsent != true && a.IsManual != true).ToList();
 										List<Emp_CheckInOut> empIndividualforshift = emp_CheckInOuts2.Where(a => a.UserId == emp.Emp_Id).ToList();
@@ -230,11 +207,11 @@ namespace HomeTextileApp
 											if (From.DayOfWeek.ToString() == "Friday" || Holiday != null)
 											{
 												TimeSpan timeSpan = Max - Min;
-												if(timeSpan.TotalHours>0)
+												if (timeSpan.TotalHours > 0)
 												{
 													viewOT.TotalHour = (int)Math.Abs(timeSpan.TotalHours);
 												}
-												
+
 											}
 											else
 											{
@@ -261,7 +238,7 @@ namespace HomeTextileApp
 						}
 
 						//Complience Calculate
-						if(viewOT.TotalHour>2)
+						if (viewOT.TotalHour > 2)
 						{
 							viewOT.TotalHourC = 2;
 							viewOT.OutTimeC = viewOT.AllocationTime.AddHours(2);
@@ -282,7 +259,7 @@ namespace HomeTextileApp
 
 
 
-				viewOTDataGridView.DataSource = viewOTs.ToList();
+				//viewOTDataGridView.DataSource = viewOTs.ToList();
 				viewOTDataGridView1.DataSource = viewOTs.ToList();
 
 
@@ -291,6 +268,23 @@ namespace HomeTextileApp
 
 			}
 
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			DateTime From = dateTimePicker1.Value;
+			int id = Convert.ToInt32(comboBox4.SelectedValue);
+			List<Employee> employeesALL = db.Employees.Where(a => a.SectionId == id).ToList();
+			List<Employee> employees = employeesALL.Where(a => a.IsActive(From) && a.IsEdited == true).ToList();
+
+			try
+			{
+				PopulateGrid(employees);
+			}
+			catch
+			{
+
+			}
 		}
 
 		private void button3_Click(object sender, EventArgs e)
@@ -308,13 +302,12 @@ namespace HomeTextileApp
 			{
 
 			}
-
-		
 		}
 
-		private void button5_Click(object sender, EventArgs e)
+		private void button2_Click(object sender, EventArgs e)
 		{
-			var emp = viewOTDataGridView.DataSource;
+
+			var emp = viewOTDataGridView1.DataSource;
 
 			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
 
@@ -335,135 +328,5 @@ namespace HomeTextileApp
 				salaryCrystalReport.ShowDialog();
 			}
 		}
-
-		private void button2_Click(object sender, EventArgs e)
-		{
-			var emp = viewOTDataGridView.DataSource;
-
-			List<ViewOT> viewSalarySheets = (List<ViewOT>)emp;
-
-
-			DateTime From = dateTimePicker1.Value;
-			int id = Convert.ToInt32(comboBox4.SelectedValue);
-			DL.Section section = db.Sections.Find(id);
-
-
-			SalaryReportParameter salaryReportParameter = new SalaryReportParameter();
-			salaryReportParameter.Unit = section.Department.Unit.Name;
-			salaryReportParameter.Department = section.Department.Name;
-			salaryReportParameter.Section = section.Name;
-			salaryReportParameter.Date = DateTime.Now;
-			
-			using (OTDateWiseCrystalReport salaryCrystalReport = new OTDateWiseCrystalReport(salaryReportParameter, viewSalarySheets))
-			{
-				salaryCrystalReport.ShowDialog();
-			}
-		}
-
-		private void groupBox2_Enter(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label6_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label2_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void sectionsBindingSource_CurrentChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void departmentsBindingSource_CurrentChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void unitsBindingSource_CurrentChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void companiesBindingSource_CurrentChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void companyComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void viewOTBindingSource_CurrentChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void viewOTDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
-		private void viewOTDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
-		private void groupBox1_Enter(object sender, EventArgs e)
-		{
-
-		}
-
-		private void groupBox3_Enter(object sender, EventArgs e)
-		{
-
-		}
 	}
-	}
-
+}

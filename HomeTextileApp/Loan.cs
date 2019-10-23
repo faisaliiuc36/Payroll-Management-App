@@ -191,6 +191,7 @@ namespace HomeTextileApp
 					paytime.LoanId = loan.Id;
 					date = date.AddMonths(1);
 					paytime.Date = date;
+					paytime.Amount = loan.Amount / loan.Installment;
 
 					db.Paytimes.Add(paytime);
 					db.SaveChanges();
@@ -314,6 +315,7 @@ namespace HomeTextileApp
 					paytime.LoanId = loanU.Id;
 					date = date.AddMonths(1);
 					paytime.Date = date;
+					paytime.Amount = loanU.Amount / loanU.Installment;
 
 					db.Paytimes.Add(paytime);
 					db.SaveChanges();

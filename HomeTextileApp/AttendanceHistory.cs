@@ -80,7 +80,7 @@ namespace HomeTextileApp
 
 
 						//Manual Check
-						List<Emp_CheckInOut> Emp_CheckInOutManual = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.IsManual == true && a.UserId == emp.Emp_Id).ToList();
+						List<Emp_CheckInOut> Emp_CheckInOutManual = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.IsManual == true && a.IsAbsent==false && a.UserId == emp.Emp_Id).ToList();
 						List<Emp_CheckInOut> Emp_CheckInOutAbsent = db.Emp_CheckInOuts.Where(a => a.CHECKTIME.Day == NewDate.Day && a.CHECKTIME.Year == NewDate.Year && a.CHECKTIME.Month == NewDate.Month && a.IsAbsent == true && a.UserId == emp.Emp_Id).ToList();
 						var Holiday = db.Holidays.FirstOrDefault(a => a.DepartmentId == emp.Section.DepartmentId && a.From <= NewDate && a.To >= NewDate);
 						var LeaveDay = db.Leaves.FirstOrDefault(a => a.EmployeeId == emp.Id && a.From >= NewDate && a.To <= NewDate);

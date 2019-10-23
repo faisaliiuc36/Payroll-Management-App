@@ -22,7 +22,11 @@ namespace HomeTextileApp.DL
         [Required(ErrorMessage = "Please Select Date")]
         public DateTime Date { get; set; }
 
+		public double Amount { get; set; }
+
         [Display(Name = "Is Paid?")]
         public bool Paid { get; set; }
+
+
     }
 }

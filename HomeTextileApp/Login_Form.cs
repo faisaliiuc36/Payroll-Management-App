@@ -58,9 +58,17 @@ namespace HomeTextileApp
 				LoginInfo.UserName = IsUserExist.UserName;
 
 				this.Hide();
-				Layout layout = new Layout();
-				layout.Show();
-				
+				if(IsUserExist.Complience==true)
+				{
+					Home_Layout layout = new Home_Layout();
+					layout.Show();
+				}
+				else
+				{ 
+					Layout layout = new Layout();
+					layout.Show();
+				}
+
 			}
 		}
 

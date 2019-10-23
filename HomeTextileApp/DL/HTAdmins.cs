@@ -29,6 +29,7 @@ namespace HomeTextileApp.DL
 		public bool Settings { get; set; }
 		public bool LeaveAndHoliday { get; set; }
 		public bool Report { get; set; }
+		public bool Complience { get; set; }
 		
 	}
 }
