@@ -116,7 +116,7 @@ namespace HomeTextileApp
 							// Default Assign
 							if (duty_Roster == null)
 							{
-								List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == emp.Id).ToList();
+								List<DL.Duty_Roster> duty_Rosters = db.Duty_Rosters.Where(a => a.EmployeeId == emp.Id && a.Date < From).ToList();
 								if (duty_Rosters.Count > 0)
 								{
 									DateTime date = duty_Rosters.Max(a => a.Date);

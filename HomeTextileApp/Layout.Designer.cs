@@ -61,6 +61,7 @@
 			this.button10 = new System.Windows.Forms.Button();
 			this.workerDesignationButton = new System.Windows.Forms.Button();
 			this.empSubPanel2 = new System.Windows.Forms.Panel();
+			this.button37 = new System.Windows.Forms.Button();
 			this.button34 = new System.Windows.Forms.Button();
 			this.button9 = new System.Windows.Forms.Button();
 			this.button29 = new System.Windows.Forms.Button();
@@ -91,7 +92,7 @@
 			this.button21 = new System.Windows.Forms.Button();
 			this.button22 = new System.Windows.Forms.Button();
 			this.button23 = new System.Windows.Forms.Button();
-			this.button37 = new System.Windows.Forms.Button();
+			this.button38 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -421,7 +422,7 @@
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(-1, 60);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(102, 16);
+			this.label1.Size = new System.Drawing.Size(100, 16);
 			this.label1.TabIndex = 3;
 			this.label1.Text = "Home Textile";
 			// 
@@ -550,6 +551,24 @@
 			this.empSubPanel2.Size = new System.Drawing.Size(198, 286);
 			this.empSubPanel2.TabIndex = 15;
 			this.empSubPanel2.Visible = false;
+			// 
+			// button37
+			// 
+			this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button37.FlatAppearance.BorderSize = 0;
+			this.button37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button37.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button37.ForeColor = System.Drawing.Color.White;
+			this.button37.Image = ((System.Drawing.Image)(resources.GetObject("button37.Image")));
+			this.button37.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button37.Location = new System.Drawing.Point(6, 128);
+			this.button37.Name = "button37";
+			this.button37.Size = new System.Drawing.Size(186, 30);
+			this.button37.TabIndex = 14;
+			this.button37.Text = "   Add Bonus ";
+			this.button37.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button37.UseVisualStyleBackColor = true;
+			this.button37.Click += new System.EventHandler(this.button37_Click);
 			// 
 			// button34
 			// 
@@ -895,6 +914,7 @@
 			// reportPanel
 			// 
 			this.reportPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+			this.reportPanel.Controls.Add(this.button38);
 			this.reportPanel.Controls.Add(this.button33);
 			this.reportPanel.Controls.Add(this.button32);
 			this.reportPanel.Controls.Add(this.button31);
@@ -905,7 +925,7 @@
 			this.reportPanel.Controls.Add(this.button23);
 			this.reportPanel.Location = new System.Drawing.Point(199, 328);
 			this.reportPanel.Name = "reportPanel";
-			this.reportPanel.Size = new System.Drawing.Size(224, 355);
+			this.reportPanel.Size = new System.Drawing.Size(224, 395);
 			this.reportPanel.TabIndex = 18;
 			this.reportPanel.Visible = false;
 			// 
@@ -1045,23 +1065,22 @@
 			this.button23.UseVisualStyleBackColor = true;
 			this.button23.Click += new System.EventHandler(this.button23_Click);
 			// 
-			// button37
+			// button38
 			// 
-			this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button37.FlatAppearance.BorderSize = 0;
-			this.button37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button37.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button37.ForeColor = System.Drawing.Color.White;
-			this.button37.Image = ((System.Drawing.Image)(resources.GetObject("button37.Image")));
-			this.button37.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button37.Location = new System.Drawing.Point(6, 128);
-			this.button37.Name = "button37";
-			this.button37.Size = new System.Drawing.Size(186, 30);
-			this.button37.TabIndex = 14;
-			this.button37.Text = "   Add Bonus ";
-			this.button37.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button37.UseVisualStyleBackColor = true;
-			this.button37.Click += new System.EventHandler(this.button37_Click);
+			this.button38.FlatAppearance.BorderSize = 0;
+			this.button38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button38.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button38.ForeColor = System.Drawing.Color.White;
+			this.button38.Image = ((System.Drawing.Image)(resources.GetObject("button38.Image")));
+			this.button38.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button38.Location = new System.Drawing.Point(9, 341);
+			this.button38.Name = "button38";
+			this.button38.Size = new System.Drawing.Size(211, 40);
+			this.button38.TabIndex = 14;
+			this.button38.Text = "   Loan Report";
+			this.button38.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button38.UseVisualStyleBackColor = true;
+			this.button38.Click += new System.EventHandler(this.button38_Click);
 			// 
 			// Layout
 			// 
@@ -1069,6 +1088,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.ClientSize = new System.Drawing.Size(1025, 726);
+			this.Controls.Add(this.settingsSubPanel);
+			this.Controls.Add(this.reportPanel);
 			this.Controls.Add(this.empSubPanel2);
 			this.Controls.Add(this.LAHPanel);
 			this.Controls.Add(this.attendancePanel);
@@ -1076,8 +1097,6 @@
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.settingsSubPanel);
-			this.Controls.Add(this.reportPanel);
 			this.Controls.Add(this.panel6);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Layout";
@@ -1168,5 +1187,6 @@
 		private System.Windows.Forms.Button button34;
 		private System.Windows.Forms.Button button36;
 		private System.Windows.Forms.Button button37;
+		private System.Windows.Forms.Button button38;
 	}
 }

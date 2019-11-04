@@ -624,6 +624,19 @@ namespace HomeTextileApp
 			objForm.Dock = DockStyle.Fill;
 			objForm.Show();
 		}
+
+		private void button38_Click(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			LoanReport objForm = new LoanReport();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
 	}
 }
                                                                                   

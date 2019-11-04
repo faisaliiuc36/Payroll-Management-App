@@ -214,6 +214,7 @@
     <Compile Include="DL\ViewBonus.cs" />
     <Compile Include="DL\ViewEmpLeaveStatus.cs" />
     <Compile Include="DL\ViewIndividualAttendance.cs" />
+    <Compile Include="DL\ViewLoan.cs" />
     <Compile Include="DL\ViewLoanWithPayTIme.cs" />
     <Compile Include="DL\ViewOT.cs" />
     <Compile Include="DL\ViewSalarySheet.cs" />
@@ -348,6 +349,12 @@
     </Compile>
     <Compile Include="Loan.Designer.cs">
       <DependentUpon>Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoanReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoanReport.Designer.cs">
+      <DependentUpon>LoanReport.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginInfo.cs" />
     <Compile Include="Login_Form.cs">
@@ -744,6 +751,9 @@
     <EmbeddedResource Include="Loan.resx">
       <DependentUpon>Loan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoanReport.resx">
+      <DependentUpon>LoanReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -1018,6 +1028,7 @@
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewBonus.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewEmpLeaveStatus.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewIndividualAttendance.datasource" />
+    <None Include="Properties\DataSources\HomeTextileApp.DL.ViewLoan.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewLoanWithPayTIme.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewOT.datasource" />
     <None Include="Properties\DataSources\HomeTextileApp.DL.ViewSalarySheet.datasource" />

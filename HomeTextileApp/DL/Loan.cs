@@ -44,5 +44,16 @@ namespace HomeTextileApp.DL
 				return true;
 			}
 		}
+
+		public bool IsLoanPaid(DateTime dateTime)
+		{
+			var paytime = db.Paytimes.FirstOrDefault(a => a.Date >= dateTime && a.LoanId==this.Id);
+			if(paytime == null)
+			{
+				return false;
+			}
+			return true;
+
+		}
     }
 }
