@@ -497,15 +497,15 @@ namespace HomeTextileApp
 
 		private void button28_Click(object sender, EventArgs e)
 		{
-			InvisibleAllSubPanel();
-			//Form Load
-			panel6.Controls.Clear();
-			AddEmployeeDue objForm = new AddEmployeeDue();
-			objForm.TopLevel = false;
-			panel6.Controls.Add(objForm);
-			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			objForm.Dock = DockStyle.Fill;
-			objForm.Show();
+			//InvisibleAllSubPanel();
+			////Form Load
+			//panel6.Controls.Clear();
+			//AddEmployeeDue objForm = new AddEmployeeDue();
+			//objForm.TopLevel = false;
+			//panel6.Controls.Add(objForm);
+			////objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			//objForm.Dock = DockStyle.Fill;
+			//objForm.Show();
 		}
 
 		private void button29_Click(object sender, EventArgs e)
@@ -631,6 +631,19 @@ namespace HomeTextileApp
 			//Form Load
 			panel6.Controls.Clear();
 			LoanReport objForm = new LoanReport();
+			objForm.TopLevel = false;
+			panel6.Controls.Add(objForm);
+			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			objForm.Dock = DockStyle.Fill;
+			objForm.Show();
+		}
+
+		private void button34_Click_1(object sender, EventArgs e)
+		{
+			InvisibleAllSubPanel();
+			//Form Load
+			panel6.Controls.Clear();
+			WorkerSalary objForm = new WorkerSalary();
 			objForm.TopLevel = false;
 			panel6.Controls.Add(objForm);
 			//objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -84,6 +84,7 @@
 			this.button19 = new System.Windows.Forms.Button();
 			this.button20 = new System.Windows.Forms.Button();
 			this.reportPanel = new System.Windows.Forms.Panel();
+			this.button38 = new System.Windows.Forms.Button();
 			this.button33 = new System.Windows.Forms.Button();
 			this.button32 = new System.Windows.Forms.Button();
 			this.button31 = new System.Windows.Forms.Button();
@@ -92,7 +93,6 @@
 			this.button21 = new System.Windows.Forms.Button();
 			this.button22 = new System.Windows.Forms.Button();
 			this.button23 = new System.Windows.Forms.Button();
-			this.button38 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -585,6 +585,7 @@
 			this.button34.Text = "   Worker Salary ";
 			this.button34.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button34.UseVisualStyleBackColor = true;
+			this.button34.Click += new System.EventHandler(this.button34_Click_1);
 			// 
 			// button9
 			// 
@@ -929,6 +930,23 @@
 			this.reportPanel.TabIndex = 18;
 			this.reportPanel.Visible = false;
 			// 
+			// button38
+			// 
+			this.button38.FlatAppearance.BorderSize = 0;
+			this.button38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button38.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button38.ForeColor = System.Drawing.Color.White;
+			this.button38.Image = ((System.Drawing.Image)(resources.GetObject("button38.Image")));
+			this.button38.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button38.Location = new System.Drawing.Point(9, 341);
+			this.button38.Name = "button38";
+			this.button38.Size = new System.Drawing.Size(211, 40);
+			this.button38.TabIndex = 14;
+			this.button38.Text = "   Loan Report";
+			this.button38.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button38.UseVisualStyleBackColor = true;
+			this.button38.Click += new System.EventHandler(this.button38_Click);
+			// 
 			// button33
 			// 
 			this.button33.FlatAppearance.BorderSize = 0;
@@ -1065,32 +1083,15 @@
 			this.button23.UseVisualStyleBackColor = true;
 			this.button23.Click += new System.EventHandler(this.button23_Click);
 			// 
-			// button38
-			// 
-			this.button38.FlatAppearance.BorderSize = 0;
-			this.button38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button38.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button38.ForeColor = System.Drawing.Color.White;
-			this.button38.Image = ((System.Drawing.Image)(resources.GetObject("button38.Image")));
-			this.button38.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button38.Location = new System.Drawing.Point(9, 341);
-			this.button38.Name = "button38";
-			this.button38.Size = new System.Drawing.Size(211, 40);
-			this.button38.TabIndex = 14;
-			this.button38.Text = "   Loan Report";
-			this.button38.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button38.UseVisualStyleBackColor = true;
-			this.button38.Click += new System.EventHandler(this.button38_Click);
-			// 
 			// Layout
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.ClientSize = new System.Drawing.Size(1025, 726);
+			this.Controls.Add(this.empSubPanel2);
 			this.Controls.Add(this.settingsSubPanel);
 			this.Controls.Add(this.reportPanel);
-			this.Controls.Add(this.empSubPanel2);
 			this.Controls.Add(this.LAHPanel);
 			this.Controls.Add(this.attendancePanel);
 			this.Controls.Add(this.label4);
